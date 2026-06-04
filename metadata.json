@@ -1,0 +1,6 @@
+{
+  "name": "The Skin Professionals",
+  "description": "A premium clinical dermatology showcase & AI-led diagnostic application by The Skin Professionals, utilizing luxurious logo-inspired palettes and soft rose elements.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
