@@ -17,9 +17,28 @@ import {
   INITIAL_CONTACT_SUBMISSIONS 
 } from './data';
 
+const getTabFromPath = (path: string): string => {
+  const cleanPath = path.toLowerCase().replace(/^\/+/g, '').replace(/\/+$/g, '').split('?')[0];
+  const validTabs = ['home', 'about', 'products', 'analysis', 'ingredients', 'results', 'gallery', 'blog', 'contact'];
+  if (validTabs.includes(cleanPath)) {
+    return cleanPath;
+  }
+  return 'home';
+};
+
 export default function App() {
   // 1. Navigation controllers
-  const [activeTab, setActiveTab] = useState<string>('home');
+  const [activeTab, setActiveTab] = useState<string>(() => getTabFromPath(window.location.pathname));
+
+  // Dynamic Router sync with pushState to allow seamless back/forward navigation in modern browsers
+  const handleNavigate = (tab: string) => {
+    const path = tab === 'home' ? '/' : `/${tab}`;
+    if (window.location.pathname !== path) {
+      window.history.pushState(null, '', path);
+    }
+    setActiveTab(tab);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   // 2. Global application state databases synchronized with localStorage
   const [products, setProducts] = useState<Product[]>(() => {
@@ -86,35 +105,16 @@ export default function App() {
     localStorage.setItem('aura_skin_records', JSON.stringify(skinRecords));
   }, [skinRecords]);
 
-  // Sync URL hash with the React activeTab state for clean routing
+  // Synchronize popstate event (browser back/forward button clicks) so back button works correctly
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace('#/', '').replace('#', '');
-      const validTabs = ['home', 'about', 'products', 'analysis', 'ingredients', 'results', 'gallery', 'blog', 'contact'];
-      if (hash && validTabs.includes(hash)) {
-        setActiveTab(hash);
-      } else if (!hash) {
-        // Default to home when there is no hash
-        setActiveTab('home');
-      }
+    const handlePopState = () => {
+      const tab = getTabFromPath(window.location.pathname);
+      setActiveTab(tab);
     };
 
-    // Run on initial page load
-    handleHashChange();
-
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, []);
-
-  // Update hash when state changes
-  useEffect(() => {
-    if (activeTab) {
-      const currentHash = window.location.hash.replace('#/', '').replace('#', '');
-      if (currentHash !== activeTab) {
-        window.location.hash = activeTab;
-      }
-    }
-  }, [activeTab]);
 
   // 4. API / Callback handlers
   const handleAddSubmission = (submission: Omit<ContactSubmission, 'id' | 'timestamp' | 'status'>) => {
@@ -152,7 +152,7 @@ export default function App() {
       {/* Dynamic Header & Navigation */}
       <Navigation 
         activeTab={activeTab} 
-        setActiveTab={setActiveTab} 
+        setActiveTab={handleNavigate} 
       />
 
       {/* Main Coordinate body switch */}
@@ -165,20 +165,20 @@ export default function App() {
               products={products} 
               testimonials={testimonials} 
               gallery={gallery}
-              onNavigate={setActiveTab} 
+              onNavigate={handleNavigate} 
             />
           )}
 
           {activeTab === 'about' && (
             <AboutUs 
-              onNavigate={setActiveTab} 
+              onNavigate={handleNavigate} 
             />
           )}
 
           {activeTab === 'products' && (
             <Products 
               products={products} 
-              onNavigate={setActiveTab} 
+              onNavigate={handleNavigate} 
             />
           )}
 
@@ -233,10 +233,10 @@ export default function App() {
               <div id="footer-links">
                 <h4 className="font-serif text-sm text-[#E5EDA8] mb-4 uppercase tracking-widest font-normal">Our Programs</h4>
                 <ul className="space-y-2 font-sans text-[11px] uppercase tracking-wider">
-                  <li><button onClick={() => { setActiveTab('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">Client Experience</button></li>
-                  <li><button onClick={() => { setActiveTab('products'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">Clinique Formulations</button></li>
-                  <li><button onClick={() => { setActiveTab('analysis'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">AI Diagnostics Channel</button></li>
-                  <li><button onClick={() => { setActiveTab('contact'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">Private Consultation Inquiries</button></li>
+                  <li><button onClick={() => handleNavigate('home')} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">Client Experience</button></li>
+                  <li><button onClick={() => handleNavigate('products')} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">Clinique Formulations</button></li>
+                  <li><button onClick={() => handleNavigate('analysis')} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">AI Diagnostics Channel</button></li>
+                  <li><button onClick={() => handleNavigate('contact')} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">Private Consultation Inquiries</button></li>
                 </ul>
               </div>
 
