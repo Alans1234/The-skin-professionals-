@@ -53,26 +53,26 @@ export default function AISkinAnalysis({ questions, products, onSubmitRecord }: 
     const sensitivity = userAnswers['q-sensitivity'] || 'resilient';
     
     // Map of diagnostics outcomes
-    let typeName = 'Physiologically Balanced Matrix';
-    let description = 'Your skin shows optimal lipid balance and normal barrier resistance. It adapts beautifully to temperature variations and retains natural water stores without excessive sebum leakage.';
+    let typeName = 'Normal & Balanced Skin';
+    let description = 'Your skin is in a healthy, balanced state with perfect oil and water levels. We recommend maintaining this resilient barrier with a simple routine of gentle cleansing, a daily sunscreen like Sunco 50, and a soft light moisturizer.';
     
     if (skinType === 'dry') {
-      typeName = 'Chronically Dehydrated & Lipid-Deficient';
-      description = 'Your lipid synthesis channels are operating below physiological levels. The lack of cell-binding fats causes micro-tears in your acid mantle, creating chronic flaking and accelerated moisture evaporation (TEWL).';
+      typeName = 'Dry & Dehydrated Skin';
+      description = 'Your skin is producing less natural oils than required to seal moisture. This lack of essential protective lipids leads to dry patches, flakiness, or dullness. Moistcom Lite is highly recommended to restore your soft, plump skin barrier and lock hydration perfectly in Nepal.';
     } else if (skinType === 'oily') {
-      typeName = 'Hyper-Active Sebaceous Oil Matrix';
-      description = 'Your deep dermal oil glands are overproducing protective waxy lipids, usually due to genetic sensitivity to androgen triggers. Dilated pores are common as pathways stretch to release these thick proteins.';
+      typeName = 'Oily & Breakout-Prone Skin';
+      description = 'Your face produces excess natural oils, leading to a shiny look and dilated pores that can easily get clogged by dust and sweat. Sunco 50 Silicone Gel is perfect here because it absorbs excess oil and blurs pores with zero white cast.';
     } else if (skinType === 'combination') {
-      typeName = 'Segmented Mixed Cutaneous Distribution';
-      description = 'Your facial skin shows variable sebum gland density. A shiny T-zone corresponds to high active androgen receptors, whilst dry cheek cells suffer from compromised local ceramide binding.';
+      typeName = 'Combination Skin Type';
+      description = 'Your face has mixed areas: typically a shiny or oily T-zone (forehead, nose, chin) paired with dry or tight cheeks. Tailored, light moisturizers like Moistcom Lite balance both environments without feeling heavy.';
     }
 
     // Concerns mapping
-    let concernName = 'Collagen Support';
-    if (concern === 'aging') concernName = 'Structural Restoration & Collagen Fortification';
-    if (concern === 'dullness') concernName = 'Radiance Amplifying & Melanin Regulation';
-    if (concern === 'redness') concernName = 'Barrier Calming & Histamine Suppression';
-    if (concern === 'congestion') concernName = 'Pore-Wall Clarifying & Sebum Balancing';
+    let concernName = 'Support Firm & Bouncy Skin';
+    if (concern === 'aging') concernName = 'Reducing Wrinkles & Boosting Firmer Skin';
+    if (concern === 'dullness') concernName = 'Clearing Dark Spots & Getting a Brighter Glow';
+    if (concern === 'redness') concernName = 'Calming Irritation, Redness & Sensitivity';
+    if (concern === 'congestion') concernName = 'Clearing Blackheads, Clogged Pores & Acne Breakouts';
 
     // Tailor custom skincare product matches
     let matches: Product[] = [];
@@ -148,17 +148,17 @@ export default function AISkinAnalysis({ questions, products, onSubmitRecord }: 
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-6">
-          <span className="font-sans text-[10px] sm:text-xs tracking-[0.5em] text-[#E5EDA8] uppercase bg-white/10 border border-white/10 px-4 py-1.5 rounded-full inline-block mb-4 font-semibold backdrop-blur-md">
-            DIAGNOSTIC SYSTEM • BOTANICAL TELEMETRY
+          <span className="font-sans text-[10px] sm:text-xs tracking-[0.5em] text-[#E5EDA8] uppercase bg-white/10 border border-white/10 px-4 py-1.5 rounded-full inline-block mb-4 font-bold backdrop-blur-md">
+            FREE ONLINE SKIN QUIZ • NEPAL
           </span>
           <h1 className="font-serif text-4xl sm:text-6xl text-white tracking-tight leading-[1.1] mb-5">
-            Dermal Intelligence <br />
+            Which Skin Type Do I Have? <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E5EDA8] via-[#F3BCBC] to-[#FCFAF6] italic font-light">
-              AI Clinique Analysis
+              Free AI Skin Test
             </span>
           </h1>
-          <p className="font-sans text-xs sm:text-sm text-stone-300 max-w-xl mx-auto tracking-widest uppercase mb-2">
-            Decode sebum limits, hydration factors, and custom molecular selections
+          <p className="font-sans text-xs sm:text-sm text-stone-300 max-w-xl mx-auto tracking-wide uppercase mb-2">
+            Find your skin type, clear up key goals, and get custom dermatologist product recommendations
           </p>
           <div className="w-16 h-[1px] bg-gradient-to-r from-[#E5EDA8] via-[#F3BCBC] to-transparent mx-auto mt-6"></div>
         </div>
@@ -201,8 +201,8 @@ export default function AISkinAnalysis({ questions, products, onSubmitRecord }: 
 
               {/* Question Text */}
               <div className="mb-10 text-left" id="question-text-zone">
-                <span className="font-mono text-[9px] uppercase tracking-widest text-[#c5a880] mb-2 block font-semibold">
-                  Category: {questions[currentStep]?.category} Telemetry
+                <span className="font-mono text-[9px] uppercase tracking-widest text-[#c5a880] mb-2 block font-bold">
+                  TOPIC: {questions[currentStep]?.category === 'skintype' ? 'Skin Type Guide' : questions[currentStep]?.category === 'concern' ? 'Skincare Goals' : questions[currentStep]?.category === 'sensitivity' ? 'Skin Sensitivity Check' : questions[currentStep]?.category === 'age' ? 'Your Age Group' : 'My Daily Routine & Environment'}
                 </span>
                 <h2 className="font-serif text-xl sm:text-2xl lg:text-3xl text-[#0A1C26] tracking-tight leading-snug font-bold">
                   {questions[currentStep]?.text}
@@ -248,7 +248,7 @@ export default function AISkinAnalysis({ questions, products, onSubmitRecord }: 
                     className="inline-flex items-center space-x-2 text-xs text-stone-400 hover:text-[#0A1C26] transition-colors uppercase tracking-widest font-bold cursor-pointer"
                   >
                     <ArrowLeft className="w-4 h-4" />
-                    <span>Back to prior diagnostic question</span>
+                    <span>Back to previous question</span>
                   </button>
                 </div>
               )}
@@ -269,32 +269,32 @@ export default function AISkinAnalysis({ questions, products, onSubmitRecord }: 
                 <FileText className="w-8 h-8 text-[#E5EDA8]" />
               </div>
 
-              <h2 className="font-serif text-2xl sm:text-3xl text-[#0A1C26] mb-2 font-light">Register Clinical Skin Report</h2>
+              <h2 className="font-serif text-2xl sm:text-3xl text-[#0A1C26] mb-2 font-bold select-none">Get Your Free Skin Report</h2>
               <p className="font-sans text-stone-500 text-xs sm:text-sm max-w-md mx-auto mb-8 font-light">
-                Provide your client details. We will automatically code your biometric cellular analysis reports and save them within The Skin Professionals private clinical database.
+                Please enter your name and email to view your skin type, custom goals, and curated product recommendations instantly!
               </p>
 
               <form onSubmit={handleInfoSubmit} className="max-w-md mx-auto text-left space-y-5" id="analysis-reg-form">
                 
                 <div className="flex flex-col">
-                  <label className="font-sans text-[10px] uppercase tracking-widest text-[#0A1C26]/60 mb-1.5">My Full Name</label>
+                  <label className="font-sans text-[10px] uppercase tracking-widest text-[#0A1C26]/60 mb-1.5 font-bold">My Full Name</label>
                   <input 
                     type="text" 
                     value={userInfo.name}
                     onChange={(e) => setUserInfo(p => ({ ...p, name: e.target.value }))}
-                    placeholder="Aayusha Shrestha"
+                    placeholder="Enter your name here"
                     className="bg-[#FCFAF6] border border-stone-200/85 rounded-xl p-3 text-xs font-sans focus:outline-none focus:border-[#0A1C26]"
                     required
                   />
                 </div>
 
                 <div className="flex flex-col">
-                  <label className="font-sans text-[10px] uppercase tracking-widest text-[#0A1C26]/60 mb-1.5">My Contact Email Address</label>
+                  <label className="font-sans text-[10px] uppercase tracking-widest text-[#0A1C26]/60 mb-1.5 font-bold">My Email Address</label>
                   <input 
                     type="email" 
                     value={userInfo.email}
                     onChange={(e) => setUserInfo(p => ({ ...p, email: e.target.value }))}
-                    placeholder="aayusha@shrestha.com.np"
+                    placeholder="Enter your email address here"
                     className="bg-[#FCFAF6] border border-stone-200/85 rounded-xl p-3 text-xs font-sans focus:outline-none focus:border-[#0A1C26]"
                     required
                   />
@@ -303,10 +303,10 @@ export default function AISkinAnalysis({ questions, products, onSubmitRecord }: 
                 <button
                   type="submit"
                   disabled={diagnosing}
-                  className="w-full py-4 bg-[#0A1C26] hover:bg-[#112A38] text-[#FCFAF6] hover:text-[#E5EDA8] font-sans text-xs tracking-widest uppercase font-semibold rounded-xl flex items-center justify-center space-x-2 transition-all transition-transform hover:scale-102"
+                  className="w-full py-4 bg-[#0A1C26] hover:bg-[#112A38] text-[#FCFAF6] hover:text-[#E5EDA8] font-sans text-xs tracking-widest uppercase font-semibold rounded-xl flex items-center justify-center space-x-2 transition-all transition-transform hover:scale-102 cursor-pointer"
                   id="clinical-recomp-trigger"
                 >
-                  <span>{diagnosing ? 'ANALYZING LIPID AND COLLAGEN LEVELS...' : 'LAUNCH RADIANCE AUDIT REPORT'}</span>
+                  <span>{diagnosing ? 'ANALYZING YOUR PROFILE...' : 'SHOW MY SKIN TYPE & ROUTINE NOW'}</span>
                 </button>
 
               </form>
@@ -331,15 +331,15 @@ export default function AISkinAnalysis({ questions, products, onSubmitRecord }: 
                 {/* Header Sheet layout */}
                 <div className="flex flex-col sm:flex-row justify-between items-start gap-6 border-b border-stone-200/60 pb-8 mb-8" id="report-sheet-header">
                   <div>
-                    <span className="font-sans text-[9px] tracking-[0.4em] text-[#0A1C26] uppercase block mb-1 font-semibold">
-                      THE SKIN PROFESSIONALS DIGITAL CLINIQUE
+                    <span className="font-sans text-[9px] tracking-[0.4em] text-[#0A1C26] uppercase block mb-1 font-bold">
+                      THE SKIN PROFESSIONALS NEPAL • ONLINE REPORT
                     </span>
-                    <h3 className="font-serif text-3xl text-[#0A1C26] font-light uppercase tracking-tight">
-                      BIOMIMETIC DIAGNOSTICS
+                    <h3 className="font-serif text-3xl text-[#0A1C26] font-bold uppercase tracking-tight">
+                      YOUR SKIN REPORT
                     </h3>
                   </div>
                   <div className="text-left sm:text-right" id="patient-details">
-                    <span className="font-sans text-[9px] text-stone-400 block uppercase tracking-widest">CLIENT JOURNAL CODE</span>
+                    <span className="font-sans text-[9px] text-stone-400 block uppercase tracking-widest font-bold">FREE REPORT NUMBER</span>
                     <span className="font-sans text-xs text-[#0A1C26] font-mono block mb-1">SKINPRO-{Math.floor(Math.random() * 900000 + 100000)}</span>
                     <span className="font-sans text-[10px] text-stone-500 block font-sans">Name: {userInfo.name}</span>
                   </div>
@@ -352,9 +352,9 @@ export default function AISkinAnalysis({ questions, products, onSubmitRecord }: 
                   <div className="md:col-span-8 space-y-6">
                     <div>
                       <span className="font-sans text-[9px] tracking-[0.3em] text-[#c5a880] uppercase block mb-1.5 font-bold">
-                        DIAGNOSIS REPORT
+                        MY SKIN CLASSIFICATION
                       </span>
-                      <h4 className="font-serif text-xl sm:text-2xl text-[#0A1C26] mb-3 font-bold">
+                      <h4 className="font-serif text-xl sm:text-2xl text-[#0A1C26] mb-3 font-extrabold uppercase">
                         {reportData.typeName}
                       </h4>
                       <p className="font-sans text-stone-600 text-xs sm:text-sm leading-relaxed mb-4 font-light">
@@ -363,32 +363,34 @@ export default function AISkinAnalysis({ questions, products, onSubmitRecord }: 
                     </div>
 
                     <div className="p-4 bg-[#fafaf9] rounded-xl border border-stone-100">
-                      <span className="font-sans text-[9px] text-stone-400 uppercase tracking-widest block mb-1">IMMEDIATE AESTHETIC GOAL TARGET</span>
-                      <p className="font-serif text-sm text-[#0A1C26] font-semibold">{reportData.concernName}</p>
+                      <span className="font-sans text-[9px] text-stone-400 uppercase tracking-widest block mb-1 font-bold">IMMEDIATE SKINCARE FOCUS LEVEL</span>
+                      <p className="font-serif text-sm text-[#0A1C26] font-bold">{reportData.concernName}</p>
                     </div>
                   </div>
 
                   {/* Right block metrics */}
                   <div className="md:col-span-4 bg-[#0A1C26]/5 p-6 rounded-2xl border border-[#0A1C26]/10 space-y-4" id="micro-telemetry">
-                    <h5 className="font-serif text-xs text-[#0A1C26] uppercase tracking-widest font-bold border-b border-[#0A1C26]/10 pb-2">Cutaneous Metrics</h5>
+                    <h5 className="font-serif text-xs text-[#0A1C26] uppercase tracking-widest font-bold border-b border-[#0A1C26]/10 pb-2">Your Core Skin Stats</h5>
                     
                     <div className="flex justify-between items-center text-xs">
-                      <span className="text-stone-500 font-sans">Sensitised Index:</span>
+                      <span className="text-stone-500 font-sans">Sensitivity Level:</span>
                       <span className="font-mono text-[#0A1C26] tracking-wide uppercase font-bold">
-                        {userAnswers['q-sensitivity'] === 'highly' ? 'HIGH SENSITIVE' : 'STABLE MATRIX'}
+                        {userAnswers['q-sensitivity'] === 'highly' ? 'SENSITIVE SKIN' : userAnswers['q-sensitivity'] === 'moderately' ? 'SLIGHTLY SENSITIVE' : 'STABLE & STRONG'}
                       </span>
                     </div>
 
                     <div className="flex justify-between items-center text-xs">
-                      <span className="text-stone-500 font-sans">Biological Age Profile:</span>
+                      <span className="text-stone-500 font-sans">Age Bracket Stage:</span>
                       <span className="font-mono text-[#0A1C26] uppercase font-bold">
-                        {userAnswers['q-age'] === 'mature' ? 'MATURE TISSUE' : 'PREVENTATIVE'}
+                        {userAnswers['q-age'] === 'early' ? 'UNDER 25 YEARS' : userAnswers['q-age'] === 'mid' ? '25 TO 45 YEARS' : 'OVER 45 YEARS'}
                       </span>
                     </div>
 
                     <div className="flex justify-between items-center text-xs">
-                      <span className="text-stone-500 font-sans">Dermal Stress Trigger:</span>
-                      <span className="font-mono text-[#0A1C26] capitalize font-bold">{userAnswers['q-lifestyle'] || 'city'} lifestyle</span>
+                      <span className="text-stone-500 font-sans">Main Stress Factor:</span>
+                      <span className="font-mono text-[#0A1C26] uppercase font-bold">
+                        {userAnswers['q-lifestyle'] === 'city' ? 'CITY (POLLUTION)' : userAnswers['q-lifestyle'] === 'outdoor' ? 'OUTDOOR SUNLIGHT' : 'WORK STRESS / SCREEN'}
+                      </span>
                     </div>
 
                   </div>
@@ -397,7 +399,7 @@ export default function AISkinAnalysis({ questions, products, onSubmitRecord }: 
 
                 {/* Skincare Routine Blueprint layout */}
                 <div className="border-t border-stone-200/60 pt-8 mb-10" id="routine-blueprint">
-                  <h4 className="font-serif text-lg text-[#0A1C26] mb-4 uppercase tracking-widest font-bold">Prescribed Daily Routine Blueprint</h4>
+                  <h4 className="font-serif text-lg text-[#0A1C26] mb-4 uppercase tracking-widest font-bold">Your Personalized Daily Routine Guide</h4>
                   <div className="space-y-3">
                     {reportData.routines.map((rt, idx) => (
                       <div key={idx} className="flex items-start bg-[#fafaf9] border border-stone-250/20 p-3 rounded-xl sm:space-x-3 text-xs text-stone-600">
@@ -410,9 +412,9 @@ export default function AISkinAnalysis({ questions, products, onSubmitRecord }: 
 
                 {/* Recommended products shelf */}
                 <div className="border-t border-stone-200/60 pt-8" id="recommended-products-shelf">
-                  <h4 className="font-serif text-lg text-[#001c26] mb-4 uppercase tracking-widest font-bold">Required Active Synergistic Formulations</h4>
+                  <h4 className="font-serif text-lg text-[#001c26] mb-4 uppercase tracking-widest font-bold">Our Recommended Products For You</h4>
                   <p className="font-sans text-stone-500 text-xs mb-6 font-light">
-                    These active formulations contain specialized scientific enzymes, natural marine extracts, and peptides mapped directly to your answers.
+                    We suggest these active formulations and custom dermatologist-approved creams to target your answers perfectly:
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">

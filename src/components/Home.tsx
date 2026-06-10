@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, Eye, ShieldCheck, Award, ThumbsUp, ArrowRight, Quote, Image as ImageIcon, Send, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Sparkles, Eye, ShieldCheck, Award, ThumbsUp, ArrowRight, Quote, Image as ImageIcon, Send, ChevronLeft, ChevronRight, Plus, Minus } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Product, Testimonial, GalleryItem } from '../types';
 
@@ -50,8 +50,51 @@ const HERO_SLIDES = [
   }
 ];
 
+const FAQ_ITEMS = [
+  {
+    id: "faq-brand-nepal",
+    question: "What makes The Skin Professionals the best skincare brand in Nepal?",
+    answer: "The Skin Professionals is widely heralded as Nepal's first clinical dermo-physiological skincare brand. Traditional cosmetics are often imported and formulated for Western or East Asian climates. In contrast, our clinical active products—such as Moistcom Lite and Sunco 50 Silicon Sunscreen—are specifically customized by top skin professionals in Kathmandu for South Asian skin barriers, high UV indexes, and Nepal's local climate conditions."
+  },
+  {
+    id: "faq-skill-professional-nepal",
+    question: "Why does searching for 'skill professional' or 'skill professional nepal' lead to this brand?",
+    answer: "Searching for 'skill professional' or 'skill professional nepal' refers directly to the medical board and specialized skin clinic team at The Skin Professionals Nepal. Our organization hosts the country's most skillful clinical formulators, field officers, and dermatologists. To make sure clients searching for high-skill professional skin care always find authentic dermatologist diagnostics, our Kathmandu clinic and online portals are optimized for both search phrases."
+  },
+  {
+    id: "faq-ai-skin-test",
+    question: "How does the online AI Skin Analyzer work and is it accurate?",
+    answer: "Our advanced companion AI Skin Analyzer is a breakthrough diagnostic tool for Nepalese clients. It runs an instant, secure photo analysis scanning for sebum flow, moisture retention, active acne lesions, hyperpigmentation spots, and open pores. Within seconds, it generates a custom product routine curated dynamically around South Asian climate factors and prescribes targeted solutions like multi-ceramides, niacinamide, and physical sunscreen filters."
+  },
+  {
+    id: "faq-kathmandu-clinic",
+    question: "Can I visit your physical skin clinic in Kathmandu for a dermatologist consultation?",
+    answer: "Yes, The Skin Professionals is integrated with leading partner diagnostic clinics and authorized formulation hubs across Kathmandu, Nepal. Our administrative offices coordinates with senior medical advisors, dermo-pathologist officers, and clinical formulators to ensure every product you buy is clinically tested. Walk-in consultations are available for clients seeking customized, medical-grade active formulations."
+  },
+  {
+    id: "faq-moistcom-moisturizer",
+    question: "Is Moistcom Lite recommended as the best moisturizer in Nepal?",
+    answer: "Absolutely. Moistcom Lite Skin Lightning Moisturiser has earned local acclaim as Nepal's premier barrier repair cream. It combines a potent scientific matrix of multi-ceramides (essential for repairing lipid barriers), 4% Niacinamide (for deep sebum management and anti-acne), and 2% Alpha Arbutin (to lighten pregnancy spots and hyperpigmentation), presenting a perfect featherlight formula that doesn't feel sticky in Kathmandu's humid seasons."
+  },
+  {
+    id: "faq-sunscreen-sunco-50",
+    question: "How does Sunco 50 Silicone Gel protect against altitude UV rays in Nepal?",
+    answer: "Nepal's high altitude significantly intensifies ultraviolet radiation, requiring medical-grade protection. Sunco 50 Silicone Gel is custom formulated with micronized zinc oxide to provide robust SPF 50 PA++++ broad-spectrum block. It is a pore-blurring, non-greasy, physical sunscreen gel designed for comfort—it controls excessive oil, leaves absolutely zero white cast, and remains water-resistant during Kathmandu summer monsoons."
+  },
+  {
+    id: "faq-distributors",
+    question: "Where can I purchase genuine products of The Skin Professionals across Nepal?",
+    answer: "Genuine products from The Skin Professionals can be ordered directly from our website's clinical shop or bought at our authorized dermatologist clinics, skin diagnostic desks, and medical pharmacies in major hubs across Nepal, including Kathmandu, Lalitpur, Pokhara, Biratnagar, Nepalgunj, Butwal, Chitwan, and Dharan."
+  }
+];
+
 export default function Home({ products, testimonials, gallery, onNavigate }: HomeProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [activeFaq, setActiveFaq] = useState<string | null>(null);
+
+  const toggleFaq = (id: string) => {
+    setActiveFaq(prev => prev === id ? null : id);
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -508,6 +551,74 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8.5. Dynamic SEO & Clinical FAQ Accordion Section (Crawlable Rich Text for Insane Search Rankings) */}
+      <section className="py-24 bg-[#FCFAF6] border-t border-[#FBEAEA]" id="faq-interactive-section">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            {/* FAQ Intro & SEO Focus Card */}
+            <div className="lg:col-span-4 lg:sticky lg:top-28" id="faq-intro-block">
+              <span className="font-sans text-xs tracking-[0.3em] text-[#0A1C26] uppercase bg-[#FBEAEA] text-[#0A1C26] font-bold px-3.5 py-1 rounded inline-block mb-4">
+                SKINCARE EDUCATION
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#0A1C26] tracking-tight leading-tight mb-4">
+                Clinical Skincare & Diagnostics
+              </h2>
+              <p className="font-sans text-stone-600 text-sm leading-relaxed mb-6 font-light">
+                Find clear guidance and scientific insights from <strong className="text-[#0A1C26] font-medium">The Skin Professionals Nepal</strong>. We empower skin health using certified formulation expertise and high-precision AI technology.
+              </p>
+              <div className="p-6 bg-white rounded-2xl border border-[#FBEAEA] shadow-sm" id="seo-trust-seal">
+                <h3 className="font-serif text-xs text-[#0A1C26] font-bold uppercase tracking-wider mb-2">Verified Medical Cosmetics</h3>
+                <p className="font-sans text-[11px] text-stone-500 leading-relaxed font-light">
+                  Our products are verified for safety and dermo-physiological performance. Designed by highly skillful professionals dedicated to resolving local acne, dehydration, and hyperpigmentation concerns.
+                </p>
+              </div>
+            </div>
+
+            {/* Accordion List */}
+            <div className="lg:col-span-8 space-y-4" id="faq-accordion-list">
+              {FAQ_ITEMS.map((item) => {
+                const isOpen = activeFaq === item.id;
+                return (
+                  <div 
+                    key={item.id}
+                    id={item.id}
+                    className="bg-white rounded-2xl border border-[#FBEAEA] overflow-hidden transition-all duration-300 hover:border-[#F3BCBC]/40 shadow-xs"
+                  >
+                    <button
+                      onClick={() => toggleFaq(item.id)}
+                      className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-serif text-sm sm:text-base text-[#0A1C26] font-semibold hover:bg-[#FCFAF6]/50 transition-colors"
+                      aria-expanded={isOpen}
+                    >
+                      <span>{item.question}</span>
+                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#FCFAF6] border border-[#FBEAEA] flex items-center justify-center text-[#0A1C26] transition-transform duration-300">
+                        {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                      </span>
+                    </button>
+                    
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.25, ease: "easeInOut" }}
+                        >
+                          <div className="px-6 pb-6 text-stone-600 font-sans text-xs sm:text-sm leading-relaxed font-light border-t border-[#FCFAF6] pt-4">
+                            {item.answer}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
+            </div>
+
           </div>
         </div>
       </section>

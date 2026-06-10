@@ -215,28 +215,28 @@ export const INITIAL_INGREDIENTS: Ingredient[] = [
 export const INITIAL_TESTIMONIALS: Testimonial[] = [
   {
     id: 'test-1',
-    author: 'Aayusha Shrestha',
-    role: 'Skincare Blogger & Aesthetic Critic, Kathmandu',
-    avatar: 'https://images.unsplash.com/photo-1594744803329-e58b31de215f?auto=format&fit=crop&q=80&w=150',
-    content: 'After testing so many imported serums under heavy dusty Kathmandu weather, the RENEW NIACINAMIDE SERUM is the only one that gave me actual glowing, glass-like clarity. My skin sensitivity dissolved in three days, and dry spots look incredibly plumped!',
+    author: 'Shraddha Manandhar',
+    role: 'HQ Kathmandu Field Sales Officer, The Skin Professionals Nepal',
+    avatar: '/Employee Photos/Shraddha manandhar.jpeg',
+    content: "Working on the field with top skin clinics and dermatologist partners across Kathmandu, the professional feedback for Moistcom Lite and Sunco 50 is incredible. Our formulas are custom-engineered for South Asian lipid barriers and local climate conditions.",
     rating: 5,
     featured: true
   },
   {
     id: 'test-2',
-    author: 'Dr. Sandeep Karki',
-    role: 'Consultant Clinical Dermatologist, Patan',
-    avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=150',
-    content: 'The science behind are AURA formulations is flawless. Their combination of copper peptides, active ceramides, and pure Bakuchiol operates exactly what skin cells require to fight high Altitudes UV stress and pollution active here in Nepal.',
+    author: 'Priyanshu Maharjan',
+    role: 'HQ Kathmandu Field Sales Officer, The Skin Professionals Nepal',
+    avatar: '/Employee Photos/Priyanshu Maharjan.jpg',
+    content: "We collaborate closely with dozens of clinical clinics and pharmacies to distribute authentic active formulations. Clients are continually amazed at how quickly Moistcom Lite restores moisture balance and how Sunco 50 prevents solar hyperpigmentation.",
     rating: 5,
     featured: true
   },
   {
     id: 'test-3',
-    author: 'Pooja Thapa',
-    role: 'AURA Verified Customer, Pokhara',
-    avatar: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&q=80&w=150',
-    content: 'Taking their online Skin Test was so quick! The custom routine recommendation solved my dry cheeks and T-zone oiliness completely. Living in Pokhara, my friends now constantly ask me about my hidden glowing secret. Love it!',
+    author: 'Bimal Chaudhary',
+    role: 'Nepalgunj Sector Field Officer, The Skin Professionals Nepal',
+    avatar: '/Employee Photos/Bimal Chaudhary.jpeg',
+    content: "In the intense, hot climate of the Nepalgunj sector, heavy skincare fails. Our non-greasy formulations control excess sebum, protect from dust congestion, and maintain a resilient barrier. It is a genuine breakthrough for our regional clinics.",
     rating: 5,
     featured: true
   }
@@ -329,54 +329,54 @@ By respecting these spatial transitions, you amplify formulation absorption by u
 export const INITIAL_SKIN_QUESTIONS: SkinQuestion[] = [
   {
     id: 'q-skintype',
-    text: 'How does your skin feel 45 minutes after gentle washing, if you apply no products?',
+    text: 'How does your skin feel 45 minutes after washing it, if you do not apply any creams or moisturizers?',
     category: 'skintype',
     options: [
-      { value: 'dry', text: 'Tight, flaky, or looking visibly dull', description: 'Indicates thin sebum production or compromised epidermal lipid barrier.' },
-      { value: 'oily', text: 'Shiny all over, with highly visible pores', description: 'Indicates active over-secretion of waxy sebaceous lipids.' },
-      { value: 'combination', text: 'Greasy in T-zone (nose & forehead), but tight on cheeks', description: 'Standard mixed distribution of cutaneous androgen receptors.' },
-      { value: 'normal', text: 'Comfortable, velvet-smooth, and balanced skin texture', description: 'An optimal state of lipid production and dermal hydration.' }
+      { value: 'dry', text: 'Tight, flaky, rough or looking visibly dry and dull', description: 'Means your skin produces less natural oils and needs more deep moisture layers.' },
+      { value: 'oily', text: 'Shiny all over, greasy, with visible pores', description: 'Means your skin produces excess natural oil, which can cause shine and clogged pores.' },
+      { value: 'combination', text: 'Greasy on forehead, nose, and chin (T-zone), but dry or tight on cheeks', description: 'Very common! Part of your face is oily, while other areas feel dry.' },
+      { value: 'normal', text: 'Comfortable, soft, smooth, and perfectly balanced', description: 'Your skin produces just the right amount of oil and feels fully hydrated.' }
     ]
   },
   {
     id: 'q-concern',
-    text: 'What is your primary cutaneous goal or aesthetic concern today?',
+    text: 'What is your main skincare goal or skin worry today?',
     category: 'concern',
     options: [
-      { value: 'aging', text: 'Smoothing fine lines, resolving loss of cheek volume, or skin laxity', description: 'Focused on structural collagen support and elastin protection.' },
-      { value: 'dullness', text: 'Fading dark spots, resolving sun damage, or persistent gray sallow tone', description: 'Focused on melanocyte regulation and deep cell exfoliation.' },
-      { value: 'redness', text: 'Soothe hot dry spots, irritation, or persistent environmental rosacea', description: 'Focused on blood capillary calming and natural flora restoration.' },
-      { value: 'congestion', text: 'Clearing clogged blackheads, white bumps, and balancing oil levels', description: 'Focused on lipid dissolved salicylic actions and pore purging.' }
+      { value: 'aging', text: 'Smoothing wrinkles, fine lines, or saggy and loose skin', description: 'Helps boost collagen to keep your skin looking young, firm, and bouncy.' },
+      { value: 'dullness', text: 'Fading dark spots, sun marks, or getting rid of tired, dull skin', description: 'Helps lighten stubborn spots to bring back a bright, clear, and glowing skin tone.' },
+      { value: 'redness', text: 'Soothing hot dry spots, redness, itchy patches, or skin irritation', description: 'Helps calm down redness, soothe dry irritation, and protect sensitive barriers.' },
+      { value: 'congestion', text: 'Clearing clogged blackheads, pimple bumps, acne, and oily breakouts', description: 'Helps deep clean pores, treat breakouts, and normalize excess oils.' }
     ]
   },
   {
     id: 'q-sensitivity',
-    text: 'How does your skin react when exposed to wind, heat, or new cosmetic active formulas?',
+    text: 'How does your skin react to cold wind, solar heat, or new skincare products?',
     category: 'sensitivity',
     options: [
-      { value: 'highly', text: 'Swells, tingles, turns hot or red immediately', description: 'Highly reactive nervous triggers; requires gentle hypoallergenic nourishment.' },
-      { value: 'moderately', text: 'Occasionally reacts with small dry red patches', description: 'Partially vulnerable; requires ceramide moisture locks.' },
-      { value: 'resilient', text: 'Stays stable and accepts active compounds without any issues', description: 'Sturdy skin matrix; can accept high-strength expert formulations.' }
+      { value: 'highly', text: 'It stings, burns, or turns red and itchy almost immediately', description: 'Highly sensitive skin; needs extremely gentle, soothing, scent-free creams.' },
+      { value: 'moderately', text: 'Occasionally gets small red spots or slightly itchy dry patches', description: 'Slightly sensitive; benefits from moisture-locking ceramides and barriers.' },
+      { value: 'resilient', text: 'Stays completely calm and easily handles strong skincare products', description: 'Strong, healthy barriers; can use powerful treatment serums and actives.' }
     ]
   },
   {
     id: 'q-age',
-    text: 'Which biological stage best represents your skin journey?',
+    text: 'Which age range best represents your skin stage?',
     category: 'age',
     options: [
-      { value: 'early', text: 'Under 25: Growth, prevention, and sebum management', description: 'Maintaining structural integrity and defense.' },
-      { value: 'mid', text: '25 to 45: Early preventative, cellular renewal, and oxidative stress shield', description: 'Tackling early collagen slowing and lifestyle environmental oxidation.' },
-      { value: 'mature', text: 'Over 45: deep structural restoration, lipid replenishment, and cellular renewal', description: 'Addressing lipid decline, dermal density change, and intense restoration.' }
+      { value: 'early', text: 'Under 25: Balancing oils, preventing breakouts, and light protection', description: 'Keeping the skin clean, fresh, hydrated, and protected.' },
+      { value: 'mid', text: '25 to 45: Preventing first signs of aging, bright skin tone, and sun defense', description: 'Helping your skin renew itself and fighting damage from sun or daily pollution.' },
+      { value: 'mature', text: 'Over 45: Deep firming, intense hydration, and wrinkle correction', description: 'Restores thin skin, deeply moisturizes, and recovers firmness.' }
     ]
   },
   {
     id: 'q-lifestyle',
-    text: 'What environmental factor fits your daily routine closest?',
+    text: 'What environment are you in most of the day?',
     category: 'lifestyle',
     options: [
-      { value: 'city', text: 'Urban center: Commutes, air pollution, and workspace AC grids', description: 'Requires heavy defense skin shields and anti-soot barrier locks.' },
-      { value: 'outdoor', text: 'Sun-drenched: Active outdoor lifestyle and direct sun contact', description: 'Requires thermal calming lipids and deep peptide defense.' },
-      { value: 'stress', text: 'High-Pace: screen blue-light, high strain, and variable sleep cycles', description: 'Requires micro-circulatory stimulants and calming botanical oils.' }
+      { value: 'city', text: 'City environments: Dusty roads, smoke, traffic commutes, or air-conditioned rooms', description: 'Needs a strong defense layer to keep out dust, smoke, and air toxins.' },
+      { value: 'outdoor', text: 'Outdoors: Active lifestyle with regular sun exposure, wind, and sweating', description: 'Needs high sun protection, repair gels, and cooling care to reverse heat spots.' },
+      { value: 'stress', text: 'High-stress: Working late hours, screen light exposure, and lack of deep sleep', description: 'Needs skin-restarting ingredients to fix stress-related dullness and tired eyes.' }
     ]
   }
 ];

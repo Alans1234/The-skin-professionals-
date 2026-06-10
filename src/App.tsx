@@ -88,7 +88,28 @@ export default function App() {
 
   const [testimonials, setTestimonials] = useState<Testimonial[]>(() => {
     const saved = localStorage.getItem('aura_testimonials');
-    return saved ? JSON.parse(saved) : INITIAL_TESTIMONIALS;
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved) as Testimonial[];
+        const hasStale = parsed.some(t => 
+          t.author.toLowerCase().includes('vance') || 
+          t.author.toLowerCase().includes('eleanor') || 
+          t.author.toLowerCase().includes('marcus') || 
+          t.author.toLowerCase().includes('sienna') ||
+          t.author.toLowerCase().includes('thorne') ||
+          t.author.toLowerCase().includes('sterling') ||
+          t.author.toLowerCase().includes('aayusha') ||
+          t.author.toLowerCase().includes('karki') ||
+          t.author.toLowerCase().includes('thapa')
+        );
+        if (!hasStale && parsed.length > 0) {
+          return parsed;
+        }
+      } catch (err) {
+        console.warn('Recovering testimonials layout:', err);
+      }
+    }
+    return INITIAL_TESTIMONIALS;
   });
 
   const [blogs, setBlogs] = useState<Blog[]>(() => {
