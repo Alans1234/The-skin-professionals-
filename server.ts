@@ -13,8 +13,14 @@ async function startServer() {
   // Body parser
   app.use(express.json());
 
-  // Serve Employee Photos directory statically
+  // Serve favicon.ico requests cleanly by redirecting to our high-resolution SVG favicon
+  app.get("/favicon.ico", (req, res) => {
+    res.redirect(301, "/favicon.svg");
+  });
+
+  // Serve Employee Photos directory statically (handles both normal spaces and %20 URL encodings)
   app.use("/Employee Photos", express.static(path.join(process.cwd(), "Employee Photos")));
+  app.use("/Employee%20Photos", express.static(path.join(process.cwd(), "Employee Photos")));
 
   // API Route for Contact Form
   app.post("/api/contact", async (req, res) => {

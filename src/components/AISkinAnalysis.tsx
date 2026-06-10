@@ -420,7 +420,15 @@ export default function AISkinAnalysis({ questions, products, onSubmitRecord }: 
                       <div key={p.id} className="bg-[#fafaf9] rounded-xl border border-stone-200/50 p-4 flex flex-col justify-between hover:border-[#c5a880]/30 transition-all">
                         <div>
                           <div className="h-32 rounded-lg overflow-hidden mb-3 bg-stone-100">
-                            <img src={p.image} alt={p.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                            <img 
+                              src={p.image} 
+                              alt={p.name} 
+                              className="w-full h-full object-cover" 
+                              referrerPolicy="no-referrer" 
+                              onError={(e) => {
+                                (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=400';
+                              }}
+                            />
                           </div>
                           <h5 className="font-serif text-xs px-1 text-[#0A1C26] font-bold leading-tight">{p.name}</h5>
                           <span className="font-mono text-[9px] px-1 text-stone-400 uppercase block mt-1">{p.category} • {p.price}</span>

@@ -177,6 +177,9 @@ export default function Products({ products, onNavigate }: ProductsProps) {
                     alt={p.name} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=600';
+                    }}
                   />
                   {/* Subtle hover backdrop overlay */}
                   <div className="absolute inset-0 bg-[#0A1C26]/5 group-hover:bg-[#0A1C26]/0 transition-colors duration-500"></div>
@@ -302,6 +305,9 @@ export default function Products({ products, onNavigate }: ProductsProps) {
                   alt={selectedProduct.name} 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=600';
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#052e2b]/80 via-transparent to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6">

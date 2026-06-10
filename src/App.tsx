@@ -56,11 +56,11 @@ export default function App() {
         const parsed = JSON.parse(saved) as Product[];
         // Auto-heal/migrate if any product contains a dollar symbol, does not contain 'Rs.', or is old data
         const hasDollarOrStale = parsed.some(p => p.price && (p.price.includes('$') || !p.price.includes('Rs.')) || p.name.includes('AURA Luminous') || p.name.includes('Nectar'));
-        if (!hasDollarOrStale && parsed.length > 0 && parsed.some(p => p.name.includes('MOISTCOM'))) {
-          // Always map the latest active compiled asset paths from INITIAL_PRODUCTS to avoid stale local refs
+        if (!hasDollarOrStale && parsed.length > 0) {
+          // Always map the latest active compiled asset paths from INITIAL_PRODUCTS to avoid stale local refs or casing differences
           return parsed.map(p => {
-            const initial = INITIAL_PRODUCTS.find(ip => ip.id === p.id);
-            return initial ? { ...p, image: initial.image } : p;
+            const initial = INITIAL_PRODUCTS.find(ip => ip.id === p.id || ip.name.toLowerCase().trim() === p.name.toLowerCase().trim());
+            return initial ? { ...p, ...initial, image: initial.image } : p;
           });
         }
       } catch (err) {
