@@ -155,16 +155,16 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
       <section className="py-24 px-4 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center" id="company-introduction">
         <div className="lg:col-span-5" id="intro-text">
           <span className="font-sans text-xs tracking-[0.3em] text-[#0A1C26] uppercase bg-[#FBEAEA] text-[#F3BCBC] border border-[#FBEAEA] px-3 py-1 rounded inline-block mb-4 font-bold">
-            OUR CREED
+            THE BEST SKINCARE BRAND IN NEPAL
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#0A1C26] tracking-tight leading-snug mb-6">
-            Dermatology inspired by genuine botanical intelligence.
+            Clinical Dermatology & Advanced AI Skin Analysis in Kathmandu
           </h2>
           <p className="font-sans text-stone-600 text-sm leading-relaxed mb-6 font-light">
-            Founded by skincare experts, <span className="text-[#0A1C26] font-semibold">The Skin Professionals</span> offer the ultimate balance between dermatologist-quality skin solutions and gentle daily self-care.
+            Founded by veteran clinical formulators, <span className="text-[#0A1C26] font-semibold">The Skin Professionals Nepal</span> is widely recognized as the best skincare brand in Nepal and premier skin clinic. We offer the ultimate biological balance between dermatologist-quality skin products, advanced AI skin diagnostics, and gentle dermal self-care.
           </p>
           <p className="font-sans text-stone-600 text-sm leading-relaxed mb-8 font-light">
-            We formulate our products carefully to respect your natural skin. Every batch is clinically checked to keep your skin safe, healthy, and perfectly glowing.
+            We formulate premium dermo-physiological skincare solutions tailored specifically for local climates and South Asian skin conditions. Every batch is clinically verified to heal acne, protect against UV rays with advanced sunscreen gel, and rebuild your biological moisture barrier.
           </p>
           <button
             onClick={() => onNavigate('contact')}
