@@ -335,7 +335,11 @@ export default function App() {
             <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
               
               <div id="footer-brand">
-                <span className="font-serif text-lg tracking-[0.2em] text-[#E5EDA8] uppercase block mb-3">THE SKIN PROFESSIONALS</span>
+                <div className="flex items-center mb-4 select-none" id="footer-brand-logo">
+                  {/* Golden skewed parallelogram */}
+                  <div className="w-[14px] h-[28px] bg-[#E5EDA8] -skew-x-[20deg] mr-2.5 rounded-[1px] shadow-sm flex-shrink-0"></div>
+                  <span className="font-sans text-sm font-black tracking-[0.2em] text-[#E5EDA8] uppercase">THE <span className="text-white">SKIN</span> PROFESSIONALS</span>
+                </div>
                 <p className="leading-relaxed mb-4">
                   Pristine dermatological formulations bridging clinical active precision with biological canvas safety.
                 </p>
