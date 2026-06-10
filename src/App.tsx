@@ -3,12 +3,14 @@ import Navigation from './components/Navigation';
 import Home from './components/Home';
 import AboutUs from './components/AboutUs';
 import Products from './components/Products';
+import Distributors from './components/Distributors';
 import AISkinAnalysis from './components/AISkinAnalysis';
 import Ingredients from './components/Ingredients';
 import Results from './components/Results';
 import Gallery from './components/Gallery';
 import BlogPage from './components/Blog';
 import Contact from './components/Contact';
+import { Instagram, Facebook, Youtube, MessageCircle } from 'lucide-react';
 
 import { Product, GalleryItem, Testimonial, Blog, SkinQuestion, ContactSubmission, SkinAnalysisRecord } from './types';
 import { 
@@ -19,7 +21,7 @@ import {
 
 const getTabFromPath = (path: string): string => {
   const cleanPath = path.toLowerCase().replace(/^\/+/g, '').replace(/\/+$/g, '').split('?')[0];
-  const validTabs = ['home', 'about', 'products', 'analysis', 'ingredients', 'results', 'gallery', 'blog', 'contact'];
+  const validTabs = ['home', 'about', 'products', 'analysis', 'ingredients', 'results', 'gallery', 'blog', 'contact', 'distributors'];
   if (validTabs.includes(cleanPath)) {
     return cleanPath;
   }
@@ -212,6 +214,10 @@ export default function App() {
             />
           )}
 
+          {activeTab === 'distributors' && (
+            <Distributors />
+          )}
+
           {activeTab === 'contact' && (
             <Contact 
               onAddSubmission={handleAddSubmission} 
@@ -227,16 +233,34 @@ export default function App() {
                 <p className="leading-relaxed mb-4">
                   Pristine dermatological formulations bridging clinical active precision with biological canvas safety.
                 </p>
-                <span className="text-[10px] text-[#F3BCBC] tracking-widest block font-mono font-semibold">Established 2026 • Private Clinique Range</span>
+                <div className="flex flex-col space-y-3">
+                  <span className="text-[10px] text-[#F3BCBC] tracking-widest block font-mono font-semibold">Established 2026 • Private Clinique Range</span>
+                  <div className="flex items-center space-x-3 pt-1" id="footer-social-links">
+                    <a href="https://www.instagram.com/the_skin_professionals/" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 text-white hover:text-[#E5EDA8] rounded-full transition-all duration-300 border border-white/5 hover:border-[#E5EDA8]/30 cursor-pointer" title="Follow us on Instagram">
+                      <Instagram className="w-4 h-4" />
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61563659194605" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 text-white hover:text-[#E5EDA8] rounded-full transition-all duration-300 border border-white/5 hover:border-[#E5EDA8]/30 cursor-pointer" title="Find us on Facebook">
+                      <Facebook className="w-4 h-4" />
+                    </a>
+                    // <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 text-white hover:text-[#E5EDA8] rounded-full transition-all duration-300 border border-white/5 hover:border-[#E5EDA8]/30 cursor-pointer" title="Watch on YouTube">
+                    //   <Youtube className="w-4 h-4" />
+                    // </a>
+                    // <a href="https://wa.me/9779801234567" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 text-white hover:text-[#E5EDA8] rounded-full transition-all duration-300 border border-white/5 hover:border-[#E5EDA8]/30 cursor-pointer" title="Chat on WhatsApp">
+                    //   <MessageCircle className="w-4 h-4" />
+                    // </a>
+                  </div>
+                </div>
               </div>
 
               <div id="footer-links">
-                <h4 className="font-serif text-sm text-[#E5EDA8] mb-4 uppercase tracking-widest font-normal">Our Programs</h4>
+                <h4 className="font-serif text-sm text-[#E5EDA8] mb-4 uppercase tracking-widest font-normal">Quick Links</h4>
                 <ul className="space-y-2 font-sans text-[11px] uppercase tracking-wider">
-                  <li><button onClick={() => handleNavigate('home')} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">Client Experience</button></li>
-                  <li><button onClick={() => handleNavigate('products')} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">Clinique Formulations</button></li>
-                  <li><button onClick={() => handleNavigate('analysis')} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">AI Diagnostics Channel</button></li>
-                  <li><button onClick={() => handleNavigate('contact')} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">Private Consultation Inquiries</button></li>
+                  <li><button onClick={() => handleNavigate('home')} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">Home</button></li>
+                  <li><button onClick={() => handleNavigate('about')} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">About Us</button></li>
+                  <li><button onClick={() => handleNavigate('products')} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">Our Products</button></li>
+                  <li><button onClick={() => handleNavigate('analysis')} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">Skin Test</button></li>
+                  <li><button onClick={() => handleNavigate('distributors')} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">Authorized Distributors</button></li>
+                  <li><button onClick={() => handleNavigate('contact')} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">Contact Us</button></li>
                 </ul>
               </div>
 

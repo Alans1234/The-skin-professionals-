@@ -9,12 +9,14 @@ interface NavigationProps {
 export default function Navigation({ activeTab, setActiveTab }: NavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Slimmed down navigation tabs: 4 high-value clean sections
+  // Simple, easy-to-understand labels perfect for the local and Nepalese market
   const mainNavItems = [
-    { id: 'home', label: 'Experience' },
-    { id: 'products', label: 'Clinique Formulations' },
-    { id: 'analysis', label: 'AI Diagnostics' },
-    { id: 'contact', label: 'Speak with a Pro' }
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About Us' },
+    { id: 'products', label: 'Our Products' },
+    { id: 'analysis', label: 'Skin Test' },
+    { id: 'distributors', label: 'Our Distributors' },
+    { id: 'contact', label: 'Contact Us' }
   ];
 
   const handleNavClick = (tabId: string) => {
