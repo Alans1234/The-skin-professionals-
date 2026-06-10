@@ -2,7 +2,7 @@ export interface Product {
   id: string;
   name: string;
   tagline: string;
-  category: 'Cleanser' | 'Serum' | 'Moisturizer' | 'Treatment' | 'Mask';
+  category: 'Cleanser' | 'Serum' | 'Moisturizer' | 'Treatment' | 'Mask' | 'Sunscreen';
   price: string; // Luxury price for display
   rating: number;
   image: string;

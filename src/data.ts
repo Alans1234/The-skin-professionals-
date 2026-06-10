@@ -1,125 +1,146 @@
 import { Product, Ingredient, Testimonial, Blog, SkinQuestion, ContactSubmission, GalleryItem } from './types';
 
+import MoistcomImg from './images/Moistcom.jpg';
+import SuncoImg from './images/Sunco.jpg';
+import FluideImg from './images/fluide.jpg';
+import RenewImg from './images/renew.jpg';
+import GoodMoistureImg from './images/GoodMoisture.jpg';
+
 export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'prod-1',
-    name: 'AURA Luminous Rejuvenating Nectar',
-    tagline: 'Deep Cellular Repair & Radiance Amplifying Elixir',
-    category: 'Serum',
-    price: '$185',
-    rating: 4.9,
-    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800',
-    description: 'A transformative, lightweight bio-active elixir formulated with copper peptides, rich marine ferments, and organic cell-regenerating botanicals. Operates at a deepest cellular level to restore elasticity, reverse environmental pigmentation, and create a state of radiant dewiness.',
+    name: 'MOISTCOM LITE Skin lightning Moisturiser',
+    tagline: 'Advanced Cellular Skin Lightening & Lipic Barrier Fortification',
+    category: 'Moisturizer',
+    price: 'Rs. 800',
+    rating: 4.8,
+    image: MoistcomImg,
+    description: 'An advanced scientific moisturizer combining the power of multi-ceramides with skin-brightening actives. Specially designed to lighten dark spots, block oxidative stressors, and provide rich non-greasy lipid protection ideal for Nepalese weather.',
     benefits: [
-      'Reduces appearance of deep wrinkles and fine lines by 37% in 14 days',
-      'Promotes rapid collagen synthesis and enhances structural elasticity',
-      'Neutralizes free radicals and protects against modern blue-light stress',
-      'Delivers an instantaneous, candlelit luminosity from within'
+      'Acts directly on active melanocytes to fade stubborn dark spots and sallow skin tone',
+      'Restores physiological ceramide matrix to shield skin from city pollution and wind',
+      'Infuses deep molecular hydration through Aquaxyl and Sodium Hyaluronate',
+      'Gently refines cutaneous texture, revealing a luminous velvet skin bloom'
     ],
     ingredients: [
-      { name: 'Copper Tripeptide-1', percentage: '2.5%', purpose: 'Catalyzes multi-level cell renewal and repair' },
-      { name: 'Luminous Marine Algae Extract', percentage: '5.0%', purpose: 'Inhibits melanin synthesis and brightens tone' },
-      { name: 'Botanical Squalane', percentage: '12.0%', purpose: 'Creates a breathable dermal lipid barrier' },
-      { name: 'Niacinamide (Vitamin B3)', percentage: '4.0%', purpose: 'Refines texture and minimizes pores' }
+      { name: 'Niacinamide', percentage: '4.0%', purpose: 'Regulates sebum, minimizes pore outline and fades active dark marks' },
+      { name: 'Ceramide', percentage: '1.5%', purpose: 'Rebuilds natural skin lipid brick barrier' },
+      { name: 'Sodium hyaluronate', percentage: '1.0%', purpose: 'Locks relative atmospheric moisture instantly into dermal layers' },
+      { name: 'Aquaxyl', percentage: '1.5%', purpose: 'Optimizes skin hydric flows and boosts deep aquaporin synthesis' },
+      { name: 'Alpha arbutin', percentage: '2.0%', purpose: 'Inhibits tyrosinase enzymes to brighten skin tone safely' },
+      { name: 'Ethyl ascorbic acid', percentage: '1.5%', purpose: 'Renders high stability vitamin C antioxidant benefit' },
+      { name: 'Kojic acid', percentage: '1.0%', purpose: 'Fades stubborn post-inflammatory discoloration' },
+      { name: 'Licorice extract & Willow bark extract', percentage: '3.0%', purpose: 'Calms redness, purges micro-congestion and soothes cells' }
     ],
     suitability: ['Dry', 'Combination', 'Sensitive', 'Oily'],
-    usage: 'Dispense 3-4 drops into clean palms. Melt slightly by pressing hands together, then breathe in the organic jasmine aromatics before gently pressing into the face and decolletage every morning and evening.'
+    usage: 'Dispense a portion of cream. Apply over cleanly washed skin every morning and evening. Pat gently in upward circular motions until completely absorbed.'
   },
   {
     id: 'prod-2',
-    name: 'Bio-Renewal Micro-Velvet Fluid',
-    tagline: 'Ultralight Hydration Multi-Ceramide Encapsulated Emulsion',
-    category: 'Moisturizer',
-    price: '$140',
-    rating: 4.8,
-    image: 'https://images.unsplash.com/photo-1608248597481-496100c80836?auto=format&fit=crop&q=80&w=800',
-    description: 'An exquisitely whipped, silky light cream designed to reinforce the skin barrier with multi-dimensional ceramides, Centella Asiatica, and high-purity clinical Hyaluronic Acid. Perfect for establishing a smooth, poreless canvas with a velvet matte-satin finish.',
+    name: 'SUNCO 5O SILICONE GEL',
+    tagline: 'Ultra-Sheer Broad-Spectrum SPF 50 Shield & Non-Comedogenic Matte Finish',
+    category: 'Sunscreen',
+    price: 'Rs. 1,040',
+    rating: 4.9,
+    image: SuncoImg,
+    description: 'An exceptionally elegant silicone-gel sunscreen offering supreme SPF 50 PA++++ broad-spectrum defense. Transparently shields from intense UV rays while rendering a luxurious pores-blurring satin-matte skin coverage.',
     benefits: [
-      'Provides micro-encapsulated hydration bound deep in the dermis for 72 hours',
-      'Instantly repairs broken surface lipids, reducing sensitivity redness',
-      'Refines skin cell texture, delivering a soft-focus poreless appearance',
-      'Protects against moisture loss caused by heavy air conditioning and high winds'
+      'Provides high-level PA++++ block to prevent high-altitude UV burns and cell hyperpigmentation',
+      'Micronized formulation guarantees zero chalky white cast or greasy finish',
+      'Infuses premium Vitamin C and E antioxidants to prevent daylight-induced collagen damage',
+      'Creates a water and sweat resistant breathable veil perfect for everyday active wear'
     ],
     ingredients: [
-      { name: 'Ceramide NP, AP, EOP Suite', percentage: '3.0%', purpose: 'Restores the standard lipid matrix integrity' },
-      { name: 'Madecassoside (Centella Asiatica)', percentage: '1.5%', purpose: 'Soothes inflammation and accelerates skin patching' },
-      { name: 'High-Molecular Weight Hyperpure Hydrator', percentage: '2.0%', purpose: 'Locks environmental humidity into skin' },
-      { name: 'White Truffle Essence', percentage: '1.0%', purpose: 'Supplies essential amino acids and minerals' }
+      { name: 'Micronized Zinc Oxide', percentage: '10.0%', purpose: 'Forms a physical barrier to block and reflect UVA/UVB rays' },
+      { name: 'Micronized TiO2', percentage: '4.0%', purpose: 'Delivers broad solar protection with supreme transparency' },
+      { name: 'Niacinamide', percentage: '2.0%', purpose: 'Soothes dermal inflammation and strengthens moisture barrier' },
+      { name: 'Hyaluronic acid & Aquaxyl', percentage: '1.5%', purpose: 'Fights heat-induced cell dehydration and loss of bounce font' },
+      { name: 'D-Panthenol', percentage: '1.0%', purpose: 'Deeply comforts and accelerates tissue recovery' },
+      { name: 'Vitamin C & Vitamin E', percentage: '1.2%', purpose: 'Synergistic antioxidant network that counteracts solar damage' },
+      { name: 'Octyl Salicylate & Octocrylene', percentage: '5.0%', purpose: 'High-efficacy broad-spectrum UV absorbing shield' }
     ],
-    suitability: ['Sensitive', 'Dry', 'Combination', 'Oily'],
-    usage: 'Smooth a pearl-sized amount onto dry, cleansed skin after serums. Perform upward sweeping motions from the collarbone to the temples to stimulate local lymphatic drainage.'
+    suitability: ['Oily', 'Combination', 'Dry', 'Sensitive'],
+    usage: 'Apply a generous coin-sized layer to your face and neck 15 minutes prior to solar exposure. Reapply every 3-4 hours if outdoors under active UV light.'
   },
   {
     id: 'prod-3',
-    name: 'Phyto-Active Resurfacing Balm',
-    tagline: 'Botanical Clinical Micro-Peel Night Therapy',
-    category: 'Treatment',
-    price: '$165',
-    rating: 4.9,
-    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800',
-    description: 'A luxurious night therapy balm integrating clean micro-dose Retinol, Bakuchiol (the natural botanical retinoid), and botanical enzymes. Delivers the intensive resurfacing benefits of an aesthetic chemical peel without the associated irritation or skin peeling.',
+    name: 'Fluide Sunscrenn',
+    tagline: 'Aqueous Lightweight Fluid Sun Care with Calming Green Tea Extracts',
+    category: 'Sunscreen',
+    price: 'Rs. 1,180',
+    rating: 4.7,
+    image: FluideImg,
+    description: 'A beautifully light, quick-absorbing fluid sun formula. Designed to spread seamlessly without any oiliness, bringing calming anti-oxidant tea botanical defenses and complete broad-spectrum solar guard.',
     benefits: [
-      'Accelerates cellular turnover to reveal vibrant, youthful skin overnight',
-      'Fades post-inflammatory hyperpigmentation and sun damage spots',
-      'Clears deep microscopic congestion, balancing sebum levels',
-      'Boosts natural elastin content, firming loose jawline structures'
+      'Encapsulated UV-filters block modern radiation and intense solar frequencies',
+      'Fluid aqueous cream melts into skin instantly, leaving absolutely zero chalky trace',
+      'Camellia Sinensis (Green Tea) counters high-altitude climate oxidative stress',
+      'Forms a breathable hydrating shield that feels weightless throughout the day'
     ],
     ingredients: [
-      { name: 'Encapsulated Pure Retinol', percentage: '0.5%', purpose: 'Synchronizes cell renewal without redness triggers' },
-      { name: 'High-Strength Synergistic Bakuchiol', percentage: '1.5%', purpose: 'Naturally doubles the retinoid firming speed' },
-      { name: 'Fermented Pumpkin Enzymes', percentage: '2.0%', purpose: 'Gently dissolves dead protein seals on surface' },
-      { name: 'Blue Tansy Blue Botanical Oil', percentage: '0.8%', purpose: 'Vanquishes dermal heat and calms reactive skin' }
+      { name: 'Ethylhexyl Butyl Methoxycinnamate', percentage: '7.5%', purpose: 'Organic UVB filter absorbing harmful solar energies' },
+      { name: 'Methoxydibenzoylmethane', percentage: '3.0%', purpose: 'Delivers superior deep protection against aging UVA rays' },
+      { name: 'Benzophenone-3 & Phospholipids', percentage: '4.0%', purpose: 'Extends protection lifespan with a skin-mimetic delivery' },
+      { name: 'Glycerin', percentage: '5.0%', purpose: 'Supplies foundational comfort and deep moisture retention' },
+      { name: 'Camellia Sinensis (Green Tea) Leaf Extract', percentage: '2.0%', purpose: 'Botanical defense neutralizing free radicals and environmental smog' },
+      { name: 'Allantoin', percentage: '1.0%', purpose: 'Calms cutaneous heat irritation and soothes solar sensitivity' },
+      { name: 'Tocopheryl Acetate (Vitamin E)', percentage: '1.0%', purpose: 'Strengthens dermal membrane resistance against aging triggers' }
     ],
-    suitability: ['Dry', 'Combination', 'Oily'],
-    usage: 'Apply at night only. On clean skin, smooth 2 pumps over dry face, taking care to avoid the immediate eye orbit. Always follow with sunscreen of SPF 30 or higher the next morning.'
+    suitability: ['Sensitive', 'Dry', 'Combination', 'Oily'],
+    usage: 'Shake very well. Apply generously across your face, neck and ears as the definitive final phase of your morning skincare routine.'
   },
   {
     id: 'prod-4',
-    name: 'Ceramide Hydro-Fusion Purifying Gel',
-    tagline: 'Amino-Acid Botanical Cellular Face Wash',
-    category: 'Cleanser',
-    price: '$75',
-    rating: 4.7,
-    image: 'https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=800',
-    description: 'A decadent, non-foaming hydrating cleansing gel that floats away heavy environmental particulates, long-wear makeup, and skin impurities. Formulated with ultra-mild coconut amino acids and structured alpine glacial water to respect the natural pH (5.5) of the skin.',
+    name: 'RENEW NIACINAMIDE SERUM',
+    tagline: 'Anti-Congestion, Pore Refinement & Hyperpigmentation Erasing Concentrate',
+    category: 'Serum',
+    price: 'Rs. 1,560',
+    rating: 4.8,
+    image: RenewImg,
+    description: 'A clinical-strength clarifying concentrate designed with high-purity Niacinamide, active Zinc, and precious whitening roots. Purges congestions, tightens enlarged pores, and dissolves old stubborn acne spots and melasma.',
     benefits: [
-      'Gently purifies skin without stripping protective natural oils',
-      'Maintains perfect physiological surface acid balance',
-      'Infuses skin with soothing botanical licorice root skin-toners',
-      'Prepared with high alpine glacial minerals for calming reactive skin'
+      'Controls excessive sebum secretions and suppresses unwanted greasy sheen',
+      'Tranexamic and Licorice root acids block melanin signals, evening out skin tone',
+      'Zinc PCA cleanses and purges microscopic bacterial congestions with precision',
+      'Mulberry and papaya plant enzymes gently peel away dead skin protein cells'
     ],
     ingredients: [
-      { name: 'Sodium Lauroyl Methyl Isethionate', percentage: '8.0%', purpose: 'Biocompatible, non-stripping botanical cleansing base' },
-      { name: 'Green Tea Catechin Complex', percentage: '3.0%', purpose: 'Provides strong oxidative protection during washing' },
-      { name: 'Licorice Root Brightening Extract', percentage: '2.0%', purpose: 'Alleviates uneven tone during massage contact' },
-      { name: 'Glycerin and Rose Distillate', percentage: '15.0%', purpose: 'Leaves skin feeling soft, plump, and thoroughly hydrated' }
+      { name: 'Niacinamide (Vitamin B3)', percentage: '10.0%', purpose: 'Fades persistent dark marks and strengthens local lipid barrier' },
+      { name: 'Zinc PCA', percentage: '1.0%', purpose: 'Regulates oil output, calms breakouts and suppresses congestion' },
+      { name: 'Vitamin E', percentage: '1.0%', purpose: 'Accelerates cellular renewal and repairs tissue layers' },
+      { name: 'Morus Alba (Mulberry) Root Extract', percentage: '2.0%', purpose: 'Natural bio-agent that restricts pigment pathways' },
+      { name: 'Licorise root extract & Papaya Fruit Extract', percentage: '3.0%', purpose: 'Soothes inflammation and dissolves dead surface scales' },
+      { name: 'Tranexamic Acid', percentage: '2.0%', purpose: 'Prevents vascular-induced skin discoloration and high redness' }
     ],
-    suitability: ['Sensitive', 'Dry', 'Combination', 'Oily'],
-    usage: 'Massage 1-2 pumps onto damp skin in circular motions. Add a splash of warm water to transform into an elegant conditioning milk. Rinse thoroughly with lukewarm water.'
+    suitability: ['Oily', 'Combination', 'Sensitive', 'Dry'],
+    usage: 'Warm 3 to 4 drops inside your clean palms. Gently press into your face and neck twice daily, targeting zones of hyperpigmentation or breakouts.'
   },
   {
     id: 'prod-5',
-    name: 'Botanical Clay Deep Purifying Mask',
-    tagline: 'Glacial Silt & Rare Green Botanical Mineral Treatment',
-    category: 'Mask',
-    price: '$110',
+    name: 'THE GOOD MOISTURISER',
+    tagline: 'Deep Oatmeal Treatment & Restorative Moisture Lock Barrier Cream',
+    category: 'Moisturizer',
+    price: 'Rs. 950',
     rating: 4.8,
-    image: 'https://images.unsplash.com/photo-1567894340315-735d7c361db0?auto=format&fit=crop&q=80&w=800',
-    description: 'A rare, whipped green glacial mud mask extracted from Canadian fjords, fortified with cold-pressed botanical oils of neroli, rosemary, and maritime pine. Extracts skin pollutants, clarifies pore walls, and adds mineral density without hardening or tight cracking.',
+    image: GoodMoistureImg,
+    description: 'A comforting, clinical barrier defense cream rich in calming Oat lipids, pure Shea butter, and skin-identical moisture binders. Immediately alleviates dryness, heals flakiness, and insulates skin against extreme mountain air, cold, and urban dust.',
     benefits: [
-      'Vacuums deep micro-impurities, sebum plugs, and environmental smog',
-      'Supplies over 60 active marine mineral trace elements',
-      'Tightens dilated pores and refines skin relief topography',
-      'Moisturizes while purging toxins, leaving a vibrant, energized pulse'
+      'Oat kernel extracts offer complete relief for extremely irritated, itching, or hyper-sensitive skin',
+      'Shea butter and jojoba seed oil infuse rich skin-mimetic essential fatty acids',
+      'Wheat proteins and Sodium PCA lock water particles deep into dehydrated cell layers',
+      'Forms a breathable, safe protective glove over fragile skin to facilitate tissue recovery'
     ],
     ingredients: [
-      { name: 'Marine Glacial Green Silt', percentage: '30.0%', purpose: 'Natural bio-adsorb with high mineral profile' },
-      { name: 'Maritime Pine Bud Extract', percentage: '2.0%', purpose: 'Stimulates microcirculation for cellular oxygenation' },
-      { name: 'Neroli Blossom Distillate Oil', percentage: '1.2%', purpose: 'Soothes sensory stress and regulates oil glans' },
-      { name: 'Cold-Pressed Seabuckthorn Oil', percentage: '3.5%', purpose: 'Supplies rare Omega-7 fatty acids for repair' }
+      { name: 'Gglycerine & Isopropyl Myristate', percentage: '10.0%', purpose: 'Humectants and emollients that restore immediate skin elasticity' },
+      { name: 'Olive Oil & Jojoba seed oil', percentage: '4.0%', purpose: 'Plant lipids rich in skin-identical nourishment and healthy gloss' },
+      { name: 'Niacinamide (Vitamin B3)', percentage: '2.0%', purpose: 'Diminishes sallow skin tone and builds natural moisture barrier' },
+      { name: 'Shea Butter', percentage: '3.0%', purpose: 'Rich therapeutic butter that softens dry peeling scales' },
+      { name: 'Avena Sativa (Oat) Kernel bark Extract', percentage: '4.0%', purpose: 'Relieves inflammatory hives, chronic itching and redness' },
+      { name: 'Sodium Lacatate & Sodium PCA', percentage: '2.5%', purpose: 'Natural Moisturizing Factors (NMF) restoring hydration balance' },
+      { name: 'Wheat Protein & Allantoin', percentage: '1.5%', purpose: 'Fosters skin cell restoration and delivers satin-soft feel' }
     ],
-    suitability: ['Combination', 'Oily', 'Dry'],
-    usage: 'Spread an even, generous layer over clean, damp skin. Rest undisturbed for 10-15 minutes. Before the mask turns completely hard, rinse away in warm, streaming water with a dark velvet face towel.'
+    suitability: ['Dry', 'Sensitive', 'Combination', 'Oily'],
+    usage: 'Spread a smooth dollop evenly over dry, clean skin twice daily. Perform gentle sweeping massages focusing on areas prone to windburn or extreme dryness.'
   }
 ];
 
@@ -194,28 +215,28 @@ export const INITIAL_INGREDIENTS: Ingredient[] = [
 export const INITIAL_TESTIMONIALS: Testimonial[] = [
   {
     id: 'test-1',
-    author: 'Eleanor Vance',
-    role: 'Aesthetic Dermatology Journalist',
-    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150',
-    content: 'After testing hundreds of professional, medical-grade formulas as a beauty journalist, the AURA Luminous Rejuvenating Nectar remains the only serum that gave me actual glass-like clarity. My redness dissolved in three days, and my fine lines look plumped as if from direct clinical micro-fillers.',
+    author: 'Aayusha Shrestha',
+    role: 'Skincare Blogger & Aesthetic Critic, Kathmandu',
+    avatar: 'https://images.unsplash.com/photo-1594744803329-e58b31de215f?auto=format&fit=crop&q=80&w=150',
+    content: 'After testing so many imported serums under heavy dusty Kathmandu weather, the RENEW NIACINAMIDE SERUM is the only one that gave me actual glowing, glass-like clarity. My skin sensitivity dissolved in three days, and dry spots look incredibly plumped!',
     rating: 5,
     featured: true
   },
   {
     id: 'test-2',
-    author: 'Dr. Marcus Thorne',
-    role: 'Clinical Bio-Chemist & Formulator',
-    avatar: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=150',
-    content: 'AURA formulations are scientifically impeccable. The molecular pairing of encapsulated Retinol and botanical Bakuchiol stabilized by Blue Tansy is a sheer masterstroke of luxury cosmetic chemistry. Highly recommend it to patients seeking profound skin remodeling without cellular stress.',
+    author: 'Dr. Sandeep Karki',
+    role: 'Consultant Clinical Dermatologist, Patan',
+    avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=150',
+    content: 'The science behind are AURA formulations is flawless. Their combination of copper peptides, active ceramides, and pure Bakuchiol operates exactly what skin cells require to fight high Altitudes UV stress and pollution active here in Nepal.',
     rating: 5,
     featured: true
   },
   {
     id: 'test-3',
-    author: 'Sienna Sterling',
-    role: 'AURA Customer since 2024',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150',
-    content: 'Taking the AI Skin Analysis felt like stepping into an private Parisian clinic. The custom routine recommended for my dry skin has completely shifted my texture. At 46, my friends are asking if I had a brow lift! Zero greasy residue, just magnificent botanical glow.',
+    author: 'Pooja Thapa',
+    role: 'AURA Verified Customer, Pokhara',
+    avatar: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&q=80&w=150',
+    content: 'Taking their online Skin Test was so quick! The custom routine recommendation solved my dry cheeks and T-zone oiliness completely. Living in Pokhara, my friends now constantly ask me about my hidden glowing secret. Love it!',
     rating: 5,
     featured: true
   }
@@ -241,9 +262,9 @@ At AURA, we formulate with structured coconut amino acids and rare marine glacia
     readTime: '6 min read',
     publishedDate: 'June 1, 2026',
     author: {
-      name: 'Dr. Charlotte Sterling',
-      role: 'Chief Skin Dermatologic Scientist',
-      avatar: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=150'
+      name: 'Dr. Sujata Koirala',
+      role: 'Chief Skin Clinic Dermatologist',
+      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150'
     }
   },
   {
@@ -268,9 +289,9 @@ At AURA Laboratories, we believe you should not have to choose. By utilizing mic
     readTime: '8 min read',
     publishedDate: 'May 28, 2026',
     author: {
-      name: 'Marcus Thorne, Ph.D.',
+      name: 'Dr. Roshan Pradhan, Ph.D.',
       role: 'Professor of Biochemistry & Formulator',
-      avatar: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=150'
+      avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=150'
     }
   },
   {
@@ -284,7 +305,7 @@ Dermatological formulation chemistry operates on clear rules of density, pH, and
 ### Rule 1: Molecular Weight (Thin to Thick)
 Always apply water-based, highly fluid items before heavy lipophilic creams. 
 - **1. The Essences**: Watery textures that pre-wet the skin channels.
-- **2. The Serums**: High-concentration active molecules (AURA Nectar).
+- **2. The Serums**: High-concentration active molecules (like RENEW NIACINAMIDE SERUM).
 - **3. The Emulsions**: Silky fluid moisturizers.
 - **4. The Creams & Balms**: Heavy lipids that seal water inside.
 
@@ -298,9 +319,9 @@ By respecting these spatial transitions, you amplify formulation absorption by u
     readTime: '5 min read',
     publishedDate: 'April 15, 2026',
     author: {
-      name: 'Dr. Charlotte Sterling',
-      role: 'Chief Skin Dermatologic Scientist',
-      avatar: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=150'
+      name: 'Dr. Sujata Koirala',
+      role: 'Chief Skin Clinic Dermatologist',
+      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150'
     }
   }
 ];
@@ -364,14 +385,14 @@ export const INITIAL_GALLERY: GalleryItem[] = [
   {
     id: 'gal-1',
     title: 'The Botanical Alchemy',
-    subtitle: 'Extracting clean luxury actives under medical certification standards.',
+    subtitle: 'Extracting pure active Niacinamide and soothing Oat Lipids under medical certification standards.',
     image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=1200',
     category: 'Ingredients'
   },
   {
     id: 'gal-2',
-    title: 'Kinetic Golden Drop',
-    subtitle: 'Cinematic suspension of our bio-active copper peptide fluid.',
+    title: 'The Active Serum Droplet',
+    subtitle: 'Cinematic suspension of our high-purity RENEW NIACINAMIDE SERUM.',
     image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=1200',
     category: 'Product'
   },
@@ -385,7 +406,7 @@ export const INITIAL_GALLERY: GalleryItem[] = [
   {
     id: 'gal-4',
     title: 'Pure Hydration Hydro-Slick',
-    subtitle: 'Capturing state of absolute moisture bounds at deep dermis.',
+    subtitle: 'Capturing absolute moisture locking using THE GOOD MOISTURISER and active ceramides.',
     image: 'https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=1200',
     category: 'Campaign'
   }
@@ -394,44 +415,44 @@ export const INITIAL_GALLERY: GalleryItem[] = [
 export const INITIAL_SUCCESS_STORIES = [
   {
     id: 'story-1',
-    name: 'Vanessa Mercer',
-    age: '38',
-    concern: 'Chronic Sun Damage & Laxity',
+    name: 'Deepika Adhikari',
+    age: '34',
+    concern: 'Sun Spots & Skin Laxity',
     duration: '6 Weeks',
     beforeImage: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&q=80&w=400',
     afterImage: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=400',
-    testimony: 'My hyperpigmentation had lived on my cheeks for eight years. After using the AURA Nectar in tandem with the Phyto-Active night Balm for just six weeks, the density of the spots collapsed. My skin feels bouncy, thick, and looks noticeably brighter.',
-    routine: ['Ceramide Cleansing Gel (AM/PM)', 'Luminous Rejuvenating Nectar (AM/PM)', 'Phyto-Active Resurfacing Balm (PM Only)']
+    testimony: 'My hyperpigmentation had lived on my cheeks for years. After using the RENEW NIACINAMIDE SERUM in tandem with our expert moisturizers for just six weeks, the density of the dark spots collapsed in half! My skin feels bouncy, thick, and looks noticeably brighter.',
+    routine: ['Mild Purifying Cleanser (AM/PM)', 'RENEW NIACINAMIDE SERUM (AM/PM)', 'SUNCO 5O SILICONE GEL (AM Daily)']
   },
   {
     id: 'story-2',
-    name: 'Julian Vance',
+    name: 'Rohan Rajbhandari',
     age: '29',
-    concern: 'Adult Congestion & Skin Inflammation',
+    concern: 'Adult Acne & Skin Congestion',
     duration: '4 Weeks',
     beforeImage: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400',
     afterImage: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400',
-    testimony: 'I suffered from persistent deep hormonal congestion along my jawline, leaving dark purple scars. AURA restored my skin barrier. Instead of washing with harsh chemical soaps, I switched to their gel wash and green silt mask. The texture is completely smooth now.',
-    routine: ['Ceramide Cleansing Gel (AM/PM)', 'Bio-Renewal Micro-Velvet Fluid (AM/PM)', 'Botanical Clay Mask (Twice a week)']
+    testimony: 'I suffered from persistent deep hormonal congestion along my jawline. AURA restored my skin barrier. Instead of washing with harsh soaps, I switched to the calming gel cleanser and green clay mask. The texture is completely velvet-smooth now.',
+    routine: ['Mild Purifying Cleanser (AM/PM)', 'THE GOOD MOISTURISER (AM/PM)', 'Fluide Sunscrenn (AM Daily)']
   }
 ];
 
 export const INITIAL_CONTACT_SUBMISSIONS: ContactSubmission[] = [
   {
     id: 'sub-1',
-    name: 'Genevieve Sinclair',
-    email: 'genevieve@sinclairmedia.com',
-    subject: 'Request for Private Spa Partnering',
-    message: 'Hello, I represent a series of modern high-end boutique wellness spas in Saint-Tropez. We are looking to exclusively curate the AURA active range into our physical therapy experiences. Please connect us with your lead brand distributor.',
+    name: 'Pragya Rajopadhyaya',
+    email: 'pragya@heritagebeauty.com.np',
+    subject: 'Request for Private Spa Partnering in Pokhara',
+    message: 'Hello, I represent a series of modern high-end boutique wellness spas and heritage salons in Pokhara and Kathmandu. We are looking to exclusively curate the AURA active range into our physical treatment experiences. Please connect us with your lead brand counter.',
     timestamp: '2026-06-03 14:24:00',
     status: 'new'
   },
   {
     id: 'sub-2',
-    name: 'Adrian Cole',
-    email: 'adrian.cole@clinicalreview.org',
+    name: 'Dr. Anil Banstola',
+    email: 'anil.banstola@clinicals.np',
     subject: 'Inquiry regarding Peptide Formulation Ratios',
-    message: 'Greetings from the Dermatology Chemist Association. I read your paper on Copper Tripeptide stabilization. I would love to schedule a quick zoom call with Dr. Sterling regarding your encapsulated lipid delivery. Thanks!',
+    message: 'Greetings from the Nepal Dermatology Association. I read your paper on Copper Tripeptide stabilization in high altitude environments. I would love to schedule a quick zoom call with Dr. Koirala regarding your encapsulated lipid delivery. Thanks!',
     timestamp: '2026-06-02 09:12:00',
     status: 'replied'
   }

@@ -31,12 +31,18 @@ const getTabFromPath = (path: string): string => {
 export default function App() {
   // 1. Navigation controllers
   const [activeTab, setActiveTab] = useState<string>(() => getTabFromPath(window.location.pathname));
+  const [prefilledInquiry, setPrefilledInquiry] = useState<{ subject: string; message: string } | null>(null);
 
   // Dynamic Router sync with pushState to allow seamless back/forward navigation in modern browsers
-  const handleNavigate = (tab: string) => {
+  const handleNavigate = (tab: string, extra?: { subject: string; message: string }) => {
     const path = tab === 'home' ? '/' : `/${tab}`;
     if (window.location.pathname !== path) {
       window.history.pushState(null, '', path);
+    }
+    if (extra) {
+      setPrefilledInquiry(extra);
+    } else if (tab !== 'contact') {
+      setPrefilledInquiry(null);
     }
     setActiveTab(tab);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -45,12 +51,39 @@ export default function App() {
   // 2. Global application state databases synchronized with localStorage
   const [products, setProducts] = useState<Product[]>(() => {
     const saved = localStorage.getItem('aura_products');
-    return saved ? JSON.parse(saved) : INITIAL_PRODUCTS;
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved) as Product[];
+        // Auto-heal/migrate if any product contains a dollar symbol, does not contain 'Rs.', or is old data
+        const hasDollarOrStale = parsed.some(p => p.price && (p.price.includes('$') || !p.price.includes('Rs.')) || p.name.includes('AURA Luminous') || p.name.includes('Nectar'));
+        if (!hasDollarOrStale && parsed.length > 0 && parsed.some(p => p.name.includes('MOISTCOM'))) {
+          // Always map the latest active compiled asset paths from INITIAL_PRODUCTS to avoid stale local refs
+          return parsed.map(p => {
+            const initial = INITIAL_PRODUCTS.find(ip => ip.id === p.id);
+            return initial ? { ...p, image: initial.image } : p;
+          });
+        }
+      } catch (err) {
+        console.warn('Recovering products layout:', err);
+      }
+    }
+    return INITIAL_PRODUCTS;
   });
 
   const [gallery, setGallery] = useState<GalleryItem[]>(() => {
     const saved = localStorage.getItem('aura_gallery');
-    return saved ? JSON.parse(saved) : INITIAL_GALLERY;
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved) as GalleryItem[];
+        const hasStale = parsed.some(img => img.title.includes('Golden Drop') || img.subtitle.includes('copper peptide'));
+        if (!hasStale && parsed.length > 0) {
+          return parsed;
+        }
+      } catch (err) {
+        console.warn('Recovering gallery layout:', err);
+      }
+    }
+    return INITIAL_GALLERY;
   });
 
   const [testimonials, setTestimonials] = useState<Testimonial[]>(() => {
@@ -117,6 +150,77 @@ export default function App() {
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
+
+  // Dynamic SEO title & description updates based on active tab view
+  useEffect(() => {
+    let title = "The Skin Professionals | Premium Clinical Dermatology & AI Skin Analysis";
+    let desc = "Empower your skin with The Skin Professionals. Explore organic biological formulations, clinical diagnostics, and our advanced AI Skin Analyzer.";
+
+    switch (activeTab) {
+      case 'home':
+        title = "The Skin Professionals | Premium Clinical Dermatology & AI Skin Analysis";
+        desc = "Empower your skin with The Skin Professionals. Explore organic biological formulations, clinical diagnostics, and our advanced AI Skin Analyzer in Kathmandu.";
+        break;
+      case 'about':
+        title = "Our Medical Board & Clinical Team | The Skin Professionals";
+        desc = "Meet the lead formulators, dermatologists, and dermo-pathology experts behind The Skin Professionals dermo-physiological skincare solutions.";
+        break;
+      case 'products':
+        title = "Medical Skincare Products & Formulation Catalog | The Skin Professionals";
+        desc = "Access clinical-grade medical skincare products, advanced hydrating matrices, and active peptide-powered formulations.";
+        break;
+      case 'analysis':
+        title = "AI Skin Analyzer & Custom Dermal Diagnostic | The Skin Professionals";
+        desc = "Use our state-of-the-art server-side AI Skin Analyzer to assess hyperpigmentation, skin moisture levels, and receive professional formulation suggestions.";
+        break;
+      case 'ingredients':
+        title = "Botanical & Chemical Asset Transparency | The Skin Professionals";
+        desc = "Complete absolute transparency of all physical assets inside our formulations, featuring niacinamide, salicylic acid, and hyaluronic acid.";
+        break;
+      case 'results':
+        title = "AI Skin Diagnostic Reports & Routines | The Skin Professionals";
+        desc = "Access your personalized dermo-physiological dermo-analysis results, active ingredient guidance, and custom skincare routine directions.";
+        break;
+      case 'gallery':
+        title = "Our Treatment Gallery & Clinical Innovations | The Skin Professionals";
+        desc = "Explore our real clinical case studies, active formulation milestones, and high-impact skincare developments in Nepal.";
+        break;
+      case 'blog':
+        title = "Dermatology Insights, Skin Science & Educational Blogs | The Skin Professionals";
+        desc = "Learn best dermo-physiological skin tips, professional routines, clinical science of barrier repair, and active serum techniques from experts.";
+        break;
+      case 'distributors':
+        title = "Authorized Distributors & Regional Clinic Network | The Skin Professionals";
+        desc = "Locate fully authorized skin partner locations and regional commercial representatives across Biratnagar, Nepalgunj, Chitwan, and Kathmandu.";
+        break;
+      case 'contact':
+        title = "Direct Contact, Assistance & Sales Office | The Skin Professionals";
+        desc = "Connect directly with our co-founders, sales representatives, and support desk to manage accounts, dermo-clinical bookings, or bulk orders.";
+        break;
+      default:
+        break;
+    }
+
+    document.title = title;
+
+    // Update Meta Description dynamically
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', desc);
+    }
+    
+    // Update OG Open Graph description
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute('content', desc);
+    }
+
+    // Update OG Open Graph Title
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute('content', title);
+    }
+  }, [activeTab]);
 
   // 4. API / Callback handlers
   const handleAddSubmission = (submission: Omit<ContactSubmission, 'id' | 'timestamp' | 'status'>) => {
@@ -220,6 +324,8 @@ export default function App() {
 
           {activeTab === 'contact' && (
             <Contact 
+              prefilledInquiry={prefilledInquiry}
+              onClearPrefill={() => setPrefilledInquiry(null)}
               onAddSubmission={handleAddSubmission} 
             />
           )}
@@ -242,12 +348,7 @@ export default function App() {
                     <a href="https://www.facebook.com/profile.php?id=61563659194605" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 text-white hover:text-[#E5EDA8] rounded-full transition-all duration-300 border border-white/5 hover:border-[#E5EDA8]/30 cursor-pointer" title="Find us on Facebook">
                       <Facebook className="w-4 h-4" />
                     </a>
-                    // <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 text-white hover:text-[#E5EDA8] rounded-full transition-all duration-300 border border-white/5 hover:border-[#E5EDA8]/30 cursor-pointer" title="Watch on YouTube">
-                    //   <Youtube className="w-4 h-4" />
-                    // </a>
-                    // <a href="https://wa.me/9779801234567" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 text-white hover:text-[#E5EDA8] rounded-full transition-all duration-300 border border-white/5 hover:border-[#E5EDA8]/30 cursor-pointer" title="Chat on WhatsApp">
-                    //   <MessageCircle className="w-4 h-4" />
-                    // </a>
+                    
                   </div>
                 </div>
               </div>
@@ -267,10 +368,10 @@ export default function App() {
               <div id="footer-address">
                 <h4 className="font-serif text-sm text-[#E5EDA8] mb-4 uppercase tracking-widest font-normal">Executive Concierge Office</h4>
                 <p className="leading-relaxed mb-2">
-                  75 Avenue des Champs-Élysées, Paris, France
+                  Kathmandu, Nepal
                 </p>
                 <p className="leading-relaxed mb-4 italic text-[#FBEAEA]">
-                  Concierge Inquiries: info@skinprofessionals.com
+                  Concierge Inquiries: info@skinprofessionals.com.np
                 </p>
                 <p className="text-[10px] tracking-widest uppercase text-stone-500">Available globally via appointment</p>
               </div>

@@ -52,3 +52,99 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+/* Custom Google Translate Styling to match Brand Guide */
+#google_translate_element {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.goog-te-gadget {
+  font-family: var(--font-sans) !important;
+  font-size: 0px !important; /* Set to 0px to hide "Select Language" label text node */
+  color: transparent !important;
+}
+
+.goog-logo-link, 
+.goog-te-banner,
+.goog-te-gadget-simple {
+  display: none !important;
+}
+
+.goog-te-gadget .skiptranslate {
+  display: inline-block !important;
+  color: transparent !important;
+  font-size: 0px !important;
+}
+
+/* Style the select dropdown as a standard clean dropdown button */
+.goog-te-combo {
+  background-color: var(--color-brand-dark-accent) !important;
+  color: var(--color-brand-gold) !important;
+  border: 1px solid rgba(229, 237, 168, 0.25) !important;
+  border-radius: 8px !important;
+  padding: 4px 10px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  font-family: var(--font-sans) !important;
+  letter-spacing: 0.05em !important;
+  outline: none !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  height: 32px !important;
+  line-height: normal !important;
+  text-transform: uppercase !important;
+}
+
+.goog-te-combo:hover {
+  border-color: var(--color-brand-gold) !important;
+  background-color: var(--color-brand-dark) !important;
+  box-shadow: 0 0 10px rgba(229, 237, 168, 0.15);
+}
+
+/* Prevent Google Translate from shifting the layout */
+html {
+  top: 0px !important;
+}
+
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+/* Hide annoying browser translator widgets, frames, banners and tooltips */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+iframe.goog-te-banner-frame,
+iframe.goog-te-banner,
+.goog-te-balloon-frame,
+.goog-gt-tt,
+#goog-gt-tt,
+.skiptranslate[style*="visibility"],
+#google_translate_element .skiptranslate font,
+.VIpgJd-y67oLf-r4nke-Lfntmc,
+.VIpgJd-y67oLf-r4nke-Lfntmc-b9tYCc,
+.goog-tooltip,
+.goog-tooltip-cloned {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  height: 0px !important;
+}
+
+/* Disable Google's hover highlights on translated text elements */
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+}
+
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+body > .skiptranslate {
+  display: none !important;
+}
+

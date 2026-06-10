@@ -5,7 +5,7 @@ import { Product } from '../types';
 
 interface ProductsProps {
   products: Product[];
-  onNavigate: (tabId: string) => void;
+  onNavigate: (tabId: string, extra?: { subject: string; message: string }) => void;
 }
 
 export default function Products({ products, onNavigate }: ProductsProps) {
@@ -14,7 +14,7 @@ export default function Products({ products, onNavigate }: ProductsProps) {
   const [selectedSuitability, setSelectedSuitability] = useState<string>('All');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-  const categories = ['All', 'Cleanser', 'Serum', 'Moisturizer', 'Treatment', 'Mask'];
+  const categories = ['All', 'Cleanser', 'Serum', 'Moisturizer', 'Treatment', 'Mask', 'Sunscreen'];
   const suitabilities = ['All', 'Dry', 'Oily', 'Sensitive', 'Combination'];
 
   // Filter products
@@ -370,8 +370,11 @@ export default function Products({ products, onNavigate }: ProductsProps) {
                   <div className="flex gap-2 font-sans text-xs tracking-widest uppercase">
                     <button
                       onClick={() => {
+                        onNavigate('contact', {
+                          subject: `Product Inquiry: ${selectedProduct.name}`,
+                          message: `Dear Skin Professionals Team,\n\nI want to receive more information & custom guidelines regarding this formulation:\n\n- Product: ${selectedProduct.name}\n- Category: ${selectedProduct.category}\n- Price: ${selectedProduct.price}\n- Description: ${selectedProduct.description}\n\nPlease guide me on how to purchase and integrate this formulation into my skin routine.\n\nThank you!`
+                        });
                         setSelectedProduct(null);
-                        onNavigate('contact');
                       }}
                       className="px-5 py-3 bg-[#0A1C26] hover:bg-[#c5a880] text-[#E5EDA8] hover:text-[#0A1C26] rounded transition-all duration-300 cursor-pointer"
                     >

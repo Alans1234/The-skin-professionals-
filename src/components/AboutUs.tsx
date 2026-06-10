@@ -55,28 +55,28 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
             The Botanical Epiphany
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl text-[#0A1C26] tracking-tight leading-snug mb-6">
-            Rethinking skincare with clinical molecular intent.
+            Rethinking skincare with pure clinic-grade honesty.
           </h2>
           <div className="w-12 h-[2px] bg-[#c5a880] mb-8"></div>
           <p className="font-sans text-stone-600 text-sm leading-relaxed mb-6 font-light">
-            In 2021, The Skin Professionals collection was born from a simple realization: the modern skincare industry was selling illusions. Brands either peddled aggressive, clinical chemicals that compromised the skin's healthy microflora, or marketed romanticized, weak botanical extracts that failed to yield actual, cellular results.
+            In 2021, The Skin Professionals collection was born from a simple realization: the modern skincare industry was selling illusions. Brands either peddled aggressive, clinical chemicals that compromised the skin's healthy microflora, or marketed romanticized, weak botanical extracts that failed to yield actual results.
           </p>
           <blockquote className="border-l-2 border-[#c5a880] pl-6 py-2 my-8">
             <span className="font-serif text-lg italic text-[#0A1C26] block">
-              "We sought to create the ultimate state of skin homeostasis, where biological pathways are activated, not irritated."
+              "Our mission is to create a state of perfect skin balance, where active ingredients support your skin instead of causing redness."
             </span>
             <span className="font-sans text-[10px] uppercase tracking-wider text-stone-500 block mt-2">
-              — Dr. Charlotte Sterling, Co-Founder
+              — Dr. Sujata Koirala, Lead Dermatologist
             </span>
           </blockquote>
         </div>
 
         <div className="lg:col-span-7" id="chronicle-detail flex flex-col gap-8">
           <p className="font-sans text-stone-600 leading-relaxed mb-6 font-light">
-            Working within a clinical workspace in Paris, our founding chemists succeeded in stabilizing copper peptides inside organic marine glacial matrices. By surrounding complex medical active agents with biocompatible botanical lipid envelopes, we unlocked a new frontier: formulations that penetrate deeply into the dermis with zero cellular irritation.
+            Working in our clinical laboratory, our formulators succeeded in combining pure peptides with wild mountain plant extracts. By surrounding active skin nutrients with gentle botanical moisturizers, we unlocked a new standard: formulas that feed the skin deeply with absolutely zero redness or irritation.
           </p>
           <p className="font-sans text-stone-600 leading-relaxed mb-12 font-light">
-            Today, The Skin Professionals stand as an international beacon of honest, dermatological craftsmanship. We write our chemical formulations with mathematical transparency and prioritize the long-term health of your cutaneous mantle above fleeting beauty trends.
+            Today, The Skin Professionals stand as Nepal's premium provider of honest, clinic-grade skincare. We design our formulas with complete honesty and prioritize the long-term health of your skin over temporary cosmetic trends.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8" id="credentials-box">
@@ -212,7 +212,277 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
         </div>
       </section>
 
-      {/* 4. ESG / Sustainability & Circularity (Botanical Environmental Ethics) */}
+      {/* 4. Our Team Section */}
+      <section className="py-24 max-w-7xl mx-auto px-4 border-t border-stone-200/50 animate-fade-in" id="brand-team">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="font-sans text-xs tracking-[0.3em] text-[#0A1C26] uppercase block mb-3 font-bold">
+            OUR DEDICATED TEAM
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl text-[#0A1C26] tracking-tight">
+            Meet the Minds Behind Skin Professionals
+          </h2>
+          <div className="w-12 h-[1px] bg-[#c5a880] mx-auto mt-4"></div>
+          <p className="font-sans text-stone-500 text-xs sm:text-sm mt-3 leading-relaxed">
+            Pioneering excellence of customized skincare distribution, professional client liaison, and high-standard medical device & formula logistics across Nepal.
+          </p>
+        </div>
+
+        {/* Subsection A: Executive Leadership */}
+        <div className="mb-16">
+          <h3 className="font-serif text-xl text-[#0A1C26] border-b border-stone-200 pb-3 mb-8 tracking-tight flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#c5a880]"></span>
+            Executive Leadership & Management
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Member 1: Nikesh Baral */}
+            <div className="bg-white rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row h-full">
+              <div className="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative bg-stone-100 min-h-[220px]">
+                <img 
+                  src="/Employee Photos/NIkesh baral.jpg" 
+                  alt="Nikesh Baral - Co founder, CEO" 
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=300';
+                  }}
+                />
+              </div>
+              <div className="p-6 sm:w-3/5 flex flex-col justify-between">
+                <div>
+                  <div className="flex justify-between items-baseline mb-2">
+                    <h4 className="font-serif text-lg text-[#0A1C26] font-semibold">Nikesh Baral</h4>
+                    <span className="font-mono text-[9px] text-[#FCFAF6] uppercase tracking-widest bg-[#0A1C26] px-2 py-0.5 rounded">CEO</span>
+                  </div>
+                  <p className="font-sans text-xs text-[#c5a880] tracking-wider mb-4 font-semibold">Co-Founder & Chief Executive Officer</p>
+                  <p className="font-sans text-stone-500 text-xs leading-relaxed">
+                    Spearheads the brand vision, strategic formulation contracts, and therapeutic distribution standards, building an integrated pathway for elite skincare professionals.
+                  </p>
+                </div>
+                <div className="mt-4 pt-4 border-t border-stone-100 flex items-center justify-between">
+                  <span className="font-sans text-[10px] text-stone-400 font-medium">Corporate HQ</span>
+                  <a href="tel:9709157230" className="font-mono text-xs text-[#0A1C26] font-semibold hover:text-[#c5a880] transition-colors">
+                    +977 9709157230
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Member 2: Ramesh Timilsena */}
+            <div className="bg-white rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row h-full">
+              <div className="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative bg-stone-100 min-h-[220px]">
+                <img 
+                  src="/Employee Photos/Ramesh timilsena.jpeg" 
+                  alt="Ramesh Timilsena - Sales and Marketing Manager" 
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=300';
+                  }}
+                />
+              </div>
+              <div className="p-6 sm:w-3/5 flex flex-col justify-between">
+                <div>
+                  <div className="flex justify-between items-baseline mb-2">
+                    <h4 className="font-serif text-lg text-[#0A1C26] font-semibold">Ramesh Timilsena</h4>
+                    <span className="font-mono text-[9px] text-[#FCFAF6] uppercase tracking-widest bg-[#0A1C26] px-2 py-0.5 rounded">Management</span>
+                  </div>
+                  <p className="font-sans text-xs text-[#c5a880] tracking-wider mb-4 font-semibold">Sales & Marketing Manager</p>
+                  <p className="font-sans text-stone-500 text-xs leading-relaxed">
+                    Directs educational partner campaigns, distributor liaisons, and aesthetic clinical outreach campaigns across major regional branches.
+                  </p>
+                </div>
+                <div className="mt-4 pt-4 border-t border-stone-100 flex items-center justify-between">
+                  <span className="font-sans text-[10px] text-stone-400 font-medium">National Outreach</span>
+                  <a href="tel:9709157340" className="font-mono text-xs text-[#0A1C26] font-semibold hover:text-[#c5a880] transition-colors">
+                    +977 9709157340
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Subsection B: Regional Field Sales Officers */}
+        <div className="mb-16">
+          <h3 className="font-serif text-xl text-[#0A1C26] border-b border-stone-200 pb-3 mb-8 tracking-tight flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#c5a880]"></span>
+            Regional Field Sales Officers
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+
+            {/* FSO 1: Priyanshu Maharjan */}
+            <div className="bg-white rounded-xl overflow-hidden border border-stone-200/50 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+              <div>
+                <div className="h-52 overflow-hidden relative bg-stone-100">
+                  <img 
+                    src="/Employee Photos/Priyanshu Maharjan.jpg" 
+                    alt="Priyanshu Maharjan" 
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200';
+                    }}
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-serif text-sm font-semibold text-[#0A1C26]">Priyanshu Maharjan</h4>
+                  <div className="text-[10px] font-mono text-stone-400 uppercase tracking-widest mt-0.5">HQ Kathmandu</div>
+                  <p className="font-sans text-[11px] text-[#c5a880] font-medium mt-1">Field Sales Officer</p>
+                </div>
+              </div>
+              <div className="p-4 pt-0">
+                <a href="tel:9802351488" className="block text-center text-[10px] font-mono py-1.5 bg-[#0A1C26]/5 text-[#0A1C26] hover:bg-[#0A1C26] hover:text-[#E5EDA8] rounded transition-all font-semibold">
+                  Call: 9802351488
+                </a>
+              </div>
+            </div>
+
+            {/* FSO 2: Shraddha Manandhar */}
+            <div className="bg-white rounded-xl overflow-hidden border border-stone-200/50 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+              <div>
+                <div className="h-52 overflow-hidden relative bg-stone-100">
+                  <img 
+                    src="/Employee Photos/Shraddha manandhar.jpeg" 
+                    alt="Shraddha Manandhar" 
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200';
+                    }}
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-serif text-sm font-semibold text-[#0A1C26]">Shraddha Manandhar</h4>
+                  <div className="text-[10px] font-mono text-stone-400 uppercase tracking-widest mt-0.5">HQ Kathmandu</div>
+                  <p className="font-sans text-[11px] text-[#c5a880] font-medium mt-1">Field Sales Officer</p>
+                </div>
+              </div>
+              <div className="p-4 pt-0">
+                <a href="tel:9818920668" className="block text-center text-[10px] font-mono py-1.5 bg-[#0A1C26]/5 text-[#0A1C26] hover:bg-[#0A1C26] hover:text-[#E5EDA8] rounded transition-all font-semibold">
+                  Call: 9818920668
+                </a>
+              </div>
+            </div>
+
+            {/* FSO 3: Bimal Chaudhary */}
+            <div className="bg-white rounded-xl overflow-hidden border border-stone-200/50 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+              <div>
+                <div className="h-52 overflow-hidden relative bg-stone-100">
+                  <img 
+                    src="/Employee Photos/Bimal Chaudhary.jpeg" 
+                    alt="Bimal Chaudhary" 
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200';
+                    }}
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-serif text-sm font-semibold text-[#0A1C26]">Bimal Chaudhary</h4>
+                  <div className="text-[10px] font-mono text-stone-400 uppercase tracking-widest mt-0.5">Nepalgunj Sector</div>
+                  <p className="font-sans text-[11px] text-[#c5a880] font-medium mt-1">Field Sales Officer</p>
+                </div>
+              </div>
+              <div className="p-4 pt-0">
+                <a href="tel:9709188315" className="block text-center text-[10px] font-mono py-1.5 bg-[#0A1C26]/5 text-[#0A1C26] hover:bg-[#0A1C26] hover:text-[#E5EDA8] rounded transition-all font-semibold">
+                  Call: 9709188315
+                </a>
+              </div>
+            </div>
+
+            {/* FSO 4: Ramesh Shrestha */}
+            <div className="bg-white rounded-xl overflow-hidden border border-stone-200/50 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+              <div>
+                <div className="h-52 overflow-hidden relative bg-stone-100">
+                  <img 
+                    src="/Employee Photos/Ramesh Shrestha.jpeg" 
+                    alt="Ramesh Shrestha" 
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200';
+                    }}
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-serif text-sm font-semibold text-[#0A1C26]">Ramesh Shrestha</h4>
+                  <div className="text-[10px] font-mono text-stone-400 uppercase tracking-widest mt-0.5">Chitwan Sector</div>
+                  <p className="font-sans text-[11px] text-[#c5a880] font-medium mt-1">Field Sales Officer</p>
+                </div>
+              </div>
+              <div className="p-4 pt-0">
+                <a href="tel:9802351489" className="block text-center text-[10px] font-mono py-1.5 bg-[#0A1C26]/5 text-[#0A1C26] hover:bg-[#0A1C26] hover:text-[#E5EDA8] rounded transition-all font-semibold">
+                  Call: 9802351489
+                </a>
+              </div>
+            </div>
+
+            {/* FSO 5: Bikash Mandal */}
+            <div className="bg-white rounded-xl overflow-hidden border border-stone-200/50 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+              <div>
+                <div className="h-52 overflow-hidden relative bg-stone-100">
+                  <img 
+                    src="/Employee Photos/Bikas Kumar Mandal.png" 
+                    alt="Bikash Mandal" 
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=200';
+                    }}
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-serif text-sm font-semibold text-[#0A1C26]">Bikash Mandal</h4>
+                  <div className="text-[10px] font-mono text-stone-400 uppercase tracking-widest mt-0.5">Biratnagar Sector</div>
+                  <p className="font-sans text-[11px] text-[#c5a880] font-medium mt-1">Field Sales Officer</p>
+                </div>
+              </div>
+              <div className="p-4 pt-0">
+                <a href="tel:9705429614" className="block text-center text-[10px] font-mono py-1.5 bg-[#0A1C26]/5 text-[#0A1C26] hover:bg-[#0A1C26] hover:text-[#E5EDA8] rounded transition-all font-semibold">
+                  Call: 9705429614
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Subsection C: Central Supply Chain & Care Support */}
+        <div>
+          <h3 className="font-serif text-xl text-[#0A1C26] border-b border-stone-200 pb-3 mb-8 tracking-tight flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#c5a880]"></span>
+            Logistics & Warehousing Hub
+          </h3>
+          <div className="bg-[#0A1C26] rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden flex flex-col lg:flex-row justify-between items-center gap-8 animate-fade-in">
+            <div className="absolute right-0 top-0 bottom-0 w-1/3 opacity-5 bg-[radial-gradient(#c5a880_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+            
+            <div className="text-center lg:text-left">
+              <span className="font-sans text-[10px] tracking-[0.2em] text-[#E5EDA8] uppercase block mb-2 font-bold font-mono">
+                Logistics Administration
+              </span>
+              <h4 className="font-serif text-2xl text-[#E5EDA8] font-semibold mb-3">Shree Krishna Khadgi</h4>
+              <p className="font-sans text-[#c5a880] text-xs uppercase tracking-wider mb-4 font-semibold">Warehouse & Store Keeper</p>
+              <p className="font-sans text-[#AFB9AC] text-xs max-w-xl leading-relaxed">
+                Supervises formulation quarantine controls, molecular ambient storage verification, and daily regional dispatch queues across our key Kathmandu central logistics hub.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto shrink-0 justify-center">
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center select-none backdrop-blur-sm min-w-[200px]">
+                <div className="font-mono text-[10px] uppercase text-stone-400 mb-1">Assigned Department</div>
+                <div className="font-serif text-sm font-semibold text-[#E5EDA8]">Central Hub & Inventory</div>
+              </div>
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center select-none backdrop-blur-sm min-w-[200px]">
+                <div className="font-mono text-[10px] uppercase text-stone-400 mb-1">Dispatch Protocol</div>
+                <div className="font-serif text-sm font-semibold text-[#c5a880]">Contact Representative</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. ESG / Sustainability & Circularity (Botanical Environmental Ethics) */}
       <section className="py-24 bg-gradient-to-b from-[#0A1C26]/5 to-[#fafaf9]" id="sustainability-ethics">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="rounded-3xl overflow-hidden shadow-2xl h-[500px]" id="sustainability-visual">

@@ -86,11 +86,11 @@ export default function AISkinAnalysis({ questions, products, onSubmitRecord }: 
     }
 
     const routinesList = [
-      'AM Step 1: Purify with Ceramide Hydro-Fusion Purifying Gel',
-      `AM Step 2: Massaging 4 drops of ${matches[0]?.name || 'Luminous Nectar'} onto damp cells`,
-      `AM Step 3: Seal hydration with ${matches[1]?.name || 'Bio-Renewal Fluid'}`,
-      'PM Step 1: Double cellular cleanse to wash off pollutants',
-      `PM Step 2: Repair skin overnight using ${matches[2]?.name || 'Phyto-Active Resurfacing Balm'}`
+      'AM Step 1: Cleanse with a mild pH-balanced skin cleanser',
+      `AM Step 2: Massage 4 drops of ${matches[0]?.name || 'RENEW NIACINAMIDE SERUM'} onto damp skin`,
+      `AM Step 3: Seal hydration with ${matches[1]?.name || 'THE GOOD MOISTURISER'}`,
+      'PM Step 1: Double cellular cleanse to wash off pollutants & sebum',
+      `PM Step 2: Repair skin overnight using ${matches[2]?.name || 'MOISTCOM LITE Skin lightning Moisturiser'}`
     ];
 
     setTimeout(() => {
@@ -282,7 +282,7 @@ export default function AISkinAnalysis({ questions, products, onSubmitRecord }: 
                     type="text" 
                     value={userInfo.name}
                     onChange={(e) => setUserInfo(p => ({ ...p, name: e.target.value }))}
-                    placeholder="Sienna Sterling"
+                    placeholder="Aayusha Shrestha"
                     className="bg-[#FCFAF6] border border-stone-200/85 rounded-xl p-3 text-xs font-sans focus:outline-none focus:border-[#0A1C26]"
                     required
                   />
@@ -294,7 +294,7 @@ export default function AISkinAnalysis({ questions, products, onSubmitRecord }: 
                     type="email" 
                     value={userInfo.email}
                     onChange={(e) => setUserInfo(p => ({ ...p, email: e.target.value }))}
-                    placeholder="sienna@sterling.com"
+                    placeholder="aayusha@shrestha.com.np"
                     className="bg-[#FCFAF6] border border-stone-200/85 rounded-xl p-3 text-xs font-sans focus:outline-none focus:border-[#0A1C26]"
                     required
                   />

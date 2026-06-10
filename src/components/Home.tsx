@@ -22,31 +22,31 @@ interface HomeProps {
 const HERO_SLIDES = [
   {
     image: k0ijk,
-    tagline: "CLINICAL GRADE • BOTANICAL TELEMETRY",
+    tagline: "CLINICAL GRADE • PURE PLANTS",
     title: "Empower Your Dermal Health",
     subtitle: "Eco-Active Vitality Complex",
-    desc: "Welcome to The Skin Professionals. Formulated with high-potency clinical bio-actives to restore cells to pristine equilibrium."
+    desc: "Welcome to The Skin Professionals. Formulated with high-potency pure ingredients to make your skin glowing and healthy."
   },
   {
     image: Eszt1,
-    tagline: "PHYTO-MOLECULAR ESSENTIAL OILS",
+    tagline: "PURE NATURAL PLANT EXTRACTS",
     title: "Pure Botanical Peptide Catalyst",
-    subtitle: "Dermatological Craftsmanship",
-    desc: "Distilled botanical lipid fractions engineered in Paris to safely reconstruct cellular moisture barrier integrity."
+    subtitle: "Dermatology Clinic Quality",
+    desc: "Pure plant oils made to safely protect your natural skin barrier and keep it smooth."
   },
   {
     image: rxO1E,
     tagline: "ADVANCED THERAPY ACCELERATORS",
     title: "Dynamic Physiological Serums",
-    subtitle: "Advanced Cellular Telemetry",
-    desc: "Deeply penetrating biomimetic compounds formulated to correct trans-epidermal moisture loss without biological stress."
+    subtitle: "Advanced Skin Repair",
+    desc: "Deeply repairing serums made to stop dry skin and give an instant glowing look."
   },
   {
     image: M6MC2,
-    tagline: "BIO-ACTIVE EPIDERMAL RESILIENCE",
-    title: "Sovereign Barrier Reinforcement",
-    subtitle: "Pristine Moisture Elixirs",
-    desc: "Premium organic liposomes delivering lipid-rich nourishment engineered for the absolute most sensitive skin profiles."
+    tagline: "STRONG CELLULAR HYDRATION",
+    title: "Strong Skin Protection",
+    subtitle: "Pure Hydrating Creams",
+    desc: "Premium organic creams delivering deep nourishment made for even the most sensitive skin."
   }
 ];
 
@@ -161,10 +161,10 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
             Dermatology inspired by genuine botanical intelligence.
           </h2>
           <p className="font-sans text-stone-600 text-sm leading-relaxed mb-6 font-light">
-            Founded by a collective of master clinical biochemists, <span className="text-[#0A1C26] font-semibold">The Skin Professionals</span> bridge the gap between high-strength medical dermatologics and soft sensory care.
+            Founded by skincare experts, <span className="text-[#0A1C26] font-semibold">The Skin Professionals</span> offer the ultimate balance between dermatologist-quality skin solutions and gentle daily self-care.
           </p>
           <p className="font-sans text-stone-600 text-sm leading-relaxed mb-8 font-light">
-            We operate utilizing a customized, eye-safe clinical framework. Every batch undergoes rigorous assay validation processes to preserve biological enzyme safety and respect your skin's perfect moisture barrier structure.
+            We formulate our products carefully to respect your natural skin. Every batch is clinically checked to keep your skin safe, healthy, and perfectly glowing.
           </p>
           <button
             onClick={() => onNavigate('contact')}
@@ -229,13 +229,13 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
             <div className="absolute inset-x-0 bottom-0 z-10 p-8 sm:p-12 text-left bg-gradient-to-t from-black/80 via-black/20 to-transparent">
               <div className="max-w-7xl mx-auto px-4">
                 <span className="font-mono text-[9px] sm:text-xs tracking-[0.4em] text-[#E5EDA8] uppercase font-bold mb-2 block">
-                  ACTIVE PHYTO-ALCHEMICAL MATRIX
+                  ACTIVE NATURAL SKIN HYDRATION
                 </span>
                 <h3 className="font-serif text-2xl sm:text-4xl text-white font-light tracking-tight max-w-2xl mb-3">
-                  Biocompatible Cellular Hydration Serums.
+                  Deeply Hydrating Botanical Serums.
                 </h3>
                 <p className="font-sans text-[11px] sm:text-xs text-white/90 max-w-xl font-light leading-relaxed">
-                  Precision-engineered biological nutrients captured to reconstruct critical cellular mantle bonds, protect moisture integrity, and deliver a luminous dermis glow.
+                  Carefully made premium skin nutrients that protect your skin barrier, lock in daily moisture, and give you a beautiful natural glow.
                 </p>
               </div>
             </div>
@@ -402,20 +402,20 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
 
         <div className="relative z-10 max-w-4xl mx-auto px-4">
           <span className="font-sans text-xs tracking-[0.3em] text-[#E5EDA8] uppercase block mb-3 font-semibold">
-            TELEMETRIC RECREATION DIAGNOSTICS
+            EASY ONLINE SKIN TEST
           </span>
           <h2 className="font-serif text-3xl sm:text-5xl text-[#FCFAF6] tracking-tight mb-6">
-            Consult the AI Dermatologist Matrix
+            Try our quick Skin Test
           </h2>
           <p className="font-sans text-sm text-[#FCFAF6]/80 max-w-xl mx-auto mb-8 font-light leading-relaxed">
-            Our exclusive skin diagnostics pipeline assesses sebum secretion indices, trans-epidermal water loss limits, and environmental damage metrics to recommend custom routines.
+            Our easy interactive questionnaire checks your skin type, weather exposure, and issues to suggest the absolute perfect routine for your skin.
           </p>
           <button
             onClick={() => onNavigate('analysis')}
             id="launch-analysis-banner-cta"
             className="px-8 py-4 bg-[#E5EDA8] hover:bg-[#CAD18E] text-[#0A1C26] font-sans text-xs tracking-widest uppercase font-bold rounded hover:scale-105 transition-all duration-300 shadow-lg"
           >
-            Launch Interactive Skin Questionnaire
+            Start Easy Skin Test
           </button>
         </div>
       </section>

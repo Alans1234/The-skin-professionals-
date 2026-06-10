@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, MessageSquare, Search, ShieldCheck, Mail, HelpCircle } from 'lucide-react';
+import { MapPin, Phone, MessageSquare, Search, ShieldCheck, Mail, HelpCircle, ExternalLink } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface Distributor {
@@ -8,115 +8,257 @@ interface Distributor {
   region: string;
   city: string;
   address: string;
-  phone: string;
+  phone?: string;
   whatsapp?: string;
   email?: string;
   timing: string;
   isMainHub?: boolean;
+  mapsUrl?: string;
 }
 
 const NEPAL_DISTRIBUTORS: Distributor[] = [
-  // Kathmandu Valley
+  
   {
-    id: 'dist-1',
-    name: 'The Skin Professionals Head Office & Experience Center',
-    region: 'Bagmati Province (Kathmandu Valley)',
-    city: 'Kathmandu',
-    address: 'Durbar Marg (Opposite to Royal Palace Museum), Kathmandu',
-    phone: '+977-1-4220022',
-    whatsapp: '+977-9801234567',
-    email: 'durbar@skinprofessionals.com.np',
-    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
-    isMainHub: true,
+    id: 'dist-nik',
+    name: 'NIK Traders',
+    region: 'Bagmati Province',
+    city: 'Chitwan',
+    address: 'Chitwan, Nepal',
+    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
+    mapsUrl: 'https://www.google.com/maps/search/NIK%20Traders%20Chitwan%20Nepal'
   },
   {
-    id: 'dist-2',
-    name: 'Lalitpur Premium Clinic & Store',
+    id: 'dist-kala',
+    name: 'Kala and Brothers Suppliers',
+    region: 'Bagmati Province (Kathmandu Valley)',
+    city: 'Kathmandu',
+    address: 'Kathmandu, Nepal',
+    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
+    mapsUrl: 'https://www.google.com/maps/search/Kala%20and%20Brothers%20Kathmandu%20Nepal'
+  },
+  {
+    id: 'dist-all-derma',
+    name: 'All Derma House',
+    region: 'Bagmati Province (Kathmandu Valley)',
+    city: 'Kathmandu',
+    address: 'Kathmandu, Nepal',
+    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
+    mapsUrl: 'https://www.google.com/maps/search/All%20derma%20house%20Kathmandu%20Nepal'
+  },
+  {
+    id: 'dist-api-derma',
+    name: 'API Derma House',
+    region: 'Bagmati Province (Kathmandu Valley)',
+    city: 'Kathmandu',
+    address: 'Kathmandu, Nepal',
+    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
+    mapsUrl: 'https://www.google.com/maps/search/API%20derma%20house%20Kathmandu%20Nepal'
+  },
+  {
+    id: 'dist-caremark',
+    name: 'Caremark Enterprise',
+    region: 'Bagmati Province (Kathmandu Valley)',
+    city: 'Kathmandu',
+    address: 'Kathmandu, Nepal',
+    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
+    mapsUrl: 'https://www.google.com/maps/search/Caremark%20Enterprise%20Kathmandu%20Nepal'
+  },
+  {
+    id: 'dist-joshi',
+    name: 'Joshi Trade Concern',
+    region: 'Lumbini Province',
+    city: 'Butwal',
+    address: 'Butwal, Nepal',
+    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
+    mapsUrl: 'https://www.google.com/maps/search/Joshi%20Trade%20concern%20Butwal%20Nepal'
+  },
+  {
+    id: 'dist-ishika',
+    name: 'Ishika Cosmetics',
+    region: 'Bagmati Province (Kathmandu Valley)',
+    city: 'Kathmandu',
+    address: 'Kathmandu, Nepal',
+    timing: '10:00 AM - 7:30 PM (Sunday - Friday)',
+    mapsUrl: 'https://www.google.com/maps/search/Ishika%20Cosmetics%20Kathmandu%20Nepal'
+  },
+  {
+    id: 'dist-sahara',
+    name: 'Sahara Medicine Distributors',
+    region: 'Lumbini Province',
+    city: 'Nepalgunj',
+    address: 'Nepalgunj, Nepal',
+    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
+    mapsUrl: 'https://maps.app.goo.gl/h2zap6FHurA1r3u16'
+  },
+  {
+    id: 'dist-natraj',
+    name: 'Natraj Healthcare Pvt Ltd',
+    region: 'Bagmati Province (Kathmandu Valley)',
+    city: 'Kathmandu',
+    address: 'Kathmandu, Nepal',
+    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
+    mapsUrl: 'https://www.google.com/maps/search/Natraj%20healthcare%20pvt%20ltd%20Kathmandu%20Nepal'
+  },
+  {
+    id: 'dist-derma-essentia',
+    name: 'Derma Essentia',
     region: 'Bagmati Province (Kathmandu Valley)',
     city: 'Lalitpur',
-    address: 'Ground Floor, Labim Mall, Pulchowk, Lalitpur',
-    phone: '+977-1-5530011',
-    whatsapp: '+977-9801234568',
-    timing: '11:00 AM - 8:30 PM (Everyday)',
-    isMainHub: false,
+    address: 'Lalitpur, Nepal',
+    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
+    mapsUrl: 'https://www.google.com/maps/search/Derma%20essentia%20Lalitpur%20Nepal'
   },
   {
-    id: 'dist-3',
-    name: 'Bhatbhateni Skincare Corner',
+    id: 'dist-unique',
+    name: 'Unique Medicine Distributor',
+    region: 'Karnali Province',
+    city: 'Surkhet',
+    address: 'Surkhet, Nepal',
+    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
+    mapsUrl: 'https://maps.app.goo.gl/DqpVZTKbiDCDFABP7'
+  },
+  {
+    id: 'dist-roshan',
+    name: 'Roshan Drug House',
+    region: 'Karnali Province',
+    city: 'Surkhet',
+    address: 'Surkhet, Nepal',
+    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
+    mapsUrl: 'https://www.google.com/maps/search/Roshan%20Drug%20house%20Surkhet%20Nepal'
+  },
+  {
+    id: 'dist-care-pharmacy',
+    name: 'Care Pharmacy Pvt Ltd',
+    region: 'Gandaki Province',
+    city: 'Pokhara',
+    address: 'Pokhara, Nepal',
+    timing: '10:00 AM - 8:00 PM (Everyday)',
+    mapsUrl: 'https://maps.app.goo.gl/vAWFzXu3EnemAfZc8'
+  },
+  {
+    id: 'dist-terai',
+    name: 'Terai Enterprises',
+    region: 'Madhesh Province',
+    city: 'Birgunj',
+    address: 'Birgunj, Nepal',
+    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
+    mapsUrl: 'https://www.google.com/maps/search/Terai%20enterprises%20Birgunj%20Nepal'
+  },
+  {
+    id: 'dist-ar',
+    name: 'AR Traders',
+    region: 'Lumbini Province',
+    city: 'Ghorahi, Dang',
+    address: 'Ghorahi, Dang, Nepal',
+    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
+    mapsUrl: 'https://maps.app.goo.gl/VWMQis4nqQEXiQVf6'
+  },
+  {
+    id: 'dist-sajak',
+    name: 'Sajak Distributors',
+    region: 'Bagmati Province',
+    city: 'Banepa',
+    address: 'Banepa, Nepal',
+    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
+    mapsUrl: 'https://maps.app.goo.gl/7eQ3M6aZfBELRjpT8'
+  },
+  {
+    id: 'dist-kalika',
+    name: 'Kalika Medicine Distributors',
+    region: 'Karnali Province',
+    city: 'Surkhet',
+    address: 'Surkhet, Nepal',
+    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
+    mapsUrl: 'https://maps.app.goo.gl/Wv2EQp8ha5VeFoM2A'
+  },
+  {
+    id: 'dist-dipika',
+    name: 'Dipika Trade Link',
+    region: 'Gandaki Province',
+    city: 'Pokhara',
+    address: 'Pokhara, Nepal',
+    timing: '10:00 AM - 7:30 PM (Sunday - Friday)',
+    mapsUrl: 'https://www.google.com/maps/search/dipika%20trade%20link%20Pokhara%20Nepal'
+  },
+  {
+    id: 'dist-nayan',
+    name: 'Nayan Medisales',
+    region: 'Lumbini Province',
+    city: 'Butwal',
+    address: 'Butwal, Nepal',
+    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
+    mapsUrl: 'https://maps.app.goo.gl/4V6eQYVXXxDYEJnm6'
+  },
+  {
+    id: 'dist-qutish',
+    name: 'Qutish Pharmacy Pvt Ltd',
     region: 'Bagmati Province (Kathmandu Valley)',
     city: 'Kathmandu',
-    address: 'Bhatbhateni Super Store, Naxal, Kathmandu',
-    phone: '+977-1-4411133',
-    timing: '9:00 AM - 9:00 PM (Everyday)',
-    isMainHub: false,
-  },
-  // Pokhara
-  {
-    id: 'dist-4',
-    name: 'Pokhara Lakeside Beauty Hub',
-    region: 'Gandaki Province (Pokhara Region)',
-    city: 'Pokhara',
-    address: 'Lakeside Road, Ward No. 6 (Near Barahi Temple), Pokhara',
-    phone: '+977-61-460011',
-    whatsapp: '+977-9856033111',
-    timing: '10:00 AM - 8:00 PM (Everyday)',
-    isMainHub: true,
-  },
-  // Butwal / Lumbini
-  {
-    id: 'dist-5',
-    name: 'Butwal Dermatological Care Shop',
-    region: 'Lumbini Province (Butwal & Bhairahawa)',
-    city: 'Butwal',
-    address: 'Milanchowk, Main Highway Road, Butwal',
-    phone: '+977-71-540099',
-    whatsapp: '+977-9847055999',
+    address: 'Kathmandu, Nepal',
     timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
-    isMainHub: false,
+    mapsUrl: 'https://maps.app.goo.gl/U7hqvxz7qsun3FNy8'
   },
-  // Dharan / Biratnagar
   {
-    id: 'dist-6',
-    name: 'Koshi Region Main Distributor',
-    region: 'Koshi Province (Biratnagar & Dharan)',
+    id: 'dist-shree-sidhhivinayak',
+    name: 'Shree Sidhhivinayak Impex',
+    region: 'Koshi Province',
     city: 'Biratnagar',
-    address: 'Traffic Chowk, Main Bazaar, Biratnagar',
-    phone: '+977-21-530088',
-    whatsapp: '+977-9812355666',
+    address: 'Biratnagar, Nepal',
     timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
-    isMainHub: true,
+    mapsUrl: 'https://www.google.com/maps/search/Shree%20sidhhivinayak%20impex%20Biratnagar%20Nepal'
   },
   {
-    id: 'dist-7',
-    name: 'Dharan Beauty & Skincare Dealer',
-    region: 'Koshi Province (Biratnagar & Dharan)',
-    city: 'Dharan',
-    address: 'Bhanuchowk Shopping Arcade, Dharan',
-    phone: '+977-25-520111',
-    timing: '10:00 AM - 7:30 PM (Sunday - Friday)',
-    isMainHub: false,
-  },
-  // Birgunj
-  {
-    id: 'dist-8',
-    name: 'Birgunj Wellness Center',
-    region: 'Madhesh Province (Birgunj & Janakpur)',
-    city: 'Birgunj',
-    address: 'Maisthan Road, Ward No. 8, Birgunj',
-    phone: '+977-51-525252',
-    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
-    isMainHub: false,
-  },
-  // West Nepal
-  {
-    id: 'dist-9',
-    name: 'Sudurpashchim Distribution Partner',
-    region: 'Sudurpashchim & Karnali Province',
-    city: 'Dhangadhi',
-    address: 'Main Chowk Road, Dhangadhi',
-    phone: '+977-91-521122',
+    id: 'dist-meditop',
+    name: 'Meditop Pharma Suppliers',
+    region: 'Koshi Province',
+    city: 'Birtamode',
+    address: 'Birtamode, Nepal',
     timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
-    isMainHub: false,
+    mapsUrl: 'https://www.google.com/maps/search/meditop%20pharma%20suppliers%20Birtamode%20Nepal'
+  },
+  {
+    id: 'dist-national-pharmacy',
+    name: 'National Pharmacy and Surgical Suppliers',
+    region: 'Gandaki Province',
+    city: 'Kawasoti',
+    address: 'Kawasoti, Nepal',
+    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
+    mapsUrl: 'https://maps.app.goo.gl/75qTXcjyhi9ZKYSq6'
+  },
+  {
+    id: 'dist-kartabya',
+    name: 'Kartabya Medicine Distributors',
+    region: 'Lumbini Province',
+    city: 'Nepalgunj',
+    address: 'Nepalgunj, Nepal',
+    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
+    mapsUrl: 'https://maps.app.goo.gl/h2zap6FHurA1r3u16'
+  },
+  {
+    id: 'dist-bhagat',
+    name: 'Bhagat and Sons Distributors',
+    region: 'Koshi Province',
+    city: 'Biratnagar',
+    address: 'Biratnagar, Nepal',
+    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
+    mapsUrl: 'https://www.google.com/maps/search/Bhagat%20and%20sons%20Distributors%20Biratnagar%20Nepal'
+  },
+  {
+    id: 'dist-halesi',
+    name: 'Halesi Trade and Company',
+    region: 'Koshi Province',
+    city: 'Dharan',
+    address: 'Dharan, Nepal',
+    timing: '10:00 AM - 6:30 PM (Sunday - Friday)'
+  },
+  {
+    id: 'dist-valasa',
+    name: 'Valasa Traders Pvt Ltd',
+    region: 'Bagmati Province (Kathmandu Valley)',
+    city: 'Kathmandu',
+    address: 'Kathmandu, Nepal',
+    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
+    mapsUrl: 'https://maps.app.goo.gl/g2UsygZ2Cr2eGZneA'
   }
 ];
 
@@ -256,13 +398,18 @@ export default function Distributors() {
 
                 {/* Direct Action Buttons for simple Nepalese user experience */}
                 <div className="pt-4 border-t border-stone-100 space-y-2" id="action-buttons-box">
-                  <a 
-                    href={`tel:${d.phone}`} 
-                    className="w-full flex items-center justify-center space-x-2 bg-[#0A1C26] text-white hover:bg-[#112A38] text-xs font-bold py-2.5 px-4 rounded-lg transition-colors cursor-pointer"
-                  >
-                    <Phone className="w-3.5 h-3.5" />
-                    <span>Call Store ({d.phone})</span>
-                  </a>
+                  {d.mapsUrl && (
+                    <a 
+                      href={d.mapsUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-center space-x-2 bg-[#0A1C26] text-white hover:bg-[#112A38] text-xs font-bold py-2.5 px-4 rounded-lg transition-colors cursor-pointer"
+                    >
+                      <MapPin className="w-3.5 h-3.5 text-[#E5EDA8]" />
+                      <span>Google Maps Location</span>
+                    </a>
+                  )}
+
 
                   {d.whatsapp && (
                     <a 
