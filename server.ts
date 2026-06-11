@@ -18,10 +18,13 @@ async function startServer() {
     res.redirect(301, "/favicon.svg");
   });
 
-  // Serve employee-photos directory statically
-  app.use("/employee-photos", express.static(path.join(process.cwd(), "public/employee-photos")));
-  app.use("/Employee Photos", express.static(path.join(process.cwd(), "public/employee-photos")));
-  app.use("/Employee%20Photos", express.static(path.join(process.cwd(), "public/employee-photos")));
+  // Serve the public directory statically at the root url (/images/..., /favicon.svg, etc.)
+  app.use(express.static(path.join(process.cwd(), "public")));
+
+  // Serve employee-photos and Employee Photos requests from the images directory where they exist
+  app.use("/employee-photos", express.static(path.join(process.cwd(), "public/images")));
+  app.use("/Employee Photos", express.static(path.join(process.cwd(), "public/images")));
+  app.use("/Employee%20Photos", express.static(path.join(process.cwd(), "public/images")));
 
   // API Route for Contact Form
   app.post("/api/contact", async (req, res) => {
