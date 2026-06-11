@@ -48,12 +48,82 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // 2. Global application state databases - Static constants loaded directly to prevent stale cache bugs
-  const [products, setProducts] = useState<Product[]>(INITIAL_PRODUCTS);
-  const [gallery, setGallery] = useState<GalleryItem[]>(INITIAL_GALLERY);
-  const [testimonials, setTestimonials] = useState<Testimonial[]>(INITIAL_TESTIMONIALS);
-  const [blogs, setBlogs] = useState<Blog[]>(INITIAL_BLOGS);
-  const [questions, setQuestions] = useState<SkinQuestion[]>(INITIAL_SKIN_QUESTIONS);
+  // 2. Global application state databases synchronized with localStorage
+  const [products, setProducts] = useState<Product[]>(() => {
+    const saved = localStorage.getItem('aura_products');
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved) as Product[];
+        // Auto-heal/migrate if any product contains a dollar symbol, does not contain 'Rs.', or is old data
+        const hasDollarOrStale = parsed.some(p => p.price && (p.price.includes('$') || !p.price.includes('Rs.')) || p.name.includes('AURA Luminous') || p.name.includes('Nectar'));
+        if (!hasDollarOrStale && parsed.length > 0) {
+          // Always map the latest active compiled asset paths from INITIAL_PRODUCTS to avoid stale local refs or casing differences
+          return parsed.map(p => {
+            const initial = INITIAL_PRODUCTS.find(ip => ip.id === p.id || ip.name.toLowerCase().trim() === p.name.toLowerCase().trim());
+            return initial ? { ...p, ...initial, image: initial.image } : p;
+          });
+        }
+      } catch (err) {
+        console.warn('Recovering products layout:', err);
+      }
+    }
+    return INITIAL_PRODUCTS;
+  });
+
+  const [gallery, setGallery] = useState<GalleryItem[]>(() => {
+    const saved = localStorage.getItem('aura_gallery');
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved) as GalleryItem[];
+        const hasStale = parsed.some(img => img.title.includes('Golden Drop') || img.subtitle.includes('copper peptide'));
+        if (!hasStale && parsed.length > 0) {
+          return parsed;
+        }
+      } catch (err) {
+        console.warn('Recovering gallery layout:', err);
+      }
+    }
+    return INITIAL_GALLERY;
+  });
+
+  const [testimonials, setTestimonials] = useState<Testimonial[]>(() => {
+    const saved = localStorage.getItem('aura_testimonials');
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved) as Testimonial[];
+        const hasStale = parsed.some(t => 
+          t.author.toLowerCase().includes('vance') || 
+          t.author.toLowerCase().includes('eleanor') || 
+          t.author.toLowerCase().includes('marcus') || 
+          t.author.toLowerCase().includes('sienna') ||
+          t.author.toLowerCase().includes('thorne') ||
+          t.author.toLowerCase().includes('sterling') ||
+          t.author.toLowerCase().includes('aayusha') ||
+          t.author.toLowerCase().includes('karki') ||
+          t.author.toLowerCase().includes('thapa')
+        );
+        if (!hasStale && parsed.length > 0) {
+          return parsed.map(t => {
+            const initial = INITIAL_TESTIMONIALS.find(it => it.id === t.id || it.author.toLowerCase().trim() === t.author.toLowerCase().trim());
+            return initial ? { ...t, ...initial, avatar: initial.avatar } : t;
+          });
+        }
+      } catch (err) {
+        console.warn('Recovering testimonials layout:', err);
+      }
+    }
+    return INITIAL_TESTIMONIALS;
+  });
+
+  const [blogs, setBlogs] = useState<Blog[]>(() => {
+    const saved = localStorage.getItem('aura_blogs');
+    return saved ? JSON.parse(saved) : INITIAL_BLOGS;
+  });
+
+  const [questions, setQuestions] = useState<SkinQuestion[]>(() => {
+    const saved = localStorage.getItem('aura_questions');
+    return saved ? JSON.parse(saved) : INITIAL_SKIN_QUESTIONS;
+  });
 
   const [submissions, setSubmissions] = useState<ContactSubmission[]>(() => {
     const saved = localStorage.getItem('aura_submissions');
@@ -65,7 +135,27 @@ export default function App() {
     return saved ? JSON.parse(saved) : [];
   });
 
-  // 3. Keep dynamic localStorage collections fully in sync
+  // 3. Keep localStorage fully in sync
+  useEffect(() => {
+    localStorage.setItem('aura_products', JSON.stringify(products));
+  }, [products]);
+
+  useEffect(() => {
+    localStorage.setItem('aura_gallery', JSON.stringify(gallery));
+  }, [gallery]);
+
+  useEffect(() => {
+    localStorage.setItem('aura_testimonials', JSON.stringify(testimonials));
+  }, [testimonials]);
+
+  useEffect(() => {
+    localStorage.setItem('aura_blogs', JSON.stringify(blogs));
+  }, [blogs]);
+
+  useEffect(() => {
+    localStorage.setItem('aura_questions', JSON.stringify(questions));
+  }, [questions]);
+
   useEffect(() => {
     localStorage.setItem('aura_submissions', JSON.stringify(submissions));
   }, [submissions]);

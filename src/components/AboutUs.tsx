@@ -236,12 +236,15 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Member 1: Nikesh Baral */}
             <div className="bg-white rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row h-full">
-               <div className="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative bg-stone-100 min-h-[220px]">
+              <div className="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative bg-stone-100 min-h-[220px]">
                 <img 
-                  src="/images/nikesh_baral.jpg" 
+                  src="/Employee Photos/NIkesh baral.jpg" 
                   alt="Nikesh Baral - Co founder, CEO" 
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=300';
+                  }}
                 />
               </div>
               <div className="p-6 sm:w-3/5 flex flex-col justify-between">
@@ -266,12 +269,15 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
 
             {/* Member 2: Ramesh Timilsena */}
             <div className="bg-white rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row h-full">
-               <div className="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative bg-stone-100 min-h-[220px]">
+              <div className="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative bg-stone-100 min-h-[220px]">
                 <img 
-                  src="/images/ramesh_timilsena.jpeg" 
+                  src="/Employee Photos/Ramesh timilsena.jpeg" 
                   alt="Ramesh Timilsena - Sales and Marketing Manager" 
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=300';
+                  }}
                 />
               </div>
               <div className="p-6 sm:w-3/5 flex flex-col justify-between">
@@ -309,10 +315,13 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               <div>
                 <div className="h-52 overflow-hidden relative bg-stone-100">
                   <img 
-                    src="/images/priyanshu_maharjan.jpg" 
+                    src="/Employee Photos/Priyanshu Maharjan.jpg" 
                     alt="Priyanshu Maharjan" 
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200';
+                    }}
                   />
                 </div>
                 <div className="p-4">
@@ -333,10 +342,13 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               <div>
                 <div className="h-52 overflow-hidden relative bg-stone-100">
                   <img 
-                    src="/images/shraddha_manandhar.jpeg" 
+                    src="/Employee Photos/Shraddha manandhar.jpeg" 
                     alt="Shraddha Manandhar" 
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200';
+                    }}
                   />
                 </div>
                 <div className="p-4">
@@ -357,10 +369,13 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               <div>
                 <div className="h-52 overflow-hidden relative bg-stone-100">
                   <img 
-                    src="/images/bimal_chaudhary.jpeg" 
+                    src="/Employee Photos/Bimal Chaudhary.jpeg" 
                     alt="Bimal Chaudhary" 
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200';
+                    }}
                   />
                 </div>
                 <div className="p-4">
@@ -381,10 +396,13 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               <div>
                 <div className="h-52 overflow-hidden relative bg-stone-100">
                   <img 
-                    src="/images/ramesh_shrestha.jpeg" 
+                    src="/Employee Photos/Ramesh Shrestha.jpeg" 
                     alt="Ramesh Shrestha" 
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200';
+                    }}
                   />
                 </div>
                 <div className="p-4">
@@ -405,10 +423,13 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               <div>
                 <div className="h-52 overflow-hidden relative bg-stone-100">
                   <img 
-                    src="/images/bikas_kumar_mandal.png" 
+                    src="/Employee Photos/Bikas Kumar Mandal.png" 
                     alt="Bikash Mandal" 
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=200';
+                    }}
                   />
                 </div>
                 <div className="p-4">

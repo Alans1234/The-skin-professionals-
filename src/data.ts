@@ -1,5 +1,11 @@
 import { Product, Ingredient, Testimonial, Blog, SkinQuestion, ContactSubmission, GalleryItem } from './types';
 
+import MoistcomImg from './images/Moistcom.jpg';
+import SuncoImg from './images/Sunco.jpg';
+import FluideImg from './images/fluide.jpg';
+import RenewImg from './images/renew.jpg';
+import GoodMoistureImg from './images/GoodMoisture.jpg';
+
 export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'prod-1',
@@ -8,7 +14,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Moisturizer',
     price: 'Rs. 800',
     rating: 4.8,
-    image: '/images/Moistcom.jpg',
+    image: MoistcomImg,
     description: 'An advanced scientific moisturizer combining the power of multi-ceramides with skin-brightening actives. Specially designed to lighten dark spots, block oxidative stressors, and provide rich non-greasy lipid protection ideal for Nepalese weather.',
     benefits: [
       'Acts directly on active melanocytes to fade stubborn dark spots and sallow skin tone',
@@ -36,7 +42,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Sunscreen',
     price: 'Rs. 1,040',
     rating: 4.9,
-    image: '/images/Sunco.jpg',
+    image: SuncoImg,
     description: 'An exceptionally elegant silicone-gel sunscreen offering supreme SPF 50 PA++++ broad-spectrum defense. Transparently shields from intense UV rays while rendering a luxurious pores-blurring satin-matte skin coverage.',
     benefits: [
       'Provides high-level PA++++ block to prevent high-altitude UV burns and cell hyperpigmentation',
@@ -63,7 +69,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Sunscreen',
     price: 'Rs. 1,180',
     rating: 4.7,
-    image: '/images/fluide.jpg',
+    image: FluideImg,
     description: 'A beautifully light, quick-absorbing fluid sun formula. Designed to spread seamlessly without any oiliness, bringing calming anti-oxidant tea botanical defenses and complete broad-spectrum solar guard.',
     benefits: [
       'Encapsulated UV-filters block modern radiation and intense solar frequencies',
@@ -90,7 +96,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Serum',
     price: 'Rs. 1,560',
     rating: 4.8,
-    image: '/images/renew.jpg',
+    image: RenewImg,
     description: 'A clinical-strength clarifying concentrate designed with high-purity Niacinamide, active Zinc, and precious whitening roots. Purges congestions, tightens enlarged pores, and dissolves old stubborn acne spots and melasma.',
     benefits: [
       'Controls excessive sebum secretions and suppresses unwanted greasy sheen',
@@ -100,7 +106,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     ingredients: [
       { name: 'Niacinamide (Vitamin B3)', percentage: '10.0%', purpose: 'Fades persistent dark marks and strengthens local lipid barrier' },
-      { name: 'Zinc PCA', percentage: '1.0%', purpose: 'Regulate oil output, calms breakouts and suppresses congestion' },
+      { name: 'Zinc PCA', percentage: '1.0%', purpose: 'Regulates oil output, calms breakouts and suppresses congestion' },
       { name: 'Vitamin E', percentage: '1.0%', purpose: 'Accelerates cellular renewal and repairs tissue layers' },
       { name: 'Morus Alba (Mulberry) Root Extract', percentage: '2.0%', purpose: 'Natural bio-agent that restricts pigment pathways' },
       { name: 'Licorise root extract & Papaya Fruit Extract', percentage: '3.0%', purpose: 'Soothes inflammation and dissolves dead surface scales' },
@@ -116,7 +122,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Moisturizer',
     price: 'Rs. 950',
     rating: 4.8,
-    image: '/images/GoodMoisture.jpg',
+    image: GoodMoistureImg,
     description: 'A comforting, clinical barrier defense cream rich in calming Oat lipids, pure Shea butter, and skin-identical moisture binders. Immediately alleviates dryness, heals flakiness, and insulates skin against extreme mountain air, cold, and urban dust.',
     benefits: [
       'Oat kernel extracts offer complete relief for extremely irritated, itching, or hyper-sensitive skin',
@@ -211,7 +217,7 @@ export const INITIAL_TESTIMONIALS: Testimonial[] = [
     id: 'test-1',
     author: 'Shraddha Manandhar',
     role: 'HQ Kathmandu Field Sales Officer, The Skin Professionals Nepal',
-    avatar: '/images/shraddha_manandhar.jpeg',
+    avatar: '/Employee Photos/Shraddha manandhar.jpeg',
     content: "Working on the field with top skin clinics and dermatologist partners across Kathmandu, the professional feedback for Moistcom Lite and Sunco 50 is incredible. Our formulas are custom-engineered for South Asian lipid barriers and local climate conditions.",
     rating: 5,
     featured: true
@@ -220,7 +226,7 @@ export const INITIAL_TESTIMONIALS: Testimonial[] = [
     id: 'test-2',
     author: 'Priyanshu Maharjan',
     role: 'HQ Kathmandu Field Sales Officer, The Skin Professionals Nepal',
-    avatar: '/images/priyanshu_maharjan.jpg',
+    avatar: '/Employee Photos/Priyanshu Maharjan.jpg',
     content: "We collaborate closely with dozens of clinical clinics and pharmacies to distribute authentic active formulations. Clients are continually amazed at how quickly Moistcom Lite restores moisture balance and how Sunco 50 prevents solar hyperpigmentation.",
     rating: 5,
     featured: true
@@ -229,7 +235,7 @@ export const INITIAL_TESTIMONIALS: Testimonial[] = [
     id: 'test-3',
     author: 'Bimal Chaudhary',
     role: 'Nepalgunj Sector Field Officer, The Skin Professionals Nepal',
-    avatar: '/images/bimal_chaudhary.jpeg',
+    avatar: '/Employee Photos/Bimal Chaudhary.jpeg',
     content: "In the intense, hot climate of the Nepalgunj sector, heavy skincare fails. Our non-greasy formulations control excess sebum, protect from dust congestion, and maintain a resilient barrier. It is a genuine breakthrough for our regional clinics.",
     rating: 5,
     featured: true
