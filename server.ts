@@ -31,7 +31,7 @@ async function startServer() {
         return res.status(400).json({ error: "All inquiry fields are required." });
       }
 
-      const resendApiKey = process.env.RESEND_API_KEY;
+      const resendApiKey = process.env.RESEND_API_KEY || "re_WFKw1gaU_NYaFLbsgSuhjBM3JtzFk9gBu";
       if (!resendApiKey) {
         console.warn("WARNING: RESEND_API_KEY is not set in environment variables.");
         return res.status(400).json({
@@ -60,7 +60,7 @@ async function startServer() {
 
       const { data, error } = await resend.emails.send({
         from: "Skin Professionals <onboarding@resend.dev>",
-        to: "goofeygumball@gmail.com",
+        to: "skinprofessionals.2023@gmail.com",
         subject: `[Contact Form] ${subject}`,
         html: htmlContent,
         replyTo: email,

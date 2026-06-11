@@ -185,8 +185,7 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
               <div>
                 <h4 className="font-serif text-sm text-[#0A1C26] font-semibold">Email Correspondence</h4>
                 <p className="font-sans text-stone-500 text-xs leading-relaxed">
-                  Private care: concierge@skinprofessionals.com.np <br />
-                  Science Desk: lab@skinprofessionals.com.np
+                  Official Desk: skinprofessionals.2023@gmail.com
                 </p>
               </div>
             </div>

@@ -103,7 +103,10 @@ export default function App() {
           t.author.toLowerCase().includes('thapa')
         );
         if (!hasStale && parsed.length > 0) {
-          return parsed;
+          return parsed.map(t => {
+            const initial = INITIAL_TESTIMONIALS.find(it => it.id === t.id || it.author.toLowerCase().trim() === t.author.toLowerCase().trim());
+            return initial ? { ...t, ...initial, avatar: initial.avatar } : t;
+          });
         }
       } catch (err) {
         console.warn('Recovering testimonials layout:', err);
@@ -396,7 +399,7 @@ export default function App() {
                   Kathmandu, Nepal
                 </p>
                 <p className="leading-relaxed mb-4 italic text-[#FBEAEA]">
-                  Concierge Inquiries: info@skinprofessionals.com.np
+                  Concierge Inquiries: skinprofessionals.2023@gmail.com
                 </p>
                 <p className="text-[10px] tracking-widest uppercase text-stone-500">Available globally via appointment</p>
               </div>
