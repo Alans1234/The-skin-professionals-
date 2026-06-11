@@ -236,7 +236,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Member 1: Nikesh Baral */}
             <div className="bg-white rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row h-full">
-              <div className="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative bg-stone-100 min-h-[220px]">
+               <div className="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative bg-stone-100 min-h-[220px]">
                 <img 
                   src="/images/nikesh_baral.jpg" 
                   alt="Nikesh Baral - Co founder, CEO" 
@@ -266,7 +266,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
 
             {/* Member 2: Ramesh Timilsena */}
             <div className="bg-white rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row h-full">
-              <div className="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative bg-stone-100 min-h-[220px]">
+               <div className="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative bg-stone-100 min-h-[220px]">
                 <img 
                   src="/images/ramesh_timilsena.jpeg" 
                   alt="Ramesh Timilsena - Sales and Marketing Manager" 
