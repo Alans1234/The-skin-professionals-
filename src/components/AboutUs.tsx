@@ -238,7 +238,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
             <div className="bg-white rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row h-full">
               <div className="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative bg-stone-100 min-h-[220px]">
                 <img 
-                  src="/Employee Photos/NIkesh baral.jpg" 
+                  src="/employee-photos/nikesh_baral.jpg" 
                   alt="Nikesh Baral - Co founder, CEO" 
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                   referrerPolicy="no-referrer"
@@ -271,7 +271,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
             <div className="bg-white rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row h-full">
               <div className="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative bg-stone-100 min-h-[220px]">
                 <img 
-                  src="/Employee Photos/Ramesh timilsena.jpeg" 
+                  src="/employee-photos/ramesh_timilsena.jpeg" 
                   alt="Ramesh Timilsena - Sales and Marketing Manager" 
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                   referrerPolicy="no-referrer"
@@ -315,7 +315,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               <div>
                 <div className="h-52 overflow-hidden relative bg-stone-100">
                   <img 
-                    src="/Employee Photos/Priyanshu Maharjan.jpg" 
+                    src="/employee-photos/priyanshu_maharjan.jpg" 
                     alt="Priyanshu Maharjan" 
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"
@@ -342,7 +342,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               <div>
                 <div className="h-52 overflow-hidden relative bg-stone-100">
                   <img 
-                    src="/Employee Photos/Shraddha manandhar.jpeg" 
+                    src="/employee-photos/shraddha_manandhar.jpeg" 
                     alt="Shraddha Manandhar" 
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"
@@ -369,7 +369,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               <div>
                 <div className="h-52 overflow-hidden relative bg-stone-100">
                   <img 
-                    src="/Employee Photos/Bimal Chaudhary.jpeg" 
+                    src="/employee-photos/bimal_chaudhary.jpeg" 
                     alt="Bimal Chaudhary" 
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"
@@ -396,7 +396,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               <div>
                 <div className="h-52 overflow-hidden relative bg-stone-100">
                   <img 
-                    src="/Employee Photos/Ramesh Shrestha.jpeg" 
+                    src="/employee-photos/ramesh_shrestha.jpeg" 
                     alt="Ramesh Shrestha" 
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"
@@ -423,7 +423,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               <div>
                 <div className="h-52 overflow-hidden relative bg-stone-100">
                   <img 
-                    src="/Employee Photos/Bikas Kumar Mandal.png" 
+                    src="/employee-photos/bikas_kumar_mandal.png" 
                     alt="Bikash Mandal" 
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"

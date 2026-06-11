@@ -18,9 +18,10 @@ async function startServer() {
     res.redirect(301, "/favicon.svg");
   });
 
-  // Serve Employee Photos directory statically (handles both normal spaces and %20 URL encodings)
-  app.use("/Employee Photos", express.static(path.join(process.cwd(), "Employee Photos")));
-  app.use("/Employee%20Photos", express.static(path.join(process.cwd(), "Employee Photos")));
+  // Serve employee-photos directory statically
+  app.use("/employee-photos", express.static(path.join(process.cwd(), "public/employee-photos")));
+  app.use("/Employee Photos", express.static(path.join(process.cwd(), "public/employee-photos")));
+  app.use("/Employee%20Photos", express.static(path.join(process.cwd(), "public/employee-photos")));
 
   // API Route for Contact Form
   app.post("/api/contact", async (req, res) => {

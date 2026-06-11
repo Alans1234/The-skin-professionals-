@@ -217,7 +217,7 @@ export const INITIAL_TESTIMONIALS: Testimonial[] = [
     id: 'test-1',
     author: 'Shraddha Manandhar',
     role: 'HQ Kathmandu Field Sales Officer, The Skin Professionals Nepal',
-    avatar: '/Employee Photos/Shraddha manandhar.jpeg',
+    avatar: '/employee-photos/shraddha_manandhar.jpeg',
     content: "Working on the field with top skin clinics and dermatologist partners across Kathmandu, the professional feedback for Moistcom Lite and Sunco 50 is incredible. Our formulas are custom-engineered for South Asian lipid barriers and local climate conditions.",
     rating: 5,
     featured: true
@@ -226,7 +226,7 @@ export const INITIAL_TESTIMONIALS: Testimonial[] = [
     id: 'test-2',
     author: 'Priyanshu Maharjan',
     role: 'HQ Kathmandu Field Sales Officer, The Skin Professionals Nepal',
-    avatar: '/Employee Photos/Priyanshu Maharjan.jpg',
+    avatar: '/employee-photos/priyanshu_maharjan.jpg',
     content: "We collaborate closely with dozens of clinical clinics and pharmacies to distribute authentic active formulations. Clients are continually amazed at how quickly Moistcom Lite restores moisture balance and how Sunco 50 prevents solar hyperpigmentation.",
     rating: 5,
     featured: true
@@ -235,7 +235,7 @@ export const INITIAL_TESTIMONIALS: Testimonial[] = [
     id: 'test-3',
     author: 'Bimal Chaudhary',
     role: 'Nepalgunj Sector Field Officer, The Skin Professionals Nepal',
-    avatar: '/Employee Photos/Bimal Chaudhary.jpeg',
+    avatar: '/employee-photos/bimal_chaudhary.jpeg',
     content: "In the intense, hot climate of the Nepalgunj sector, heavy skincare fails. Our non-greasy formulations control excess sebum, protect from dust congestion, and maintain a resilient barrier. It is a genuine breakthrough for our regional clinics.",
     rating: 5,
     featured: true
