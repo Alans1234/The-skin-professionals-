@@ -2,6 +2,15 @@ import React from 'react';
 import { Eye, Shield, Leaf, Heart, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
+// Import employee photos as native ES modules
+import NikeshBaralImg from '../images/nikesh_baral.jpg';
+import RameshTimilsenaImg from '../images/ramesh_timilsena.jpeg';
+import PriyanshuMaharjanImg from '../images/priyanshu_maharjan.jpg';
+import ShraddhaManandharImg from '../images/shraddha_manandhar.jpeg';
+import BimalChaudharyImg from '../images/bimal_chaudhary.jpeg';
+import RameshShresthaImg from '../images/ramesh_shrestha.jpeg';
+import BikasMandalImg from '../images/bikas_kumar_mandal.png';
+
 interface AboutUsProps {
   onNavigate: (tabId: string) => void;
 }
@@ -238,13 +247,10 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
             <div className="bg-white rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row h-full">
               <div className="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative bg-stone-100 min-h-[220px]">
                 <img 
-                  src="/employee-photos/nikesh_baral.jpg" 
+                  src={NikeshBaralImg} 
                   alt="Nikesh Baral - Co founder, CEO" 
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                   referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=300';
-                  }}
                 />
               </div>
               <div className="p-6 sm:w-3/5 flex flex-col justify-between">
@@ -271,13 +277,10 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
             <div className="bg-white rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row h-full">
               <div className="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative bg-stone-100 min-h-[220px]">
                 <img 
-                  src="/employee-photos/ramesh_timilsena.jpeg" 
+                  src={RameshTimilsenaImg} 
                   alt="Ramesh Timilsena - Sales and Marketing Manager" 
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                   referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=300';
-                  }}
                 />
               </div>
               <div className="p-6 sm:w-3/5 flex flex-col justify-between">
@@ -315,13 +318,10 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               <div>
                 <div className="h-52 overflow-hidden relative bg-stone-100">
                   <img 
-                    src="/employee-photos/priyanshu_maharjan.jpg" 
+                    src={PriyanshuMaharjanImg} 
                     alt="Priyanshu Maharjan" 
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200';
-                    }}
                   />
                 </div>
                 <div className="p-4">
@@ -342,13 +342,10 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               <div>
                 <div className="h-52 overflow-hidden relative bg-stone-100">
                   <img 
-                    src="/employee-photos/shraddha_manandhar.jpeg" 
+                    src={ShraddhaManandharImg} 
                     alt="Shraddha Manandhar" 
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200';
-                    }}
                   />
                 </div>
                 <div className="p-4">
@@ -369,13 +366,10 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               <div>
                 <div className="h-52 overflow-hidden relative bg-stone-100">
                   <img 
-                    src="/employee-photos/bimal_chaudhary.jpeg" 
+                    src={BimalChaudharyImg} 
                     alt="Bimal Chaudhary" 
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200';
-                    }}
                   />
                 </div>
                 <div className="p-4">
@@ -396,13 +390,10 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               <div>
                 <div className="h-52 overflow-hidden relative bg-stone-100">
                   <img 
-                    src="/employee-photos/ramesh_shrestha.jpeg" 
+                    src={RameshShresthaImg} 
                     alt="Ramesh Shrestha" 
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200';
-                    }}
                   />
                 </div>
                 <div className="p-4">
@@ -423,13 +414,10 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               <div>
                 <div className="h-52 overflow-hidden relative bg-stone-100">
                   <img 
-                    src="/employee-photos/bikas_kumar_mandal.png" 
+                    src={BikasMandalImg} 
                     alt="Bikash Mandal" 
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=200';
-                    }}
                   />
                 </div>
                 <div className="p-4">
