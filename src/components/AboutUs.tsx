@@ -2,15 +2,6 @@ import React from 'react';
 import { Eye, Shield, Leaf, Heart, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
-// Import employee photos as native ES modules
-import NikeshBaralImg from '../images/nikesh_baral.jpg';
-import RameshTimilsenaImg from '../images/ramesh_timilsena.jpeg';
-import PriyanshuMaharjanImg from '../images/priyanshu_maharjan.jpg';
-import ShraddhaManandharImg from '../images/shraddha_manandhar.jpeg';
-import BimalChaudharyImg from '../images/bimal_chaudhary.jpeg';
-import RameshShresthaImg from '../images/ramesh_shrestha.jpeg';
-import BikasMandalImg from '../images/bikas_kumar_mandal.png';
-
 interface AboutUsProps {
   onNavigate: (tabId: string) => void;
 }
@@ -247,7 +238,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
             <div className="bg-white rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row h-full">
               <div className="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative bg-stone-100 min-h-[220px]">
                 <img 
-                  src={NikeshBaralImg} 
+                  src="/images/nikesh_baral.jpg" 
                   alt="Nikesh Baral - Co founder, CEO" 
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                   referrerPolicy="no-referrer"
@@ -277,7 +268,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
             <div className="bg-white rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row h-full">
               <div className="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative bg-stone-100 min-h-[220px]">
                 <img 
-                  src={RameshTimilsenaImg} 
+                  src="/images/ramesh_timilsena.jpeg" 
                   alt="Ramesh Timilsena - Sales and Marketing Manager" 
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                   referrerPolicy="no-referrer"
@@ -318,7 +309,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               <div>
                 <div className="h-52 overflow-hidden relative bg-stone-100">
                   <img 
-                    src={PriyanshuMaharjanImg} 
+                    src="/images/priyanshu_maharjan.jpg" 
                     alt="Priyanshu Maharjan" 
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"
@@ -342,7 +333,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               <div>
                 <div className="h-52 overflow-hidden relative bg-stone-100">
                   <img 
-                    src={ShraddhaManandharImg} 
+                    src="/images/shraddha_manandhar.jpeg" 
                     alt="Shraddha Manandhar" 
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"
@@ -366,7 +357,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               <div>
                 <div className="h-52 overflow-hidden relative bg-stone-100">
                   <img 
-                    src={BimalChaudharyImg} 
+                    src="/images/bimal_chaudhary.jpeg" 
                     alt="Bimal Chaudhary" 
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"
@@ -390,7 +381,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               <div>
                 <div className="h-52 overflow-hidden relative bg-stone-100">
                   <img 
-                    src={RameshShresthaImg} 
+                    src="/images/ramesh_shrestha.jpeg" 
                     alt="Ramesh Shrestha" 
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"
@@ -414,7 +405,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               <div>
                 <div className="h-52 overflow-hidden relative bg-stone-100">
                   <img 
-                    src={BikasMandalImg} 
+                    src="/images/bikas_kumar_mandal.png" 
                     alt="Bikash Mandal" 
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"

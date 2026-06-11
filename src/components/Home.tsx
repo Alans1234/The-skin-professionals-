@@ -3,15 +3,6 @@ import { Sparkles, Eye, ShieldCheck, Award, ThumbsUp, ArrowRight, Quote, Image a
 import { motion, AnimatePresence } from 'motion/react';
 import { Product, Testimonial, GalleryItem } from '../types';
 
-// @ts-ignore
-import Eszt1 from '../images/Eszt1.jpg';
-// @ts-ignore
-import M6MC2 from '../images/M6MC2.jpg';
-// @ts-ignore
-import k0ijk from '../images/VpwN0.jpg';
-// @ts-ignore
-import rxO1E from '../images/rxO1E.jpg';
-
 interface HomeProps {
   products: Product[];
   testimonials: Testimonial[];
@@ -21,28 +12,28 @@ interface HomeProps {
 
 const HERO_SLIDES = [
   {
-    image: k0ijk,
+    image: '/images/VpwN0.jpg',
     tagline: "CLINICAL GRADE • PURE PLANTS",
     title: "Empower Your Dermal Health",
     subtitle: "Eco-Active Vitality Complex",
     desc: "Welcome to The Skin Professionals. Formulated with high-potency pure ingredients to make your skin glowing and healthy."
   },
   {
-    image: Eszt1,
+    image: '/images/Eszt1.jpg',
     tagline: "PURE NATURAL PLANT EXTRACTS",
     title: "Pure Botanical Peptide Catalyst",
     subtitle: "Dermatology Clinic Quality",
     desc: "Pure plant oils made to safely protect your natural skin barrier and keep it smooth."
   },
   {
-    image: rxO1E,
+    image: '/images/rxO1E.jpg',
     tagline: "ADVANCED THERAPY ACCELERATORS",
     title: "Dynamic Physiological Serums",
     subtitle: "Advanced Skin Repair",
     desc: "Deeply repairing serums made to stop dry skin and give an instant glowing look."
   },
   {
-    image: M6MC2,
+    image: '/images/M6MC2.jpg',
     tagline: "STRONG CELLULAR HYDRATION",
     title: "Strong Skin Protection",
     subtitle: "Pure Hydrating Creams",
@@ -223,7 +214,7 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
           <div className="absolute -inset-4 bg-[#FBEAEA]/55 rounded-3xl -z-10 filter blur-xl"></div>
           <div className="col-span-7 rounded-2xl overflow-hidden shadow-xl hover:scale-[1.01] transition-transform duration-500 h-[450px]">
             <img 
-              src={Eszt1} 
+              src="/images/Eszt1.jpg" 
               alt="Luxury cosmetic botanical lipids showcase" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
@@ -232,7 +223,7 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
           <div className="col-span-5 flex flex-col gap-4 justify-between">
             <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-[1.01] transition-all duration-500 h-[210px]">
               <img 
-                src={M6MC2} 
+                src="/images/M6MC2.jpg" 
                 alt="High-tech premium dermal barrier treatment"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -258,7 +249,7 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
             {/* Background Picture */}
             <div className="absolute inset-0 z-0">
               <img 
-                src={rxO1E} 
+                src="/images/rxO1E.jpg" 
                 alt="Active Phyto-Alchemical Pure Serum Concentrate" 
                 className="w-full h-full object-cover transition-all duration-[1200ms] group-hover:scale-102"
                 referrerPolicy="no-referrer"
