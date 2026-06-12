@@ -17,7 +17,7 @@ import {
 import { motion, AnimatePresence } from "motion/react";
 import { Product, Testimonial, GalleryItem } from "../types";
 
-const Eszt1 = "/images/eszt1.jpg";
+const Eszt1 = "/images/Eszt1.jpg";
 const M6MC2 = "/images/M6MC2.jpg";
 const k0ijk = "/images/VpwN0.jpg";
 const rxO1E = "/images/rxO1E.jpg";

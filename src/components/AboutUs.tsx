@@ -16,7 +16,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
       >
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/eszt1.jpg"
+            src="/images/Eszt1.jpg"
             alt="Advanced clean cosmetic laboratory settings with soft ambient lighting"
             className="w-full h-full object-cover opacity-35 filter scale-102"
             referrerPolicy="no-referrer"
