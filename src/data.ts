@@ -399,7 +399,7 @@ export const INITIAL_TESTIMONIALS: Testimonial[] = [
     id: "test-1",
     author: "Shraddha Manandhar",
     role: "HQ Kathmandu Field Sales Officer, The Skin Professionals Nepal",
-    avatar: "/Employee%20Photos/Shraddha%20manandhar.jpeg",
+    avatar: "/images/Employee%20Photos/Shraddha%20manandhar.jpeg",
     content:
       "Working on the field with top skin clinics and dermatologist partners across Kathmandu, the professional feedback for Moistcom Lite and Sunco 50 is incredible. Our formulas are custom-engineered for South Asian lipid barriers and local climate conditions.",
     rating: 5,
