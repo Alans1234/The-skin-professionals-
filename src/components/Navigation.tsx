@@ -135,7 +135,7 @@ export default function Navigation({
       className="sticky top-0 z-50 bg-[#2F7376]/85 backdrop-blur-md border-b border-brand-gold/15 font-sans"
       id="aura-navbar"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-15">
           {/* Logo with precise image matching structure: Tilted gold parallelogram + company text */}
           <div
@@ -149,7 +149,7 @@ export default function Navigation({
                 <img
                   src={logo}
                   alt="The Skin Professionals Logo"
-                  className="h-12 w-40"
+                  className="h-14 w-45"
                   onError={(e) => {
                     (e.currentTarget as HTMLImageElement).style.display =
                       "none";

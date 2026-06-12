@@ -442,134 +442,6 @@ export default function Home({
       </section>
 
       {/* 5. Benefits Section (Clinically Validated) */}
-      <section className="py-24 bg-brand-chalk" id="science-benefits-section">
-        <div className="max-w-7xl mx-auto px-4">
-          <div
-            className="text-center max-w-2xl mx-auto mb-16"
-            id="benefits-header"
-          >
-            <span className="font-sans text-xs tracking-[0.3em] text-brand-dark uppercase bg-brand-pink text-brand-dark font-bold border border-brand-pink px-3.5 py-1 rounded inline-block mb-3">
-              THE MEDICAL STANDARD
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-brand-dark tracking-tight">
-              Clinically Prescribed Biomimetic Benefits
-            </h2>
-            <div className="w-12 h-[1px] bg-brand-gold mx-auto mt-4"></div>
-          </div>
-
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-            id="benefits-grid"
-          >
-            {/* Benefit 1 */}
-            <div
-              className="bg-white p-8 rounded-2xl border border-brand-pink-dark/25 shadow-sm hover:shadow-md transition-shadow"
-              id="benefit-card-1"
-            >
-              <div className="w-12 h-12 rounded-xl bg-brand-pink flex items-center justify-center text-brand-dark mb-6">
-                <ShieldCheck className="w-6 h-6 text-brand-dark" />
-              </div>
-              <h3 className="font-serif text-lg text-brand-dark mb-3">
-                Barrier Reconstruction
-              </h3>
-              <p className="font-sans text-stone-600 text-xs leading-relaxed">
-                Repairs the epidermal lipid structure to establish skin
-                resilience and protect against urban pollutants.
-              </p>
-            </div>
-
-            {/* Benefit 2 */}
-            <div
-              className="bg-white p-8 rounded-2xl border border-brand-pink-dark/25 shadow-sm hover:shadow-md transition-shadow"
-              id="benefit-card-2"
-            >
-              <div className="w-12 h-12 rounded-xl bg-brand-pink flex items-center justify-center text-brand-dark mb-6">
-                <Sparkles className="w-6 h-6 text-brand-dark" />
-              </div>
-              <h3 className="font-serif text-lg text-brand-dark mb-3">
-                Cellular Luster
-              </h3>
-              <p className="font-sans text-stone-600 text-xs leading-relaxed">
-                Accelerates surface cell turnover rates to clear dull, gray skin
-                scales to maintain a natural blush glow.
-              </p>
-            </div>
-
-            {/* Benefit 3 */}
-            <div
-              className="bg-white p-8 rounded-2xl border border-brand-pink-dark/25 shadow-sm hover:shadow-md transition-shadow"
-              id="benefit-card-3"
-            >
-              <div className="w-12 h-12 rounded-xl bg-brand-pink flex items-center justify-center text-brand-dark mb-6">
-                <Award className="w-6 h-6 text-brand-dark" />
-              </div>
-              <h3 className="font-serif text-lg text-brand-dark mb-3">
-                Clinical Grade Assays
-              </h3>
-              <p className="font-sans text-stone-600 text-xs leading-relaxed">
-                Validated in leading private clinics to guarantee safety, zero
-                irritation triggers, and absolute physiological purity.
-              </p>
-            </div>
-
-            {/* Benefit 4 */}
-            <div
-              className="bg-white p-8 rounded-2xl border border-brand-pink-dark/25 shadow-sm hover:shadow-md transition-shadow"
-              id="benefit-card-4"
-            >
-              <div className="w-12 h-12 rounded-xl bg-brand-pink flex items-center justify-center text-brand-dark mb-6">
-                <ThumbsUp className="w-6 h-6 text-brand-dark" />
-              </div>
-              <h3 className="font-serif text-lg text-brand-dark mb-3">
-                Biocompatible Lipids
-              </h3>
-              <p className="font-sans text-stone-600 text-xs leading-relaxed">
-                Formulated utilizing clean, identical biological lipids that
-                absorb instantly without any heavy grease buildup.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Skin Analysis CTA (Cinematic Visual with prompt-responsive backgrounds) */}
-      <section
-        className="relative py-24 bg-brand-dark flex items-center justify-center text-center overflow-hidden"
-        id="skin-analysis-cta-section"
-      >
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=1200"
-            alt="Hydrating water and serum formulation"
-            className="w-full h-full object-cover opacity-15 mix-blend-overlay"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-brand-dark/80"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-transparent to-brand-dark/95"></div>
-        </div>
-
-        <div className="relative z-10 max-w-4xl mx-auto px-4">
-          <span className="font-sans text-xs tracking-[0.3em] text-brand-gold uppercase block mb-3 font-semibold">
-            EASY ONLINE SKIN TEST
-          </span>
-          <h2 className="font-serif text-3xl sm:text-5xl text-brand-chalk tracking-tight mb-6">
-            Try our quick Skin Test
-          </h2>
-          <p className="font-sans text-sm text-brand-chalk/80 max-w-xl mx-auto mb-8 font-light leading-relaxed">
-            Our easy interactive questionnaire checks your skin type, weather
-            exposure, and issues to suggest the absolute perfect routine for
-            your skin.
-          </p>
-          <button
-            onClick={() => onNavigate("analysis")}
-            id="launch-analysis-banner-cta"
-            className="px-8 py-4 bg-brand-gold hover:bg-brand-gold-dark text-brand-dark font-sans text-xs tracking-widest uppercase font-bold rounded hover:scale-105 transition-all duration-300 shadow-lg"
-          >
-            Start Easy Skin Test
-          </button>
-        </div>
-      </section>
-
       {/* 7. Testimonials Section (blending soft rose/blush backdrop highlights) */}
       <section
         className="py-24 bg-brand-chalk border-t border-brand-pink"
@@ -634,9 +506,88 @@ export default function Home({
           </div>
         </div>
       </section>
+      {/* 6. Skin Analysis CTA (Cinematic Visual with prompt-responsive backgrounds) */}
+      <section
+        className="w-full relative overflow-hidden bg-transparent"
+        id="wide-banner-showcase-section"
+      >
+        <div className="w-full">
+          {/* Panoramic Widescreen Frame rendering a pure full-width luxury clinical landscape banner image */}
+          <div className="relative w-full h-[320px] sm:h-[480px] overflow-hidden transition-all duration-500 group">
+            {/* Background Picture */}
+            <div className="absolute inset-0 z-0">
+              <img
+                src={k0ijk}
+                alt="Active Phyto-Alchemical Pure Serum Concentrate"
+                className="w-full h-full object-cover transition-all duration-[1200ms] group-hover:scale-102"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+              {/* Decorative baby pink overlay beam */}
+              <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-brand-gold via-brand-pink-dark to-brand-chalk"></div>
+            </div>
+
+            {/* Static Elegant Overlay Caption */}
+            <div className="absolute inset-x-0 bottom-0 z-10 p-8 sm:p-12 text-left bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+              <div className="max-w-7xl mx-auto px-4">
+                <span className="font-mono text-[9px] sm:text-xs tracking-[0.4em] text-brand-gold uppercase font-bold mb-2 block">
+                  ADVANCED UV PROTECTION
+                </span>
+
+                <h3 className="font-serif text-2xl sm:text-4xl text-white font-light tracking-tight max-w-2xl mb-3">
+                  Daily Broad-Spectrum Sunscreen Protection.
+                </h3>
+
+                <p className="font-sans text-[11px] sm:text-xs text-white/90 max-w-xl font-light leading-relaxed">
+                  Lightweight SPF protection enriched with skin-loving
+                  antioxidants and hydrating botanicals to defend against
+                  harmful UVA & UVB rays while keeping your complexion smooth,
+                  radiant, and healthy every day.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        className="relative py-24 bg-brand-dark flex items-center justify-center text-center overflow-hidden"
+        id="skin-analysis-cta-section"
+      >
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=1200"
+            alt="Hydrating water and serum formulation"
+            className="w-full h-full object-cover opacity-15 mix-blend-overlay"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-brand-dark/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-transparent to-brand-dark/95"></div>
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto px-4">
+          <span className="font-sans text-xs tracking-[0.3em] text-brand-gold uppercase block mb-3 font-semibold">
+            EASY ONLINE SKIN TEST
+          </span>
+          <h2 className="font-serif text-3xl sm:text-5xl text-brand-chalk tracking-tight mb-6">
+            Try our quick Skin Test
+          </h2>
+          <p className="font-sans text-sm text-brand-chalk/80 max-w-xl mx-auto mb-8 font-light leading-relaxed">
+            Our easy interactive questionnaire checks your skin type, weather
+            exposure, and issues to suggest the absolute perfect routine for
+            your skin.
+          </p>
+          <button
+            onClick={() => onNavigate("analysis")}
+            id="launch-analysis-banner-cta"
+            className="px-8 py-4 bg-brand-gold hover:bg-brand-gold-dark text-brand-dark font-sans text-xs tracking-widest uppercase font-bold rounded hover:scale-105 transition-all duration-300 shadow-lg"
+          >
+            Start Easy Skin Test
+          </button>
+        </div>
+      </section>
 
       {/* 8. Gallery / Portfolio Preview Section */}
-      <section
+      {/* <section
         className="py-24 bg-brand-dark text-brand-chalk"
         id="gallery-preview-section"
       >
@@ -685,7 +636,7 @@ export default function Home({
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 8.5. Dynamic SEO & Clinical FAQ Accordion Section (Crawlable Rich Text for Insane Search Rankings) */}
       <section
