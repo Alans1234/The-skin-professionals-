@@ -132,7 +132,7 @@ export default function Contact({
       >
         <div className="absolute inset-0 z-0">
           <img
-            src="public/images/contact.png"
+            src="/images/contact.png"
             alt="Scientific skincare formulations contact header pattern"
             className="w-full h-full object-cover opacity-35 filter scale-102"
             referrerPolicy="no-referrer"
