@@ -8,12 +8,12 @@ import {
   GalleryItem,
 } from "./types";
 
-const RenewImg = "public/images/renew.jpg";
-const GoodMoistureImg = "public/images/GoodMoisture.jpg";
+const RenewImg = "/images/renew.jpg";
+const GoodMoistureImg = "/images/GoodMoisture.jpg";
 
-const MoistcomImg = "public/images/112A4432.jpg";
-const SuncoImg = "public/images/Sunco.jpg";
-const FluideImg = "public/images/fluide.jpg";
+const MoistcomImg = "/images/112A4432.jpg";
+const SuncoImg = "/images/Sunco.jpg";
+const FluideImg = "/images/fluide.jpg";
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
@@ -399,7 +399,7 @@ export const INITIAL_TESTIMONIALS: Testimonial[] = [
     id: "test-1",
     author: "Shraddha Manandhar",
     role: "HQ Kathmandu Field Sales Officer, The Skin Professionals Nepal",
-    avatar: "/images/Employee%20Photos/Shraddha%20manandhar.jpeg",
+    avatar: "/images/employeePhotos/shraddhamanandhar.jpeg",
     content:
       "Working on the field with top skin clinics and dermatologist partners across Kathmandu, the professional feedback for Moistcom Lite and Sunco 50 is incredible. Our formulas are custom-engineered for South Asian lipid barriers and local climate conditions.",
     rating: 5,
@@ -409,7 +409,7 @@ export const INITIAL_TESTIMONIALS: Testimonial[] = [
     id: "test-2",
     author: "Priyanshu Maharjan",
     role: "HQ Kathmandu Field Sales Officer, The Skin Professionals Nepal",
-    avatar: "/public/images/Employee%20Photos/Priyanshu%20Maharjan.jpg",
+    avatar: "/images/employeePhotos/priyanshuMaharjan.jpg",
     content:
       "We collaborate closely with dozens of clinical clinics and pharmacies to distribute authentic active formulations. Clients are continually amazed at how quickly Moistcom Lite restores moisture balance and how Sunco 50 prevents solar hyperpigmentation.",
     rating: 5,
@@ -419,7 +419,7 @@ export const INITIAL_TESTIMONIALS: Testimonial[] = [
     id: "test-3",
     author: "Bimal Chaudhary",
     role: "Nepalgunj Sector Field Officer, The Skin Professionals Nepal",
-    avatar: "/public/images/Employee%20Photos/Bimal%20Chaudhary.jpeg",
+    avatar: "/images/employeePhotos/bimalChaudhary.jpeg",
     content:
       "In the intense, hot climate of the Nepalgunj sector, heavy skincare fails. Our non-greasy formulations control excess sebum, protect from dust congestion, and maintain a resilient barrier. It is a genuine breakthrough for our regional clinics.",
     rating: 5,

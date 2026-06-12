@@ -68,7 +68,7 @@ export default function Products({ products, onNavigate }: ProductsProps) {
         {/* Cinematic rich background blur & Unsplash premium skincare texture */}
         <div className="absolute inset-0 z-0">
           <img
-            src="public/images/M6MC2.jpg"
+            src="/images/M6MC2.jpg"
             alt="Physiological formulations backdrop"
             className="w-full h-full object-cover opacity-35 filter scale-102"
             referrerPolicy="no-referrer"
