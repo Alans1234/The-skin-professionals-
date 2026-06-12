@@ -103,7 +103,7 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
     <div id="contact-view" className="bg-[#fafaf9] text-[#1c1c1a] min-h-screen">
       
       {/* Elevated Header Banner */}
-      <section className="relative py-28 bg-[#0A1C26] text-center overflow-hidden" id="contact-header">
+      <section className="relative py-28 bg-brand-dark text-center overflow-hidden" id="contact-header">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=1600" 
@@ -111,26 +111,26 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
             className="w-full h-full object-cover opacity-35 filter scale-102"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A1C26]/90 via-[#0A1C26]/75 to-[#0A1C26]/45"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/75 to-brand-dark/45"></div>
           
-          <div className="absolute top-10 left-1/4 w-[400px] h-[400px] bg-[#E5EDA8]/5 rounded-full blur-[110px] mix-blend-screen pointer-events-none"></div>
-          <div className="absolute bottom-10 right-1/4 w-[400px] h-[400px] bg-[#FBEAEA]/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
+          <div className="absolute top-10 left-1/4 w-[400px] h-[400px] bg-brand-gold/5 rounded-full blur-[110px] mix-blend-screen pointer-events-none"></div>
+          <div className="absolute bottom-10 right-1/4 w-[400px] h-[400px] bg-brand-pink/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <span className="font-sans text-[10px] sm:text-xs tracking-[0.5em] text-[#E5EDA8] uppercase bg-white/10 border border-white/10 px-4 py-1.5 rounded-full inline-block mb-4 font-semibold backdrop-blur-md">
+          <span className="font-sans text-[10px] sm:text-xs tracking-[0.5em] text-brand-gold uppercase bg-white/10 border border-white/10 px-4 py-1.5 rounded-full inline-block mb-4 font-semibold backdrop-blur-md">
             BESPOKE COMMUNICATIONS
           </span>
           <h1 className="font-serif text-4xl sm:text-6xl text-white tracking-tight leading-[1.1] mb-5">
             The Private <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E5EDA8] via-[#F3BCBC] to-[#FCFAF6] italic font-light">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-brand-pink-dark to-brand-chalk italic font-light">
               Concierge Office
             </span>
           </h1>
           <p className="font-sans text-xs sm:text-sm text-stone-300 max-w-xl mx-auto tracking-widest uppercase mb-2">
             ESTABLISH CONTACT WITH THE SKIN PROFESSIONALS LABS & CLINICAL DISTRIBUTORS
           </p>
-          <div className="w-16 h-[1px] bg-gradient-to-r from-[#E5EDA8] via-[#F3BCBC] to-transparent mx-auto mt-6"></div>
+          <div className="w-16 h-[1px] bg-gradient-to-r from-brand-gold via-brand-pink-dark to-transparent mx-auto mt-6"></div>
         </div>
       </section>
 
@@ -140,10 +140,10 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
         {/* Column Left: Contact Details */}
         <div className="lg:col-span-4 space-y-10" id="contact-details-panel">
           <div>
-            <span className="font-sans text-xs tracking-[0.3em] text-[#0A1C26] uppercase block mb-3 font-semibold">
+            <span className="font-sans text-xs tracking-[0.3em] text-brand-dark uppercase block mb-3 font-semibold">
               Corporate Desk
             </span>
-            <h2 className="font-serif text-2xl sm:text-3xl text-[#0A1C26] tracking-tight mb-4 font-light">
+            <h2 className="font-serif text-2xl sm:text-3xl text-brand-dark tracking-tight mb-4 font-light">
               We look forward to guiding your skin path.
             </h2>
             <p className="font-sans text-stone-600 text-xs sm:text-sm leading-relaxed font-light">
@@ -154,11 +154,11 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
           <div className="space-y-6" id="contact-items">
             
              <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#0A1C26]/5 flex items-center justify-center text-[#0A1C26]" id="icon-map">
-                <MapPin className="w-5 h-5 text-[#E5EDA8]" />
+              <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-brand-dark/5 flex items-center justify-center text-brand-dark" id="icon-map">
+                <MapPin className="w-5 h-5 text-brand-gold" />
               </div>
               <div>
-                <h4 className="font-serif text-sm text-[#0A1C26] font-semibold">Durbar Marg Atelier</h4>
+                <h4 className="font-serif text-sm text-brand-dark font-semibold">Durbar Marg Atelier</h4>
                 <p className="font-sans text-stone-500 text-xs leading-relaxed">
                   Kathmandu, Nepal
                 </p>
@@ -166,11 +166,11 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#0A1C26]/5 flex items-center justify-center text-[#0A1C26]" id="icon-phone">
-                <Phone className="w-5 h-5 text-[#E5EDA8]" />
+              <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-brand-dark/5 flex items-center justify-center text-brand-dark" id="icon-phone">
+                <Phone className="w-5 h-5 text-brand-gold" />
               </div>
               <div>
-                <h4 className="font-serif text-sm text-[#0A1C26] font-semibold">Virtual Care Desk</h4>
+                <h4 className="font-serif text-sm text-brand-dark font-semibold">Virtual Care Desk</h4>
                 <p className="font-sans text-stone-500 text-xs leading-relaxed">
                   Mon - Sat, 09:00 - 18:00 NPT <br />
                   +977 9709157340
@@ -179,11 +179,11 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#0A1C26]/5 flex items-center justify-center text-[#0A1C26]" id="icon-mail">
-                <Mail className="w-5 h-5 text-[#E5EDA8]" />
+              <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-brand-dark/5 flex items-center justify-center text-brand-dark" id="icon-mail">
+                <Mail className="w-5 h-5 text-brand-gold" />
               </div>
               <div>
-                <h4 className="font-serif text-sm text-[#0A1C26] font-semibold">Email Correspondence</h4>
+                <h4 className="font-serif text-sm text-brand-dark font-semibold">Email Correspondence</h4>
                 <p className="font-sans text-stone-500 text-xs leading-relaxed">
                   Official Desk: skinprofessionals.2023@gmail.com
                 </p>
@@ -195,9 +195,9 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
           {/* Social links block */}
           <div className="pt-6 border-t border-stone-250/60" id="social-brief">
             <h4 className="font-serif text-xs text-stone-400 uppercase tracking-widest mb-4">Social campaigns</h4>
-            <div className="flex space-x-4 font-sans text-xs uppercase tracking-wider text-[#0A1C26] font-semibold" id="social-channels">
-              <span className="hover:text-[#E5EDA8] cursor-pointer">Instagram</span>
-              <span className="hover:text-[#E5EDA8] cursor-pointer font-serif">AURA Nepal</span>
+            <div className="flex space-x-4 font-sans text-xs uppercase tracking-wider text-brand-dark font-semibold" id="social-channels">
+              <span className="hover:text-brand-gold cursor-pointer">Instagram</span>
+              <span className="hover:text-brand-gold cursor-pointer font-serif">AURA Nepal</span>
             </div>
           </div>
 
@@ -206,7 +206,7 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
         {/* Column Right: Interactive Contact Form */}
         <div className="lg:col-span-8 bg-white p-8 sm:p-12 rounded-3xl border border-stone-200/60 shadow-sm" id="contact-form-panel">
           
-          <h3 className="font-serif text-xl sm:text-2xl text-[#0A1C26] mb-1 font-light">Submit a Digital Inquiry</h3>
+          <h3 className="font-serif text-xl sm:text-2xl text-brand-dark mb-1 font-light">Submit a Digital Inquiry</h3>
           <p className="font-sans text-stone-500 text-xs mb-8">
             Your notes are securely treated by our lead dermo-physicians in Kathmandu within 24 hours.
           </p>
@@ -243,7 +243,7 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
                   value={formData.name}
                   onChange={(e) => setFormData(p => ({ ...p, name: e.target.value }))}
                   placeholder="Eleanor Vance"
-                  className="bg-[#fafaf9] border border-stone-200/80 rounded-xl p-3 text-xs tracking-wider font-sans focus:outline-none focus:border-[#0A1C26] focus:ring-1 focus:ring-[#0A1C26]/25"
+                  className="bg-[#fafaf9] border border-stone-200/80 rounded-xl p-3 text-xs tracking-wider font-sans focus:outline-none focus:border-brand-dark focus:ring-1 focus:ring-brand-dark/25"
                   required
                 />
               </div>
@@ -255,7 +255,7 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
                   value={formData.email}
                   onChange={(e) => setFormData(p => ({ ...p, email: e.target.value }))}
                   placeholder="eleanor@vance.org"
-                  className="bg-[#fafaf9] border border-stone-200/80 rounded-xl p-3 text-xs tracking-wider font-sans focus:outline-none focus:border-[#0A1C26] focus:ring-1 focus:ring-[#0A1C26]/25"
+                  className="bg-[#fafaf9] border border-stone-200/80 rounded-xl p-3 text-xs tracking-wider font-sans focus:outline-none focus:border-brand-dark focus:ring-1 focus:ring-brand-dark/25"
                   required
                 />
               </div>
@@ -269,20 +269,20 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
                 value={formData.subject}
                 onChange={(e) => setFormData(p => ({ ...p, subject: e.target.value }))}
                 placeholder="Request for private skin audit critique / Spa distribution"
-                className="bg-[#fafaf9] border border-stone-200/80 rounded-xl p-3 text-xs tracking-wider font-sans focus:outline-none focus:border-[#0A1C26] focus:ring-1 focus:ring-[#0A1C26]/25"
+                className="bg-[#fafaf9] border border-stone-200/80 rounded-xl p-3 text-xs tracking-wider font-sans focus:outline-none focus:border-brand-dark focus:ring-1 focus:ring-brand-dark/25"
                 required
               />
             </div>
 
             {/* Message field */}
             <div className="flex flex-col">
-              <label className="font-sans text-[10px] uppercase tracking-widest text-[#0A1C26]/60 mb-2 font-bold">Detailed Notes or Clinical Questionnaire answers *</label>
+              <label className="font-sans text-[10px] uppercase tracking-widest text-brand-dark/60 mb-2 font-bold">Detailed Notes or Clinical Questionnaire answers *</label>
               <textarea 
                 rows={5}
                 value={formData.message}
                 onChange={(e) => setFormData(p => ({ ...p, message: e.target.value }))}
                 placeholder="Please write down your detailed skin concerns, current symptoms, active retinoid frequencies, or clinic partnership proposals..."
-                className="bg-[#fafaf9] border border-stone-200/80 rounded-xl p-3 text-xs tracking-wider font-sans focus:outline-none focus:border-[#0A1C26] focus:ring-1 focus:ring-[#0A1C26]/25 resize-none"
+                className="bg-[#fafaf9] border border-stone-200/80 rounded-xl p-3 text-xs tracking-wider font-sans focus:outline-none focus:border-brand-dark focus:ring-1 focus:ring-brand-dark/25 resize-none"
                 required
               />
             </div>
@@ -291,7 +291,7 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
             <button
               type="submit"
               disabled={submitting}
-              className="w-full py-4 bg-[#0A1C26] hover:bg-[#0A1C26]/90 text-white hover:text-[#E5EDA8] font-sans text-xs tracking-widest uppercase font-bold rounded-xl flex items-center justify-center space-x-2 transition-all duration-300 shadow cursor-pointer"
+              className="w-full py-4 bg-brand-dark hover:bg-brand-dark/90 text-white hover:text-brand-gold font-sans text-xs tracking-widest uppercase font-bold rounded-xl flex items-center justify-center space-x-2 transition-all duration-300 shadow cursor-pointer"
             >
               <Send className="w-4.5 h-4.5" />
               <span>{submitting ? 'TRANSMITTING TO ACTIVE GRID...' : 'SUBMIT DIRECT SECURE INQUIRY'}</span>
@@ -304,14 +304,14 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
       </section>
 
       {/* Modern Interactive Representatives & Field Sales Directory */}
-      <section className="py-24 bg-[#FCFAF6] border-t border-stone-200/60" id="representatives-directory-section">
+      <section className="py-24 bg-brand-chalk border-t border-stone-200/60" id="representatives-directory-section">
         <div className="max-w-7xl mx-auto px-4">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="font-sans text-[10px] tracking-[0.3em] text-[#0A1C26] uppercase bg-stone-200/50 border border-stone-200/80 px-3 py-1 rounded-full inline-block mb-3 font-semibold">
+            <span className="font-sans text-[10px] tracking-[0.3em] text-brand-dark uppercase bg-stone-200/50 border border-stone-200/80 px-3 py-1 rounded-full inline-block mb-3 font-semibold">
               ORGANIZATIONAL CONNECT
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-[#0A1C26] tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl text-brand-dark tracking-tight">
               Direct Contact & Field Support
             </h2>
             <div className="w-12 h-[1.5px] bg-[#c5a880] mx-auto mt-4 mb-3"></div>
@@ -324,11 +324,11 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
           <div className="bg-white rounded-3xl border border-stone-200/70 shadow-sm overflow-hidden" id="directory-container">
             <div className="px-6 py-5 bg-stone-50 border-b border-stone-200/60 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div>
-                <h3 className="font-serif text-base text-[#0A1C26] font-semibold">Representative Register</h3>
+                <h3 className="font-serif text-base text-brand-dark font-semibold">Representative Register</h3>
                 <p className="font-sans text-stone-400 text-[11px]">Authorized commercial representatives in Nepal</p>
               </div>
               <div className="font-sans text-[10px] text-stone-500 bg-white border border-stone-200 px-3 py-1.5 rounded-lg font-medium">
-                Active Listings: <span className="font-mono text-[#0A1C26] font-bold">8 Officers</span>
+                Active Listings: <span className="font-mono text-brand-dark font-bold">8 Officers</span>
               </div>
             </div>
 
@@ -349,11 +349,11 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
                   <tr className="hover:bg-stone-50/80 transition-colors">
                     <td className="py-4 px-6 font-mono text-stone-400 text-center font-bold">01</td>
                     <td className="py-4 px-6">
-                      <div className="font-serif text-sm font-bold text-[#0A1C26]">Nikesh Baral</div>
+                      <div className="font-serif text-sm font-bold text-brand-dark">Nikesh Baral</div>
                       <div className="text-[10px] text-stone-400">Executive Administration</div>
                     </td>
                     <td className="py-4 px-6">
-                      <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-stone-100 text-[#0A1C26] text-[10px] font-medium font-mono">
+                      <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-stone-100 text-brand-dark text-[10px] font-medium font-mono">
                         <MapPin className="w-3 h-3 text-stone-400" />
                         <span>Corporate HQ</span>
                       </span>
@@ -364,7 +364,7 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
                     <td className="py-4 px-6 text-right">
                       <a 
                         href="tel:9709157230" 
-                        className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-[#0A1C26]/5 hover:bg-[#0A1C26] hover:text-[#E5EDA8] text-[#0A1C26] rounded-lg font-semibold transition-all duration-200 cursor-pointer text-[11px]"
+                        className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-brand-dark/5 hover:bg-brand-dark hover:text-brand-gold text-brand-dark rounded-lg font-semibold transition-all duration-200 cursor-pointer text-[11px]"
                       >
                         <Phone className="w-3 h-3" />
                         <span>+977 9709157230</span>
@@ -376,11 +376,11 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
                   <tr className="hover:bg-stone-50/80 transition-colors">
                     <td className="py-4 px-6 font-mono text-stone-400 text-center font-bold">02</td>
                     <td className="py-4 px-6">
-                      <div className="font-serif text-sm font-bold text-[#0A1C26]">Ramesh Timilsena</div>
+                      <div className="font-serif text-sm font-bold text-brand-dark">Ramesh Timilsena</div>
                       <div className="text-[10px] text-stone-400">Marketing & Sales Unit</div>
                     </td>
                     <td className="py-4 px-6">
-                      <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-stone-100 text-[#0A1C26] text-[10px] font-medium font-mono">
+                      <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-stone-100 text-brand-dark text-[10px] font-medium font-mono">
                         <MapPin className="w-3 h-3 text-stone-400" />
                         <span>National / Kathmandu</span>
                       </span>
@@ -391,7 +391,7 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
                     <td className="py-4 px-6 text-right">
                       <a 
                         href="tel:9709157340" 
-                        className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-[#0A1C26]/5 hover:bg-[#0A1C26] hover:text-[#E5EDA8] text-[#0A1C26] rounded-lg font-semibold transition-all duration-200 cursor-pointer text-[11px]"
+                        className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-brand-dark/5 hover:bg-brand-dark hover:text-brand-gold text-brand-dark rounded-lg font-semibold transition-all duration-200 cursor-pointer text-[11px]"
                       >
                         <Phone className="w-3 h-3" />
                         <span>+977 9709157340</span>
@@ -403,11 +403,11 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
                   <tr className="hover:bg-stone-50/80 transition-colors">
                     <td className="py-4 px-6 font-mono text-stone-400 text-center font-bold">03</td>
                     <td className="py-4 px-6">
-                      <div className="font-serif text-sm font-bold text-[#0A1C26]">Priyanshu Maharjan</div>
+                      <div className="font-serif text-sm font-bold text-brand-dark">Priyanshu Maharjan</div>
                       <div className="text-[10px] text-stone-400">Field Clinical Sales</div>
                     </td>
                     <td className="py-4 px-6 text-stone-600">
-                      <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-stone-100 text-[#0A1C26] text-[10px] font-medium font-mono">
+                      <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-stone-100 text-brand-dark text-[10px] font-medium font-mono">
                         <MapPin className="w-3 h-3 text-stone-400" />
                         <span>Kathmandu Valley</span>
                       </span>
@@ -418,7 +418,7 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
                     <td className="py-4 px-6 text-right">
                       <a 
                         href="tel:9802351488" 
-                        className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-[#0A1C26]/5 hover:bg-[#0A1C26] hover:text-[#E5EDA8] text-[#0A1C26] rounded-lg font-semibold transition-all duration-200 cursor-pointer text-[11px]"
+                        className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-brand-dark/5 hover:bg-brand-dark hover:text-brand-gold text-brand-dark rounded-lg font-semibold transition-all duration-200 cursor-pointer text-[11px]"
                       >
                         <Phone className="w-3 h-3" />
                         <span>+977 9802351488</span>
@@ -430,11 +430,11 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
                   <tr className="hover:bg-stone-50/80 transition-colors">
                     <td className="py-4 px-6 font-mono text-stone-400 text-center font-bold">04</td>
                     <td className="py-4 px-6">
-                      <div className="font-serif text-sm font-bold text-[#0A1C26]">Shraddha Manandhar</div>
+                      <div className="font-serif text-sm font-bold text-brand-dark">Shraddha Manandhar</div>
                       <div className="text-[10px] text-stone-400">Field Clinical Sales</div>
                     </td>
                     <td className="py-4 px-6 text-stone-600">
-                      <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-stone-100 text-[#0A1C26] text-[10px] font-medium font-mono">
+                      <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-stone-100 text-brand-dark text-[10px] font-medium font-mono">
                         <MapPin className="w-3 h-3 text-stone-400" />
                         <span>Kathmandu Valley</span>
                       </span>
@@ -445,7 +445,7 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
                     <td className="py-4 px-6 text-right">
                       <a 
                         href="tel:9818920668" 
-                        className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-[#0A1C26]/5 hover:bg-[#0A1C26] hover:text-[#E5EDA8] text-[#0A1C26] rounded-lg font-semibold transition-all duration-200 cursor-pointer text-[11px]"
+                        className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-brand-dark/5 hover:bg-brand-dark hover:text-brand-gold text-brand-dark rounded-lg font-semibold transition-all duration-200 cursor-pointer text-[11px]"
                       >
                         <Phone className="w-3 h-3" />
                         <span>+977 9818920668</span>
@@ -457,11 +457,11 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
                   <tr className="hover:bg-stone-50/80 transition-colors">
                     <td className="py-4 px-6 font-mono text-stone-400 text-center font-bold">05</td>
                     <td className="py-4 px-6">
-                      <div className="font-serif text-sm font-bold text-[#0A1C26]">Bimal Chaudhary</div>
+                      <div className="font-serif text-sm font-bold text-brand-dark">Bimal Chaudhary</div>
                       <div className="text-[10px] text-stone-400">Field Clinical Sales</div>
                     </td>
                     <td className="py-4 px-6 text-stone-600">
-                      <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-stone-100 text-[#0A1C26] text-[10px] font-medium font-mono">
+                      <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-stone-100 text-brand-dark text-[10px] font-medium font-mono">
                         <MapPin className="w-3 h-3 text-[#c5a880]" />
                         <span>Nepalgunj Sector</span>
                       </span>
@@ -472,7 +472,7 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
                     <td className="py-4 px-6 text-right">
                       <a 
                         href="tel:9709188315" 
-                        className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-[#0A1C26]/5 hover:bg-[#0A1C26] hover:text-[#E5EDA8] text-[#0A1C26] rounded-lg font-semibold transition-all duration-200 cursor-pointer text-[11px]"
+                        className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-brand-dark/5 hover:bg-brand-dark hover:text-brand-gold text-brand-dark rounded-lg font-semibold transition-all duration-200 cursor-pointer text-[11px]"
                       >
                         <Phone className="w-3 h-3" />
                         <span>+977 9709188315</span>
@@ -484,11 +484,11 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
                   <tr className="hover:bg-stone-50/80 transition-colors">
                     <td className="py-4 px-6 font-mono text-stone-400 text-center font-bold">06</td>
                     <td className="py-4 px-6">
-                      <div className="font-serif text-sm font-bold text-[#0A1C26]">Ramesh Shrestha</div>
+                      <div className="font-serif text-sm font-bold text-brand-dark">Ramesh Shrestha</div>
                       <div className="text-[10px] text-stone-400">Field Clinical Sales</div>
                     </td>
                     <td className="py-4 px-6 text-stone-600">
-                      <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-stone-100 text-[#0A1C26] text-[10px] font-medium font-mono">
+                      <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-stone-100 text-brand-dark text-[10px] font-medium font-mono">
                         <MapPin className="w-3 h-3 text-[#c5a880]" />
                         <span>Chitwan Sector</span>
                       </span>
@@ -499,7 +499,7 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
                     <td className="py-4 px-6 text-right">
                       <a 
                         href="tel:9802351489" 
-                        className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-[#0A1C26]/5 hover:bg-[#0A1C26] hover:text-[#E5EDA8] text-[#0A1C26] rounded-lg font-semibold transition-all duration-200 cursor-pointer text-[11px]"
+                        className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-brand-dark/5 hover:bg-brand-dark hover:text-brand-gold text-brand-dark rounded-lg font-semibold transition-all duration-200 cursor-pointer text-[11px]"
                       >
                         <Phone className="w-3 h-3" />
                         <span>+977 9802351489</span>
@@ -511,11 +511,11 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
                   <tr className="hover:bg-stone-50/80 transition-colors">
                     <td className="py-4 px-6 font-mono text-stone-400 text-center font-bold">07</td>
                     <td className="py-4 px-6">
-                      <div className="font-serif text-sm font-bold text-[#0A1C26]">Bikash Mandal</div>
+                      <div className="font-serif text-sm font-bold text-brand-dark">Bikash Mandal</div>
                       <div className="text-[10px] text-stone-400">Field Clinical Sales</div>
                     </td>
                     <td className="py-4 px-6 text-stone-600">
-                      <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-stone-100 text-[#0A1C26] text-[10px] font-medium font-mono">
+                      <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-stone-100 text-brand-dark text-[10px] font-medium font-mono">
                         <MapPin className="w-3 h-3 text-[#c5a880]" />
                         <span>Biratnagar Sector</span>
                       </span>
@@ -526,7 +526,7 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
                     <td className="py-4 px-6 text-right">
                       <a 
                         href="tel:9705429614" 
-                        className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-[#0A1C26]/5 hover:bg-[#0A1C26] hover:text-[#E5EDA8] text-[#0A1C26] rounded-lg font-semibold transition-all duration-200 cursor-pointer text-[11px]"
+                        className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-brand-dark/5 hover:bg-brand-dark hover:text-brand-gold text-brand-dark rounded-lg font-semibold transition-all duration-200 cursor-pointer text-[11px]"
                       >
                         <Phone className="w-3 h-3" />
                         <span>+977 9705429614</span>
@@ -538,11 +538,11 @@ export default function Contact({ prefilledInquiry, onClearPrefill, onAddSubmiss
                   <tr className="hover:bg-stone-50/80 transition-colors">
                     <td className="py-4 px-6 font-mono text-stone-400 text-center font-bold">08</td>
                     <td className="py-4 px-6">
-                      <div className="font-serif text-sm font-bold text-[#0A1C26]">Shree Krishna Khadgi</div>
+                      <div className="font-serif text-sm font-bold text-brand-dark">Shree Krishna Khadgi</div>
                       <div className="text-[10px] text-stone-400">Logistics & Warehousing</div>
                     </td>
                     <td className="py-4 px-6 text-stone-500">
-                      <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-stone-100 text-[#0A1C26] text-[10px] font-medium font-mono">
+                      <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-stone-100 text-brand-dark text-[10px] font-medium font-mono">
                         <MapPin className="w-3 h-3 text-stone-400" />
                         <span>Central Hub</span>
                       </span>

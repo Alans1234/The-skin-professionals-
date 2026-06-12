@@ -355,25 +355,25 @@ export default function App() {
           )}
 
           {/* Elegant minimalist brand footer aligned with the header color pattern */}
-          <footer className="bg-[#0A1C26] border-t border-[#E5EDA8]/10 py-16 text-[#FCFAF6]/60 text-xs font-light" id="aura-brand-footer">
+          <footer className="bg-brand-dark border-t border-brand-gold/10 py-16 text-brand-chalk/60 text-xs font-light" id="aura-brand-footer">
             <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
               
               <div id="footer-brand">
                 <div className="flex items-center mb-4 select-none" id="footer-brand-logo">
                   {/* Golden skewed parallelogram */}
-                  <div className="w-[14px] h-[28px] bg-[#E5EDA8] -skew-x-[20deg] mr-2.5 rounded-[1px] shadow-sm flex-shrink-0"></div>
-                  <span className="font-sans text-sm font-black tracking-[0.2em] text-[#E5EDA8] uppercase">THE <span className="text-white">SKIN</span> PROFESSIONALS</span>
+                  <div className="w-[14px] h-[28px] bg-brand-gold -skew-x-[20deg] mr-2.5 rounded-[1px] shadow-sm flex-shrink-0"></div>
+                  <span className="font-sans text-sm font-black tracking-[0.2em] text-brand-gold uppercase">THE <span className="text-white">SKIN</span> PROFESSIONALS</span>
                 </div>
                 <p className="leading-relaxed mb-4">
                   Pristine dermatological formulations bridging clinical active precision with biological canvas safety.
                 </p>
                 <div className="flex flex-col space-y-3">
-                  <span className="text-[10px] text-[#F3BCBC] tracking-widest block font-mono font-semibold">Established 2026 • Private Clinique Range</span>
+                  <span className="text-[10px] text-brand-pink-dark tracking-widest block font-mono font-semibold">Established 2026 • Private Clinique Range</span>
                   <div className="flex items-center space-x-3 pt-1" id="footer-social-links">
-                    <a href="https://www.instagram.com/the_skin_professionals/" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 text-white hover:text-[#E5EDA8] rounded-full transition-all duration-300 border border-white/5 hover:border-[#E5EDA8]/30 cursor-pointer" title="Follow us on Instagram">
+                    <a href="https://www.instagram.com/the_skin_professionals/" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 text-white hover:text-brand-gold rounded-full transition-all duration-300 border border-white/5 hover:border-brand-gold/30 cursor-pointer" title="Follow us on Instagram">
                       <Instagram className="w-4 h-4" />
                     </a>
-                    <a href="https://www.facebook.com/profile.php?id=61563659194605" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 text-white hover:text-[#E5EDA8] rounded-full transition-all duration-300 border border-white/5 hover:border-[#E5EDA8]/30 cursor-pointer" title="Find us on Facebook">
+                    <a href="https://www.facebook.com/profile.php?id=61563659194605" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 text-white hover:text-brand-gold rounded-full transition-all duration-300 border border-white/5 hover:border-brand-gold/30 cursor-pointer" title="Find us on Facebook">
                       <Facebook className="w-4 h-4" />
                     </a>
                     
@@ -382,23 +382,23 @@ export default function App() {
               </div>
 
               <div id="footer-links">
-                <h4 className="font-serif text-sm text-[#E5EDA8] mb-4 uppercase tracking-widest font-normal">Quick Links</h4>
+                <h4 className="font-serif text-sm text-brand-gold mb-4 uppercase tracking-widest font-normal">Quick Links</h4>
                 <ul className="space-y-2 font-sans text-[11px] uppercase tracking-wider">
-                  <li><button onClick={() => handleNavigate('home')} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">Home</button></li>
-                  <li><button onClick={() => handleNavigate('about')} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">About Us</button></li>
-                  <li><button onClick={() => handleNavigate('products')} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">Our Products</button></li>
-                  <li><button onClick={() => handleNavigate('analysis')} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">Skin Test</button></li>
-                  <li><button onClick={() => handleNavigate('distributors')} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">Authorized Distributors</button></li>
-                  <li><button onClick={() => handleNavigate('contact')} className="hover:text-[#E5EDA8] transition-colors cursor-pointer">Contact Us</button></li>
+                  <li><button onClick={() => handleNavigate('home')} className="hover:text-brand-gold transition-colors cursor-pointer">Home</button></li>
+                  <li><button onClick={() => handleNavigate('about')} className="hover:text-brand-gold transition-colors cursor-pointer">About Us</button></li>
+                  <li><button onClick={() => handleNavigate('products')} className="hover:text-brand-gold transition-colors cursor-pointer">Our Products</button></li>
+                  <li><button onClick={() => handleNavigate('analysis')} className="hover:text-brand-gold transition-colors cursor-pointer">Skin Test</button></li>
+                  <li><button onClick={() => handleNavigate('distributors')} className="hover:text-brand-gold transition-colors cursor-pointer">Authorized Distributors</button></li>
+                  <li><button onClick={() => handleNavigate('contact')} className="hover:text-brand-gold transition-colors cursor-pointer">Contact Us</button></li>
                 </ul>
               </div>
 
               <div id="footer-address">
-                <h4 className="font-serif text-sm text-[#E5EDA8] mb-4 uppercase tracking-widest font-normal">Executive Concierge Office</h4>
+                <h4 className="font-serif text-sm text-brand-gold mb-4 uppercase tracking-widest font-normal">Executive Concierge Office</h4>
                 <p className="leading-relaxed mb-2">
                   Kathmandu, Nepal
                 </p>
-                <p className="leading-relaxed mb-4 italic text-[#FBEAEA]">
+                <p className="leading-relaxed mb-4 italic text-brand-pink">
                   Concierge Inquiries: skinprofessionals.2023@gmail.com
                 </p>
                 <p className="text-[10px] tracking-widest uppercase text-stone-500">Available globally via appointment</p>
@@ -406,11 +406,11 @@ export default function App() {
 
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between text-[10px] text-[#FCFAF6]/40" id="footer-bottom">
+            <div className="max-w-7xl mx-auto px-4 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between text-[10px] text-brand-chalk/40" id="footer-bottom">
               <p>© 2026 THE SKIN PROFESSIONALS INC. All rights reserved. Premium Clinical Botanical Curation.</p>
               <div className="flex space-x-6 mt-4 md:mt-0 font-medium tracking-[0.05em]">
-                <span className="hover:text-[#E5EDA8] cursor-pointer">Physician Guidelines</span>
-                <span className="hover:text-[#E5EDA8] cursor-pointer">Clinical Dermal Assays</span>
+                <span className="hover:text-brand-gold cursor-pointer">Physician Guidelines</span>
+                <span className="hover:text-brand-gold cursor-pointer">Clinical Dermal Assays</span>
                 <span className="hover:text-white cursor-pointer">Privacy Charter</span>
               </div>
             </div>

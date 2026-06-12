@@ -121,10 +121,10 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
   const previewGallery = gallery.slice(0, 3);
 
   return (
-    <div id="home-view" className="bg-[#FCFAF6] text-[#0A1C26]">
+    <div id="home-view" className="bg-brand-chalk text-brand-dark">
       
       {/* 1. Pure Full Width Luxury Hero Banner (Showing only the uploaded clinical images of exact size) */}
-      <section className="relative w-full h-[55vh] md:h-auto overflow-hidden bg-[#0A1C26]" id="hero-banner">
+      <section className="relative w-full h-[55vh] md:h-auto overflow-hidden bg-brand-dark" id="hero-banner">
 
       {/* Invisible spacer to naturally set the height of the container to match the image's exact aspect ratio on desktop */}
       <img
@@ -158,7 +158,7 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
         <button
           onClick={prevSlide}
           aria-label="Previous image"
-          className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-stone-800/10 bg-white/70 hover:bg-white text-[#0A1C26] flex items-center justify-center transition-all shadow-sm hover:scale-105 cursor-pointer backdrop-blur-xs"
+          className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-stone-800/10 bg-white/70 hover:bg-white text-brand-dark flex items-center justify-center transition-all shadow-sm hover:scale-105 cursor-pointer backdrop-blur-xs"
         >
           <ChevronLeft className="w-5 h-5 text-current" />
         </button>
@@ -167,7 +167,7 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
         <button
           onClick={nextSlide}
           aria-label="Next image"
-          className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-stone-800/10 bg-white/70 hover:bg-white text-[#0A1C26] flex items-center justify-center transition-all shadow-sm hover:scale-105 cursor-pointer backdrop-blur-xs"
+          className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-stone-800/10 bg-white/70 hover:bg-white text-brand-dark flex items-center justify-center transition-all shadow-sm hover:scale-105 cursor-pointer backdrop-blur-xs"
         >
           <ChevronRight className="w-5 h-5 text-current" />
         </button>
@@ -182,7 +182,7 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
               onClick={() => setCurrentSlide(idx)}
               className={`group relative w-10 h-6 sm:w-12 sm:h-8 rounded-lg sm:rounded-xl overflow-hidden transition-all duration-300 cursor-pointer ${
                 currentSlide === idx
-                  ? 'ring-2 ring-[#0A1C26] scale-105'
+                  ? 'ring-2 ring-brand-dark scale-105'
                   : 'opacity-65 hover:opacity-100'
               }`}
               aria-label={`Show image ${idx + 1}`}
@@ -197,14 +197,14 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
       {/* 2. Brand Introduction / Philosophy */}
       <section className="py-24 px-4 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center" id="company-introduction">
         <div className="lg:col-span-5" id="intro-text">
-          <span className="font-sans text-xs tracking-[0.3em] text-[#0A1C26] uppercase bg-[#FBEAEA] text-[#F3BCBC] border border-[#FBEAEA] px-3 py-1 rounded inline-block mb-4 font-bold">
+          <span className="font-sans text-xs tracking-[0.3em] text-brand-dark uppercase bg-brand-pink text-brand-pink-dark border border-brand-pink px-3 py-1 rounded inline-block mb-4 font-bold">
             THE BEST SKINCARE BRAND IN NEPAL
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#0A1C26] tracking-tight leading-snug mb-6">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-brand-dark tracking-tight leading-snug mb-6">
             Clinical Dermatology & Advanced AI Skin Analysis in Kathmandu
           </h2>
           <p className="font-sans text-stone-600 text-sm leading-relaxed mb-6 font-light">
-            Founded by veteran clinical formulators, <span className="text-[#0A1C26] font-semibold">The Skin Professionals Nepal</span> is widely recognized as the best skincare brand in Nepal and premier skin clinic. We offer the ultimate biological balance between dermatologist-quality skin products, advanced AI skin diagnostics, and gentle dermal self-care.
+            Founded by veteran clinical formulators, <span className="text-brand-dark font-semibold">The Skin Professionals Nepal</span> is widely recognized as the best skincare brand in Nepal and premier skin clinic. We offer the ultimate biological balance between dermatologist-quality skin products, advanced AI skin diagnostics, and gentle dermal self-care.
           </p>
           <p className="font-sans text-stone-600 text-sm leading-relaxed mb-8 font-light">
             We formulate premium dermo-physiological skincare solutions tailored specifically for local climates and South Asian skin conditions. Every batch is clinically verified to heal acne, protect against UV rays with advanced sunscreen gel, and rebuild your biological moisture barrier.
@@ -212,7 +212,7 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
           <button
             onClick={() => onNavigate('contact')}
             id="intro-read-story"
-            className="inline-flex items-center space-x-2 text-xs tracking-widest uppercase text-[#0A1C26] hover:text-[#F3BCBC] transition-all font-bold border-b border-[#0A1C26] pb-1"
+            className="inline-flex items-center space-x-2 text-xs tracking-widest uppercase text-brand-dark hover:text-brand-pink-dark transition-all font-bold border-b border-brand-dark pb-1"
           >
             <span>Consult Our Specialists</span>
             <ArrowRight className="w-4 h-4" />
@@ -220,7 +220,7 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
         </div>
 
         <div className="lg:col-span-7 grid grid-cols-12 gap-4 relative" id="intro-visuals">
-          <div className="absolute -inset-4 bg-[#FBEAEA]/55 rounded-3xl -z-10 filter blur-xl"></div>
+          <div className="absolute -inset-4 bg-brand-pink/55 rounded-3xl -z-10 filter blur-xl"></div>
           <div className="col-span-7 rounded-2xl overflow-hidden shadow-xl hover:scale-[1.01] transition-transform duration-500 h-[450px]">
             <img 
               src={Eszt1} 
@@ -239,10 +239,10 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
               />
             </div>
             {/* Gentle baby pink box */}
-            <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-[1.01] transition-all duration-500 h-[224px] bg-[#FBEAEA] p-6 flex flex-col justify-end text-[#0A1C26] border border-[#F3BCBC]/40">
-              <span className="font-serif text-3xl text-[#0A1C26] block mb-2 font-medium">100%</span>
-              <span className="font-sans text-xs uppercase tracking-widest text-[#0A1C26] block font-bold mb-1">Gentle Active Formula</span>
-              <p className="font-sans text-[11px] text-[#0A1C26]/70 leading-normal">
+            <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-[1.01] transition-all duration-500 h-[224px] bg-brand-pink p-6 flex flex-col justify-end text-brand-dark border border-brand-pink-dark/40">
+              <span className="font-serif text-3xl text-brand-dark block mb-2 font-medium">100%</span>
+              <span className="font-sans text-xs uppercase tracking-widest text-brand-dark block font-bold mb-1">Gentle Active Formula</span>
+              <p className="font-sans text-[11px] text-brand-dark/70 leading-normal">
                 Absorbs immediately with zero heavy feel. Completely free from synthetic fillers, sulfates, or paraben cultures.
               </p>
             </div>
@@ -265,13 +265,13 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
               {/* Decorative baby pink overlay beam */}
-              <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#E5EDA8] via-[#F3BCBC] to-[#FCFAF6]"></div>
+              <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-brand-gold via-brand-pink-dark to-brand-chalk"></div>
             </div>
 
             {/* Static Elegant Overlay Caption */}
             <div className="absolute inset-x-0 bottom-0 z-10 p-8 sm:p-12 text-left bg-gradient-to-t from-black/80 via-black/20 to-transparent">
               <div className="max-w-7xl mx-auto px-4">
-                <span className="font-mono text-[9px] sm:text-xs tracking-[0.4em] text-[#E5EDA8] uppercase font-bold mb-2 block">
+                <span className="font-mono text-[9px] sm:text-xs tracking-[0.4em] text-brand-gold uppercase font-bold mb-2 block">
                   ACTIVE NATURAL SKIN HYDRATION
                 </span>
                 <h3 className="font-serif text-2xl sm:text-4xl text-white font-light tracking-tight max-w-2xl mb-3">
@@ -287,25 +287,25 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
       </section>
 
       {/* 4. Featured Product Collections (No E-commerce) */}
-      <section className="py-24 bg-[#0A1C26] text-[#FCFAF6] relative overflow-hidden" id="featured-collections-section">
+      <section className="py-24 bg-brand-dark text-brand-chalk relative overflow-hidden" id="featured-collections-section">
         {/* Decorative backdrop elements */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#E5EDA8]/5 rounded-full blur-[120px] -z-10"></div>
-        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#FBEAEA]/5 rounded-full blur-[100px] -z-10"></div>
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-gold/5 rounded-full blur-[120px] -z-10"></div>
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-brand-pink/5 rounded-full blur-[100px] -z-10"></div>
 
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-baseline justify-between mb-16" id="products-header">
             <div>
-              <span className="font-sans text-xs tracking-[0.3em] text-[#E5EDA8] uppercase block mb-3">
+              <span className="font-sans text-xs tracking-[0.3em] text-brand-gold uppercase block mb-3">
                 THE PHYSICAL FORMULATION LIBRARY
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#FCFAF6]">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl tracking-tight text-brand-chalk">
                 Signature Formulations
               </h2>
             </div>
             <button
               onClick={() => onNavigate('products')}
               id="view-all-formulations"
-              className="mt-4 md:mt-0 inline-flex items-center space-x-2 text-xs tracking-widest uppercase text-[#E5EDA8] hover:text-[#F3BCBC] transition-colors"
+              className="mt-4 md:mt-0 inline-flex items-center space-x-2 text-xs tracking-widest uppercase text-brand-gold hover:text-brand-pink-dark transition-colors"
             >
               <span>View Full Formulations Archive</span>
               <ArrowRight className="w-4 h-4" />
@@ -317,18 +317,18 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
               <div 
                 key={p.id}
                 id={`featured-card-${p.id}`}
-                className="group flex flex-col bg-[#112A38]/60 border border-white/10 rounded-2xl overflow-hidden hover:border-[#E5EDA8]/40 transition-all duration-500 shadow-xl"
+                className="group flex flex-col bg-brand-dark-accent/60 border border-white/10 rounded-2xl overflow-hidden hover:border-brand-gold/40 transition-all duration-500 shadow-xl"
               >
                 {/* Image */}
                 <div className="h-80 overflow-hidden relative">
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1C26] to-transparent opacity-60 z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark to-transparent opacity-60 z-10"></div>
                   <img 
                     src={p.image} 
                     alt={p.name} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute top-4 right-4 bg-[#0A1C26] border border-[#E5EDA8]/30 rounded-full px-3 py-1 text-[10px] tracking-widest uppercase text-[#E5EDA8] z-20">
+                  <div className="absolute top-4 right-4 bg-brand-dark border border-brand-gold/30 rounded-full px-3 py-1 text-[10px] tracking-widest uppercase text-brand-gold z-20">
                     {p.category}
                   </div>
                 </div>
@@ -336,24 +336,24 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
                 {/* Info */}
                 <div className="p-6 flex-grow flex flex-col justify-between">
                   <div>
-                    <h3 className="font-serif text-xl text-white mb-1 group-hover:text-[#E5EDA8] transition-colors">
+                    <h3 className="font-serif text-xl text-white mb-1 group-hover:text-brand-gold transition-colors">
                       {p.name}
                     </h3>
-                    <p className="font-sans text-xs text-[#FBEAEA] tracking-wider mb-3 italic">
+                    <p className="font-sans text-xs text-brand-pink tracking-wider mb-3 italic">
                       {p.tagline}
                     </p>
-                    <p className="font-sans text-xs text-[#FCFAF6]/70 leading-relaxed line-clamp-3 mb-6">
+                    <p className="font-sans text-xs text-brand-chalk/70 leading-relaxed line-clamp-3 mb-6">
                       {p.description}
                     </p>
                   </div>
 
                   <div>
                     <div className="flex items-center justify-between border-t border-white/15 pt-4">
-                      <span className="font-serif text-lg text-[#E5EDA8]">{p.price}</span>
+                      <span className="font-serif text-lg text-brand-gold">{p.price}</span>
                       <button
                         onClick={() => onNavigate('products')}
                         id={`explore-formula-${p.id}`}
-                        className="inline-flex items-center space-x-1.5 text-[10px] tracking-widest uppercase text-[#FCFAF6] hover:text-[#F3BCBC] transition-colors"
+                        className="inline-flex items-center space-x-1.5 text-[10px] tracking-widest uppercase text-brand-chalk hover:text-brand-pink-dark transition-colors"
                       >
                         <span>Analyze Alchemy</span>
                         <ArrowRight className="w-3 h-3" />
@@ -368,59 +368,59 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
       </section>
 
       {/* 5. Benefits Section (Clinically Validated) */}
-      <section className="py-24 bg-[#FCFAF6]" id="science-benefits-section">
+      <section className="py-24 bg-brand-chalk" id="science-benefits-section">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16" id="benefits-header">
-            <span className="font-sans text-xs tracking-[0.3em] text-[#0A1C26] uppercase bg-[#FBEAEA] text-[#0A1C26] font-bold border border-[#FBEAEA] px-3.5 py-1 rounded inline-block mb-3">
+            <span className="font-sans text-xs tracking-[0.3em] text-brand-dark uppercase bg-brand-pink text-brand-dark font-bold border border-brand-pink px-3.5 py-1 rounded inline-block mb-3">
               THE MEDICAL STANDARD
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-[#0A1C26] tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl text-brand-dark tracking-tight">
               Clinically Prescribed Biomimetic Benefits
             </h2>
-            <div className="w-12 h-[1px] bg-[#E5EDA8] mx-auto mt-4"></div>
+            <div className="w-12 h-[1px] bg-brand-gold mx-auto mt-4"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="benefits-grid">
             
             {/* Benefit 1 */}
-            <div className="bg-white p-8 rounded-2xl border border-[#F3BCBC]/25 shadow-sm hover:shadow-md transition-shadow" id="benefit-card-1">
-              <div className="w-12 h-12 rounded-xl bg-[#FBEAEA] flex items-center justify-center text-[#0A1C26] mb-6">
-                <ShieldCheck className="w-6 h-6 text-[#0A1C26]" />
+            <div className="bg-white p-8 rounded-2xl border border-brand-pink-dark/25 shadow-sm hover:shadow-md transition-shadow" id="benefit-card-1">
+              <div className="w-12 h-12 rounded-xl bg-brand-pink flex items-center justify-center text-brand-dark mb-6">
+                <ShieldCheck className="w-6 h-6 text-brand-dark" />
               </div>
-              <h3 className="font-serif text-lg text-[#0A1C26] mb-3">Barrier Reconstruction</h3>
+              <h3 className="font-serif text-lg text-brand-dark mb-3">Barrier Reconstruction</h3>
               <p className="font-sans text-stone-600 text-xs leading-relaxed">
                 Repairs the epidermal lipid structure to establish skin resilience and protect against urban pollutants.
               </p>
             </div>
 
             {/* Benefit 2 */}
-            <div className="bg-white p-8 rounded-2xl border border-[#F3BCBC]/25 shadow-sm hover:shadow-md transition-shadow" id="benefit-card-2">
-              <div className="w-12 h-12 rounded-xl bg-[#FBEAEA] flex items-center justify-center text-[#0A1C26] mb-6">
-                <Sparkles className="w-6 h-6 text-[#0A1C26]" />
+            <div className="bg-white p-8 rounded-2xl border border-brand-pink-dark/25 shadow-sm hover:shadow-md transition-shadow" id="benefit-card-2">
+              <div className="w-12 h-12 rounded-xl bg-brand-pink flex items-center justify-center text-brand-dark mb-6">
+                <Sparkles className="w-6 h-6 text-brand-dark" />
               </div>
-              <h3 className="font-serif text-lg text-[#0A1C26] mb-3">Cellular Luster</h3>
+              <h3 className="font-serif text-lg text-brand-dark mb-3">Cellular Luster</h3>
               <p className="font-sans text-stone-600 text-xs leading-relaxed">
                 Accelerates surface cell turnover rates to clear dull, gray skin scales to maintain a natural blush glow.
               </p>
             </div>
 
             {/* Benefit 3 */}
-            <div className="bg-white p-8 rounded-2xl border border-[#F3BCBC]/25 shadow-sm hover:shadow-md transition-shadow" id="benefit-card-3">
-              <div className="w-12 h-12 rounded-xl bg-[#FBEAEA] flex items-center justify-center text-[#0A1C26] mb-6">
-                <Award className="w-6 h-6 text-[#0A1C26]" />
+            <div className="bg-white p-8 rounded-2xl border border-brand-pink-dark/25 shadow-sm hover:shadow-md transition-shadow" id="benefit-card-3">
+              <div className="w-12 h-12 rounded-xl bg-brand-pink flex items-center justify-center text-brand-dark mb-6">
+                <Award className="w-6 h-6 text-brand-dark" />
               </div>
-              <h3 className="font-serif text-lg text-[#0A1C26] mb-3">Clinical Grade Assays</h3>
+              <h3 className="font-serif text-lg text-brand-dark mb-3">Clinical Grade Assays</h3>
               <p className="font-sans text-stone-600 text-xs leading-relaxed">
                 Validated in leading private clinics to guarantee safety, zero irritation triggers, and absolute physiological purity.
               </p>
             </div>
 
             {/* Benefit 4 */}
-            <div className="bg-white p-8 rounded-2xl border border-[#F3BCBC]/25 shadow-sm hover:shadow-md transition-shadow" id="benefit-card-4">
-              <div className="w-12 h-12 rounded-xl bg-[#FBEAEA] flex items-center justify-center text-[#0A1C26] mb-6">
-                <ThumbsUp className="w-6 h-6 text-[#0A1C26]" />
+            <div className="bg-white p-8 rounded-2xl border border-brand-pink-dark/25 shadow-sm hover:shadow-md transition-shadow" id="benefit-card-4">
+              <div className="w-12 h-12 rounded-xl bg-brand-pink flex items-center justify-center text-brand-dark mb-6">
+                <ThumbsUp className="w-6 h-6 text-brand-dark" />
               </div>
-              <h3 className="font-serif text-lg text-[#0A1C26] mb-3">Biocompatible Lipids</h3>
+              <h3 className="font-serif text-lg text-brand-dark mb-3">Biocompatible Lipids</h3>
               <p className="font-sans text-stone-600 text-xs leading-relaxed">
                 Formulated utilizing clean, identical biological lipids that absorb instantly without any heavy grease buildup.
               </p>
@@ -431,7 +431,7 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
       </section>
 
       {/* 6. Skin Analysis CTA (Cinematic Visual with prompt-responsive backgrounds) */}
-      <section className="relative py-24 bg-[#0A1C26] flex items-center justify-center text-center overflow-hidden" id="skin-analysis-cta-section">
+      <section className="relative py-24 bg-brand-dark flex items-center justify-center text-center overflow-hidden" id="skin-analysis-cta-section">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=1200" 
@@ -439,24 +439,24 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
             className="w-full h-full object-cover opacity-15 mix-blend-overlay"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-[#0A1C26]/80"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1C26]/95 via-transparent to-[#0A1C26]/95"></div>
+          <div className="absolute inset-0 bg-brand-dark/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-transparent to-brand-dark/95"></div>
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4">
-          <span className="font-sans text-xs tracking-[0.3em] text-[#E5EDA8] uppercase block mb-3 font-semibold">
+          <span className="font-sans text-xs tracking-[0.3em] text-brand-gold uppercase block mb-3 font-semibold">
             EASY ONLINE SKIN TEST
           </span>
-          <h2 className="font-serif text-3xl sm:text-5xl text-[#FCFAF6] tracking-tight mb-6">
+          <h2 className="font-serif text-3xl sm:text-5xl text-brand-chalk tracking-tight mb-6">
             Try our quick Skin Test
           </h2>
-          <p className="font-sans text-sm text-[#FCFAF6]/80 max-w-xl mx-auto mb-8 font-light leading-relaxed">
+          <p className="font-sans text-sm text-brand-chalk/80 max-w-xl mx-auto mb-8 font-light leading-relaxed">
             Our easy interactive questionnaire checks your skin type, weather exposure, and issues to suggest the absolute perfect routine for your skin.
           </p>
           <button
             onClick={() => onNavigate('analysis')}
             id="launch-analysis-banner-cta"
-            className="px-8 py-4 bg-[#E5EDA8] hover:bg-[#CAD18E] text-[#0A1C26] font-sans text-xs tracking-widest uppercase font-bold rounded hover:scale-105 transition-all duration-300 shadow-lg"
+            className="px-8 py-4 bg-brand-gold hover:bg-brand-gold-dark text-brand-dark font-sans text-xs tracking-widest uppercase font-bold rounded hover:scale-105 transition-all duration-300 shadow-lg"
           >
             Start Easy Skin Test
           </button>
@@ -464,16 +464,16 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
       </section>
 
       {/* 7. Testimonials Section (blending soft rose/blush backdrop highlights) */}
-      <section className="py-24 bg-[#FCFAF6] border-t border-[#FBEAEA]" id="testimonials-section">
+      <section className="py-24 bg-brand-chalk border-t border-brand-pink" id="testimonials-section">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16" id="testimonials-header">
-            <span className="font-sans text-xs tracking-[0.3em] text-[#0A1C26] uppercase bg-[#FBEAEA] text-[#0A1C26] font-bold px-3.5 py-1 rounded inline-block mb-3">
+            <span className="font-sans text-xs tracking-[0.3em] text-brand-dark uppercase bg-brand-pink text-brand-dark font-bold px-3.5 py-1 rounded inline-block mb-3">
               CLIENT TESTIMONIALS
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-[#0A1C26] tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl text-brand-dark tracking-tight">
               Clinical Quality Experience
             </h2>
-            <div className="w-12 h-[1px] bg-[#E5EDA8] mx-auto mt-4"></div>
+            <div className="w-12 h-[1px] bg-brand-gold mx-auto mt-4"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8" id="testimonials-grid">
@@ -481,10 +481,10 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
               <div 
                 key={t.id}
                 id={`testimonial-card-${t.id}`}
-                className="bg-white p-8 rounded-2xl border border-[#FBEAEA] shadow-sm flex flex-col justify-between relative hover:border-[#F3BCBC] transition-all"
+                className="bg-white p-8 rounded-2xl border border-brand-pink shadow-sm flex flex-col justify-between relative hover:border-brand-pink-dark transition-all"
               >
                 <div>
-                  <Quote className="w-8 h-8 text-[#F3BCBC]/30 mb-6" />
+                  <Quote className="w-8 h-8 text-brand-pink-dark/30 mb-6" />
                   <p className="font-sans text-stone-600 text-xs italic leading-relaxed mb-6 font-light">
                     "{t.content}"
                   </p>
@@ -494,15 +494,15 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
                   <img 
                     src={t.avatar} 
                     alt={t.author} 
-                    className="w-12 h-12 rounded-full object-cover border border-[#F3BCBC]/40"
+                    className="w-12 h-12 rounded-full object-cover border border-brand-pink-dark/40"
                     referrerPolicy="no-referrer"
                   />
                   <div>
-                    <h4 className="font-serif text-sm text-[#0A1C26] font-semibold">{t.author}</h4>
-                    <p className="font-sans text-[10px] text-[#0A1C26] uppercase tracking-wider">{t.role}</p>
+                    <h4 className="font-serif text-sm text-brand-dark font-semibold">{t.author}</h4>
+                    <p className="font-sans text-[10px] text-brand-dark uppercase tracking-wider">{t.role}</p>
                     <div className="flex space-x-0.5 mt-1">
                       {Array.from({ length: t.rating }).map((_, i) => (
-                        <span key={i} className="text-[#E5EDA8] text-xs">★</span>
+                        <span key={i} className="text-brand-gold text-xs">★</span>
                       ))}
                     </div>
                   </div>
@@ -514,11 +514,11 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
       </section>
 
       {/* 8. Gallery / Portfolio Preview Section */}
-      <section className="py-24 bg-[#0A1C26] text-[#FCFAF6]" id="gallery-preview-section">
+      <section className="py-24 bg-brand-dark text-brand-chalk" id="gallery-preview-section">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-baseline justify-between mb-12">
             <div>
-              <span className="font-sans text-xs tracking-[0.3em] text-[#E5EDA8] uppercase block mb-3">
+              <span className="font-sans text-xs tracking-[0.3em] text-brand-gold uppercase block mb-3">
                 Cinematic Campaign Previews
               </span>
               <h2 className="font-serif text-3xl tracking-tight">Atelier Campaigns</h2>
@@ -532,7 +532,7 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
                 id={`gallery-preview-item-${img.id}`}
                 className="group relative h-96 rounded-2xl overflow-hidden shadow-xl"
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1C26]/90 via-[#0A1C26]/30 to-transparent z-10"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/30 to-transparent z-10"></div>
                 <img 
                   src={img.image} 
                   alt={img.title} 
@@ -541,11 +541,11 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
                 />
                 
                 <div className="absolute bottom-6 left-6 right-6 z-20">
-                  <span className="font-sans text-[9px] uppercase tracking-[0.25em] text-[#E5EDA8] block mb-1">
+                  <span className="font-sans text-[9px] uppercase tracking-[0.25em] text-brand-gold block mb-1">
                     {img.category}
                   </span>
-                  <h3 className="font-serif text-lg text-[#FCFAF6] mb-1">{img.title}</h3>
-                  <p className="font-sans text-[10px] text-[#FCFAF6]/70 leading-normal line-clamp-2">
+                  <h3 className="font-serif text-lg text-brand-chalk mb-1">{img.title}</h3>
+                  <p className="font-sans text-[10px] text-brand-chalk/70 leading-normal line-clamp-2">
                     {img.subtitle}
                   </p>
                 </div>
@@ -556,23 +556,23 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
       </section>
 
       {/* 8.5. Dynamic SEO & Clinical FAQ Accordion Section (Crawlable Rich Text for Insane Search Rankings) */}
-      <section className="py-24 bg-[#FCFAF6] border-t border-[#FBEAEA]" id="faq-interactive-section">
+      <section className="py-24 bg-brand-chalk border-t border-brand-pink" id="faq-interactive-section">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
             {/* FAQ Intro & SEO Focus Card */}
             <div className="lg:col-span-4 lg:sticky lg:top-28" id="faq-intro-block">
-              <span className="font-sans text-xs tracking-[0.3em] text-[#0A1C26] uppercase bg-[#FBEAEA] text-[#0A1C26] font-bold px-3.5 py-1 rounded inline-block mb-4">
+              <span className="font-sans text-xs tracking-[0.3em] text-brand-dark uppercase bg-brand-pink text-brand-dark font-bold px-3.5 py-1 rounded inline-block mb-4">
                 SKINCARE EDUCATION
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl text-[#0A1C26] tracking-tight leading-tight mb-4">
+              <h2 className="font-serif text-3xl sm:text-4xl text-brand-dark tracking-tight leading-tight mb-4">
                 Clinical Skincare & Diagnostics
               </h2>
               <p className="font-sans text-stone-600 text-sm leading-relaxed mb-6 font-light">
-                Find clear guidance and scientific insights from <strong className="text-[#0A1C26] font-medium">The Skin Professionals Nepal</strong>. We empower skin health using certified formulation expertise and high-precision AI technology.
+                Find clear guidance and scientific insights from <strong className="text-brand-dark font-medium">The Skin Professionals Nepal</strong>. We empower skin health using certified formulation expertise and high-precision AI technology.
               </p>
-              <div className="p-6 bg-white rounded-2xl border border-[#FBEAEA] shadow-sm" id="seo-trust-seal">
-                <h3 className="font-serif text-xs text-[#0A1C26] font-bold uppercase tracking-wider mb-2">Verified Medical Cosmetics</h3>
+              <div className="p-6 bg-white rounded-2xl border border-brand-pink shadow-sm" id="seo-trust-seal">
+                <h3 className="font-serif text-xs text-brand-dark font-bold uppercase tracking-wider mb-2">Verified Medical Cosmetics</h3>
                 <p className="font-sans text-[11px] text-stone-500 leading-relaxed font-light">
                   Our products are verified for safety and dermo-physiological performance. Designed by highly skillful professionals dedicated to resolving local acne, dehydration, and hyperpigmentation concerns.
                 </p>
@@ -587,15 +587,15 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
                   <div 
                     key={item.id}
                     id={item.id}
-                    className="bg-white rounded-2xl border border-[#FBEAEA] overflow-hidden transition-all duration-300 hover:border-[#F3BCBC]/40 shadow-xs"
+                    className="bg-white rounded-2xl border border-brand-pink overflow-hidden transition-all duration-300 hover:border-brand-pink-dark/40 shadow-xs"
                   >
                     <button
                       onClick={() => toggleFaq(item.id)}
-                      className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-serif text-sm sm:text-base text-[#0A1C26] font-semibold hover:bg-[#FCFAF6]/50 transition-colors"
+                      className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-serif text-sm sm:text-base text-brand-dark font-semibold hover:bg-brand-chalk/50 transition-colors"
                       aria-expanded={isOpen}
                     >
                       <span>{item.question}</span>
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#FCFAF6] border border-[#FBEAEA] flex items-center justify-center text-[#0A1C26] transition-transform duration-300">
+                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-brand-chalk border border-brand-pink flex items-center justify-center text-brand-dark transition-transform duration-300">
                         {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                       </span>
                     </button>
@@ -608,7 +608,7 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.25, ease: "easeInOut" }}
                         >
-                          <div className="px-6 pb-6 text-stone-600 font-sans text-xs sm:text-sm leading-relaxed font-light border-t border-[#FCFAF6] pt-4">
+                          <div className="px-6 pb-6 text-stone-600 font-sans text-xs sm:text-sm leading-relaxed font-light border-t border-brand-chalk pt-4">
                             {item.answer}
                           </div>
                         </motion.div>
@@ -624,24 +624,24 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
       </section>
 
       {/* 9. Contact / Inquiries CTA with exquisite baby pink details */}
-      <section className="py-24 bg-[#0A1C26] flex items-center justify-center relative overflow-hidden px-4" id="home-contact-cta">
-        <div className="absolute left-1/2 -translate-x-1/2 w-[600px] h-[350px] rounded-full bg-[#112A38]/60 blur-[130px] -z-10"></div>
+      <section className="py-24 bg-brand-dark flex items-center justify-center relative overflow-hidden px-4" id="home-contact-cta">
+        <div className="absolute left-1/2 -translate-x-1/2 w-[600px] h-[350px] rounded-full bg-brand-dark-accent/60 blur-[130px] -z-10"></div>
         
-        <div className="p-12 md:p-16 max-w-5xl w-full rounded-3xl border border-[#FBEAEA]/10 bg-[#112A38]/40 backdrop-blur-md text-center shadow-2xl" id="contact-cta-card">
-          <span className="font-sans text-xs tracking-[0.3em] text-[#E5EDA8] uppercase block mb-3 font-semibold">
+        <div className="p-12 md:p-16 max-w-5xl w-full rounded-3xl border border-brand-pink/10 bg-brand-dark-accent/40 backdrop-blur-md text-center shadow-2xl" id="contact-cta-card">
+          <span className="font-sans text-xs tracking-[0.3em] text-brand-gold uppercase block mb-3 font-semibold">
             Bespoke Client Curation
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl text-[#FCFAF6] tracking-tight mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl text-brand-chalk tracking-tight mb-4">
             Do You Seek a Targeted Skincare Formula?
           </h2>
-          <p className="font-sans text-xs sm:text-sm text-[#FCFAF6]/80 max-w-xl mx-auto mb-8 font-light leading-relaxed">
+          <p className="font-sans text-xs sm:text-sm text-brand-chalk/80 max-w-xl mx-auto mb-8 font-light leading-relaxed">
             Our private clinical client representatives are standing by to guide your custom selections. Contact our clinic desk to schedule a virtual scan or order.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={() => onNavigate('contact')}
               id="concierge-cta"
-              className="w-full sm:w-auto px-8 py-3 bg-[#E5EDA8] hover:bg-[#CAD18E] text-[#0A1C26] font-sans text-xs tracking-widest uppercase font-bold rounded transition-all duration-300 shadow-md"
+              className="w-full sm:w-auto px-8 py-3 bg-brand-gold hover:bg-brand-gold-dark text-brand-dark font-sans text-xs tracking-widest uppercase font-bold rounded transition-all duration-300 shadow-md"
             >
               Contact Concierge Office
             </button>
@@ -650,7 +650,7 @@ export default function Home({ products, testimonials, gallery, onNavigate }: Ho
               target="_blank" 
               rel="noreferrer"
               id="whatsapp-direct-link"
-              className="w-full sm:w-auto text-center px-8 py-3 bg-transparent hover:bg-white/10 text-[#FCFAF6] border border-white/20 rounded font-sans text-xs tracking-widest uppercase transition-all duration-300"
+              className="w-full sm:w-auto text-center px-8 py-3 bg-transparent hover:bg-white/10 text-brand-chalk border border-white/20 rounded font-sans text-xs tracking-widest uppercase transition-all duration-300"
             >
               Direct WhatsApp chat
             </a>

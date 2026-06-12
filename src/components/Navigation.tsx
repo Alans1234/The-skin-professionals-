@@ -119,20 +119,20 @@ export default function Navigation({ activeTab, setActiveTab }: NavigationProps)
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#0A1C26] backdrop-blur-md border-b border-[#E5EDA8]/15 font-sans" id="aura-navbar">
+    <nav className="sticky top-0 z-50 bg-brand-dark backdrop-blur-md border-b border-brand-gold/15 font-sans" id="aura-navbar">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-15">
           
           {/* Logo with precise image matching structure: Tilted gold parallelogram + company text */}
           <div className="flex-shrink-0 flex items-center cursor-pointer select-none" onClick={() => handleNavClick('home')} id="logo-container">
             {/* Golden skewed parallelogram */}
-            <div className="w-[18px] h-9 bg-[#E5EDA8] -skew-x-[20deg] mr-2.5 rounded-[1px] shadow-sm flex-shrink-0"></div>
+            <div className="w-[18px] h-9 bg-brand-gold -skew-x-[20deg] mr-2.5 rounded-[1px] shadow-sm flex-shrink-0"></div>
             
             {/* Sizable elegant branding text aligning to screenshot colors */}
             <div className="flex flex-col text-left justify-center">
-              <span className="font-serif text-[10px] leading-none text-[#FBEAEA] italic mb-0.5">The</span>
-              <span className="font-sans text-xs font-black tracking-[0.2em] text-[#E5EDA8] leading-none uppercase">SKIN</span>
-              <span className="font-sans text-[8px] font-semibold tracking-wider text-[#FBEAEA] leading-none uppercase mt-0.5">PROFESSIONALS</span>
+              <span className="font-serif text-[10px] leading-none text-brand-pink italic mb-0.5">The</span>
+              <span className="font-sans text-xs font-black tracking-[0.2em] text-brand-gold leading-none uppercase">SKIN</span>
+              <span className="font-sans text-[8px] font-semibold tracking-wider text-brand-pink leading-none uppercase mt-0.5">PROFESSIONALS</span>
             </div>
           </div>
 
@@ -145,13 +145,13 @@ export default function Navigation({ activeTab, setActiveTab }: NavigationProps)
                 onClick={() => handleNavClick(item.id)}
                 className={`relative px-4 py-2 text-xs tracking-widest uppercase transition-all duration-300 rounded font-sans font-medium cursor-pointer ${
                   activeTab === item.id
-                    ? 'text-[#E5EDA8] font-bold'
-                    : 'text-[#FCFAF6]/80 hover:text-[#FBEAEA]'
+                    ? 'text-brand-gold font-bold'
+                    : 'text-brand-chalk/80 hover:text-brand-pink'
                 }`}
               >
                 <span>{item.label}</span>
                 {activeTab === item.id && (
-                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-[#F3BCBC] rounded-full"></span>
+                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-brand-pink-dark rounded-full"></span>
                 )}
               </button>
             ))}
@@ -164,13 +164,13 @@ export default function Navigation({ activeTab, setActiveTab }: NavigationProps)
             <div className="relative" id="custom-language-selector-wrapper">
               <button
                 onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center space-x-1.5 bg-[#112A38] hover:bg-[#163547] active:bg-[#1c3f54] text-[#E5EDA8] rounded-full px-3 py-1 h-9 border border-white/10 hover:border-[#E5EDA8]/30 shadow-inner transition-all duration-300 text-[11px] font-bold uppercase tracking-wider cursor-pointer"
+                className="flex items-center space-x-1.5 bg-brand-dark-accent hover:bg-[#163547] active:bg-[#1c3f54] text-brand-gold rounded-full px-3 py-1 h-9 border border-white/10 hover:border-brand-gold/30 shadow-inner transition-all duration-300 text-[11px] font-bold uppercase tracking-wider cursor-pointer"
                 id="language-dropdown-toggle"
                 title="Select Platform Language"
               >
-                <Globe className="w-3.5 h-3.5 text-[#E5EDA8] shrink-0" />
+                <Globe className="w-3.5 h-3.5 text-brand-gold shrink-0" />
                 <span>{languages.find(l => l.code === currentLang)?.native || 'English'}</span>
-                <span className={`text-[8px] text-[#E5EDA8]/70 transform transition-transform duration-300 ${langOpen ? 'rotate-180' : 'rotate-0'}`}>▼</span>
+                <span className={`text-[8px] text-brand-gold/70 transform transition-transform duration-300 ${langOpen ? 'rotate-180' : 'rotate-0'}`}>▼</span>
               </button>
 
               {/* Custom Dropdown Dialog panel */}
@@ -184,11 +184,11 @@ export default function Navigation({ activeTab, setActiveTab }: NavigationProps)
                       key={lang.code}
                       onClick={() => changeLanguage(lang.code)}
                       className={`w-full flex items-center justify-between px-3.5 py-2 text-xs tracking-wider transition-colors hover:bg-white/10 text-left cursor-pointer ${
-                        currentLang === lang.code ? 'text-[#E5EDA8] font-bold bg-[#17384B]' : 'text-[#FCFAF6]/85'
+                        currentLang === lang.code ? 'text-brand-gold font-bold bg-[#17384B]' : 'text-brand-chalk/85'
                       }`}
                     >
                       <span className="font-sans font-medium">{lang.native}</span>
-                      {currentLang === lang.code && <span className="text-[10px] text-[#E5EDA8]">✓</span>}
+                      {currentLang === lang.code && <span className="text-[10px] text-brand-gold">✓</span>}
                     </button>
                   ))}
                 </div>
@@ -203,7 +203,7 @@ export default function Navigation({ activeTab, setActiveTab }: NavigationProps)
               <button
                 onClick={() => handleNavClick('contact')}
                 id="contact-btn-desktop"
-                className="flex items-center space-x-2 px-5 py-2 rounded text-xs tracking-widest uppercase transition-all duration-500 font-sans font-bold border bg-[#E5EDA8] text-[#0A1C26] border-[#E5EDA8] hover:bg-[#0A1C26] hover:text-[#E5EDA8] cursor-pointer"
+                className="flex items-center space-x-2 px-5 py-2 rounded text-xs tracking-widest uppercase transition-all duration-500 font-sans font-bold border bg-brand-gold text-brand-dark border-brand-gold hover:bg-brand-dark hover:text-brand-gold cursor-pointer"
               >
                 <span>Contact Us</span>
               </button>
@@ -214,7 +214,7 @@ export default function Navigation({ activeTab, setActiveTab }: NavigationProps)
               <button
                 onClick={() => handleNavClick('contact')}
                 id="contact-btn-mobile"
-                className="px-2.5 py-1.5 rounded border text-[10px] tracking-wider uppercase bg-[#E5EDA8] text-[#0A1C26] border-[#E5EDA8] font-bold cursor-pointer font-sans"
+                className="px-2.5 py-1.5 rounded border text-[10px] tracking-wider uppercase bg-brand-gold text-brand-dark border-brand-gold font-bold cursor-pointer font-sans"
                 title="Concierge Inquiry"
               >
                 Contact
@@ -222,7 +222,7 @@ export default function Navigation({ activeTab, setActiveTab }: NavigationProps)
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 id="menu-trigger"
-                className="inline-flex items-center justify-center p-1.5 rounded-md text-[#E5EDA8] hover:text-[#FBEAEA] hover:bg-[#112A38] focus:outline-none cursor-pointer"
+                className="inline-flex items-center justify-center p-1.5 rounded-md text-brand-gold hover:text-brand-pink hover:bg-brand-dark-accent focus:outline-none cursor-pointer"
                 aria-expanded="false"
               >
                 {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -236,7 +236,7 @@ export default function Navigation({ activeTab, setActiveTab }: NavigationProps)
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="lg:hidden bg-[#0A1C26] border-t border-[#E5EDA8]/20 shadow-2xl transition-all duration-300" id="mobile-dropdown">
+        <div className="lg:hidden bg-brand-dark border-t border-brand-gold/20 shadow-2xl transition-all duration-300" id="mobile-dropdown">
           <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3">
             {mainNavItems.map((item) => (
               <button
@@ -245,8 +245,8 @@ export default function Navigation({ activeTab, setActiveTab }: NavigationProps)
                 onClick={() => handleNavClick(item.id)}
                 className={`block w-full text-left px-4 py-3 text-sm tracking-widest uppercase rounded cursor-pointer ${
                   activeTab === item.id
-                    ? 'text-[#E5EDA8] bg-[#112A38] font-bold border-l-2 border-[#F3BCBC]'
-                    : 'text-[#FCFAF6]/90 hover:bg-[#112A38]/55'
+                    ? 'text-brand-gold bg-brand-dark-accent font-bold border-l-2 border-brand-pink-dark'
+                    : 'text-brand-chalk/90 hover:bg-brand-dark-accent/55'
                 }`}
               >
                 {item.label}

@@ -23,7 +23,7 @@ export default function Ingredients({ ingredients }: IngredientsProps) {
     <div id="ingredients-view" className="bg-[#fafaf9] text-[#1c1c1a] min-h-screen">
       
       {/* Elevated Cinematic Banner */}
-      <section className="relative py-28 bg-[#0A1C26] text-center overflow-hidden" id="ingredients-header">
+      <section className="relative py-28 bg-brand-dark text-center overflow-hidden" id="ingredients-header">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=1600" 
@@ -31,26 +31,26 @@ export default function Ingredients({ ingredients }: IngredientsProps) {
             className="w-full h-full object-cover opacity-35 filter scale-102"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A1C26]/90 via-[#0A1C26]/75 to-[#0A1C26]/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/75 to-brand-dark/40"></div>
           
-          <div className="absolute top-10 left-1/4 w-[400px] h-[400px] bg-[#E5EDA8]/5 rounded-full blur-[110px] mix-blend-screen pointer-events-none"></div>
-          <div className="absolute bottom-10 right-1/4 w-[400px] h-[400px] bg-[#FBEAEA]/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
+          <div className="absolute top-10 left-1/4 w-[400px] h-[400px] bg-brand-gold/5 rounded-full blur-[110px] mix-blend-screen pointer-events-none"></div>
+          <div className="absolute bottom-10 right-1/4 w-[400px] h-[400px] bg-brand-pink/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <span className="font-sans text-[10px] sm:text-xs tracking-[0.5em] text-[#E5EDA8] uppercase bg-white/10 border border-white/10 px-4 py-1.5 rounded-full inline-block mb-4 font-semibold backdrop-blur-md">
+          <span className="font-sans text-[10px] sm:text-xs tracking-[0.5em] text-brand-gold uppercase bg-white/10 border border-white/10 px-4 py-1.5 rounded-full inline-block mb-4 font-semibold backdrop-blur-md">
             IN VITRO BIO-PHARMACY
           </span>
           <h1 className="font-serif text-4xl sm:text-6xl text-white tracking-tight leading-[1.1] mb-5">
             The Scientific <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E5EDA8] via-[#F3BCBC] to-[#FCFAF6] italic font-light">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-brand-pink-dark to-brand-chalk italic font-light">
               Ingredient Library
             </span>
           </h1>
           <p className="font-sans text-xs sm:text-sm text-stone-300 max-w-xl mx-auto tracking-widest uppercase mb-2">
             DELVE INTO THE MOLECULAR STRUCTURES, CLINICAL ACTIONS, AND SOURCE PROFILES Of BIO-ACTIVE COMPOUNDS
           </p>
-          <div className="w-16 h-[1px] bg-gradient-to-r from-[#E5EDA8] via-[#F3BCBC] to-transparent mx-auto mt-6"></div>
+          <div className="w-16 h-[1px] bg-gradient-to-r from-brand-gold via-brand-pink-dark to-transparent mx-auto mt-6"></div>
         </div>
       </section>
 
@@ -65,7 +65,7 @@ export default function Ingredients({ ingredients }: IngredientsProps) {
               placeholder="Search scientific codes, e.g., peptide..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full bg-[#fafaf9] border border-stone-200 pl-11 pr-4 py-2.5 rounded-lg text-xs font-sans tracking-wide focus:outline-none focus:border-[#0A1C26] focus:ring-1 focus:ring-[#0A1C26]/25"
+              className="w-full bg-[#fafaf9] border border-stone-200 pl-11 pr-4 py-2.5 rounded-lg text-xs font-sans tracking-wide focus:outline-none focus:border-brand-dark focus:ring-1 focus:ring-brand-dark/25"
             />
           </div>
 
@@ -76,8 +76,8 @@ export default function Ingredients({ ingredients }: IngredientsProps) {
                 onClick={() => setCurrentFilter(source)}
                 className={`px-4 py-2 text-[10px] sm:text-xs tracking-widest uppercase rounded font-sans transition-all duration-300 cursor-pointer ${
                   currentFilter === source
-                    ? 'bg-[#0A1C26] text-[#E5EDA8] font-bold'
-                    : 'bg-[#FCFAF6] text-stone-500 hover:text-[#0A1C26] border border-stone-200/50'
+                    ? 'bg-brand-dark text-brand-gold font-bold'
+                    : 'bg-brand-chalk text-stone-500 hover:text-brand-dark border border-stone-200/50'
                 }`}
               >
                 {source}
@@ -108,10 +108,10 @@ export default function Ingredients({ ingredients }: IngredientsProps) {
                 <div>
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <span className="font-mono text-[9px] tracking-widest uppercase text-[#0A1C26] bg-[#E5EDA8] px-2 py-0.5 rounded-sm block w-max mb-2 font-bold">
+                      <span className="font-mono text-[9px] tracking-widest uppercase text-brand-dark bg-brand-gold px-2 py-0.5 rounded-sm block w-max mb-2 font-bold">
                         {item.source} Sourced
                       </span>
-                      <h3 className="font-serif text-xl sm:text-2xl text-[#0A1C26] font-light leading-none">
+                      <h3 className="font-serif text-xl sm:text-2xl text-brand-dark font-light leading-none">
                         {item.name}
                       </h3>
                       <span className="font-sans text-[10px] text-stone-500 mt-1 block italic font-indigo-700">
@@ -125,8 +125,8 @@ export default function Ingredients({ ingredients }: IngredientsProps) {
                   </p>
 
                   <div className="border-t border-stone-100/80 pt-4 mb-6">
-                    <h4 className="font-serif text-xs text-[#0A1C26] uppercase tracking-widest mb-3 font-semibold flex items-center">
-                      <CheckCircle className="w-3.5 h-3.5 text-[#0A1C26] mr-2 flex-shrink-0" />
+                    <h4 className="font-serif text-xs text-brand-dark uppercase tracking-widest mb-3 font-semibold flex items-center">
+                      <CheckCircle className="w-3.5 h-3.5 text-brand-dark mr-2 flex-shrink-0" />
                       Biological Efficacy Parameters
                     </h4>
                     <ul className="space-y-2.5">
@@ -142,7 +142,7 @@ export default function Ingredients({ ingredients }: IngredientsProps) {
 
                 <div className="border-t border-stone-100 pt-4 text-left">
                   <span className="font-sans text-[9px] text-stone-400 block uppercase tracking-widest">Molecular Extraction Base</span>
-                  <span className="font-sans text-[11px] text-[#0A1C26] uppercase tracking-wider font-bold">{item.derivedFrom}</span>
+                  <span className="font-sans text-[11px] text-brand-dark uppercase tracking-wider font-bold">{item.derivedFrom}</span>
                 </div>
 
               </div>
@@ -153,7 +153,7 @@ export default function Ingredients({ ingredients }: IngredientsProps) {
       </section>
 
       {/* Bottom informational bar */}
-      <section className="py-16 bg-[#0A1C26] text-center text-white" id="ingredients-bottom-bar">
+      <section className="py-16 bg-brand-dark text-center text-white" id="ingredients-bottom-bar">
         <div className="max-w-xl mx-auto px-4">
           <Database className="w-8 h-8 text-[#c5a880] mx-auto mb-3" />
           <h4 className="font-serif text-lg tracking-wide mb-1 font-light text-[#f5f5f4]">Formulation Transparency Policy</h4>
