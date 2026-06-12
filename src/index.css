@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@200;300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@200;300;400;500&display=swap");
 @import "tailwindcss";
 
 @theme {
   --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-sans: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
-  
+
   /* Brand colors based on 'The Skin Professionals' Logo */
-  --color-brand-dark: #0A1C26;
-  --color-brand-dark-accent: #112A38;
-  --color-brand-gold: #E5EDA8;
-  --color-brand-gold-dark: #CAD18E;
-  --color-brand-pink: #FBEAEA;
-  --color-brand-pink-dark: #F3BCBC;
-  --color-brand-pink-soft: #FBF4F4;
-  --color-brand-chalk: #FCFAF6;
+  --color-brand-dark: #2f7376;
+  --color-brand-dark-accent: #112a38;
+  --color-brand-gold: #e5eda8;
+  --color-brand-gold-dark: #cad18e;
+  --color-brand-pink: #fbeaea;
+  --color-brand-pink-dark: #f3bcbc;
+  --color-brand-pink-soft: #fbf4f4;
+  --color-brand-chalk: #fcfaf6;
 }
 
 /* Custom premium styles */
@@ -49,8 +49,8 @@ body {
   display: none;
 }
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 /* Custom Google Translate Styling to match Brand Guide */
@@ -65,7 +65,7 @@ body {
   color: transparent !important;
 }
 
-.goog-logo-link, 
+.goog-logo-link,
 .goog-te-banner,
 .goog-te-gadget-simple {
   display: none !important;
@@ -147,4 +147,3 @@ iframe.goog-te-banner,
 body > .skiptranslate {
   display: none !important;
 }
-
