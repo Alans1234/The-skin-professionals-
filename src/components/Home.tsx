@@ -758,7 +758,7 @@ export default function Home({
               Contact Concierge Office
             </button>
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/9845573095"
               target="_blank"
               rel="noreferrer"
               id="whatsapp-direct-link"
