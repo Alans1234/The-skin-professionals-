@@ -318,7 +318,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
             <div className="bg-white rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row h-full">
               <div className="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative bg-stone-100 min-h-[220px]">
                 <img
-                  src="/Employee%20Photos/NIkesh%20baral.jpg"
+                  src="/images/Employee%20Photos/NIkesh%20baral.jpg"
                   alt="Nikesh Baral - Co founder, CEO"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                   referrerPolicy="no-referrer"
