@@ -719,15 +719,14 @@ export default function Home({
           id="contact-cta-card"
         >
           <span className="font-sans text-xs tracking-[0.3em] text-brand-gold uppercase block mb-3 font-semibold">
-            Bespoke Client Curation
+            Get Personal Care
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl text-brand-chalk tracking-tight mb-4">
-            Do You Seek a Targeted Skincare Formula?
+            Looking for a skincare routine made for you?
           </h2>
           <p className="font-sans text-xs sm:text-sm text-brand-chalk/80 max-w-xl mx-auto mb-8 font-light leading-relaxed">
-            Our private clinical client representatives are standing by to guide
-            your custom selections. Contact our clinic desk to schedule a
-            virtual scan or order.
+            Our team is here to help. Talk to us for custom product advice, skin
+            scanning, or to place an order.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
@@ -735,7 +734,7 @@ export default function Home({
               id="concierge-cta"
               className="w-full sm:w-auto px-8 py-3 bg-brand-gold hover:bg-brand-gold-dark text-brand-dark font-sans text-xs tracking-widest uppercase font-bold rounded transition-all duration-300 shadow-md"
             >
-              Contact Concierge Office
+              Contact Us
             </button>
             <a
               href="https://wa.me/9845573095"
@@ -744,7 +743,7 @@ export default function Home({
               id="whatsapp-direct-link"
               className="w-full sm:w-auto text-center px-8 py-3 bg-transparent hover:bg-white/10 text-brand-chalk border border-white/20 rounded font-sans text-xs tracking-widest uppercase transition-all duration-300"
             >
-              Direct WhatsApp chat
+              WhatsApp
             </a>
           </div>
         </div>
