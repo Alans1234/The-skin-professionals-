@@ -19,40 +19,36 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: "prod-1",
     name: "MOISTCOM LITE Skin lightning Moisturiser",
-    tagline: "Advanced Cellular Skin Lightening & Lipic Barrier Fortification",
+    tagline:
+      "Lightweight skin lightening moisturiser for pigmentation & barrier repair",
     category: "Moisturizer",
     price: "Rs. 800",
     rating: 4.8,
     image: MoistcomImg,
-    description: "",
+    description:
+      "Moistcom Lite is a lightweight skin lightening moisturiser, suitable for normal, oily and combination skin types. It is very effective for conditions like pigmentation, melasma, and acne scars. It helps reduce pigmentation and brighten skin while repairing the skin barrier with components like ceramide and licorice extract.",
     benefits: [],
     ingredients: [
       {
         name: "Niacinamide",
-        purpose:
-          "Regulates sebum, minimizes pore outline and fades active dark marks",
+        purpose: "Regulates sebum, minimizes pores, fades dark marks",
       },
-      {
-        name: "Ceramide",
-        purpose: "Rebuilds natural skin lipid brick barrier",
-      },
+      { name: "Ceramide", purpose: "Rebuilds natural skin lipid barrier" },
       {
         name: "Sodium hyaluronate",
-        purpose:
-          "Locks relative atmospheric moisture instantly into dermal layers",
+        purpose: "Locks moisture into dermal layers",
       },
       {
         name: "Aquaxyl",
-        purpose:
-          "Optimizes skin hydric flows and boosts deep aquaporin synthesis",
+        purpose: "Optimizes skin hydration and boosts aquaporin synthesis",
       },
       {
         name: "Alpha arbutin",
-        purpose: "Inhibits tyrosinase enzymes to brighten skin tone safely",
+        purpose: "Inhibits tyrosinase to brighten skin tone safely",
       },
       {
         name: "Ethyl ascorbic acid",
-        purpose: "Renders high stability vitamin C antioxidant benefit",
+        purpose: "Provides stable vitamin C antioxidant benefit",
       },
       {
         name: "Kojic acid",
@@ -60,69 +56,68 @@ export const INITIAL_PRODUCTS: Product[] = [
       },
       {
         name: "Licorice extract & Willow bark extract",
-        purpose: "Calms redness, purges micro-congestion and soothes cells",
+        purpose: "Calms redness, purges congestion, soothes cells",
       },
     ],
-    suitability: ["Dry", "Combination", "Sensitive", "Oily"],
+    suitability: ["Normal", "Oily", "Combination"],
     usage:
-      "Dispense a portion of cream. Apply over cleanly washed skin every morning and evening. Pat gently in upward circular motions until completely absorbed.",
+      "Apply a generous amount of Moistcom Lite on damp face after cleansing with a gentle cleanser, twice a day.",
   },
   {
     id: "prod-2",
     name: "SUNCO 5O SILICONE GEL",
-    tagline:
-      "Ultra-Sheer Broad-Spectrum SPF 50 Shield & Non-Comedogenic Matte Finish",
+    tagline: "Mineral-based matte finish sunscreen with SPF 50 and PA+++",
     category: "Sunscreen",
     price: "Rs. 1,040",
     rating: 4.9,
     image: SuncoImg,
-    description: "",
+    description:
+      "Sunco is a mineral-based matte finish gel sunscreen with Zinc Oxide and Titanium Dioxide. It protects the skin from harmful UV rays with SPF 50 and PA+++, shielding against both UVA and UVB. Suitable for all skin types, especially oily skin and melasma. Safe for use during pregnancy and pre/post-procedure treatments.",
     benefits: [],
     ingredients: [
       {
         name: "Micronized Zinc Oxide",
-        purpose: "Forms a physical barrier to block and reflect UVA/UVB rays",
+        purpose: "Forms a physical barrier to block UVA/UVB rays",
       },
       {
         name: "Micronized TiO2",
-        purpose: "Delivers broad solar protection with supreme transparency",
+        purpose: "Provides broad solar protection with transparency",
       },
       {
         name: "Niacinamide",
-        purpose: "Soothes dermal inflammation and strengthens moisture barrier",
+        purpose: "Soothes inflammation and strengthens moisture barrier",
       },
       {
         name: "Hyaluronic acid & Aquaxyl",
-        purpose: "Fights heat-induced cell dehydration and loss of bounce font",
+        purpose: "Prevents heat-induced dehydration",
       },
       {
         name: "D-Panthenol",
-        purpose: "Deeply comforts and accelerates tissue recovery",
+        purpose: "Comforts and accelerates tissue recovery",
       },
       {
         name: "Vitamin C & Vitamin E",
-        purpose:
-          "Synergistic antioxidant network that counteracts solar damage",
+        purpose: "Antioxidant network that counteracts solar damage",
       },
       {
         name: "Octyl Salicylate & Octocrylene",
-        purpose: "High-efficacy broad-spectrum UV absorbing shield",
+        purpose: "High-efficacy broad-spectrum UV absorption",
       },
     ],
-    suitability: ["Oily", "Combination", "Dry", "Sensitive"],
+    suitability: ["Normal", "Oily", "Combination", "Dry"],
     usage:
-      "Apply a generous coin-sized layer to your face and neck 15 minutes prior to solar exposure. Reapply every 3-4 hours if outdoors under active UV light.",
+      "Apply a generous amount using the two-finger method. Reapply every 2 hours for best protection. Apply at least 15 minutes before sun exposure.",
   },
   {
     id: "prod-3",
     name: "Fluide Sunscrenn",
-    tagline:
-      "Aqueous Lightweight Fluid Sun Care with Calming Green Tea Extracts",
+    tagline: "Gel-based chemical sunscreen with zero white cast, SPF 50+ PA+++",
     category: "Sunscreen",
     price: "Rs. 1,180",
     rating: 4.7,
     image: FluideImg,
-    description: "",
+    description:
+      "Fluide is a gel-based chemical sunscreen with zero white cast. Formulated with powerful yet gentle, non-comedogenic ingredients, it is best for oily and acne-prone skin. Blends well and feels light while providing absolute protection from UVA and UVB with SPF 50+ and PA+++ rating.",
     benefits: [],
     ingredients: [
       {
@@ -131,95 +126,90 @@ export const INITIAL_PRODUCTS: Product[] = [
       },
       {
         name: "Methoxydibenzoylmethane",
-        purpose: "Delivers superior deep protection against aging UVA rays",
+        purpose: "Deep protection against aging UVA rays",
       },
       {
         name: "Benzophenone-3 & Phospholipids",
-        purpose: "Extends protection lifespan with a skin-mimetic delivery",
+        purpose: "Extends protection lifespan with skin-mimetic delivery",
       },
       {
         name: "Glycerin",
-        purpose: "Supplies foundational comfort and deep moisture retention",
+        purpose: "Foundational comfort and deep moisture retention",
       },
       {
         name: "Camellia Sinensis (Green Tea) Leaf Extract",
-        purpose:
-          "Botanical defense neutralizing free radicals and environmental smog",
+        purpose: "Neutralizes free radicals and environmental smog",
       },
       {
         name: "Allantoin",
-        purpose:
-          "Calms cutaneous heat irritation and soothes solar sensitivity",
+        purpose: "Calms heat irritation and soothes solar sensitivity",
       },
       {
         name: "Tocopheryl Acetate (Vitamin E)",
-        purpose:
-          "Strengthens dermal membrane resistance against aging triggers",
+        purpose: "Strengthens dermal membrane resistance",
       },
     ],
-    suitability: ["Sensitive", "Dry", "Combination", "Oily"],
+    suitability: ["Oily", "Acne Prone", "Normal"],
     usage:
-      "Shake very well. Apply generously across your face, neck and ears as the definitive final phase of your morning skincare routine.",
+      "Shake well. Apply generous amount using the two-finger method. Reapply every 2 hours. Apply at least 15 minutes before sun exposure.",
   },
   {
     id: "prod-4",
     name: "RENEW NIACINAMIDE SERUM",
-    tagline:
-      "Anti-Congestion, Pore Refinement & Hyperpigmentation Erasing Concentrate",
+    tagline: "All‑rounder brightening, hydrating, and repairing serum",
     category: "Serum",
     price: "Rs. 1,560",
     rating: 4.8,
     image: RenewImg,
-    description: "",
+    description:
+      "Renew Niacinamide serum is an all-rounder composition with Niacinamide, Zinc PCA, and Tranexamic acid, plus other components. It is your everyday serum that brightens, hydrates, and repairs your skin. Ideal for skin with melasma, acne scars, and pigmentation.",
     benefits: [],
     ingredients: [
       {
         name: "Niacinamide (Vitamin B3)",
-        purpose:
-          "Fades persistent dark marks and strengthens local lipid barrier",
+        purpose: "Fades dark marks and strengthens lipid barrier",
       },
       {
         name: "Zinc PCA",
-        purpose:
-          "Regulates oil output, calms breakouts and suppresses congestion",
+        purpose: "Regulates oil, calms breakouts, suppresses congestion",
       },
       {
         name: "Vitamin E",
-        purpose: "Accelerates cellular renewal and repairs tissue layers",
+        purpose: "Accelerates cellular renewal and repairs tissue",
       },
       {
         name: "Morus Alba (Mulberry) Root Extract",
-        purpose: "Natural bio-agent that restricts pigment pathways",
+        purpose: "Natural agent that restricts pigment pathways",
       },
       {
         name: "Licorise root extract & Papaya Fruit Extract",
-        purpose: "Soothes inflammation and dissolves dead surface scales",
+        purpose: "Soothes inflammation and dissolves dead surface cells",
       },
       {
         name: "Tranexamic Acid",
-        purpose:
-          "Prevents vascular-induced skin discoloration and high redness",
+        purpose: "Prevents vascular-induced discoloration and redness",
       },
     ],
-    suitability: ["Oily", "Combination", "Sensitive", "Dry"],
+    suitability: ["All skin types"],
     usage:
-      "Warm 3 to 4 drops inside your clean palms. Gently press into your face and neck twice daily, targeting zones of hyperpigmentation or breakouts.",
+      "Put 3–4 drops of Renew Niacinamide serum on your face after cleansing. Use serum after face wash and before moisturiser. Let it dry before applying moisturiser.",
   },
   {
     id: "prod-5",
     name: "THE GOOD MOISTURISER",
-    tagline: "Deep Oatmeal Treatment & Restorative Moisture Lock Barrier Cream",
+    tagline:
+      "Deeply nourishing medical‑grade moisturiser for dehydrated, dull, and compromised skin",
     category: "Moisturizer",
     price: "Rs. 950",
     rating: 4.8,
     image: GoodMoistureImg,
-    description: "",
+    description:
+      "A deeply nourishing, medical-grade moisturizer engineered to rescue dehydrated, dull, and compromised skin. Formulated with Natural Moisturizing Factors (NMFs), bio-mimetic botanical lipids, and clinical-grade Niacinamide. This rich cream actively repairs the skin's lipid barrier while locking in long-lasting hydration for a smooth, radiant, and resilient complexion.",
     benefits: [],
     ingredients: [
       {
-        name: "Gglycerine & Isopropyl Myristate",
-        purpose:
-          "Humectants and emollients that restore immediate skin elasticity",
+        name: "Glycerine & Isopropyl Myristate",
+        purpose: "Humectants and emollients that restore skin elasticity",
       },
       {
         name: "Olive Oil & Jojoba seed oil",
@@ -228,30 +218,29 @@ export const INITIAL_PRODUCTS: Product[] = [
       },
       {
         name: "Niacinamide (Vitamin B3)",
-        purpose:
-          "Diminishes sallow skin tone and builds natural moisture barrier",
+        purpose: "Diminishes sallow tone and builds natural moisture barrier",
       },
       {
         name: "Shea Butter",
-        purpose: "Rich therapeutic butter that softens dry peeling scales",
+        purpose: "Therapeutic butter that softens dry, peeling scales",
       },
       {
         name: "Avena Sativa (Oat) Kernel bark Extract",
-        purpose: "Relieves inflammatory hives, chronic itching and redness",
+        purpose: "Relieves inflammatory hives, itching, and redness",
       },
       {
-        name: "Sodium Lacatate & Sodium PCA",
+        name: "Sodium Lactate & Sodium PCA",
         purpose:
           "Natural Moisturizing Factors (NMF) restoring hydration balance",
       },
       {
         name: "Wheat Protein & Allantoin",
-        purpose: "Fosters skin cell restoration and delivers satin-soft feel",
+        purpose: "Fosters skin cell restoration and delivers a satin-soft feel",
       },
     ],
-    suitability: ["Dry", "Sensitive", "Combination", "Oily"],
+    suitability: ["Dry", "Normal"],
     usage:
-      "Spread a smooth dollop evenly over dry, clean skin twice daily. Perform gentle sweeping massages focusing on areas prone to windburn or extreme dryness.",
+      "Apply a generous amount of The Good Moisturiser on damp face after cleaning with a gentle cleanser, twice a day.",
   },
 ];
 
