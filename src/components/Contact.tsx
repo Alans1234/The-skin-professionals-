@@ -289,9 +289,9 @@ export default function Contact({
                     Inquiry Registered
                   </h4>
                   <p className="font-sans text-[11px] leading-normal opacity-90">
-                    Your scientific inquiry has been synced with our The Skin
-                    Professionals executive workspace. Dr. Sujata Koirala's
-                    representative will email you shortly.
+                    Your inquiry has been synced with our The Skin Professionals
+                    executive workspace. Our Team representative will email you
+                    shortly.
                   </p>
                 </div>
               </div>
