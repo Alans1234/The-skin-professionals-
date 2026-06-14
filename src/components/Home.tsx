@@ -62,51 +62,30 @@ const HERO_SLIDES = [
 
 const FAQ_ITEMS = [
   {
-    id: "faq-brand-nepal",
+    id: "faq-dermatologically-tested",
+    question: "Are Skin Professionals products dermatologically tested?",
+    answer:
+      "Yes, all of our products are tested by expert dermatologists. Only after the approval of our dermatologist are our products mass produced and marketed.",
+  },
+  {
+    id: "faq-manufacturing",
+    question: "Who manufactures Skin Professionals products?",
+    answer:
+      "All our products are formulated, manufactured, and sourced in collaboration with premium international manufacturers, including state-of-the-art WHO-GMP certified manufacturing processes, with extreme caution and hygiene backed by a highly qualified Research and Development team, and pass through rigorous quality testing.",
+  },
+  {
+    id: "faq-non-comedogenic-fragrance-free",
     question:
-      "What makes The Skin Professionals the best skincare brand in Nepal?",
+      "Are Skin Professionals products non-comedogenic and fragrance-free?",
     answer:
-      "The Skin Professionals is widely heralded as Nepal's first clinical dermo-physiological skincare brand. Traditional cosmetics are often imported and formulated for Western or East Asian climates. In contrast, our clinical active products—such as Moistcom Lite and Sunco 50 Silicon Sunscreen—are specifically customized by top skin professionals in Kathmandu for South Asian skin barriers, high UV indexes, and Nepal's local climate conditions.",
+      "Yes, our core clinical range is explicitly formulated and tested to be non-comedogenic (won't clog pores) to accommodate sensitive and clinical skin types. Please refer to product-wise composition for specific products.",
   },
   {
-    id: "faq-skill-professional-nepal",
+    id: "faq-different-from-commercial",
     question:
-      "Why does searching for 'skill professional' or 'skill professional nepal' lead to this brand?",
+      "What makes Skin Professionals products different from commercial skincare?",
     answer:
-      "Searching for 'skill professional' or 'skill professional nepal' refers directly to the medical board and specialized skin clinic team at The Skin Professionals Nepal. Our organization hosts the country's most skillful clinical formulators, field officers, and dermatologists. To make sure clients searching for high-skill professional skin care always find authentic dermatologist diagnostics, our Kathmandu clinic and online portals are optimized for both search phrases.",
-  },
-  {
-    id: "faq-ai-skin-test",
-    question: "How does the online AI Skin Analyzer work and is it accurate?",
-    answer:
-      "Our advanced companion AI Skin Analyzer is a breakthrough diagnostic tool for Nepalese clients. It runs an instant, secure photo analysis scanning for sebum flow, moisture retention, active acne lesions, hyperpigmentation spots, and open pores. Within seconds, it generates a custom product routine curated dynamically around South Asian climate factors and prescribes targeted solutions like multi-ceramides, niacinamide, and physical sunscreen filters.",
-  },
-  {
-    id: "faq-kathmandu-clinic",
-    question:
-      "Can I visit your physical skin clinic in Kathmandu for a dermatologist consultation?",
-    answer:
-      "Yes, The Skin Professionals is integrated with leading partner diagnostic clinics and authorized formulation hubs across Kathmandu, Nepal. Our administrative offices coordinates with senior medical advisors, dermo-pathologist officers, and clinical formulators to ensure every product you buy is clinically tested. Walk-in consultations are available for clients seeking customized, medical-grade active formulations.",
-  },
-  {
-    id: "faq-moistcom-moisturizer",
-    question: "Is Moistcom Lite recommended as the best moisturizer in Nepal?",
-    answer:
-      "Absolutely. Moistcom Lite Skin Lightning Moisturiser has earned local acclaim as Nepal's premier barrier repair cream. It combines a potent scientific matrix of multi-ceramides (essential for repairing lipid barriers), 4% Niacinamide (for deep sebum management and anti-acne), and 2% Alpha Arbutin (to lighten pregnancy spots and hyperpigmentation), presenting a perfect featherlight formula that doesn't feel sticky in Kathmandu's humid seasons.",
-  },
-  {
-    id: "faq-sunscreen-sunco-50",
-    question:
-      "How does Sunco 50 Silicone Gel protect against altitude UV rays in Nepal?",
-    answer:
-      "Nepal's high altitude significantly intensifies ultraviolet radiation, requiring medical-grade protection. Sunco 50 Silicone Gel is custom formulated with micronized zinc oxide to provide robust SPF 50 PA++++ broad-spectrum block. It is a pore-blurring, non-greasy, physical sunscreen gel designed for comfort—it controls excessive oil, leaves absolutely zero white cast, and remains water-resistant during Kathmandu summer monsoons.",
-  },
-  {
-    id: "faq-distributors",
-    question:
-      "Where can I purchase genuine products of The Skin Professionals across Nepal?",
-    answer:
-      "Genuine products from The Skin Professionals can be ordered directly from our website's clinical shop or bought at our authorized dermatologist clinics, skin diagnostic desks, and medical pharmacies in major hubs across Nepal, including Kathmandu, Lalitpur, Pokhara, Biratnagar, Nepalgunj, Butwal, Chitwan, and Dharan.",
+      "Our products are clinically formulated by dermatologists, focusing on evidence-based ingredients at precise therapeutic concentrations. We avoid unnecessary fillers and fragrance to ensure maximum efficacy with minimal irritation.",
   },
 ];
 
