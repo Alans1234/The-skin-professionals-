@@ -34,16 +34,16 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
             transition={{ duration: 0.8 }}
           >
             <span className="font-sans text-[10px] sm:text-xs tracking-[0.5em] text-brand-gold uppercase bg-white/10 border border-white/10 px-4 py-1.5 rounded-full inline-block mb-4 font-semibold backdrop-blur-md">
-              THE CHRONICLE OF FORMULATION
+              WHO WE ARE
             </span>
             <h1 className="font-serif text-4xl sm:text-6xl text-white tracking-tight leading-[1.15] mb-5">
-              Our Legacy, Science, <br />
+              Our legacy is Beauty, <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-brand-pink-dark to-brand-chalk italic font-light">
-                and Pure Intention
+                our intention is pure.
               </span>
             </h1>
             <p className="font-sans text-xs sm:text-sm text-stone-300 max-w-xl mx-auto tracking-widest uppercase mb-2">
-              RE-ENGINEERING BEAUTY FROM CELLULAR FOUNDATIONS
+              REDEFINING BEAUTY FROM THE INSIDE OUT
             </p>
             <div className="w-16 h-[1px] bg-gradient-to-r from-brand-gold via-brand-pink-dark to-transparent mx-auto mt-6"></div>
           </motion.div>
