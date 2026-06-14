@@ -81,16 +81,17 @@ export default function Products({ products, onNavigate }: ProductsProps) {
 
         <div className="relative z-10 max-w-4xl mx-auto px-6">
           <span className="font-sans text-[9px] sm:text-xs tracking-[0.4em] text-brand-gold bg-brand-chalk/10 border border-brand-chalk/10 px-4 py-1.5 rounded-full inline-block mb-4 font-semibold backdrop-blur-md">
-            THE APOTHECARY ARCHIVE
+            OUR PRODUCTS
           </span>
           <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-brand-chalk tracking-tight leading-[1.1] mb-5">
-            Dermal Active <br className="hidden sm:inline" />
+            Active ingredients for your skin.{" "}
+            <br className="hidden sm:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-brand-pink-dark to-brand-chalk italic font-light">
-              Physiological Formulations
+              Formulated for real results.
             </span>
           </h1>
           <p className="font-sans text-[10px] sm:text-xs text-stone-300 max-w-xl mx-auto tracking-widest uppercase mb-2">
-            PRECISE PRESCRIPTIONS BALANCED FOR BIOLOGICAL INTEGRITY
+            CLEAN FORMULAS THAT WORK WITH YOUR BODY
           </p>
           <div className="w-16 h-[1px] bg-gradient-to-r from-brand-gold via-brand-pink-dark to-transparent mx-auto mt-6"></div>
         </div>
