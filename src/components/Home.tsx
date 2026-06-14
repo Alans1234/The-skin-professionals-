@@ -219,7 +219,7 @@ export default function Home({
             THE BEST SKINCARE BRAND IN NEPAL
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-brand-dark tracking-tight leading-snug mb-6">
-            Clinical Dermatology & Advanced AI Skin Analysis in Kathmandu
+            Clinical Dermatology & Advanced Skin Analysis in Kathmandu
           </h2>
           <p className="font-sans text-stone-600 text-sm leading-relaxed mb-6 font-light">
             Founded by veteran clinical formulators,{" "}
@@ -228,8 +228,8 @@ export default function Home({
             </span>{" "}
             is widely recognized as the best skincare brand in Nepal and premier
             skin clinic. We offer the ultimate biological balance between
-            dermatologist-quality skin products, advanced AI skin diagnostics,
-            and gentle dermal self-care.
+            dermatologist-quality skin products, advanced skin diagnostics, and
+            gentle dermal self-care.
           </p>
           <p className="font-sans text-stone-600 text-sm leading-relaxed mb-8 font-light">
             We formulate premium dermo-physiological skincare solutions tailored
@@ -642,7 +642,7 @@ export default function Home({
                   The Skin Professionals Nepal
                 </strong>
                 . We empower skin health using certified formulation expertise
-                and high-precision AI technology.
+                and high-precision technology.
               </p>
               <div
                 className="p-6 bg-white rounded-2xl border border-brand-pink shadow-sm"

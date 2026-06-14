@@ -1,6 +1,15 @@
-import React, { useState } from 'react';
-import { MapPin, Phone, MessageSquare, Search, ShieldCheck, Mail, HelpCircle, ExternalLink } from 'lucide-react';
-import { motion } from 'motion/react';
+import React, { useState } from "react";
+import {
+  MapPin,
+  Phone,
+  MessageSquare,
+  Search,
+  ShieldCheck,
+  Mail,
+  HelpCircle,
+  ExternalLink,
+} from "lucide-react";
+import { motion } from "motion/react";
 
 interface Distributor {
   id: string;
@@ -17,345 +26,406 @@ interface Distributor {
 }
 
 const NEPAL_DISTRIBUTORS: Distributor[] = [
-  
   {
-    id: 'dist-nik',
-    name: 'NIK Traders',
-    region: 'Bagmati Province',
-    city: 'Chitwan',
-    address: 'Chitwan, Nepal',
-    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
-    mapsUrl: 'https://www.google.com/maps/search/NIK%20Traders%20Chitwan%20Nepal'
+    id: "dist-nik",
+    name: "NIK Traders",
+    region: "Bagmati Province",
+    city: "Chitwan",
+    address: "Chitwan, Nepal",
+    timing: "10:00 AM - 6:30 PM (Sunday - Friday)",
+    mapsUrl:
+      "https://www.google.com/maps/search/NIK%20Traders%20Chitwan%20Nepal",
   },
   {
-    id: 'dist-kala',
-    name: 'Kala and Brothers Suppliers',
-    region: 'Bagmati Province (Kathmandu Valley)',
-    city: 'Kathmandu',
-    address: 'Kathmandu, Nepal',
-    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
-    mapsUrl: 'https://www.google.com/maps/search/Kala%20and%20Brothers%20Kathmandu%20Nepal'
+    id: "dist-kala",
+    name: "Kala and Brothers Suppliers",
+    region: "Bagmati Province (Kathmandu Valley)",
+    city: "Kathmandu",
+    address: "Kathmandu, Nepal",
+    timing: "10:00 AM - 7:00 PM (Sunday - Friday)",
+    mapsUrl:
+      "https://www.google.com/maps/search/Kala%20and%20Brothers%20Kathmandu%20Nepal",
   },
   {
-    id: 'dist-all-derma',
-    name: 'All Derma House',
-    region: 'Bagmati Province (Kathmandu Valley)',
-    city: 'Kathmandu',
-    address: 'Kathmandu, Nepal',
-    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
-    mapsUrl: 'https://www.google.com/maps/search/All%20derma%20house%20Kathmandu%20Nepal'
+    id: "dist-all-derma",
+    name: "All Derma House",
+    region: "Bagmati Province (Kathmandu Valley)",
+    city: "Kathmandu",
+    address: "Kathmandu, Nepal",
+    timing: "10:00 AM - 7:00 PM (Sunday - Friday)",
+    mapsUrl:
+      "https://www.google.com/maps/search/All%20derma%20house%20Kathmandu%20Nepal",
   },
   {
-    id: 'dist-api-derma',
-    name: 'API Derma House',
-    region: 'Bagmati Province (Kathmandu Valley)',
-    city: 'Kathmandu',
-    address: 'Kathmandu, Nepal',
-    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
-    mapsUrl: 'https://www.google.com/maps/search/API%20derma%20house%20Kathmandu%20Nepal'
+    id: "dist-api-derma",
+    name: "API Derma House",
+    region: "Bagmati Province (Kathmandu Valley)",
+    city: "Kathmandu",
+    address: "Kathmandu, Nepal",
+    timing: "10:00 AM - 7:00 PM (Sunday - Friday)",
+    mapsUrl:
+      "https://www.google.com/maps/search/API%20derma%20house%20Kathmandu%20Nepal",
   },
   {
-    id: 'dist-caremark',
-    name: 'Caremark Enterprise',
-    region: 'Bagmati Province (Kathmandu Valley)',
-    city: 'Kathmandu',
-    address: 'Kathmandu, Nepal',
-    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
-    mapsUrl: 'https://www.google.com/maps/search/Caremark%20Enterprise%20Kathmandu%20Nepal'
+    id: "dist-caremark",
+    name: "Caremark Enterprise",
+    region: "Bagmati Province (Kathmandu Valley)",
+    city: "Kathmandu",
+    address: "Kathmandu, Nepal",
+    timing: "10:00 AM - 7:00 PM (Sunday - Friday)",
+    mapsUrl:
+      "https://www.google.com/maps/search/Caremark%20Enterprise%20Kathmandu%20Nepal",
   },
   {
-    id: 'dist-joshi',
-    name: 'Joshi Trade Concern',
-    region: 'Lumbini Province',
-    city: 'Butwal',
-    address: 'Butwal, Nepal',
-    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
-    mapsUrl: 'https://www.google.com/maps/search/Joshi%20Trade%20concern%20Butwal%20Nepal'
+    id: "dist-joshi",
+    name: "Joshi Trade Concern",
+    region: "Lumbini Province",
+    city: "Butwal",
+    address: "Butwal, Nepal",
+    timing: "10:00 AM - 6:30 PM (Sunday - Friday)",
+    mapsUrl:
+      "https://www.google.com/maps/search/Joshi%20Trade%20concern%20Butwal%20Nepal",
   },
   {
-    id: 'dist-ishika',
-    name: 'Ishika Cosmetics',
-    region: 'Bagmati Province (Kathmandu Valley)',
-    city: 'Kathmandu',
-    address: 'Kathmandu, Nepal',
-    timing: '10:00 AM - 7:30 PM (Sunday - Friday)',
-    mapsUrl: 'https://www.google.com/maps/search/Ishika%20Cosmetics%20Kathmandu%20Nepal'
+    id: "dist-ishika",
+    name: "Ishika Cosmetics",
+    region: "Bagmati Province (Kathmandu Valley)",
+    city: "Kathmandu",
+    address: "Kathmandu, Nepal",
+    timing: "10:00 AM - 7:30 PM (Sunday - Friday)",
+    mapsUrl:
+      "https://www.google.com/maps/search/Ishika%20Cosmetics%20Kathmandu%20Nepal",
   },
   {
-    id: 'dist-sahara',
-    name: 'Sahara Medicine Distributors',
-    region: 'Lumbini Province',
-    city: 'Nepalgunj',
-    address: 'Nepalgunj, Nepal',
-    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
-    mapsUrl: 'https://maps.app.goo.gl/h2zap6FHurA1r3u16'
+    id: "dist-sahara",
+    name: "Sahara Medicine Distributors",
+    region: "Lumbini Province",
+    city: "Nepalgunj",
+    address: "Nepalgunj, Nepal",
+    timing: "10:00 AM - 6:30 PM (Sunday - Friday)",
+    mapsUrl: "https://maps.app.goo.gl/h2zap6FHurA1r3u16",
   },
   {
-    id: 'dist-natraj',
-    name: 'Natraj Healthcare Pvt Ltd',
-    region: 'Bagmati Province (Kathmandu Valley)',
-    city: 'Kathmandu',
-    address: 'Kathmandu, Nepal',
-    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
-    mapsUrl: 'https://www.google.com/maps/search/Natraj%20healthcare%20pvt%20ltd%20Kathmandu%20Nepal'
+    id: "dist-natraj",
+    name: "Natraj Healthcare Pvt Ltd",
+    region: "Bagmati Province (Kathmandu Valley)",
+    city: "Kathmandu",
+    address: "Kathmandu, Nepal",
+    timing: "10:00 AM - 7:00 PM (Sunday - Friday)",
+    mapsUrl:
+      "https://www.google.com/maps/search/Natraj%20healthcare%20pvt%20ltd%20Kathmandu%20Nepal",
   },
   {
-    id: 'dist-derma-essentia',
-    name: 'Derma Essentia',
-    region: 'Bagmati Province (Kathmandu Valley)',
-    city: 'Lalitpur',
-    address: 'Lalitpur, Nepal',
-    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
-    mapsUrl: 'https://www.google.com/maps/search/Derma%20essentia%20Lalitpur%20Nepal'
+    id: "dist-derma-essentia",
+    name: "Derma Essentia",
+    region: "Bagmati Province (Kathmandu Valley)",
+    city: "Lalitpur",
+    address: "Lalitpur, Nepal",
+    timing: "10:00 AM - 7:00 PM (Sunday - Friday)",
+    mapsUrl:
+      "https://www.google.com/maps/search/Derma%20essentia%20Lalitpur%20Nepal",
   },
   {
-    id: 'dist-unique',
-    name: 'Unique Medicine Distributor',
-    region: 'Karnali Province',
-    city: 'Surkhet',
-    address: 'Surkhet, Nepal',
-    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
-    mapsUrl: 'https://maps.app.goo.gl/DqpVZTKbiDCDFABP7'
+    id: "dist-unique",
+    name: "Unique Medicine Distributor",
+    region: "Karnali Province",
+    city: "Surkhet",
+    address: "Surkhet, Nepal",
+    timing: "10:00 AM - 6:30 PM (Sunday - Friday)",
+    mapsUrl: "https://maps.app.goo.gl/DqpVZTKbiDCDFABP7",
   },
   {
-    id: 'dist-roshan',
-    name: 'Roshan Drug House',
-    region: 'Karnali Province',
-    city: 'Surkhet',
-    address: 'Surkhet, Nepal',
-    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
-    mapsUrl: 'https://www.google.com/maps/search/Roshan%20Drug%20house%20Surkhet%20Nepal'
+    id: "dist-roshan",
+    name: "Roshan Drug House",
+    region: "Karnali Province",
+    city: "Surkhet",
+    address: "Surkhet, Nepal",
+    timing: "10:00 AM - 6:30 PM (Sunday - Friday)",
+    mapsUrl:
+      "https://www.google.com/maps/search/Roshan%20Drug%20house%20Surkhet%20Nepal",
   },
   {
-    id: 'dist-care-pharmacy',
-    name: 'Care Pharmacy Pvt Ltd',
-    region: 'Gandaki Province',
-    city: 'Pokhara',
-    address: 'Pokhara, Nepal',
-    timing: '10:00 AM - 8:00 PM (Everyday)',
-    mapsUrl: 'https://maps.app.goo.gl/vAWFzXu3EnemAfZc8'
+    id: "dist-care-pharmacy",
+    name: "Care Pharmacy Pvt Ltd",
+    region: "Gandaki Province",
+    city: "Pokhara",
+    address: "Pokhara, Nepal",
+    timing: "10:00 AM - 8:00 PM (Everyday)",
+    mapsUrl: "https://maps.app.goo.gl/vAWFzXu3EnemAfZc8",
   },
   {
-    id: 'dist-terai',
-    name: 'Terai Enterprises',
-    region: 'Madhesh Province',
-    city: 'Birgunj',
-    address: 'Birgunj, Nepal',
-    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
-    mapsUrl: 'https://www.google.com/maps/search/Terai%20enterprises%20Birgunj%20Nepal'
+    id: "dist-terai",
+    name: "Terai Enterprises",
+    region: "Madhesh Province",
+    city: "Birgunj",
+    address: "Birgunj, Nepal",
+    timing: "10:00 AM - 7:00 PM (Sunday - Friday)",
+    mapsUrl:
+      "https://www.google.com/maps/search/Terai%20enterprises%20Birgunj%20Nepal",
   },
   {
-    id: 'dist-ar',
-    name: 'AR Traders',
-    region: 'Lumbini Province',
-    city: 'Ghorahi, Dang',
-    address: 'Ghorahi, Dang, Nepal',
-    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
-    mapsUrl: 'https://maps.app.goo.gl/VWMQis4nqQEXiQVf6'
+    id: "dist-ar",
+    name: "AR Traders",
+    region: "Lumbini Province",
+    city: "Ghorahi, Dang",
+    address: "Ghorahi, Dang, Nepal",
+    timing: "10:00 AM - 6:30 PM (Sunday - Friday)",
+    mapsUrl: "https://maps.app.goo.gl/VWMQis4nqQEXiQVf6",
   },
   {
-    id: 'dist-sajak',
-    name: 'Sajak Distributors',
-    region: 'Bagmati Province',
-    city: 'Banepa',
-    address: 'Banepa, Nepal',
-    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
-    mapsUrl: 'https://maps.app.goo.gl/7eQ3M6aZfBELRjpT8'
+    id: "dist-sajak",
+    name: "Sajak Distributors",
+    region: "Bagmati Province",
+    city: "Banepa",
+    address: "Banepa, Nepal",
+    timing: "10:00 AM - 6:30 PM (Sunday - Friday)",
+    mapsUrl: "https://maps.app.goo.gl/7eQ3M6aZfBELRjpT8",
   },
   {
-    id: 'dist-kalika',
-    name: 'Kalika Medicine Distributors',
-    region: 'Karnali Province',
-    city: 'Surkhet',
-    address: 'Surkhet, Nepal',
-    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
-    mapsUrl: 'https://maps.app.goo.gl/Wv2EQp8ha5VeFoM2A'
+    id: "dist-kalika",
+    name: "Kalika Medicine Distributors",
+    region: "Karnali Province",
+    city: "Surkhet",
+    address: "Surkhet, Nepal",
+    timing: "10:00 AM - 6:30 PM (Sunday - Friday)",
+    mapsUrl: "https://maps.app.goo.gl/Wv2EQp8ha5VeFoM2A",
   },
   {
-    id: 'dist-dipika',
-    name: 'Dipika Trade Link',
-    region: 'Gandaki Province',
-    city: 'Pokhara',
-    address: 'Pokhara, Nepal',
-    timing: '10:00 AM - 7:30 PM (Sunday - Friday)',
-    mapsUrl: 'https://www.google.com/maps/search/dipika%20trade%20link%20Pokhara%20Nepal'
+    id: "dist-dipika",
+    name: "Dipika Trade Link",
+    region: "Gandaki Province",
+    city: "Pokhara",
+    address: "Pokhara, Nepal",
+    timing: "10:00 AM - 7:30 PM (Sunday - Friday)",
+    mapsUrl:
+      "https://www.google.com/maps/search/dipika%20trade%20link%20Pokhara%20Nepal",
   },
   {
-    id: 'dist-nayan',
-    name: 'Nayan Medisales',
-    region: 'Lumbini Province',
-    city: 'Butwal',
-    address: 'Butwal, Nepal',
-    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
-    mapsUrl: 'https://maps.app.goo.gl/4V6eQYVXXxDYEJnm6'
+    id: "dist-nayan",
+    name: "Nayan Medisales",
+    region: "Lumbini Province",
+    city: "Butwal",
+    address: "Butwal, Nepal",
+    timing: "10:00 AM - 6:30 PM (Sunday - Friday)",
+    mapsUrl: "https://maps.app.goo.gl/4V6eQYVXXxDYEJnm6",
   },
   {
-    id: 'dist-qutish',
-    name: 'Qutish Pharmacy Pvt Ltd',
-    region: 'Bagmati Province (Kathmandu Valley)',
-    city: 'Kathmandu',
-    address: 'Kathmandu, Nepal',
-    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
-    mapsUrl: 'https://maps.app.goo.gl/U7hqvxz7qsun3FNy8'
+    id: "dist-qutish",
+    name: "Qutish Pharmacy Pvt Ltd",
+    region: "Bagmati Province (Kathmandu Valley)",
+    city: "Kathmandu",
+    address: "Kathmandu, Nepal",
+    timing: "10:00 AM - 7:00 PM (Sunday - Friday)",
+    mapsUrl: "https://maps.app.goo.gl/U7hqvxz7qsun3FNy8",
   },
   {
-    id: 'dist-shree-sidhhivinayak',
-    name: 'Shree Sidhhivinayak Impex',
-    region: 'Koshi Province',
-    city: 'Biratnagar',
-    address: 'Biratnagar, Nepal',
-    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
-    mapsUrl: 'https://www.google.com/maps/search/Shree%20sidhhivinayak%20impex%20Biratnagar%20Nepal'
+    id: "dist-shree-sidhhivinayak",
+    name: "Shree Sidhhivinayak Impex",
+    region: "Koshi Province",
+    city: "Biratnagar",
+    address: "Biratnagar, Nepal",
+    timing: "10:00 AM - 7:00 PM (Sunday - Friday)",
+    mapsUrl:
+      "https://www.google.com/maps/search/Shree%20sidhhivinayak%20impex%20Biratnagar%20Nepal",
   },
   {
-    id: 'dist-meditop',
-    name: 'Meditop Pharma Suppliers',
-    region: 'Koshi Province',
-    city: 'Birtamode',
-    address: 'Birtamode, Nepal',
-    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
-    mapsUrl: 'https://www.google.com/maps/search/meditop%20pharma%20suppliers%20Birtamode%20Nepal'
+    id: "dist-meditop",
+    name: "Meditop Pharma Suppliers",
+    region: "Koshi Province",
+    city: "Birtamode",
+    address: "Birtamode, Nepal",
+    timing: "10:00 AM - 6:30 PM (Sunday - Friday)",
+    mapsUrl:
+      "https://www.google.com/maps/search/meditop%20pharma%20suppliers%20Birtamode%20Nepal",
   },
   {
-    id: 'dist-national-pharmacy',
-    name: 'National Pharmacy and Surgical Suppliers',
-    region: 'Gandaki Province',
-    city: 'Kawasoti',
-    address: 'Kawasoti, Nepal',
-    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
-    mapsUrl: 'https://maps.app.goo.gl/75qTXcjyhi9ZKYSq6'
+    id: "dist-national-pharmacy",
+    name: "National Pharmacy and Surgical Suppliers",
+    region: "Gandaki Province",
+    city: "Kawasoti",
+    address: "Kawasoti, Nepal",
+    timing: "10:00 AM - 7:00 PM (Sunday - Friday)",
+    mapsUrl: "https://maps.app.goo.gl/75qTXcjyhi9ZKYSq6",
   },
   {
-    id: 'dist-kartabya',
-    name: 'Kartabya Medicine Distributors',
-    region: 'Lumbini Province',
-    city: 'Nepalgunj',
-    address: 'Nepalgunj, Nepal',
-    timing: '10:00 AM - 6:30 PM (Sunday - Friday)',
-    mapsUrl: 'https://maps.app.goo.gl/h2zap6FHurA1r3u16'
+    id: "dist-kartabya",
+    name: "Kartabya Medicine Distributors",
+    region: "Lumbini Province",
+    city: "Nepalgunj",
+    address: "Nepalgunj, Nepal",
+    timing: "10:00 AM - 6:30 PM (Sunday - Friday)",
+    mapsUrl: "https://maps.app.goo.gl/h2zap6FHurA1r3u16",
   },
   {
-    id: 'dist-bhagat',
-    name: 'Bhagat and Sons Distributors',
-    region: 'Koshi Province',
-    city: 'Biratnagar',
-    address: 'Biratnagar, Nepal',
-    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
-    mapsUrl: 'https://www.google.com/maps/search/Bhagat%20and%20sons%20Distributors%20Biratnagar%20Nepal'
+    id: "dist-bhagat",
+    name: "Bhagat and Sons Distributors",
+    region: "Koshi Province",
+    city: "Biratnagar",
+    address: "Biratnagar, Nepal",
+    timing: "10:00 AM - 7:00 PM (Sunday - Friday)",
+    mapsUrl:
+      "https://www.google.com/maps/search/Bhagat%20and%20sons%20Distributors%20Biratnagar%20Nepal",
   },
   {
-    id: 'dist-halesi',
-    name: 'Halesi Trade and Company',
-    region: 'Koshi Province',
-    city: 'Dharan',
-    address: 'Dharan, Nepal',
-    timing: '10:00 AM - 6:30 PM (Sunday - Friday)'
+    id: "dist-halesi",
+    name: "Halesi Trade and Company",
+    region: "Koshi Province",
+    city: "Dharan",
+    address: "Dharan, Nepal",
+    timing: "10:00 AM - 6:30 PM (Sunday - Friday)",
   },
   {
-    id: 'dist-valasa',
-    name: 'Valasa Traders Pvt Ltd',
-    region: 'Bagmati Province (Kathmandu Valley)',
-    city: 'Kathmandu',
-    address: 'Kathmandu, Nepal',
-    timing: '10:00 AM - 7:00 PM (Sunday - Friday)',
-    mapsUrl: 'https://maps.app.goo.gl/g2UsygZ2Cr2eGZneA'
-  }
+    id: "dist-valasa",
+    name: "Valasa Traders Pvt Ltd",
+    region: "Bagmati Province (Kathmandu Valley)",
+    city: "Kathmandu",
+    address: "Kathmandu, Nepal",
+    timing: "10:00 AM - 7:00 PM (Sunday - Friday)",
+    mapsUrl: "https://maps.app.goo.gl/g2UsygZ2Cr2eGZneA",
+  },
 ];
 
 export default function Distributors() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedRegion, setSelectedRegion] = useState('All');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedRegion, setSelectedRegion] = useState("All");
 
   // Simple, friendly list of unique regions
-  const regions = ['All', ...Array.from(new Set(NEPAL_DISTRIBUTORS.map(d => d.region)))];
+  const regions = [
+    "All",
+    ...Array.from(new Set(NEPAL_DISTRIBUTORS.map((d) => d.region))),
+  ];
 
-  const filteredDistributors = NEPAL_DISTRIBUTORS.filter(d => {
-    const matchesSearch = 
+  const filteredDistributors = NEPAL_DISTRIBUTORS.filter((d) => {
+    const matchesSearch =
       d.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       d.city.toLowerCase().includes(searchTerm.toLowerCase()) ||
       d.address.toLowerCase().includes(searchTerm.toLowerCase());
-    
-    const matchesRegion = selectedRegion === 'All' || d.region === selectedRegion;
-    
+
+    const matchesRegion =
+      selectedRegion === "All" || d.region === selectedRegion;
+
     return matchesSearch && matchesRegion;
   });
 
   return (
-    <div id="distributors-view" className="bg-brand-chalk text-brand-dark min-h-screen">
-      
+    <div
+      id="distributors-view"
+      className="bg-brand-chalk text-brand-dark min-h-screen"
+    >
       {/* Friendly Header with simple words */}
-      <section className="relative py-20 bg-brand-dark text-white text-center overflow-hidden" id="distributors-header">
-        <div className="absolute inset-0 z-0 opacity-15">
-          <div className="absolute top-10 left-10 w-62.5 h-62.5 bg-brand-gold rounded-full blur-[90px] pointer-events-none"></div>
-          <div className="absolute bottom-10 right-10 w-87.5 h-87.5 bg-brand-pink rounded-full blur-[100px] pointer-events-none"></div>
+      <section
+        className="relative py-28 bg-brand-dark overflow-hidden"
+        id="distributors-header"
+      >
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/Eszt1.jpg"
+            alt="Authorized Skin Professionals shop locations across Nepal"
+            className="w-full h-full object-cover opacity-35 filter scale-102"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/75 to-brand-dark/40"></div>
+
+          <div className="absolute top-10 left-10 w-[350px] h-[350px] bg-brand-gold/5 rounded-full blur-[110px] mix-blend-screen pointer-events-none"></div>
+          <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-brand-pink/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
         </div>
-        
-        <div className="relative z-10 max-w-4xl mx-auto px-4">
-          <span className="font-sans text-xs tracking-widest text-brand-gold uppercase bg-white/10 px-4 py-1.5 rounded-full inline-block mb-3 font-semibold">
-            Nepal Authorized Shop Locations
-          </span>
-          <h1 className="font-serif text-3xl sm:text-5xl tracking-tight mb-4">
-            Where to Buy
-          </h1>
-          <p className="font-sans text-stone-300 text-sm max-w-xl mx-auto leading-relaxed">
-            Buy original items and skincare items from our stores and authorized shops. 
-            Select your nearest city or call directly for quick help & home delivery all over Nepal!
-          </p>
+
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="font-sans text-[10px] sm:text-xs tracking-[0.5em] text-brand-gold uppercase bg-white/10 border border-white/10 px-4 py-1.5 rounded-full inline-block mb-4 font-semibold backdrop-blur-md">
+              NEPAL AUTHORIZED SHOP LOCATIONS
+            </span>
+            <h1 className="font-serif text-4xl sm:text-6xl text-white tracking-tight leading-[1.15] mb-5">
+              Where to Buy <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-brand-pink-dark to-brand-chalk italic font-light">
+                Authentic Skin Professionals
+              </span>
+            </h1>
+            <p className="font-sans text-xs sm:text-sm text-stone-300 max-w-xl mx-auto tracking-widest uppercase mb-2">
+              BUY ORIGINAL ITEMS FROM OUR STORES AND AUTHORIZED SHOPS ACROSS
+              NEPAL
+            </p>
+            <div className="w-16 h-[1px] bg-gradient-to-r from-brand-gold via-brand-pink-dark to-transparent mx-auto mt-6"></div>
+          </motion.div>
         </div>
       </section>
 
       {/* Verification Shield Banner in simple words */}
-      <section className="py-4 bg-brand-gold/20 border-b border-brand-gold/40" id="originality-badge">
+      <section
+        className="py-4 bg-brand-gold/20 border-b border-brand-gold/40"
+        id="originality-badge"
+      >
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-3 text-center md:text-left">
           <ShieldCheck className="w-5 h-5 text-brand-dark shrink-0" />
           <p className="font-sans text-xs font-semibold text-brand-dark tracking-wide">
-            ALWAYS BUY FROM AUTHORIZED STORES TO ENSURE 100% ORIGINAL GENUINE CLINICAL SKINCARE (नक्कली सामानबाट बच्नुहोस्)
+            ALWAYS BUY FROM AUTHORIZED STORES TO ENSURE 100% ORIGINAL GENUINE
+            CLINICAL SKINCARE (नक्कली सामानबाट बच्नुहोस्)
           </p>
         </div>
       </section>
 
       {/* Distributors Search and Listings Container */}
-      <section className="py-12 max-w-7xl mx-auto px-4" id="distributors-directory">
-        
+      <section
+        className="py-12 max-w-7xl mx-auto px-4"
+        id="distributors-directory"
+      >
         {/* Search & Province Filter Bar */}
-        <div className="bg-white p-6 rounded-2xl border border-stone-200/80 shadow-sm flex flex-col md:flex-row gap-4 mb-10 items-center justify-between" id="search-filter-controls">
-          
-          <div className="relative w-full md:max-w-md" id="search-input-wrapper">
+        <div
+          className="bg-white p-6 rounded-2xl border border-stone-200/80 shadow-sm flex flex-col md:flex-row gap-4 mb-10 items-center justify-between"
+          id="search-filter-controls"
+        >
+          <div
+            className="relative w-full md:max-w-md"
+            id="search-input-wrapper"
+          >
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
-            <input 
-              type="text" 
+            <input
+              type="text"
               placeholder="Search your City (e.g. Kathmandu, Butwal, Pokhara, Dharan)..."
               value={searchTerm}
-              onChange={e => setSearchTerm(e.target.value)}
+              onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-10 pr-4 py-2.5 bg-brand-chalk text-brand-dark text-sm rounded-lg border border-stone-200 focus:outline-none focus:border-brand-dark font-sans"
             />
           </div>
 
-          <div id="region-filter-wrapper" className="w-full md:w-auto flex items-center space-x-2">
-            <span className="text-xs text-stone-500 font-medium shrink-0 font-sans">Select Province:</span>
-            <select 
+          <div
+            id="region-filter-wrapper"
+            className="w-full md:w-auto flex items-center space-x-2"
+          >
+            <span className="text-xs text-stone-500 font-medium shrink-0 font-sans">
+              Select Province:
+            </span>
+            <select
               value={selectedRegion}
-              onChange={e => setSelectedRegion(e.target.value)}
+              onChange={(e) => setSelectedRegion(e.target.value)}
               className="w-full md:w-auto bg-brand-chalk text-brand-dark font-sans text-xs font-semibold border border-stone-200 rounded-lg px-4 py-2.5 focus:outline-none focus:border-brand-dark"
             >
-              {regions.map(r => (
-                <option key={r} value={r}>{r}</option>
+              {regions.map((r) => (
+                <option key={r} value={r}>
+                  {r}
+                </option>
               ))}
             </select>
           </div>
-
         </div>
 
         {/* Distributor Cards Grid */}
         {filteredDistributors.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="distributors-grid">
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            id="distributors-grid"
+          >
             {filteredDistributors.map((d) => (
-              <div 
-                key={d.id} 
+              <div
+                key={d.id}
                 className={`bg-white rounded-2xl border p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-md ${
-                  d.isMainHub 
-                    ? 'border-brand-gold bg-brand-gold/5 relative overflow-hidden' 
-                    : 'border-stone-200/80'
+                  d.isMainHub
+                    ? "border-brand-gold bg-brand-gold/5 relative overflow-hidden"
+                    : "border-stone-200/80"
                 }`}
                 id={`dist-card-${d.id}`}
               >
@@ -381,7 +451,10 @@ export default function Distributors() {
                     {d.name}
                   </h3>
 
-                  <div className="space-y-2.5 my-4 text-xs text-stone-600 font-sans" id="dist-info-details">
+                  <div
+                    className="space-y-2.5 my-4 text-xs text-stone-600 font-sans"
+                    id="dist-info-details"
+                  >
                     {/* Address */}
                     <div className="flex items-start space-x-2">
                       <MapPin className="w-4 h-4 text-stone-400 shrink-0 mt-0.5" />
@@ -397,11 +470,14 @@ export default function Distributors() {
                 </div>
 
                 {/* Direct Action Buttons for simple Nepalese user experience */}
-                <div className="pt-4 border-t border-stone-100 space-y-2" id="action-buttons-box">
+                <div
+                  className="pt-4 border-t border-stone-100 space-y-2"
+                  id="action-buttons-box"
+                >
                   {d.mapsUrl && (
-                    <a 
-                      href={d.mapsUrl} 
-                      target="_blank" 
+                    <a
+                      href={d.mapsUrl}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-center space-x-2 bg-brand-dark text-white hover:bg-brand-dark-accent text-xs font-bold py-2.5 px-4 rounded-lg transition-colors cursor-pointer"
                     >
@@ -410,11 +486,10 @@ export default function Distributors() {
                     </a>
                   )}
 
-
                   {d.whatsapp && (
-                    <a 
-                      href={`https://wa.me/${d.whatsapp.replace(/\D/g, '')}`} 
-                      target="_blank" 
+                    <a
+                      href={`https://wa.me/${d.whatsapp.replace(/\D/g, "")}`}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="w-full flex items-center justify-center space-x-2 bg-[#25D366]/10 text-[#128C7E] hover:bg-[#25D366]/20 text-xs font-bold py-2 px-4 rounded-lg transition-colors cursor-pointer"
                     >
@@ -423,54 +498,58 @@ export default function Distributors() {
                     </a>
                   )}
                 </div>
-
               </div>
             ))}
           </div>
         ) : (
-          <div className="text-center py-16 bg-white rounded-2xl border border-stone-200/80 max-w-md mx-auto" id="no-distributor-found">
+          <div
+            className="text-center py-16 bg-white rounded-2xl border border-stone-200/80 max-w-md mx-auto"
+            id="no-distributor-found"
+          >
             <HelpCircle className="w-12 h-12 text-brand-pink-dark mx-auto mb-3" />
-            <h3 className="font-serif text-lg text-brand-dark mb-1">No Local Shop Found</h3>
+            <h3 className="font-serif text-lg text-brand-dark mb-1">
+              No Local Shop Found
+            </h3>
             <p className="font-sans text-xs text-stone-500 px-6 leading-relaxed">
-              We did not find any dealer matching your search. Don't worry! We offer home delivery all over Nepal from our main office.
+              We did not find any dealer matching your search. Don't worry! We
+              offer home delivery all over Nepal from our main office.
             </p>
-            <button 
-              onClick={() => { setSearchTerm(''); setSelectedRegion('All'); }}
+            <button
+              onClick={() => {
+                setSearchTerm("");
+                setSelectedRegion("All");
+              }}
               className="mt-4 font-sans text-xs text-brand-dark font-bold underline cursor-pointer"
             >
               Clear Search
             </button>
           </div>
         )}
-
       </section>
 
       {/* Online Delivery & Support Section tailored for Nepal customer */}
-      <section className="bg-white border-t border-stone-200/80 py-16" id="delivery-info-banner">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="font-serif text-2xl text-brand-dark mb-2">Can't reach a store? We deliver to your home!</h2>
-          <p className="font-sans text-stone-600 text-sm max-w-lg mx-auto mb-6">
-            We provide fast Cash-On-Delivery (COD) inside Kathmandu Valley and secure courier services across all outer districts of Nepal.
+      <section
+        className="py-24 bg-brand-dark flex items-center justify-center relative overflow-hidden px-4"
+        id="distributor-contact-banner"
+      >
+        <div className="absolute left-1/2 -translate-x-1/2 w-[600px] h-[350px] rounded-full bg-brand-dark-accent/60 blur-[130px] -z-10"></div>
+
+        <div
+          className="p-12 md:p-16 max-w-5xl w-full rounded-3xl border border-brand-pink/10 bg-brand-dark-accent/40 backdrop-blur-md text-center shadow-2xl"
+          id="distributor-cta-card"
+        >
+          <span className="font-sans text-xs tracking-[0.3em] text-brand-gold uppercase block mb-3 font-semibold">
+            Retail & Wholesale
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl text-brand-chalk tracking-tight mb-4">
+            Bulk Orders & Partnership Inquiries
+          </h2>
+          <p className="font-sans text-xs sm:text-sm text-brand-chalk/80 max-w-xl mx-auto mb-8 font-light leading-relaxed">
+            Reach out to our authorized distributors for bulk orders, retail
+            partnerships, and professional clinic supplies across Nepal.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto text-left" id="mini-benefits">
-            <div className="bg-brand-chalk p-4 rounded-xl border border-stone-200/50 flex items-center space-x-3">
-              <span className="text-xl">🚚</span>
-              <div>
-                <h4 className="font-sans text-xs font-bold text-brand-dark">Fast Delivery</h4>
-                <p className="font-sans text-[11px] text-stone-500">1-2 days inside kathaandu, 3-5 days in outer districts.</p>
-              </div>
-            </div>
-            <div className="bg-brand-chalk p-4 rounded-xl border border-stone-200/50 flex items-center space-x-3">
-              <span className="text-xl">💳</span>
-              <div>
-                <h4 className="font-sans text-xs font-bold text-brand-dark">Cash on Delivery</h4>
-                <p className="font-sans text-[11px] text-stone-500">Pay when you receive the packet safely at your door.</p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
-
     </div>
   );
 }

@@ -316,7 +316,7 @@ export default function Products({ products, onNavigate }: ProductsProps) {
             onClick={() => onNavigate("analysis")}
             className="w-full lg:w-auto flex-shrink-0 px-8 py-4 bg-brand-gold text-brand-dark font-sans text-xs tracking-widest uppercase font-bold rounded hover:scale-105 transition-all duration-300 cursor-pointer shadow-md"
           >
-            Launch AI Consultation
+            Launch Consultation
           </button>
         </div>
       </section>

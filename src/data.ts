@@ -29,45 +29,37 @@ export const INITIAL_PRODUCTS: Product[] = [
     ingredients: [
       {
         name: "Niacinamide",
-        percentage: "4.0%",
         purpose:
           "Regulates sebum, minimizes pore outline and fades active dark marks",
       },
       {
         name: "Ceramide",
-        percentage: "1.5%",
         purpose: "Rebuilds natural skin lipid brick barrier",
       },
       {
         name: "Sodium hyaluronate",
-        percentage: "1.0%",
         purpose:
           "Locks relative atmospheric moisture instantly into dermal layers",
       },
       {
         name: "Aquaxyl",
-        percentage: "1.5%",
         purpose:
           "Optimizes skin hydric flows and boosts deep aquaporin synthesis",
       },
       {
         name: "Alpha arbutin",
-        percentage: "2.0%",
         purpose: "Inhibits tyrosinase enzymes to brighten skin tone safely",
       },
       {
         name: "Ethyl ascorbic acid",
-        percentage: "1.5%",
         purpose: "Renders high stability vitamin C antioxidant benefit",
       },
       {
         name: "Kojic acid",
-        percentage: "1.0%",
         purpose: "Fades stubborn post-inflammatory discoloration",
       },
       {
         name: "Licorice extract & Willow bark extract",
-        percentage: "3.0%",
         purpose: "Calms redness, purges micro-congestion and soothes cells",
       },
     ],
@@ -89,38 +81,31 @@ export const INITIAL_PRODUCTS: Product[] = [
     ingredients: [
       {
         name: "Micronized Zinc Oxide",
-        percentage: "10.0%",
         purpose: "Forms a physical barrier to block and reflect UVA/UVB rays",
       },
       {
         name: "Micronized TiO2",
-        percentage: "4.0%",
         purpose: "Delivers broad solar protection with supreme transparency",
       },
       {
         name: "Niacinamide",
-        percentage: "2.0%",
         purpose: "Soothes dermal inflammation and strengthens moisture barrier",
       },
       {
         name: "Hyaluronic acid & Aquaxyl",
-        percentage: "1.5%",
         purpose: "Fights heat-induced cell dehydration and loss of bounce font",
       },
       {
         name: "D-Panthenol",
-        percentage: "1.0%",
         purpose: "Deeply comforts and accelerates tissue recovery",
       },
       {
         name: "Vitamin C & Vitamin E",
-        percentage: "1.2%",
         purpose:
           "Synergistic antioxidant network that counteracts solar damage",
       },
       {
         name: "Octyl Salicylate & Octocrylene",
-        percentage: "5.0%",
         purpose: "High-efficacy broad-spectrum UV absorbing shield",
       },
     ],
@@ -142,39 +127,32 @@ export const INITIAL_PRODUCTS: Product[] = [
     ingredients: [
       {
         name: "Ethylhexyl Butyl Methoxycinnamate",
-        percentage: "7.5%",
         purpose: "Organic UVB filter absorbing harmful solar energies",
       },
       {
         name: "Methoxydibenzoylmethane",
-        percentage: "3.0%",
         purpose: "Delivers superior deep protection against aging UVA rays",
       },
       {
         name: "Benzophenone-3 & Phospholipids",
-        percentage: "4.0%",
         purpose: "Extends protection lifespan with a skin-mimetic delivery",
       },
       {
         name: "Glycerin",
-        percentage: "5.0%",
         purpose: "Supplies foundational comfort and deep moisture retention",
       },
       {
         name: "Camellia Sinensis (Green Tea) Leaf Extract",
-        percentage: "2.0%",
         purpose:
           "Botanical defense neutralizing free radicals and environmental smog",
       },
       {
         name: "Allantoin",
-        percentage: "1.0%",
         purpose:
           "Calms cutaneous heat irritation and soothes solar sensitivity",
       },
       {
         name: "Tocopheryl Acetate (Vitamin E)",
-        percentage: "1.0%",
         purpose:
           "Strengthens dermal membrane resistance against aging triggers",
       },
@@ -197,34 +175,28 @@ export const INITIAL_PRODUCTS: Product[] = [
     ingredients: [
       {
         name: "Niacinamide (Vitamin B3)",
-        percentage: "10.0%",
         purpose:
           "Fades persistent dark marks and strengthens local lipid barrier",
       },
       {
         name: "Zinc PCA",
-        percentage: "1.0%",
         purpose:
           "Regulates oil output, calms breakouts and suppresses congestion",
       },
       {
         name: "Vitamin E",
-        percentage: "1.0%",
         purpose: "Accelerates cellular renewal and repairs tissue layers",
       },
       {
         name: "Morus Alba (Mulberry) Root Extract",
-        percentage: "2.0%",
         purpose: "Natural bio-agent that restricts pigment pathways",
       },
       {
         name: "Licorise root extract & Papaya Fruit Extract",
-        percentage: "3.0%",
         purpose: "Soothes inflammation and dissolves dead surface scales",
       },
       {
         name: "Tranexamic Acid",
-        percentage: "2.0%",
         purpose:
           "Prevents vascular-induced skin discoloration and high redness",
       },
@@ -246,41 +218,34 @@ export const INITIAL_PRODUCTS: Product[] = [
     ingredients: [
       {
         name: "Gglycerine & Isopropyl Myristate",
-        percentage: "10.0%",
         purpose:
           "Humectants and emollients that restore immediate skin elasticity",
       },
       {
         name: "Olive Oil & Jojoba seed oil",
-        percentage: "4.0%",
         purpose:
           "Plant lipids rich in skin-identical nourishment and healthy gloss",
       },
       {
         name: "Niacinamide (Vitamin B3)",
-        percentage: "2.0%",
         purpose:
           "Diminishes sallow skin tone and builds natural moisture barrier",
       },
       {
         name: "Shea Butter",
-        percentage: "3.0%",
         purpose: "Rich therapeutic butter that softens dry peeling scales",
       },
       {
         name: "Avena Sativa (Oat) Kernel bark Extract",
-        percentage: "4.0%",
         purpose: "Relieves inflammatory hives, chronic itching and redness",
       },
       {
         name: "Sodium Lacatate & Sodium PCA",
-        percentage: "2.5%",
         purpose:
           "Natural Moisturizing Factors (NMF) restoring hydration balance",
       },
       {
         name: "Wheat Protein & Allantoin",
-        percentage: "1.5%",
         purpose: "Fosters skin cell restoration and delivers satin-soft feel",
       },
     ],
