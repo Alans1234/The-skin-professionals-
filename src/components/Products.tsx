@@ -402,7 +402,7 @@ export default function Products({ products, onNavigate }: ProductsProps) {
                 </div>
 
                 {/* Benefits List */}
-                <div className="mb-6">
+                {/* <div className="mb-6">
                   <h4 className="font-serif text-sm text-brand-dark uppercase tracking-wider mb-3">
                     Key Dermal Reconstructions
                   </h4>
@@ -414,7 +414,7 @@ export default function Products({ products, onNavigate }: ProductsProps) {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </div> */}
 
                 {/* Ingredients list with percent and purpose */}
                 <div className="mb-6">
@@ -478,7 +478,7 @@ export default function Products({ products, onNavigate }: ProductsProps) {
                       }}
                       className="px-5 py-3 bg-brand-dark hover:bg-[#c5a880] text-brand-gold hover:text-brand-dark rounded transition-all duration-300 cursor-pointer"
                     >
-                      Bespoke Inquiry
+                      Inquiry
                     </button>
                     <button
                       onClick={() => {
@@ -487,7 +487,7 @@ export default function Products({ products, onNavigate }: ProductsProps) {
                       }}
                       className="px-4 py-3 bg-transparent text-brand-dark border border-brand-dark/30 hover:bg-brand-dark/5 rounded text-[10px] transition-all duration-300 cursor-pointer"
                     >
-                      Audit Skin
+                      Test Skin
                     </button>
                   </div>
                 </div>
