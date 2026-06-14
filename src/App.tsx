@@ -418,18 +418,19 @@ export default function App() {
             <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
               <div id="footer-brand">
                 <div
-                  className="flex items-center mb-4 select-none"
+                  className="flex items-center mb-4 select-none gap-3"
                   id="footer-brand-logo"
                 >
-                  {/* Golden skewed parallelogram */}
-                  <div className="w-[14px] h-[28px] bg-brand-gold -skew-x-[20deg] mr-2.5 rounded-[1px] shadow-sm flex-shrink-0"></div>
-                  <span className="font-sans text-sm font-black tracking-[0.2em] text-brand-gold uppercase">
-                    THE <span className="text-white">SKIN</span> PROFESSIONALS
-                  </span>
+                  {/* Logo image instead of DIY parallelogram */}
+                  <img
+                    src="/images/Logo.png"
+                    alt="The Skin Professionals Logo"
+                    className="h-13 w-50"
+                  />
                 </div>
-                <p className="leading-relaxed mb-4">
-                  Pristine dermatological formulations bridging clinical active
-                  precision with biological canvas safety.
+
+                <p className="leading-relaxed mb-4 text-sm text-brand-chalk/80">
+                  Clean, clinical skincare you can trust.
                 </p>
                 <div className="flex flex-col space-y-3">
                   <span className="text-[10px] text-brand-pink-dark tracking-widest block font-mono font-semibold">
@@ -532,24 +533,20 @@ export default function App() {
             </div>
 
             <div
-              className="max-w-7xl mx-auto px-4 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between text-[10px] text-brand-chalk/40"
+              className="max-w-7xl mx-auto px-4 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-center text-[10px] text-brand-chalk/40"
               id="footer-bottom"
             >
               <p>
-                © 2023 THE SKIN PROFESSIONALS INC. All rights reserved. Premium
-                Clinical Botanical Curation.
+                © 2023 THE SKIN PROFESSIONALS NEPAL. All rights reserved.
+                <a
+                  href="https://skinprofessionalsnepal.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-brand-gold transition-colors"
+                >
+                  skinprofessionalsnepal.com
+                </a>
               </p>
-              <div className="flex space-x-6 mt-4 md:mt-0 font-medium tracking-[0.05em]">
-                <span className="hover:text-brand-gold cursor-pointer">
-                  Physician Guidelines
-                </span>
-                <span className="hover:text-brand-gold cursor-pointer">
-                  Clinical Dermal Assays
-                </span>
-                <span className="hover:text-white cursor-pointer">
-                  Privacy Charter
-                </span>
-              </div>
             </div>
           </footer>
         </div>
