@@ -183,109 +183,6 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
       </section>
 
       {/* 3. Research & Innovation Gallery */}
-      <section
-        className="py-24 max-w-7xl mx-auto px-4"
-        id="research-innovation"
-      >
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="font-sans text-xs tracking-[0.3em] text-brand-dark uppercase block mb-3 font-bold">
-            Laboratory Insights
-          </span>
-          <h2 className="font-serif text-3xl sm:text-4xl text-brand-dark tracking-tight">
-            Scientific Progress & Bio-Tech Assays
-          </h2>
-          <div className="w-12 h-[1px] bg-[#c5a880] mx-auto mt-4"></div>
-        </div>
-
-        <div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          id="research-pillars"
-        >
-          {/* Pillar 1 */}
-          <div
-            className="bg-[#ffffff] rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm"
-            id="pillar-card-1"
-          >
-            <div className="h-48 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=600"
-                alt="Herbal elements and extracts visual"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div className="p-6">
-              <span className="font-mono text-[9px] text-brand-dark uppercase block mb-2 font-bold">
-                PHASE I • PHYTO-STABILIZATION
-              </span>
-              <h4 className="font-serif text-lg text-brand-dark mb-3">
-                Green Extraction
-              </h4>
-              <p className="font-sans text-stone-600 text-xs leading-relaxed">
-                Utilizing high-purity ultrasonic frequencies to extract fragile
-                plant molecules without applying heat destructors, ensuring
-                botanical enzymes survive fully intact.
-              </p>
-            </div>
-          </div>
-
-          {/* Pillar 2 */}
-          <div
-            className="bg-[#ffffff] rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm"
-            id="pillar-card-2"
-          >
-            <div className="h-48 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=600"
-                alt="Hydrating water droplet patterns"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div className="p-6">
-              <span className="font-mono text-[9px] text-brand-dark uppercase block mb-2 font-bold">
-                PHASE II • LIPID ENCAPSULATION
-              </span>
-              <h4 className="font-serif text-lg text-brand-dark mb-3">
-                Dermal Bio-Delivery
-              </h4>
-              <p className="font-sans text-stone-600 text-xs leading-relaxed">
-                Coding active ingredients inside layered biomimetic phospholipid
-                spheres, allowing formulas to pass through the lipid mantle
-                safely before releasing.
-              </p>
-            </div>
-          </div>
-
-          {/* Pillar 3 */}
-          <div
-            className="bg-[#ffffff] rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm"
-            id="pillar-card-3"
-          >
-            <div className="h-48 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=600"
-                alt="Clinical laboratory slide reviews"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div className="p-6">
-              <span className="font-mono text-[9px] text-brand-dark uppercase block mb-2 font-bold">
-                PHASE III • CLINICAL SCREENING
-              </span>
-              <h4 className="font-serif text-lg text-brand-dark mb-3">
-                Diagnostics & Assays
-              </h4>
-              <p className="font-sans text-stone-600 text-xs leading-relaxed">
-                Conducting rigorous assays on human skin cells in vitro,
-                measuring collagen fiber expansion and inflammatory cytokine
-                suppression before release approval.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 4. Our Team Section */}
       <section
@@ -658,31 +555,35 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
         id="sustainability-ethics"
       >
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Image side */}
           <div
-            className="rounded-3xl overflow-hidden shadow-2xl h-[500px]"
+            className="rounded-3xl overflow-hidden shadow-2xl h-[600px]"
             id="sustainability-visual"
           >
             <img
-              src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800"
-              alt="Sustainable botanical harvesting patterns close up"
+              src="/images/shivnarineChanderpaul.jpeg"
+              alt="Shivnarine Chanderpaul – legendary cricketer and trusted family figure"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
           </div>
 
+          {/* Content side */}
           <div id="sustainability-narrative">
             <span className="font-sans text-xs tracking-[0.3em] text-brand-dark uppercase block mb-3 font-bold">
-              Eco-System Accountability
+              LEGEND’S CHOICE
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-brand-dark tracking-tight mb-6">
-              Respecting the ground that grows our botanical intelligence.
+              Shivnarine Chanderpaul trusts The Skin Professionals for his
+              family.
             </h2>
             <p className="font-sans text-stone-600 text-xs sm:text-sm leading-relaxed mb-6 font-light">
-              skincaring products cannot claim to respect your body if they
-              disrespect the earth that funds them. AURA is strictly grounded in
-              sustainable and circular supply pipelines. We formulate in harmony
-              with biodynamic agriculture and verify that every plant extract
-              can trace its origins to fields where worker rights are secure.
+              One of the greatest batsmen of his era, and the 10th highest
+              international run-scorer of all time, Shivnarine Chanderpaul
+              doesn’t leave his family’s skin health to chance. He chooses The
+              Skin Professionals – because unmatched expertise, clean
+              formulations, and dermatological rigour matter as much off the
+              pitch as on it.
             </p>
 
             <div className="space-y-6" id="sustainability-points">
@@ -690,11 +591,12 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
                 <Leaf className="w-5 h-5 text-brand-dark mt-0.5" />
                 <div>
                   <h4 className="font-serif text-xs sm:text-sm text-brand-dark font-semibold">
-                    100% Biodegradable Fluid Matrix
+                    Dermatologist‑backed safety
                   </h4>
                   <p className="font-sans text-stone-500 text-xs leading-normal">
-                    Our washed-off cleansing formulations decompose organically
-                    within standard aquatic water systems in 28 days.
+                    Every product is formulated under medical supervision –
+                    hypoallergenic, non‑irritating, and suitable for the whole
+                    family, from toddlers to seniors.
                   </p>
                 </div>
               </div>
@@ -703,12 +605,12 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
                 <Heart className="w-5 h-5 text-brand-dark mt-0.5" />
                 <div>
                   <h4 className="font-serif text-xs sm:text-sm text-brand-dark font-semibold">
-                    Recyclable Opaline Glassware
+                    Trusted by families who demand the best
                   </h4>
                   <p className="font-sans text-stone-500 text-xs leading-normal">
-                    We house our precious formulas in solid, Italian-molded
-                    opaline glass. Protects actives from UV light and minimizes
-                    local plastics footprint.
+                    Though The Skin Professionals began in 2023, our science and
+                    safety standards have already earned the quiet confidence of
+                    athletes, celebrities, and parents.
                   </p>
                 </div>
               </div>
@@ -717,12 +619,12 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
                 <Eye className="w-5 h-5 text-brand-dark mt-0.5" />
                 <div>
                   <h4 className="font-serif text-xs sm:text-sm text-brand-dark font-semibold">
-                    Zero-Harm Animal Sourcing
+                    Transparent, clean science
                   </h4>
                   <p className="font-sans text-stone-500 text-xs leading-normal">
-                    AURA laboratories has always been vegan and cruelty-free. We
-                    verify our ingredient compliance down to the biological raw
-                    material tier.
+                    No hidden fragrances, no endocrine disruptors – only
+                    evidence‑based ingredients you can pronounce. What
+                    Shivnarine demands for his family, we deliver.
                   </p>
                 </div>
               </div>
@@ -737,7 +639,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
                 id="partnership-cta"
                 className="px-6 py-3 bg-brand-dark hover:bg-brand-dark/90 text-[#f5f5f4] font-sans text-xs tracking-widest uppercase transition-all duration-300 rounded cursor-pointer shadow-sm hover:translate-y-[-1px]"
               >
-                Inquire About Eco-Practices
+                Discover the champion’s routine
               </button>
             </div>
           </div>

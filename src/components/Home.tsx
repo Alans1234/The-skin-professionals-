@@ -365,10 +365,11 @@ export default function Home({
           >
             <div>
               <span className="font-sans text-xs tracking-[0.3em] text-brand-gold uppercase block mb-3">
-                THE PHYSICAL FORMULATION LIBRARY
+                {" "}
+                OUR SIGNATURE Products
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl tracking-tight text-brand-chalk">
-                Signature Formulations
+                Best sellers & Client Favorites
               </h2>
             </div>
             <button
