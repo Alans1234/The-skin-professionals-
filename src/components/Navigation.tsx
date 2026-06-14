@@ -121,7 +121,6 @@ export default function Navigation({
     { id: "products", label: "Our Products" },
     { id: "analysis", label: "Skin Test" },
     { id: "distributors", label: "Our Distributors" },
-    { id: "contact", label: "Contact Us" },
   ];
 
   const handleNavClick = (tabId: string) => {
