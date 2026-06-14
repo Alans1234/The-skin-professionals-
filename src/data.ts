@@ -24,14 +24,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: "Rs. 800",
     rating: 4.8,
     image: MoistcomImg,
-    description:
-      "An advanced scientific moisturizer combining the power of multi-ceramides with skin-brightening actives. Specially designed to lighten dark spots, block oxidative stressors, and provide rich non-greasy lipid protection ideal for Nepalese weather.",
-    benefits: [
-      "Acts directly on active melanocytes to fade stubborn dark spots and sallow skin tone",
-      "Restores physiological ceramide matrix to shield skin from city pollution and wind",
-      "Infuses deep molecular hydration through Aquaxyl and Sodium Hyaluronate",
-      "Gently refines cutaneous texture, revealing a luminous velvet skin bloom",
-    ],
+    description: "",
+    benefits: [],
     ingredients: [
       {
         name: "Niacinamide",
@@ -90,14 +84,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: "Rs. 1,040",
     rating: 4.9,
     image: SuncoImg,
-    description:
-      "An exceptionally elegant silicone-gel sunscreen offering supreme SPF 50 PA++++ broad-spectrum defense. Transparently shields from intense UV rays while rendering a luxurious pores-blurring satin-matte skin coverage.",
-    benefits: [
-      "Provides high-level PA++++ block to prevent high-altitude UV burns and cell hyperpigmentation",
-      "Micronized formulation guarantees zero chalky white cast or greasy finish",
-      "Infuses premium Vitamin C and E antioxidants to prevent daylight-induced collagen damage",
-      "Creates a water and sweat resistant breathable veil perfect for everyday active wear",
-    ],
+    description: "",
+    benefits: [],
     ingredients: [
       {
         name: "Micronized Zinc Oxide",
@@ -149,14 +137,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: "Rs. 1,180",
     rating: 4.7,
     image: FluideImg,
-    description:
-      "A beautifully light, quick-absorbing fluid sun formula. Designed to spread seamlessly without any oiliness, bringing calming anti-oxidant tea botanical defenses and complete broad-spectrum solar guard.",
-    benefits: [
-      "Encapsulated UV-filters block modern radiation and intense solar frequencies",
-      "Fluid aqueous cream melts into skin instantly, leaving absolutely zero chalky trace",
-      "Camellia Sinensis (Green Tea) counters high-altitude climate oxidative stress",
-      "Forms a breathable hydrating shield that feels weightless throughout the day",
-    ],
+    description: "",
+    benefits: [],
     ingredients: [
       {
         name: "Ethylhexyl Butyl Methoxycinnamate",
@@ -210,14 +192,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: "Rs. 1,560",
     rating: 4.8,
     image: RenewImg,
-    description:
-      "A clinical-strength clarifying concentrate designed with high-purity Niacinamide, active Zinc, and precious whitening roots. Purges congestions, tightens enlarged pores, and dissolves old stubborn acne spots and melasma.",
-    benefits: [
-      "Controls excessive sebum secretions and suppresses unwanted greasy sheen",
-      "Tranexamic and Licorice root acids block melanin signals, evening out skin tone",
-      "Zinc PCA cleanses and purges microscopic bacterial congestions with precision",
-      "Mulberry and papaya plant enzymes gently peel away dead skin protein cells",
-    ],
+    description: "",
+    benefits: [],
     ingredients: [
       {
         name: "Niacinamide (Vitamin B3)",
@@ -265,14 +241,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: "Rs. 950",
     rating: 4.8,
     image: GoodMoistureImg,
-    description:
-      "A comforting, clinical barrier defense cream rich in calming Oat lipids, pure Shea butter, and skin-identical moisture binders. Immediately alleviates dryness, heals flakiness, and insulates skin against extreme mountain air, cold, and urban dust.",
-    benefits: [
-      "Oat kernel extracts offer complete relief for extremely irritated, itching, or hyper-sensitive skin",
-      "Shea butter and jojoba seed oil infuse rich skin-mimetic essential fatty acids",
-      "Wheat proteins and Sodium PCA lock water particles deep into dehydrated cell layers",
-      "Forms a breathable, safe protective glove over fragile skin to facilitate tissue recovery",
-    ],
+    description: "",
+    benefits: [],
     ingredients: [
       {
         name: "Gglycerine & Isopropyl Myristate",
@@ -325,13 +295,8 @@ export const INITIAL_INGREDIENTS: Ingredient[] = [
     id: "ing-1",
     name: "Copper Tripeptide-1",
     source: "Clinical",
-    description:
-      "A highly advanced, naturally occurring signal peptide complex with high affinity for essential cellular copper. Famously credited with restoring dormant skin stem cell activity, accelerating healing kinetics, and improving structural collagen organization.",
-    benefits: [
-      "Signals skin fibroblasts to synthesise structural proteins like Collagen I, III and Elastin",
-      "Strongly stimulates decorin, a key skin proteoglycan that controls collagen fiber thickness",
-      "Facilitates healthy skin structure modeling, aiding in old scar smoothing",
-    ],
+    description: "",
+    benefits: [],
     scientificName: "Glycyl-L-Histidil-L-Lysine-Copper(II)",
     derivedFrom: "Clinical peptide synthesis",
   },
@@ -339,8 +304,7 @@ export const INITIAL_INGREDIENTS: Ingredient[] = [
     id: "ing-2",
     name: "Centella Asiatica (Madecassoside)",
     source: "Botanical",
-    description:
-      "A sacred botanical herb revered for centuries in traditional Ayurveda and wellness medicine. Its clinical-grade extract Madecassoside acts as an ultra-potent anti-inflammatory shield that calms modern micro-irritation and repair damage.",
+    description: "",
     benefits: [
       "Drastically suppresses biological inflammatory signals, preventing dry irritation",
       "Accelerates tissue healing and supports the internal microvascular structure",
