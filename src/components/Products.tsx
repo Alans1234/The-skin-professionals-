@@ -301,22 +301,21 @@ export default function Products({ products, onNavigate }: ProductsProps) {
         <div className="relative z-10 max-w-5xl mx-auto px-4 flex flex-col lg:flex-row gap-12 justify-between items-center text-left">
           <div className="max-w-2xl">
             <span className="font-sans text-[10px] tracking-[0.3em] text-brand-gold uppercase block mb-2 font-medium">
-              EXCEPTIONAL BRAND CONSULTATION
+              FREE SKIN ANALYSIS
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight leading-snug">
-              Unsure of which clinical formulations fit your face?
+              Not sure which products are right for you?
             </h2>
             <p className="font-sans text-xs sm:text-sm text-white/80 mt-3 font-light leading-relaxed">
-              Our bespoke digital dermatological system evaluates your skin
-              cells, sensitivity, and lifestyle profiles instantly to output a
-              verified skin prescription program.
+              Take our quick online skin test. We'll analyze your skin type and
+              needs, then recommend the best products — instantly.
             </p>
           </div>
           <button
             onClick={() => onNavigate("analysis")}
             className="w-full lg:w-auto flex-shrink-0 px-8 py-4 bg-brand-gold text-brand-dark font-sans text-xs tracking-widest uppercase font-bold rounded hover:scale-105 transition-all duration-300 cursor-pointer shadow-md"
           >
-            Launch Consultation
+            Start Free Analysis
           </button>
         </div>
       </section>
