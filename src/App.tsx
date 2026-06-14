@@ -434,7 +434,7 @@ export default function App() {
                 </p>
                 <div className="flex flex-col space-y-3">
                   <span className="text-[10px] text-brand-pink-dark tracking-widest block font-mono font-semibold">
-                    Established 2023 • Private Clinique Range
+                    Established 2023
                   </span>
                   <div
                     className="flex items-center space-x-3 pt-1"
@@ -520,14 +520,11 @@ export default function App() {
 
               <div id="footer-address">
                 <h4 className="font-serif text-sm text-brand-gold mb-4 uppercase tracking-widest font-normal">
-                  Executive Concierge Office
+                  Executive Office
                 </h4>
                 <p className="leading-relaxed mb-2">Kathmandu, Nepal</p>
                 <p className="leading-relaxed mb-4 italic text-brand-pink">
-                  Concierge Inquiries: skinprofessionals.2023@gmail.com
-                </p>
-                <p className="text-[10px] tracking-widest uppercase text-stone-500">
-                  Available globally via appointment
+                  Inquiries: skinprofessionals.2023@gmail.com
                 </p>
               </div>
             </div>
