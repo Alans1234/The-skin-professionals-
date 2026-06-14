@@ -145,17 +145,16 @@ export default function Contact({
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <span className="font-sans text-[10px] sm:text-xs tracking-[0.5em] text-brand-gold uppercase bg-white/10 border border-white/10 px-4 py-1.5 rounded-full inline-block mb-4 font-semibold backdrop-blur-md">
-            BESPOKE COMMUNICATIONS
+            GET IN TOUCH
           </span>
           <h1 className="font-serif text-4xl sm:text-6xl text-white tracking-tight leading-[1.1] mb-5">
-            The Private <br />
+            Our private <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-brand-pink-dark to-brand-chalk italic font-light">
-              Concierge Office
+              concierge team
             </span>
           </h1>
           <p className="font-sans text-xs sm:text-sm text-stone-300 max-w-xl mx-auto tracking-widest uppercase mb-2">
-            ESTABLISH CONTACT WITH THE SKIN PROFESSIONALS LABS & CLINICAL
-            DISTRIBUTORS
+            REACH THE SKIN PROFESSIONALS LABS AND CLINICAL PARTNERS
           </p>
           <div className="w-16 h-[1px] bg-gradient-to-r from-brand-gold via-brand-pink-dark to-transparent mx-auto mt-6"></div>
         </div>
