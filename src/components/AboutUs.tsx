@@ -150,14 +150,11 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               Our Mission
             </h3>
             <p className="font-sans text-stone-200 text-xs sm:text-sm leading-relaxed mb-6 font-light">
-              To engineer the cleanest, most scientifically advanced skincare
-              formulations in the world, bringing professional clinical efficacy
-              to the calm sanctuary of daily self-care.
-            </p>
-            <p className="font-sans text-stone-300 text-xs leading-relaxed font-light">
-              We empower conscious shoppers with deep product transparency,
-              enabling everyone to understand what they put on their skin, how
-              it impacts cellular function, and why it works.
+              Our mission is to provide Nepal with uncompromising,
+              results-driven skincare. We focus purely on highly effective,
+              clinically proven formulations, working alongside medical
+              professionals to elevate local skin health and pioneering the
+              future of domestic pharmaceutical-grade manufacturing."
             </p>
           </div>
 
@@ -169,14 +166,8 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               Our Vision
             </h3>
             <p className="font-sans text-stone-200 text-xs sm:text-sm leading-relaxed mb-6 font-light">
-              A future where skincare transcends cosmetic disguise and
-              integrates seamlessly with systemic health and preventative
-              dermatology, honoring the intelligence of natural eco-systems.
-            </p>
-            <p className="font-sans text-stone-300 text-xs leading-relaxed font-light">
-              By continuously innovating in biotechnology, we strive to render
-              synthetic chemical irritants obsolete, offering botanical
-              alternatives that achieve equal or superior dermal metrics.
+              To be Nepal's absolute leader in clinical skincare—trusted by
+              medical professionals, proven by results, and made for our people.
             </p>
           </div>
         </div>
