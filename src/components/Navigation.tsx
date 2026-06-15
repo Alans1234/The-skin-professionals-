@@ -134,11 +134,11 @@ export default function Navigation({
       className="sticky top-0 z-50 bg-[#2F7376] backdrop-blur-md border-b border-brand-gold/15 font-sans"
       id="aura-navbar"
     >
-      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-full px-2 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-15">
           {/* Logo with precise image matching structure: Tilted gold parallelogram + company text */}
           <div
-            className="flex-shrink-0 flex items-center cursor-pointer select-none"
+            className="flex-shrink-0 flex items-center cursor-pointer select-none min-w-0"
             onClick={() => handleNavClick("home")}
             id="logo-container"
           >
@@ -148,7 +148,7 @@ export default function Navigation({
                 <img
                   src={logo}
                   alt="The Skin Professionals Logo"
-                  className="h-14 w-45"
+                  className="h-auto w-34 sm:w-45 max-w-[38vw] sm:max-w-none object-contain"
                   onError={(e) => {
                     (e.currentTarget as HTMLImageElement).style.display =
                       "none";
@@ -183,17 +183,20 @@ export default function Navigation({
           </div>
 
           {/* Right Area Control Group - Custom language dropdown + Contact actions */}
-          <div className="flex items-center space-x-2.5" id="nav-actions-group">
+          <div
+            className="flex items-center gap-1.5 sm:gap-2.5 min-w-0"
+            id="nav-actions-group"
+          >
             {/* Custom styled 100% Google-Branding-Free Language Switcher dropdown */}
             <div className="relative" id="custom-language-selector-wrapper">
               <button
                 onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center space-x-1.5 bg-brand-dark-accent hover:bg-[#2F7376] active:bg-[#2F7376] text-brand-gold rounded-full px-3 py-1 h-9 border border-white/10 hover:border-brand-gold/30 shadow-inner transition-all duration-300 text-[11px] font-bold uppercase tracking-wider cursor-pointer"
+                className="flex items-center gap-1.5 bg-brand-dark-accent hover:bg-[#2F7376] active:bg-[#2F7376] text-brand-gold rounded-full px-2 sm:px-3 py-1 h-9 border border-white/10 hover:border-brand-gold/30 shadow-inner transition-all duration-300 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider cursor-pointer max-w-[34vw] sm:max-w-none"
                 id="language-dropdown-toggle"
                 title="Select Platform Language"
               >
                 <Globe className="w-3.5 h-3.5 text-brand-gold shrink-0" />
-                <span>
+                <span className="truncate">
                   {languages.find((l) => l.code === currentLang)?.native ||
                     "English"}
                 </span>
@@ -207,7 +210,7 @@ export default function Navigation({
               {/* Custom Dropdown Dialog panel */}
               {langOpen && (
                 <div
-                  className="absolute right-0 mt-2 w-36 bg-[#0E2330] rounded-xl border border-white/10 shadow-2xl overflow-hidden py-1 z-50 text-left animate-in fade-in duration-200"
+                className="absolute right-0 mt-2 w-36 max-w-[88vw] bg-[#0E2330] rounded-xl border border-white/10 shadow-2xl overflow-hidden py-1 z-50 text-left animate-in fade-in duration-200"
                   id="custom-language-menu"
                 >
                   {languages.map((lang) => (

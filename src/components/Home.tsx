@@ -137,7 +137,7 @@ export default function Home({
     <div id="home-view" className="bg-brand-chalk text-brand-dark">
       {/* 1. Pure Full Width Luxury Hero Banner (Showing only the uploaded clinical images of exact size) */}
       <section
-        className="relative w-full h-[55vh] md:h-auto overflow-hidden bg-brand-dark"
+        className="relative w-full h-[42vh] min-h-[260px] max-h-[520px] md:h-auto overflow-hidden bg-brand-dark"
         id="hero-banner"
       >
         {/* Invisible spacer to naturally set the height of the container to match the image's exact aspect ratio on desktop */}
@@ -168,7 +168,7 @@ export default function Home({
         </AnimatePresence>
 
         {/* Navigation Buttons (unchanged) */}
-        <div className="absolute inset-y-0 left-4 z-20 flex items-center">
+        <div className="absolute inset-y-0 left-2 sm:left-4 z-20 flex items-center">
           <button
             onClick={prevSlide}
             aria-label="Previous image"
@@ -177,7 +177,7 @@ export default function Home({
             <ChevronLeft className="w-5 h-5 text-current" />
           </button>
         </div>
-        <div className="absolute inset-y-0 right-4 z-20 flex items-center">
+        <div className="absolute inset-y-0 right-2 sm:right-4 z-20 flex items-center">
           <button
             onClick={nextSlide}
             aria-label="Next image"
@@ -244,7 +244,7 @@ export default function Home({
           <button
             onClick={() => onNavigate("products")}
             id="intro-read-story"
-            className="inline-flex items-center space-x-2 text-xs tracking-widest uppercase text-brand-dark hover:text-brand-pink-dark transition-all font-bold border-b border-brand-dark pb-1"
+            className="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-brand-dark hover:text-brand-pink-dark transition-all font-bold border-b border-brand-dark pb-1"
           >
             <span>Explore Our Range</span>
             <ArrowRight className="w-4 h-4" />
@@ -252,11 +252,11 @@ export default function Home({
         </div>
 
         <div
-          className="lg:col-span-7 grid grid-cols-12 gap-4 relative"
+          className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-12 gap-4 relative"
           id="intro-visuals"
         >
-          <div className="absolute -inset-4 bg-brand-pink/55 rounded-3xl -z-10 filter blur-xl"></div>
-          <div className="col-span-7 rounded-2xl overflow-hidden shadow-xl hover:scale-[1.01] transition-transform duration-500 h-[450px]">
+          <div className="absolute -inset-2 sm:-inset-4 bg-brand-pink/55 rounded-3xl -z-10 filter blur-xl"></div>
+          <div className="sm:col-span-7 rounded-2xl overflow-hidden shadow-xl hover:scale-[1.01] transition-transform duration-500 h-[280px] sm:h-[450px]">
             <img
               src={Eszt1}
               alt="Premium skincare products from The Skin Professionals Nepal"
@@ -264,8 +264,8 @@ export default function Home({
               referrerPolicy="no-referrer"
             />
           </div>
-          <div className="col-span-5 flex flex-col gap-4 justify-between">
-            <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-[1.01] transition-all duration-500 h-[210px]">
+          <div className="sm:col-span-5 flex flex-col gap-4 justify-between">
+            <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-[1.01] transition-all duration-500 h-[180px] sm:h-[210px]">
               <img
                 src={Sunco}
                 alt="High-quality dermatological skincare"
@@ -274,7 +274,7 @@ export default function Home({
               />
             </div>
             {/* Gentle baby pink box */}
-            <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-[1.01] transition-all duration-500 h-[224px] bg-brand-pink p-6 flex flex-col justify-end text-brand-dark border border-brand-pink-dark/40">
+            <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-[1.01] transition-all duration-500 min-h-[180px] sm:h-[224px] bg-brand-pink p-5 sm:p-6 flex flex-col justify-end text-brand-dark border border-brand-pink-dark/40">
               <span className="font-serif text-3xl text-brand-dark block mb-2 font-medium">
                 100%
               </span>
@@ -297,7 +297,7 @@ export default function Home({
       >
         <div className="w-full">
           {/* Panoramic Widescreen Frame rendering a pure full-width luxury clinical landscape banner image */}
-          <div className="relative w-full h-[320px] sm:h-[480px] overflow-hidden transition-all duration-500 group">
+          <div className="relative w-full h-[280px] sm:h-[480px] overflow-hidden transition-all duration-500 group">
             {/* Background Picture */}
             <div className="absolute inset-0 z-0">
               <img
@@ -312,8 +312,8 @@ export default function Home({
             </div>
 
             {/* Static Elegant Overlay Caption */}
-            <div className="absolute inset-x-0 bottom-0 z-10 p-8 sm:p-12 text-left bg-gradient-to-t from-black/80 via-black/20 to-transparent">
-              <div className="max-w-7xl mx-auto px-4">
+            <div className="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-12 text-left bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+              <div className="max-w-7xl mx-auto px-0 sm:px-4">
                 <span className="font-mono text-[9px] sm:text-xs tracking-[0.4em] text-brand-gold uppercase font-bold mb-2 block">
                   ACTIVE NATURAL SKIN HYDRATION
                 </span>
@@ -342,7 +342,7 @@ export default function Home({
 
         <div className="max-w-7xl mx-auto px-4">
           <div
-            className="flex flex-col md:flex-row items-baseline justify-between mb-16"
+            className="flex flex-col md:flex-row items-start md:items-baseline justify-between gap-4 mb-16"
             id="products-header"
           >
             <div>
@@ -357,7 +357,7 @@ export default function Home({
             <button
               onClick={() => onNavigate("products")}
               id="view-all-formulations"
-              className="mt-4 md:mt-0 inline-flex items-center space-x-2 text-xs tracking-widest uppercase text-brand-gold hover:text-brand-pink-dark transition-colors"
+              className="mt-4 md:mt-0 inline-flex items-center gap-2 text-xs tracking-widest uppercase text-brand-gold hover:text-brand-pink-dark transition-colors"
             >
               <span>View Full Formulations Archive</span>
               <ArrowRight className="w-4 h-4" />
@@ -448,7 +448,7 @@ export default function Home({
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Image side */}
           <div
-            className="rounded-3xl overflow-hidden shadow-2xl h-[600px]"
+            className="rounded-3xl overflow-hidden shadow-2xl h-[360px] sm:h-[600px]"
             id="sustainability-visual"
           >
             <img
@@ -528,7 +528,7 @@ export default function Home({
               <button
                 onClick={() => onNavigate("contact")}
                 id="partnership-cta"
-                className="px-6 py-3 bg-brand-dark hover:bg-brand-dark/90 text-[#f5f5f4] font-sans text-xs tracking-widest uppercase transition-all duration-300 rounded cursor-pointer shadow-sm hover:translate-y-[-1px]"
+                className="w-full sm:w-auto px-6 py-3 bg-brand-dark hover:bg-brand-dark/90 text-[#f5f5f4] font-sans text-xs tracking-widest uppercase transition-all duration-300 rounded cursor-pointer shadow-sm hover:translate-y-[-1px]"
               >
                 Discover the champion’s routine
               </button>
@@ -607,7 +607,7 @@ export default function Home({
       >
         <div className="w-full">
           {/* Panoramic Widescreen Frame rendering a pure full-width luxury clinical landscape banner image */}
-          <div className="relative w-full h-[320px] sm:h-[480px] overflow-hidden transition-all duration-500 group">
+          <div className="relative w-full h-[280px] sm:h-[480px] overflow-hidden transition-all duration-500 group">
             {/* Background Picture */}
             <div className="absolute inset-0 z-0">
               <img
@@ -622,8 +622,8 @@ export default function Home({
             </div>
 
             {/* Static Elegant Overlay Caption */}
-            <div className="absolute inset-x-0 bottom-0 z-10 p-8 sm:p-12 text-left bg-gradient-to-t from-black/80 via-black/20 to-transparent">
-              <div className="max-w-7xl mx-auto px-4">
+            <div className="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-12 text-left bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+              <div className="max-w-7xl mx-auto px-0 sm:px-4">
                 <span className="font-mono text-[9px] sm:text-xs tracking-[0.4em] text-brand-gold uppercase font-bold mb-2 block">
                   ADVANCED UV PROTECTION
                 </span>
@@ -644,7 +644,7 @@ export default function Home({
         </div>
       </section>
       <section
-        className="relative py-24 bg-brand-dark flex items-center justify-center text-center overflow-hidden"
+        className="relative py-20 sm:py-24 bg-brand-dark flex items-center justify-center text-center overflow-hidden"
         id="skin-analysis-cta-section"
       >
         <div className="absolute inset-0">
@@ -673,7 +673,7 @@ export default function Home({
           <button
             onClick={() => onNavigate("analysis")}
             id="launch-analysis-banner-cta"
-            className="px-8 py-4 bg-brand-gold hover:bg-brand-gold-dark text-brand-dark font-sans text-xs tracking-widest uppercase font-bold rounded hover:scale-105 transition-all duration-300 shadow-lg"
+            className="w-full sm:w-auto px-8 py-4 bg-brand-gold hover:bg-brand-gold-dark text-brand-dark font-sans text-xs tracking-widest uppercase font-bold rounded hover:scale-105 transition-all duration-300 shadow-lg"
           >
             Start Easy Skin Test
           </button>
@@ -829,7 +829,7 @@ export default function Home({
         <div className="absolute left-1/2 -translate-x-1/2 w-[600px] h-[350px] rounded-full bg-brand-dark-accent/60 blur-[130px] -z-10"></div>
 
         <div
-          className="p-12 md:p-16 max-w-5xl w-full rounded-3xl border border-brand-pink/10 bg-brand-dark-accent/40 backdrop-blur-md text-center shadow-2xl"
+          className="p-5 sm:p-12 md:p-16 max-w-5xl w-full rounded-3xl border border-brand-pink/10 bg-brand-dark-accent/40 backdrop-blur-md text-center shadow-2xl"
           id="contact-cta-card"
         >
           <span className="font-sans text-xs tracking-[0.3em] text-brand-gold uppercase block mb-3 font-semibold">
