@@ -180,12 +180,12 @@ export default function AISkinAnalysis({
       >
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=1600"
+            src="/images/contact.png"
             alt="Hydrating water and scientific patterns"
-            className="w-full h-full object-cover opacity-35 scale-102 filter blur-[0.5px]"
+            className="w-full h-full object-cover scale-102 filter blur-[0.5px]"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/75 to-brand-dark/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/10 via-brand-dark/75 to-brand-dark/40"></div>
 
           <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-brand-pink/10 rounded-full blur-[130px] mix-blend-screen pointer-events-none"></div>
           <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-brand-gold/5 rounded-full blur-[110px] mix-blend-screen pointer-events-none"></div>
