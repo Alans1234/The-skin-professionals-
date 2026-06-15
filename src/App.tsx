@@ -415,6 +415,7 @@ export default function App() {
             className="bg-brand-dark border-t border-brand-gold/10 py-16 text-brand-chalk/60 text-xs font-light"
             id="aura-brand-footer"
           >
+            <div id="faq" className="sr-only" />
             <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
               <div id="footer-brand">
                 <div
@@ -425,7 +426,7 @@ export default function App() {
                   <img
                     src="/images/Logo.png"
                     alt="The Skin Professionals Logo"
-                    className="h-13 w-50"
+                    className="h-auto w-44 max-w-full object-contain"
                   />
                 </div>
 
@@ -515,6 +516,33 @@ export default function App() {
                       Contact Us
                     </button>
                   </li>
+                  <li>
+                    <button
+                      onClick={() => {
+                        // Ensure Home FAQ section is visible and scroll to it
+                        if (activeTab !== "home") {
+                          handleNavigate("home");
+                          setTimeout(() => {
+                            const el = document.getElementById(
+                              "faq-interactive-section",
+                            );
+                            if (el) el.scrollIntoView({ behavior: "smooth" });
+                          }, 250);
+                          return;
+                        }
+
+                        const el = document.getElementById(
+                          "faq-interactive-section",
+                        );
+                        if (el) {
+                          el.scrollIntoView({ behavior: "smooth" });
+                        }
+                      }}
+                      className="hover:text-brand-gold transition-colors cursor-pointer"
+                    >
+                      FAQs
+                    </button>
+                  </li>
                 </ul>
               </div>
 
@@ -532,7 +560,7 @@ export default function App() {
             </div>
 
             <div
-              className="max-w-7xl mx-auto px-4 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-center text-[10px] text-brand-chalk/40"
+              className="max-w-7xl mx-auto px-4 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-center text-center text-[10px] text-brand-chalk/40"
               id="footer-bottom"
             >
               <p>

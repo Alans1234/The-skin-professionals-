@@ -26,6 +26,61 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+#aura-app-root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#aura-app-root,
+#aura-app-root main,
+#aura-app-root section,
+#aura-app-root div,
+#aura-app-root article,
+#aura-app-root header,
+#aura-app-root footer {
+  min-width: 0;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+input,
+textarea,
+select,
+button {
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a,
+button,
+label,
+td,
+th {
+  overflow-wrap: anywhere;
+}
+
 /* Scrollbar styles */
 ::-webkit-scrollbar {
   width: 6px;
@@ -110,6 +165,51 @@ html {
 body {
   top: 0px !important;
   position: static !important;
+}
+
+@media (max-width: 640px) {
+  #aura-app-root section {
+    scroll-margin-top: 64px;
+  }
+
+  #aura-app-root [class*="py-24"],
+  #aura-app-root [class*="py-28"] {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  #aura-app-root [class*="px-8"],
+  #aura-app-root [class*="px-10"],
+  #aura-app-root [class*="px-12"],
+  #aura-app-root [class*="px-16"] {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  #aura-app-root [class*="p-8"],
+  #aura-app-root [class*="p-10"],
+  #aura-app-root [class*="p-12"],
+  #aura-app-root [class*="p-16"] {
+    padding: 1rem;
+  }
+
+  #aura-app-root [class*="tracking-"] {
+    letter-spacing: 0.08em !important;
+  }
+
+  #aura-app-root [class*="text-6xl"] {
+    font-size: 2.5rem;
+    line-height: 1.12;
+  }
+
+  #aura-app-root [class*="text-5xl"] {
+    font-size: 2.25rem;
+    line-height: 1.15;
+  }
+
+  #aura-app-root table {
+    min-width: 720px;
+  }
 }
 
 /* Hide annoying browser translator widgets, frames, banners and tooltips */

@@ -227,7 +227,7 @@ export default function AISkinAnalysis({
             >
               {/* Progress and indicators */}
               <div
-                className="flex items-center justify-between mb-8"
+                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-8"
                 id="analysis-meta"
               >
                 <span className="font-sans text-[10px] tracking-widest text-brand-dark uppercase font-bold">
@@ -280,7 +280,7 @@ export default function AISkinAnalysis({
                       handleOptionSelect(questions[currentStep].id, opt.value)
                     }
                     id={`opt-${opt.value}`}
-                    className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 flex justify-between items-center cursor-pointer ${
+                    className={`w-full text-left p-4 sm:p-5 rounded-2xl border transition-all duration-300 flex items-start justify-between gap-4 cursor-pointer ${
                       userAnswers[questions[currentStep].id] === opt.value
                         ? "border-brand-dark bg-brand-dark/5 text-[#c5a880]"
                         : "border-stone-200/60 bg-[#ffffff] hover:bg-[#fafaf9]"
@@ -309,7 +309,7 @@ export default function AISkinAnalysis({
                   <button
                     onClick={() => setCurrentStep((prev) => prev - 1)}
                     id="back-step-btn"
-                    className="inline-flex items-center space-x-2 text-xs text-stone-400 hover:text-brand-dark transition-colors uppercase tracking-widest font-bold cursor-pointer"
+                    className="inline-flex items-center gap-2 text-xs text-stone-400 hover:text-brand-dark transition-colors uppercase tracking-widest font-bold cursor-pointer"
                   >
                     <ArrowLeft className="w-4 h-4" />
                     <span>Back to previous question</span>
@@ -380,7 +380,7 @@ export default function AISkinAnalysis({
                 <button
                   type="submit"
                   disabled={diagnosing}
-                  className="w-full py-4 bg-brand-dark hover:bg-brand-dark-accent text-brand-chalk hover:text-brand-gold font-sans text-xs tracking-widest uppercase font-semibold rounded-xl flex items-center justify-center space-x-2 transition-all transition-transform hover:scale-102 cursor-pointer"
+                  className="w-full py-4 px-3 bg-brand-dark hover:bg-brand-dark-accent text-brand-chalk hover:text-brand-gold font-sans text-xs tracking-widest uppercase font-semibold rounded-xl flex items-center justify-center gap-2 transition-all transition-transform hover:scale-102 cursor-pointer text-center"
                   id="clinical-recomp-trigger"
                 >
                   <span>
@@ -417,7 +417,7 @@ export default function AISkinAnalysis({
                 >
                   {/* Medical Disclaimer (big & visible) */}
                   <div className="sm:col-span-12 w-full">
-                    <div className="bg-white border border-brand-gold/40 rounded-2xl px-5 py-4 shadow-sm">
+                    <div className="bg-white border border-brand-gold/40 rounded-2xl px-4 sm:px-5 py-4 shadow-sm">
                       <p className="font-sans text-[14px] sm:text-[16px] text-brand-dark leading-relaxed">
                         <span className="font-extrabold">DISCLAIMER:</span> This
                         AI skin test report is generated from your answers and
@@ -493,7 +493,7 @@ export default function AISkinAnalysis({
                       Your Core Skin Stats
                     </h5>
 
-                    <div className="flex justify-between items-center text-xs">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 text-xs">
                       <span className="text-stone-500 font-sans">
                         Sensitivity Level:
                       </span>
@@ -506,7 +506,7 @@ export default function AISkinAnalysis({
                       </span>
                     </div>
 
-                    <div className="flex justify-between items-center text-xs">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 text-xs">
                       <span className="text-stone-500 font-sans">
                         Age Bracket Stage:
                       </span>
@@ -519,7 +519,7 @@ export default function AISkinAnalysis({
                       </span>
                     </div>
 
-                    <div className="flex justify-between items-center text-xs">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 text-xs">
                       <span className="text-stone-500 font-sans">
                         Main Stress Factor:
                       </span>
@@ -546,7 +546,7 @@ export default function AISkinAnalysis({
                     {reportData.routines.map((rt, idx) => (
                       <div
                         key={idx}
-                        className="flex items-start bg-[#fafaf9] border border-stone-250/20 p-3 rounded-xl sm:space-x-3 text-xs text-stone-600"
+                        className="flex items-start gap-3 bg-[#fafaf9] border border-stone-250/20 p-3 rounded-xl text-xs text-stone-600"
                       >
                         <span className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-dark/10 text-brand-dark flex items-center justify-center font-serif text-[10px] font-bold mt-0.5">
                           {idx + 1}

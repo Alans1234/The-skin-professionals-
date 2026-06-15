@@ -221,7 +221,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               </div>
               <div className="p-6 sm:w-3/5 flex flex-col justify-between">
                 <div>
-                  <div className="flex justify-between items-baseline mb-2">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-2 mb-2">
                     <h4 className="font-serif text-lg text-brand-dark font-semibold">
                       Nikesh Baral
                     </h4>
@@ -238,7 +238,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
                     an integrated pathway for elite skincare professionals.
                   </p>
                 </div>
-                <div className="mt-4 pt-4 border-t border-stone-100 flex items-center justify-between">
+                  <div className="mt-4 pt-4 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                   <span className="font-sans text-[10px] text-stone-400 font-medium">
                     Corporate HQ
                   </span>
@@ -268,7 +268,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               </div>
               <div className="p-6 sm:w-3/5 flex flex-col justify-between">
                 <div>
-                  <div className="flex justify-between items-baseline mb-2">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-2 mb-2">
                     <h4 className="font-serif text-lg text-brand-dark font-semibold">
                       Ramesh Timilsena
                     </h4>
@@ -285,7 +285,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
                     regional branches.
                   </p>
                 </div>
-                <div className="mt-4 pt-4 border-t border-stone-100 flex items-center justify-between">
+                <div className="mt-4 pt-4 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                   <span className="font-sans text-[10px] text-stone-400 font-medium">
                     National Outreach
                   </span>
@@ -501,7 +501,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
             <span className="w-2.5 h-2.5 rounded-full bg-[#c5a880]"></span>
             Logistics & Warehousing Hub
           </h3>
-          <div className="bg-brand-dark rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden flex flex-col lg:flex-row justify-between items-center gap-8 animate-fade-in">
+          <div className="bg-brand-dark rounded-3xl p-5 sm:p-12 text-white relative overflow-hidden flex flex-col lg:flex-row justify-between items-center gap-8 animate-fade-in">
             <div className="absolute right-0 top-0 bottom-0 w-1/3 opacity-5 bg-[radial-gradient(#c5a880_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
 
             <div className="text-center lg:text-left">
@@ -522,7 +522,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto shrink-0 justify-center">
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center select-none backdrop-blur-sm min-w-[200px]">
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-6 text-center select-none backdrop-blur-sm w-full sm:min-w-[200px]">
                 <div className="font-mono text-[10px] uppercase text-stone-400 mb-1">
                   Assigned Department
                 </div>
@@ -530,7 +530,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
                   Central Hub & Inventory
                 </div>
               </div>
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center select-none backdrop-blur-sm min-w-[200px]">
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-6 text-center select-none backdrop-blur-sm w-full sm:min-w-[200px]">
                 <div className="font-mono text-[10px] uppercase text-stone-400 mb-1">
                   Dispatch Protocol
                 </div>

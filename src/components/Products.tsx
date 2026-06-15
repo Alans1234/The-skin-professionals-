@@ -102,7 +102,7 @@ export default function Products({ products, onNavigate }: ProductsProps) {
         className="py-6 sm:py-8 bg-brand-chalk/95 border-b border-stone-200/50 sticky top-[60px] z-40 backdrop-blur-md shadow-sm"
         id="filter-controls-sticky"
       >
-        <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-6 justify-between items-center">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-4 lg:gap-6 justify-between items-stretch lg:items-center">
           {/* Search Input bar */}
           <div className="w-full lg:w-96 relative" id="search-input-container">
             <Search className="w-4 h-4 text-stone-400 absolute left-4 top-1/2 -translate-y-1/2" />
@@ -126,7 +126,7 @@ export default function Products({ products, onNavigate }: ProductsProps) {
 
           {/* Category Filters */}
           <div
-            className="w-full lg:w-auto overflow-x-auto flex space-x-2 no-scrollbar py-2"
+            className="w-full lg:w-auto overflow-x-auto flex gap-2 no-scrollbar py-2"
             id="categories-scroll"
           >
             {categories.map((cat) => (
@@ -147,14 +147,14 @@ export default function Products({ products, onNavigate }: ProductsProps) {
 
           {/* Skin Type Filters */}
           <div
-            className="w-full lg:w-auto flex items-center space-x-2"
+            className="w-full lg:w-auto flex flex-col sm:flex-row sm:items-center gap-2"
             id="suitabilities-selector"
           >
             <span className="font-sans text-[10px] uppercase tracking-widest text-brand-dark font-semibold flex items-center mr-1">
-              <SlidersHorizontal className="w-3.5 h-3.5 mr-1.5" /> Filter by
+              <SlidersHorizontal className="w-3.5 h-3.5 mr-1.5 shrink-0" /> Filter by
               Face:
             </span>
-            <div className="flex space-x-1 overflow-x-auto no-scrollbar">
+            <div className="flex gap-1 overflow-x-auto no-scrollbar max-w-full pb-1">
               {suitabilities.map((type) => (
                 <button
                   key={type}
@@ -355,7 +355,7 @@ export default function Products({ products, onNavigate }: ProductsProps) {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative bg-[#fafaf9] max-w-4xl w-full rounded-2xl overflow-hidden shadow-2xl z-10 grid grid-cols-1 md:grid-cols-12"
+              className="relative bg-[#fafaf9] max-w-4xl w-full max-h-[92vh] rounded-2xl overflow-hidden shadow-2xl z-10 grid grid-cols-1 md:grid-cols-12"
               id="modal-card"
             >
               {/* Close Button */}
@@ -368,7 +368,7 @@ export default function Products({ products, onNavigate }: ProductsProps) {
               </button>
 
               {/* Column Left: Visual representation */}
-              <div className="md:col-span-5 h-[320px] md:h-full bg-stone-100 relative">
+              <div className="md:col-span-5 h-[260px] sm:h-[320px] md:h-full bg-stone-100 relative">
                 <img
                   src={selectedProduct.image}
                   alt={selectedProduct.name}
@@ -380,7 +380,7 @@ export default function Products({ products, onNavigate }: ProductsProps) {
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#052e2b]/80 via-transparent to-transparent"></div>
-                <div className="absolute bottom-6 left-6 right-6">
+                <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
                   <span className="font-sans text-[10px] tracking-widest uppercase text-[#2dd4bf]/90 block mb-1">
                     {selectedProduct.category} Vault ID: {selectedProduct.id}
                   </span>
@@ -392,7 +392,7 @@ export default function Products({ products, onNavigate }: ProductsProps) {
 
               {/* Column Right: Details */}
               <div
-                className="md:col-span-7 p-6 sm:p-10 max-h-[85vh] overflow-y-auto"
+                className="md:col-span-7 p-5 sm:p-10 max-h-[60vh] md:max-h-[85vh] overflow-y-auto"
                 id="modal-detail-panel"
               >
                 <span className="font-sans text-[10px] tracking-[0.3em] text-[#c5a880] uppercase block mb-1 font-semibold">
@@ -443,7 +443,7 @@ export default function Products({ products, onNavigate }: ProductsProps) {
                         key={idx}
                         className="bg-[#051118]/5 p-3 rounded-xl border border-stone-205 shadow-xs flex flex-col justify-between"
                       >
-                        <div className="flex items-baseline justify-between mb-1">
+                        <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
                           <span className="font-serif text-xs text-brand-dark font-semibold">
                             {ing.name}
                           </span>
@@ -480,7 +480,7 @@ export default function Products({ products, onNavigate }: ProductsProps) {
                     </span>
                   </div> */}
 
-                  <div className="flex gap-2 font-sans text-xs tracking-widest uppercase">
+                  <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto font-sans text-xs tracking-widest uppercase">
                     <button
                       onClick={() => {
                         onNavigate("contact", {
@@ -489,7 +489,7 @@ export default function Products({ products, onNavigate }: ProductsProps) {
                         });
                         setSelectedProduct(null);
                       }}
-                      className="px-5 py-3 bg-brand-dark hover:bg-[#c5a880] text-brand-gold hover:text-brand-dark rounded transition-all duration-300 cursor-pointer"
+                      className="w-full sm:w-auto px-5 py-3 bg-brand-dark hover:bg-[#c5a880] text-brand-gold hover:text-brand-dark rounded transition-all duration-300 cursor-pointer"
                     >
                       Inquiry
                     </button>
@@ -498,7 +498,7 @@ export default function Products({ products, onNavigate }: ProductsProps) {
                         setSelectedProduct(null);
                         onNavigate("analysis");
                       }}
-                      className="px-4 py-3 bg-transparent text-brand-dark border border-brand-dark/30 hover:bg-brand-dark/5 rounded text-[10px] transition-all duration-300 cursor-pointer"
+                      className="w-full sm:w-auto px-4 py-3 bg-transparent text-brand-dark border border-brand-dark/30 hover:bg-brand-dark/5 rounded text-[10px] transition-all duration-300 cursor-pointer"
                     >
                       Test Skin
                     </button>

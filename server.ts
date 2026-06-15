@@ -8,7 +8,7 @@ dotenv.config();
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
 
   // Body parser
   app.use(express.json());
@@ -19,8 +19,14 @@ async function startServer() {
   });
 
   // Serve Employee Photos directory statically (handles both normal spaces and %20 URL encodings)
-  app.use("/Employee Photos", express.static(path.join(process.cwd(), "Employee Photos")));
-  app.use("/Employee%20Photos", express.static(path.join(process.cwd(), "Employee Photos")));
+  app.use(
+    "/Employee Photos",
+    express.static(path.join(process.cwd(), "Employee Photos")),
+  );
+  app.use(
+    "/Employee%20Photos",
+    express.static(path.join(process.cwd(), "Employee Photos")),
+  );
 
   // API Route for Contact Form
   app.post("/api/contact", async (req, res) => {
@@ -28,15 +34,21 @@ async function startServer() {
       const { name, email, subject, message } = req.body;
 
       if (!name || !email || !subject || !message) {
-        return res.status(400).json({ error: "All inquiry fields are required." });
+        return res
+          .status(400)
+          .json({ error: "All inquiry fields are required." });
       }
 
-      const resendApiKey = process.env.RESEND_API_KEY || "re_WFKw1gaU_NYaFLbsgSuhjBM3JtzFk9gBu";
+      const resendApiKey =
+        process.env.RESEND_API_KEY || "re_WFKw1gaU_NYaFLbsgSuhjBM3JtzFk9gBu";
       if (!resendApiKey) {
-        console.warn("WARNING: RESEND_API_KEY is not set in environment variables.");
+        console.warn(
+          "WARNING: RESEND_API_KEY is not set in environment variables.",
+        );
         return res.status(400).json({
           error: "RE-KEY-MISSING",
-          message: "Contact form submitted locally, but the Resend API Key is missing. Please add RESEND_API_KEY to your settings/secrets panel in AI Studio so emails can be delivered."
+          message:
+            "Contact form submitted locally, but the Resend API Key is missing. Please add RESEND_API_KEY to your settings/secrets panel in AI Studio so emails can be delivered.",
         });
       }
 
@@ -50,7 +62,7 @@ async function startServer() {
           <p><strong>Email Address:</strong> <a href="mailto:${email}">${email}</a></p>
           <p><strong>Subject:</strong> ${subject}</p>
           <div style="background-color: #ffffff; border-left: 4px solid #0A1C26; padding: 16px; margin-top: 16px; border-radius: 4px; font-style: italic;">
-            ${message.replace(/\n/g, '<br />')}
+            ${message.replace(/\n/g, "<br />")}
           </div>
           <footer style="margin-top: 24px; font-size: 11px; color: #a1a19a; text-align: center; border-top: 1px solid #e5e5e0; padding-top: 12px;">
             This email was sent securely via Resend from your Skin Professionals Concierge.
@@ -68,13 +80,21 @@ async function startServer() {
 
       if (error) {
         console.error("Resend delivery failed:", error);
-        return res.status(500).json({ error: error.message || "Failed to send email via Resend." });
+        return res
+          .status(500)
+          .json({ error: error.message || "Failed to send email via Resend." });
       }
 
-      return res.json({ success: true, message: "Inquiry sent successfully via Resend", data });
+      return res.json({
+        success: true,
+        message: "Inquiry sent successfully via Resend",
+        data,
+      });
     } catch (err: any) {
       console.error("Contact API Error:", err);
-      return res.status(500).json({ error: err.message || "An internal error occurred." });
+      return res
+        .status(500)
+        .json({ error: err.message || "An internal error occurred." });
     }
   });
 
