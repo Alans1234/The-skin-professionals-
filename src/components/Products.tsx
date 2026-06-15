@@ -212,7 +212,17 @@ export default function Products({ products, onNavigate }: ProductsProps) {
               <div
                 key={p.id}
                 id={`product-cell-${p.id}`}
-                className="group flex flex-col bg-white border border-stone-200/50 hover:border-[#c5a880]/30 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500"
+                role="button"
+                tabIndex={0}
+                aria-label={`Open details for ${p.name}`}
+                onClick={() => setSelectedProduct(p)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setSelectedProduct(p);
+                  }
+                }}
+                className="group flex flex-col bg-white border border-stone-200/50 hover:border-[#c5a880]/30 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer"
               >
                 {/* Image */}
                 <div className="h-72 overflow-hidden relative bg-stone-100">
@@ -263,12 +273,15 @@ export default function Products({ products, onNavigate }: ProductsProps) {
                   </div>
 
                   <div>
-                    <div className="flex items-center justify-between border-t border-stone-100 pt-4">
-                      <span className="font-serif text-lg text-brand-dark font-semibold">
+                    <div className="flex items-center justify-end border-t border-stone-100 pt-4">
+                      {/* <span className="font-serif text-lg text-brand-dark font-semibold">
                         {p.price}
-                      </span>
+                      </span> */}
                       <button
-                        onClick={() => setSelectedProduct(p)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedProduct(p);
+                        }}
                         id={`review-formula-btn-${p.id}`}
                         className="px-4 py-2 border border-brand-dark/20 bg-transparent text-brand-dark hover:bg-brand-dark hover:text-white transition-all duration-300 rounded text-[10px] tracking-widest uppercase font-semibold"
                       >
@@ -457,15 +470,15 @@ export default function Products({ products, onNavigate }: ProductsProps) {
                 </div>
 
                 {/* Navigation / CAs */}
-                <div className="flex items-center justify-between border-t border-stone-200/50 pt-5">
-                  <div>
+                <div className="flex items-center justify-end border-t border-stone-200/50 pt-5">
+                  {/* <div>
                     <span className="font-sans text-[10px] text-stone-400 block uppercase tracking-widest mb-0.5">
                       Value
                     </span>
                     <span className="font-serif text-2xl text-brand-dark font-semibold">
                       {selectedProduct.price}
                     </span>
-                  </div>
+                  </div> */}
 
                   <div className="flex gap-2 font-sans text-xs tracking-widest uppercase">
                     <button
