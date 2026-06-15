@@ -386,12 +386,12 @@ export default function Distributors() {
       >
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/Eszt1.jpg"
+            src="/images/contact.png"
             alt="Authorized Skin Professionals shop locations across Nepal"
-            className="w-full h-full object-cover opacity-35 filter scale-102"
+            className="w-full h-full object-cover  filter scale-102"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/75 to-brand-dark/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/10 via-brand-dark/75 to-brand-dark/40"></div>
 
           <div className="absolute top-10 left-10 w-[350px] h-[350px] bg-brand-gold/5 rounded-full blur-[110px] mix-blend-screen pointer-events-none"></div>
           <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-brand-pink/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
