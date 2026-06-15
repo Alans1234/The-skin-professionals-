@@ -18,7 +18,7 @@ const FluideImg = "/images/fluide.jpg";
 export const INITIAL_PRODUCTS: Product[] = [
   {
     id: "prod-1",
-    name: "MOISTCOM LITE Skin lightning Moisturiser",
+    name: "MOISTCOM LITE",
     tagline:
       "Lightweight skin lightening moisturiser for pigmentation & barrier repair",
     category: "Moisturizer",
@@ -65,7 +65,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   },
   {
     id: "prod-2",
-    name: "SUNCO 5O SILICONE GEL",
+    name: "SUNCO 5O ",
     tagline: "Mineral-based matte finish sunscreen with SPF 50 and PA+++",
     category: "Sunscreen",
     price: "Rs. 1,040",
@@ -110,7 +110,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   },
   {
     id: "prod-3",
-    name: "Fluide Sunscrenn",
+    name: "Fluide",
     tagline: "Gel-based chemical sunscreen with zero white cast, SPF 50+ PA+++",
     category: "Sunscreen",
     price: "Rs. 1,180",
@@ -155,7 +155,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   },
   {
     id: "prod-4",
-    name: "RENEW NIACINAMIDE SERUM",
+    name: "RENEW ",
     tagline: "All‑rounder brightening, hydrating, and repairing serum",
     category: "Serum",
     price: "Rs. 1,560",
@@ -196,7 +196,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   },
   {
     id: "prod-5",
-    name: "THE GOOD MOISTURISER",
+    name: "GOOD MOISTURISER",
     tagline:
       "Deeply nourishing medical‑grade moisturiser for dehydrated, dull, and compromised skin",
     category: "Moisturizer",
@@ -315,31 +315,31 @@ export const INITIAL_INGREDIENTS: Ingredient[] = [
 export const INITIAL_TESTIMONIALS: Testimonial[] = [
   {
     id: "test-1",
-    author: "Shraddha Manandhar",
-    role: "HQ Kathmandu Field Sales Officer, The Skin Professionals Nepal",
-    avatar: "/images/employeePhotos/shraddhamanandhar.jpeg",
+    author: "Dr. Sareesha Shrestha",
+    role: "Miss Nepal Earth 2022",
+    avatar: "",
     content:
-      "Working on the field with top skin clinics and dermatologist partners across Kathmandu, the professional feedback for Moistcom Lite and Sunco 50 is incredible. Our formulas are custom-engineered for South Asian lipid barriers and local climate conditions.",
+      "I trust Moistcom Lite and Sunco 50 for my daily skincare. They keep my skin bright, protected, and healthy — even under the lights and long outdoor schedules.",
     rating: 5,
     featured: true,
   },
   {
     id: "test-2",
-    author: "Priyanshu Maharjan",
-    role: "HQ Kathmandu Field Sales Officer, The Skin Professionals Nepal",
-    avatar: "/images/employeePhotos/priyanshuMaharjan.jpg",
+    author: "Anil Shah",
+    role: "National Men's Cricketer, Nepal",
+    avatar: "",
     content:
-      "We collaborate closely with dozens of clinical clinics and pharmacies to distribute authentic active formulations. Clients are continually amazed at how quickly Moistcom Lite restores moisture balance and how Sunco 50 prevents solar hyperpigmentation.",
+      "As a cricketer, I'm out in the sun for hours. Moistcom Lite keeps my skin hydrated and Sunco 50 gives me the protection I need without any greasy feel. Highly recommend.",
     rating: 5,
     featured: true,
   },
   {
     id: "test-3",
-    author: "Bimal Chaudhary",
-    role: "Nepalgunj Sector Field Officer, The Skin Professionals Nepal",
-    avatar: "/images/employeePhotos/bimalChaudhary.jpeg",
+    author: "Sujan Chapagain",
+    role: "Singer",
+    avatar: "",
     content:
-      "In the intense, hot climate of the Nepalgunj sector, heavy skincare fails. Our non-greasy formulations control excess sebum, protect from dust congestion, and maintain a resilient barrier. It is a genuine breakthrough for our regional clinics.",
+      "Sunco 50 is my go-to sunscreen. It's light, non-sticky, and works perfectly under stage lights and outdoor shoots. Finally a sunscreen that feels like nothing on the skin.",
     rating: 5,
     featured: true,
   },
