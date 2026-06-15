@@ -13,6 +13,8 @@ import {
   ChevronRight,
   Plus,
   Minus,
+  Leaf,
+  Heart,
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Product, Testimonial, GalleryItem } from "../types";
@@ -219,7 +221,7 @@ export default function Home({
             THE BEST SKINCARE BRAND IN NEPAL
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-brand-dark tracking-tight leading-snug mb-6">
-            Clinical Dermatology & Advanced Skin Analysis in Kathmandu
+            Clinical Dermatology & Analysis in Kathmandu
           </h2>
           <p className="font-sans text-stone-600 text-sm leading-relaxed mb-6 font-light">
             Founded by veteran clinical formulators,{" "}
@@ -386,7 +388,19 @@ export default function Home({
                 </div>
 
                 {/* Info */}
-                <div className="p-6 flex-grow flex flex-col justify-between">
+                <div
+                  className="p-6 flex-grow flex flex-col justify-between"
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Open details for ${p.name}`}
+                  onClick={() => onNavigate("products")}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      onNavigate("products");
+                    }
+                  }}
+                >
                   <div>
                     <h3 className="font-serif text-xl text-white mb-1 group-hover:text-brand-gold transition-colors">
                       {p.name}
@@ -400,16 +414,19 @@ export default function Home({
                   </div>
 
                   <div>
-                    <div className="flex items-center justify-between border-t border-white/15 pt-4">
-                      <span className="font-serif text-lg text-brand-gold">
+                    <div className="flex items-center justify-end border-t border-white/15 pt-4">
+                      {/* <span className="font-serif text-lg text-brand-gold">
                         {p.price}
-                      </span>
+                      </span> */}
                       <button
-                        onClick={() => onNavigate("products")}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onNavigate("products");
+                        }}
                         id={`explore-formula-${p.id}`}
                         className="inline-flex items-center space-x-1.5 text-[10px] tracking-widest uppercase text-brand-chalk hover:text-brand-pink-dark transition-colors"
                       >
-                        <span>Analyze Alchemy</span>
+                        <span>View Details</span>
                         <ArrowRight className="w-3 h-3" />
                       </button>
                     </div>
@@ -422,8 +439,104 @@ export default function Home({
       </section>
 
       {/* 5. Benefits Section (Clinically Validated) */}
-      {/* 7. Testimonials Section (blending soft rose/blush backdrop highlights) */}
+      {/* 5. ESG / Sustainability & Circularity (Botanical Environmental Ethics) */}
       <section
+        className="py-24 bg-gradient-to-b from-brand-dark/5 to-[#fafaf9]"
+        id="sustainability-ethics"
+      >
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Image side */}
+          <div
+            className="rounded-3xl overflow-hidden shadow-2xl h-[600px]"
+            id="sustainability-visual"
+          >
+            <img
+              src="/images/shivnarineChanderpaul.jpeg"
+              alt="Shivnarine Chanderpaul – legendary cricketer and trusted family figure"
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+
+          {/* Content side */}
+          <div id="sustainability-narrative">
+            <span className="font-sans text-xs tracking-[0.3em] text-brand-dark uppercase block mb-3 font-bold">
+              LEGEND’S CHOICE
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl text-brand-dark tracking-tight mb-6">
+              Shivnarine Chanderpaul trusts The Skin Professionals for his
+              family.
+            </h2>
+            <p className="font-sans text-stone-600 text-xs sm:text-sm leading-relaxed mb-6 font-light">
+              One of the greatest batsmen of his era, and the 10th highest
+              international run-scorer of all time, Shivnarine Chanderpaul
+              doesn’t leave his family’s skin health to chance. He chooses The
+              Skin Professionals – because unmatched expertise, clean
+              formulations, and dermatological rigour matter as much off the
+              pitch as on it.
+            </p>
+
+            <div className="space-y-6" id="sustainability-points">
+              <div className="flex items-start space-x-3">
+                <Leaf className="w-5 h-5 text-brand-dark mt-0.5" />
+                <div>
+                  <h4 className="font-serif text-xs sm:text-sm text-brand-dark font-semibold">
+                    Dermatologist‑backed safety
+                  </h4>
+                  <p className="font-sans text-stone-500 text-xs leading-normal">
+                    Every product is formulated under medical supervision –
+                    hypoallergenic, non‑irritating, and suitable for the whole
+                    family, from toddlers to seniors.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-3">
+                <Heart className="w-5 h-5 text-brand-dark mt-0.5" />
+                <div>
+                  <h4 className="font-serif text-xs sm:text-sm text-brand-dark font-semibold">
+                    Trusted by families who demand the best
+                  </h4>
+                  <p className="font-sans text-stone-500 text-xs leading-normal">
+                    Though The Skin Professionals began in 2023, our science and
+                    safety standards have already earned the quiet confidence of
+                    athletes, celebrities, and parents.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-3">
+                <Eye className="w-5 h-5 text-brand-dark mt-0.5" />
+                <div>
+                  <h4 className="font-serif text-xs sm:text-sm text-brand-dark font-semibold">
+                    Transparent, clean science
+                  </h4>
+                  <p className="font-sans text-stone-500 text-xs leading-normal">
+                    No hidden fragrances, no endocrine disruptors – only
+                    evidence‑based ingredients you can pronounce. What
+                    Shivnarine demands for his family, we deliver.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="mt-10 pt-8 border-t border-stone-200"
+              id="sustainability-cta"
+            >
+              <button
+                onClick={() => onNavigate("contact")}
+                id="partnership-cta"
+                className="px-6 py-3 bg-brand-dark hover:bg-brand-dark/90 text-[#f5f5f4] font-sans text-xs tracking-widest uppercase transition-all duration-300 rounded cursor-pointer shadow-sm hover:translate-y-[-1px]"
+              >
+                Discover the champion’s routine
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* 7. Testimonials Section (blending soft rose/blush backdrop highlights) */}
+      {/* <section
         className="py-24 bg-brand-chalk border-t border-brand-pink"
         id="testimonials-section"
       >
@@ -485,7 +598,7 @@ export default function Home({
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
       {/* 6. Skin Analysis CTA (Cinematic Visual with prompt-responsive backgrounds) */}
       <section
         className="w-full relative overflow-hidden bg-transparent"

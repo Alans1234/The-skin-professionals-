@@ -1,13 +1,10 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import {
   MapPin,
-  Phone,
   MessageSquare,
   Search,
   ShieldCheck,
-  Mail,
   HelpCircle,
-  ExternalLink,
 } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -17,12 +14,12 @@ interface Distributor {
   region: string;
   city: string;
   address: string;
-  phone?: string;
-  whatsapp?: string;
-  email?: string;
   timing: string;
   isMainHub?: boolean;
   mapsUrl?: string;
+  phone?: string;
+  whatsapp?: string;
+  email?: string;
 }
 
 const NEPAL_DISTRIBUTORS: Distributor[] = [
@@ -285,27 +282,97 @@ const NEPAL_DISTRIBUTORS: Distributor[] = [
   },
 ];
 
+const PROVINCES_IN_ORDER = [
+  "Koshi Province",
+  "Madhesh Province",
+  "Bagmati Province",
+  "Gandaki Province",
+  "Lumbini Province",
+  "Karnali Province",
+  "Sudurpashim Province",
+] as const;
+
+function normalizeProvince(region: string): string {
+  if (region.includes("Koshi")) return "Koshi Province";
+  if (region.includes("Madhesh")) return "Madhesh Province";
+  if (region.includes("Bagmati")) return "Bagmati Province";
+  if (region.includes("Gandaki")) return "Gandaki Province";
+  if (region.includes("Lumbini")) return "Lumbini Province";
+  if (region.includes("Karnali")) return "Karnali Province";
+  if (region.includes("Sudur")) return "Sudurpashim Province";
+  return region;
+}
+
+function getInnerSection(distributor: Distributor): string {
+  const match = distributor.region.match(/\(([^)]+)\)/);
+  if (match?.[1]) return match[1].trim();
+  return distributor.city;
+}
+
 export default function Distributors() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedRegion, setSelectedRegion] = useState("All");
+  const [selectedProvince, setSelectedProvince] = useState("All");
+  const [selectedInner, setSelectedInner] = useState("All");
 
-  // Simple, friendly list of unique regions
-  const regions = [
-    "All",
-    ...Array.from(new Set(NEPAL_DISTRIBUTORS.map((d) => d.region))),
-  ];
+  const provinceFiltered = useMemo(() => {
+    return NEPAL_DISTRIBUTORS.filter((d) => {
+      const matchesSearch =
+        d.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        d.city.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        d.address.toLowerCase().includes(searchTerm.toLowerCase());
 
-  const filteredDistributors = NEPAL_DISTRIBUTORS.filter((d) => {
-    const matchesSearch =
-      d.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      d.city.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      d.address.toLowerCase().includes(searchTerm.toLowerCase());
+      const prov = normalizeProvince(d.region);
+      const matchesProvince =
+        selectedProvince === "All" || prov === selectedProvince;
 
-    const matchesRegion =
-      selectedRegion === "All" || d.region === selectedRegion;
+      return matchesSearch && matchesProvince;
+    });
+  }, [searchTerm, selectedProvince]);
 
-    return matchesSearch && matchesRegion;
-  });
+  const innerOptions = useMemo(() => {
+    const set = new Set<string>();
+    for (const d of provinceFiltered) {
+      set.add(getInnerSection(d));
+    }
+
+    const all = Array.from(set).sort((a, b) => a.localeCompare(b));
+
+    // Per request: remove separate inner sections in UI and show only
+    // “Kathmandu Valley” as the inner section (when the selected province is Bagmati).
+    // For other provinces, hide the “Select Section” effect by forcing it to All.
+    if (selectedProvince === "Bagmati Province") {
+      return ["All", "Kathmandu Valley"];
+    }
+
+    return ["All"];
+  }, [provinceFiltered, selectedProvince]);
+
+  const finalFiltered = useMemo(() => {
+    return provinceFiltered.filter((d) => {
+      const inner = getInnerSection(d);
+      return selectedInner === "All" || inner === selectedInner;
+    });
+  }, [provinceFiltered, selectedInner]);
+
+  const grouped = useMemo(() => {
+    const map = new Map<string, Map<string, Distributor[]>>();
+    for (const d of finalFiltered) {
+      const prov = normalizeProvince(d.region);
+      const inner = getInnerSection(d);
+      if (!map.has(prov)) map.set(prov, new Map());
+      const innerMap = map.get(prov)!;
+      if (!innerMap.has(inner)) innerMap.set(inner, []);
+      innerMap.get(inner)!.push(d);
+    }
+
+    return map;
+  }, [finalFiltered]);
+
+  // If province changes, inner selection should reset to avoid hiding all results.
+  const handleProvinceChange = (value: string) => {
+    setSelectedProvince(value);
+    setSelectedInner("All");
+  };
 
   return (
     <div
@@ -400,106 +467,293 @@ export default function Distributors() {
               Select Province:
             </span>
             <select
-              value={selectedRegion}
-              onChange={(e) => setSelectedRegion(e.target.value)}
+              value={selectedProvince}
+              onChange={(e) => handleProvinceChange(e.target.value)}
               className="w-full md:w-auto bg-brand-chalk text-brand-dark font-sans text-xs font-semibold border border-stone-200 rounded-lg px-4 py-2.5 focus:outline-none focus:border-brand-dark"
             >
-              {regions.map((r) => (
-                <option key={r} value={r}>
-                  {r}
+              <option value="All">All</option>
+              {PROVINCES_IN_ORDER.map((p) => (
+                <option key={p} value={p}>
+                  {p.replace(" Province", "")}
                 </option>
               ))}
             </select>
           </div>
+
+          {/* <div
+            id="inner-filter-wrapper"
+            className="w-full md:w-auto flex items-center space-x-2"
+          >
+            <span className="text-xs text-stone-500 font-medium shrink-0 font-sans">
+              Select Section:
+            </span>
+            <select
+              value={selectedInner}
+              onChange={(e) => setSelectedInner(e.target.value)}
+              className="w-full md:w-auto bg-brand-chalk text-brand-dark font-sans text-xs font-semibold border border-stone-200 rounded-lg px-4 py-2.5 focus:outline-none focus:border-brand-dark"
+            >
+              {innerOptions.map((opt) => (
+                <option key={opt} value={opt}>
+                  {opt}
+                </option>
+              ))}
+            </select>
+          </div> */}
         </div>
 
-        {/* Distributor Cards Grid */}
-        {filteredDistributors.length > 0 ? (
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            id="distributors-grid"
-          >
-            {filteredDistributors.map((d) => (
-              <div
-                key={d.id}
-                className={`bg-white rounded-2xl border p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-md ${
-                  d.isMainHub
-                    ? "border-brand-gold bg-brand-gold/5 relative overflow-hidden"
-                    : "border-stone-200/80"
-                }`}
-                id={`dist-card-${d.id}`}
-              >
-                {d.isMainHub && (
-                  <div className="absolute top-0 right-0 bg-brand-gold text-brand-dark text-[8px] font-bold uppercase tracking-widest px-3 py-1 rounded-bl-lg font-mono">
-                    MAIN CENTER
-                  </div>
-                )}
+        {/* Distributors grouped by Province -> (optional Kathmandu Valley) */}
+        {[...grouped.keys()].length > 0 ? (
+          <div className="space-y-10">
+            {PROVINCES_IN_ORDER.map((province) => {
+              const innerMap = grouped.get(province);
+              if (!innerMap) return null;
 
-                <div>
-                  {/* City and Region */}
-                  <div className="flex items-center space-x-2 mb-3">
-                    <span className="text-[10px] font-bold text-brand-pink-dark uppercase tracking-wider bg-brand-dark px-2 py-0.5 rounded">
-                      {d.city}
-                    </span>
-                    <span className="text-[10px] text-stone-500 font-sans tracking-wide">
-                      {d.region}
-                    </span>
-                  </div>
+              return (
+                <div key={province} className="space-y-4">
+                  <h2 className="font-serif text-2xl text-brand-dark">
+                    {province.replace(" Province", "")}
+                  </h2>
 
-                  {/* Distributor Name */}
-                  <h3 className="font-serif text-lg text-brand-dark leading-snug mb-3">
-                    {d.name}
-                  </h3>
+                  {innerMap.size > 0 && (
+                    <div className="space-y-8">
+                      {province === "Bagmati Province" ? (
+                        // Bagmati: show Kathmandu Valley as one inner section, and all other Bagmati distributors
+                        // directly under Bagmati (no extra inner headers).
+                        <>
+                          {/* Other Bagmati (non-Kathmandu Valley) */}
+                          {[...innerMap.entries()]
+                            .filter(([inner]) => inner !== "Kathmandu Valley")
+                            .flatMap(([, distributors]) => distributors)
+                            .length > 0 && (
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                              {[...innerMap.entries()]
+                                .filter(
+                                  ([inner]) => inner !== "Kathmandu Valley",
+                                )
+                                .flatMap(([, distributors]) => distributors)
+                                .map((d) => (
+                                  <div
+                                    key={d.id}
+                                    className={`bg-white rounded-2xl border p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-md ${
+                                      d.isMainHub
+                                        ? "border-brand-gold bg-brand-gold/5 relative overflow-hidden"
+                                        : "border-stone-200/80"
+                                    }`}
+                                    id={`dist-card-${d.id}`}
+                                  >
+                                    {d.isMainHub && (
+                                      <div className="absolute top-0 right-0 bg-brand-gold text-brand-dark text-[8px] font-bold uppercase tracking-widest px-3 py-1 rounded-bl-lg font-mono">
+                                        MAIN CENTER
+                                      </div>
+                                    )}
 
-                  <div
-                    className="space-y-2.5 my-4 text-xs text-stone-600 font-sans"
-                    id="dist-info-details"
-                  >
-                    {/* Address */}
-                    <div className="flex items-start space-x-2">
-                      <MapPin className="w-4 h-4 text-stone-400 shrink-0 mt-0.5" />
-                      <span>{d.address}</span>
+                                    <div>
+                                      <div className="flex items-center space-x-2 mb-3">
+                                        <span className="text-[10px] font-bold text-brand-pink-dark uppercase tracking-wider bg-brand-dark px-2 py-0.5 rounded">
+                                          {d.city}
+                                        </span>
+                                        <span className="text-[10px] text-stone-500 font-sans tracking-wide">
+                                          {d.region}
+                                        </span>
+                                      </div>
+
+                                      <h3 className="font-serif text-lg text-brand-dark leading-snug mb-3">
+                                        {d.name}
+                                      </h3>
+
+                                      <div
+                                        className="space-y-2.5 my-4 text-xs text-stone-600 font-sans"
+                                        id="dist-info-details"
+                                      >
+                                        <div className="flex items-start space-x-2">
+                                          <MapPin className="w-4 h-4 text-stone-400 shrink-0 mt-0.5" />
+                                          <span>{d.address}</span>
+                                        </div>
+
+                                        <div className="flex items-start space-x-2 text-[11px] text-stone-500 bg-brand-chalk p-2 rounded-lg border border-stone-100">
+                                          <span className="font-semibold shrink-0">
+                                            Hours:
+                                          </span>
+                                          <span>{d.timing}</span>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div
+                                      className="pt-4 border-t border-stone-100 space-y-2"
+                                      id="action-buttons-box"
+                                    >
+                                      {d.mapsUrl && (
+                                        <a
+                                          href={d.mapsUrl}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="w-full flex items-center justify-center space-x-2 bg-brand-dark text-white hover:bg-brand-dark-accent text-xs font-bold py-2.5 px-4 rounded-lg transition-colors cursor-pointer"
+                                        >
+                                          <MapPin className="w-3.5 h-3.5 text-brand-gold" />
+                                          <span>Google Maps Location</span>
+                                        </a>
+                                      )}
+                                    </div>
+                                  </div>
+                                ))}
+                            </div>
+                          )}
+                          {[...innerMap.entries()]
+                            .filter(([inner]) => inner === "Kathmandu Valley")
+                            .map(([inner, distributors]) => (
+                              <div key={inner} className="space-y-4">
+                                <h3 className="font-sans text-xs sm:text-sm font-bold text-brand-pink-dark uppercase tracking-widest">
+                                  {inner}
+                                </h3>
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                  {distributors.map((d) => (
+                                    <div
+                                      key={d.id}
+                                      className={`bg-white rounded-2xl border p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-md ${
+                                        d.isMainHub
+                                          ? "border-brand-gold bg-brand-gold/5 relative overflow-hidden"
+                                          : "border-stone-200/80"
+                                      }`}
+                                      id={`dist-card-${d.id}`}
+                                    >
+                                      {d.isMainHub && (
+                                        <div className="absolute top-0 right-0 bg-brand-gold text-brand-dark text-[8px] font-bold uppercase tracking-widest px-3 py-1 rounded-bl-lg font-mono">
+                                          MAIN CENTER
+                                        </div>
+                                      )}
+
+                                      <div>
+                                        <div className="flex items-center space-x-2 mb-3">
+                                          <span className="text-[10px] font-bold text-brand-pink-dark uppercase tracking-wider bg-brand-dark px-2 py-0.5 rounded">
+                                            {d.city}
+                                          </span>
+                                          <span className="text-[10px] text-stone-500 font-sans tracking-wide">
+                                            {d.region}
+                                          </span>
+                                        </div>
+
+                                        <h3 className="font-serif text-lg text-brand-dark leading-snug mb-3">
+                                          {d.name}
+                                        </h3>
+
+                                        <div
+                                          className="space-y-2.5 my-4 text-xs text-stone-600 font-sans"
+                                          id="dist-info-details"
+                                        >
+                                          <div className="flex items-start space-x-2">
+                                            <MapPin className="w-4 h-4 text-stone-400 shrink-0 mt-0.5" />
+                                            <span>{d.address}</span>
+                                          </div>
+
+                                          <div className="flex items-start space-x-2 text-[11px] text-stone-500 bg-brand-chalk p-2 rounded-lg border border-stone-100">
+                                            <span className="font-semibold shrink-0">
+                                              Hours:
+                                            </span>
+                                            <span>{d.timing}</span>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div
+                                        className="pt-4 border-t border-stone-100 space-y-2"
+                                        id="action-buttons-box"
+                                      >
+                                        {d.mapsUrl && (
+                                          <a
+                                            href={d.mapsUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="w-full flex items-center justify-center space-x-2 bg-brand-dark text-white hover:bg-brand-dark-accent text-xs font-bold py-2.5 px-4 rounded-lg transition-colors cursor-pointer"
+                                          >
+                                            <MapPin className="w-3.5 h-3.5 text-brand-gold" />
+                                            <span>Google Maps Location</span>
+                                          </a>
+                                        )}
+                                      </div>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                        </>
+                      ) : (
+                        // Other provinces: no inner sections; show all cards directly under province.
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                          {[...innerMap.values()].flat().map((d) => (
+                            <div
+                              key={d.id}
+                              className={`bg-white rounded-2xl border p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-md ${
+                                d.isMainHub
+                                  ? "border-brand-gold bg-brand-gold/5 relative overflow-hidden"
+                                  : "border-stone-200/80"
+                              }`}
+                              id={`dist-card-${d.id}`}
+                            >
+                              {d.isMainHub && (
+                                <div className="absolute top-0 right-0 bg-brand-gold text-brand-dark text-[8px] font-bold uppercase tracking-widest px-3 py-1 rounded-bl-lg font-mono">
+                                  MAIN CENTER
+                                </div>
+                              )}
+
+                              <div>
+                                <div className="flex items-center space-x-2 mb-3">
+                                  <span className="text-[10px] font-bold text-brand-pink-dark uppercase tracking-wider bg-brand-dark px-2 py-0.5 rounded">
+                                    {d.city}
+                                  </span>
+                                  <span className="text-[10px] text-stone-500 font-sans tracking-wide">
+                                    {d.region}
+                                  </span>
+                                </div>
+
+                                <h3 className="font-serif text-lg text-brand-dark leading-snug mb-3">
+                                  {d.name}
+                                </h3>
+
+                                <div
+                                  className="space-y-2.5 my-4 text-xs text-stone-600 font-sans"
+                                  id="dist-info-details"
+                                >
+                                  <div className="flex items-start space-x-2">
+                                    <MapPin className="w-4 h-4 text-stone-400 shrink-0 mt-0.5" />
+                                    <span>{d.address}</span>
+                                  </div>
+
+                                  <div className="flex items-start space-x-2 text-[11px] text-stone-500 bg-brand-chalk p-2 rounded-lg border border-stone-100">
+                                    <span className="font-semibold shrink-0">
+                                      Hours:
+                                    </span>
+                                    <span>{d.timing}</span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div
+                                className="pt-4 border-t border-stone-100 space-y-2"
+                                id="action-buttons-box"
+                              >
+                                {d.mapsUrl && (
+                                  <a
+                                    href={d.mapsUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full flex items-center justify-center space-x-2 bg-brand-dark text-white hover:bg-brand-dark-accent text-xs font-bold py-2.5 px-4 rounded-lg transition-colors cursor-pointer"
+                                  >
+                                    <MapPin className="w-3.5 h-3.5 text-brand-gold" />
+                                    <span>Google Maps Location</span>
+                                  </a>
+                                )}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
-
-                    {/* Timing */}
-                    <div className="flex items-start space-x-2 text-[11px] text-stone-500 bg-brand-chalk p-2 rounded-lg border border-stone-100">
-                      <span className="font-semibold shrink-0">Hours:</span>
-                      <span>{d.timing}</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Direct Action Buttons for simple Nepalese user experience */}
-                <div
-                  className="pt-4 border-t border-stone-100 space-y-2"
-                  id="action-buttons-box"
-                >
-                  {d.mapsUrl && (
-                    <a
-                      href={d.mapsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-center space-x-2 bg-brand-dark text-white hover:bg-brand-dark-accent text-xs font-bold py-2.5 px-4 rounded-lg transition-colors cursor-pointer"
-                    >
-                      <MapPin className="w-3.5 h-3.5 text-brand-gold" />
-                      <span>Google Maps Location</span>
-                    </a>
-                  )}
-
-                  {d.whatsapp && (
-                    <a
-                      href={`https://wa.me/${d.whatsapp.replace(/\D/g, "")}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-center space-x-2 bg-[#25D366]/10 text-[#128C7E] hover:bg-[#25D366]/20 text-xs font-bold py-2 px-4 rounded-lg transition-colors cursor-pointer"
-                    >
-                      <MessageSquare className="w-3.5 h-3.5" />
-                      <span>Message on WhatsApp</span>
-                    </a>
                   )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         ) : (
           <div
@@ -517,7 +771,8 @@ export default function Distributors() {
             <button
               onClick={() => {
                 setSearchTerm("");
-                setSelectedRegion("All");
+                setSelectedProvince("All");
+                setSelectedInner("All");
               }}
               className="mt-4 font-sans text-xs text-brand-dark font-bold underline cursor-pointer"
             >

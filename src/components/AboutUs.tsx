@@ -1,12 +1,18 @@
 import React from "react";
-import { Eye, Shield, Leaf, Heart, ArrowRight } from "lucide-react";
+import { Eye, Shield, Leaf, Heart, ArrowRight, Quote } from "lucide-react";
 import { motion } from "motion/react";
+import { INITIAL_TESTIMONIALS } from "../data";
+import { Testimonial } from "../types";
 
 interface AboutUsProps {
   onNavigate: (tabId: string) => void;
 }
 
 export default function AboutUs({ onNavigate }: AboutUsProps) {
+  const featuredTestimonials: Testimonial[] = INITIAL_TESTIMONIALS.filter(
+    (t) => t.featured,
+  ).slice(0, 3);
+
   return (
     <div id="about-us-view" className="bg-[#fafaf9] text-[#1c1c1a]">
       {/* Elevated Editorial Header */}
@@ -541,98 +547,68 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
       </section>
 
       {/* 5. ESG / Sustainability & Circularity (Botanical Environmental Ethics) */}
+      {/*  */}
+      {/* 7. Testimonials Section (blending soft rose/blush backdrop highlights) */}
       <section
-        className="py-24 bg-gradient-to-b from-brand-dark/5 to-[#fafaf9]"
-        id="sustainability-ethics"
+        className="py-24 bg-brand-chalk border-t border-brand-pink"
+        id="testimonials-section"
       >
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Image side */}
+        <div className="max-w-7xl mx-auto px-4">
           <div
-            className="rounded-3xl overflow-hidden shadow-2xl h-[600px]"
-            id="sustainability-visual"
+            className="text-center max-w-2xl mx-auto mb-16"
+            id="testimonials-header"
           >
-            <img
-              src="/images/shivnarineChanderpaul.jpeg"
-              alt="Shivnarine Chanderpaul – legendary cricketer and trusted family figure"
-              className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
-            />
+            <span className="font-sans text-xs tracking-[0.3em] text-brand-dark uppercase bg-brand-pink text-brand-dark font-bold px-3.5 py-1 rounded inline-block mb-3">
+              CLIENT TESTIMONIALS
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl text-brand-dark tracking-tight">
+              Clinical Quality Experience
+            </h2>
+            <div className="w-12 h-[1px] bg-brand-gold mx-auto mt-4"></div>
           </div>
 
-          {/* Content side */}
-          <div id="sustainability-narrative">
-            <span className="font-sans text-xs tracking-[0.3em] text-brand-dark uppercase block mb-3 font-bold">
-              LEGEND’S CHOICE
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-brand-dark tracking-tight mb-6">
-              Shivnarine Chanderpaul trusts The Skin Professionals for his
-              family.
-            </h2>
-            <p className="font-sans text-stone-600 text-xs sm:text-sm leading-relaxed mb-6 font-light">
-              One of the greatest batsmen of his era, and the 10th highest
-              international run-scorer of all time, Shivnarine Chanderpaul
-              doesn’t leave his family’s skin health to chance. He chooses The
-              Skin Professionals – because unmatched expertise, clean
-              formulations, and dermatological rigour matter as much off the
-              pitch as on it.
-            </p>
-
-            <div className="space-y-6" id="sustainability-points">
-              <div className="flex items-start space-x-3">
-                <Leaf className="w-5 h-5 text-brand-dark mt-0.5" />
-                <div>
-                  <h4 className="font-serif text-xs sm:text-sm text-brand-dark font-semibold">
-                    Dermatologist‑backed safety
-                  </h4>
-                  <p className="font-sans text-stone-500 text-xs leading-normal">
-                    Every product is formulated under medical supervision –
-                    hypoallergenic, non‑irritating, and suitable for the whole
-                    family, from toddlers to seniors.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <Heart className="w-5 h-5 text-brand-dark mt-0.5" />
-                <div>
-                  <h4 className="font-serif text-xs sm:text-sm text-brand-dark font-semibold">
-                    Trusted by families who demand the best
-                  </h4>
-                  <p className="font-sans text-stone-500 text-xs leading-normal">
-                    Though The Skin Professionals began in 2023, our science and
-                    safety standards have already earned the quiet confidence of
-                    athletes, celebrities, and parents.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <Eye className="w-5 h-5 text-brand-dark mt-0.5" />
-                <div>
-                  <h4 className="font-serif text-xs sm:text-sm text-brand-dark font-semibold">
-                    Transparent, clean science
-                  </h4>
-                  <p className="font-sans text-stone-500 text-xs leading-normal">
-                    No hidden fragrances, no endocrine disruptors – only
-                    evidence‑based ingredients you can pronounce. What
-                    Shivnarine demands for his family, we deliver.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div
-              className="mt-10 pt-8 border-t border-stone-200"
-              id="sustainability-cta"
-            >
-              <button
-                onClick={() => onNavigate("contact")}
-                id="partnership-cta"
-                className="px-6 py-3 bg-brand-dark hover:bg-brand-dark/90 text-[#f5f5f4] font-sans text-xs tracking-widest uppercase transition-all duration-300 rounded cursor-pointer shadow-sm hover:translate-y-[-1px]"
+          <div
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            id="testimonials-grid"
+          >
+            {featuredTestimonials.map((t) => (
+              <div
+                key={t.id}
+                id={`testimonial-card-${t.id}`}
+                className="bg-white p-8 rounded-2xl border border-brand-pink shadow-sm flex flex-col justify-between relative hover:border-brand-pink-dark transition-all"
               >
-                Discover the champion’s routine
-              </button>
-            </div>
+                <div>
+                  {/* <Quote className="w-8 h-8 text-brand-pink-dark/30 mb-6" /> */}
+                  <p className="font-sans text-stone-600 text-xs italic leading-relaxed mb-6 font-light">
+                    "{t.content}"
+                  </p>
+                </div>
+
+                <div className="flex items-center space-x-4 border-t border-stone-100 pt-4">
+                  {/* <img
+                    src={t.avatar}
+                    alt={t.author}
+                    className="w-12 h-12 rounded-full object-cover border border-brand-pink-dark/40"
+                    referrerPolicy="no-referrer"
+                  /> */}
+                  <div>
+                    <h4 className="font-serif text-sm text-brand-dark font-semibold">
+                      {t.author}
+                    </h4>
+                    <p className="font-sans text-[10px] text-brand-dark uppercase tracking-wider">
+                      {t.role}
+                    </p>
+                    <div className="flex space-x-0.5 mt-1">
+                      {Array.from({ length: t.rating }).map((_, i) => (
+                        <span key={i} className="text-brand-gold text-xs">
+                          ★
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
