@@ -415,6 +415,25 @@ export default function AISkinAnalysis({
                   className="flex flex-col sm:flex-row justify-between items-start gap-6 border-b border-stone-200/60 pb-8 mb-8"
                   id="report-sheet-header"
                 >
+                  {/* Medical Disclaimer (big & visible) */}
+                  <div className="sm:col-span-12 w-full">
+                    <div className="bg-white border border-brand-gold/40 rounded-2xl px-5 py-4 shadow-sm">
+                      <p className="font-sans text-[14px] sm:text-[16px] text-brand-dark leading-relaxed">
+                        <span className="font-extrabold">DISCLAIMER:</span> This
+                        AI skin test report is generated from your answers and
+                        our stored dataset.
+                        <br />
+                        <span className="font-bold">
+                          Educational purposes only.
+                        </span>{" "}
+                        Not for medical diagnosis, treatment, or professional
+                        healthcare advice.
+                        <br />
+                        If you have concerns, please consult a qualified
+                        dermatologist or healthcare professional.
+                      </p>
+                    </div>
+                  </div>
                   <div>
                     <span className="font-sans text-[9px] tracking-[0.4em] text-brand-dark uppercase block mb-1 font-bold">
                       THE SKIN PROFESSIONALS NEPAL • ONLINE REPORT
@@ -576,9 +595,9 @@ export default function AISkinAnalysis({
                           <h5 className="font-serif text-xs px-1 text-brand-dark font-bold leading-tight">
                             {p.name}
                           </h5>
-                          <span className="font-mono text-[9px] px-1 text-stone-400 uppercase block mt-1">
+                          {/* <span className="font-mono text-[9px] px-1 text-stone-400 uppercase block mt-1">
                             {p.category} • {p.price}
-                          </span>
+                          </span> */}
                         </div>
 
                         <div className="border-t border-stone-100/50 pt-2 mt-3 flex items-center justify-between text-[10px]">
