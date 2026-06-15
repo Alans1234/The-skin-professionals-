@@ -23,6 +23,7 @@ const Eszt1 = "/images/Eszt1.jpg";
 const M6MC2 = "/images/M6MC2.jpg";
 const k0ijk = "/images/VpwN0.jpg";
 const rxO1E = "/images/rxO1E.jpg";
+const Sunco = "/images/Sunco.png";
 
 interface HomeProps {
   products: Product[];
@@ -53,13 +54,13 @@ const HERO_SLIDES = [
     subtitle: "Advanced Skin Repair",
     desc: "Deeply repairing serums made to stop dry skin and give an instant glowing look.",
   },
-  {
-    image: M6MC2,
-    tagline: "STRONG CELLULAR HYDRATION",
-    title: "Strong Skin Protection",
-    subtitle: "Pure Hydrating Creams",
-    desc: "Premium organic creams delivering deep nourishment made for even the most sensitive skin.",
-  },
+  // {
+  //   image: M6MC2,
+  //   tagline: "STRONG CELLULAR HYDRATION",
+  //   title: "Strong Skin Protection",
+  //   subtitle: "Pure Hydrating Creams",
+  //   desc: "Premium organic creams delivering deep nourishment made for even the most sensitive skin.",
+  // },
 ];
 
 const FAQ_ITEMS = [
@@ -266,7 +267,7 @@ export default function Home({
           <div className="col-span-5 flex flex-col gap-4 justify-between">
             <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-[1.01] transition-all duration-500 h-[210px]">
               <img
-                src={M6MC2}
+                src={Sunco}
                 alt="High-tech premium dermal barrier treatment"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
