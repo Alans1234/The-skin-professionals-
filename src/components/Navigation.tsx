@@ -131,7 +131,7 @@ export default function Navigation({
 
   return (
     <nav
-      className="sticky top-0 z-50 bg-[#2F7376]/85 backdrop-blur-md border-b border-brand-gold/15 font-sans"
+      className="sticky top-0 z-50 bg-[#2F7376] backdrop-blur-md border-b border-brand-gold/15 font-sans"
       id="aura-navbar"
     >
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
