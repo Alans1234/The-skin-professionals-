@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { motion } from "motion/react";
 import { ContactSubmission } from "../types";
+import { Instagram, Facebook, Youtube, MessageCircle } from "lucide-react";
 
 interface ContactProps {
   prefilledInquiry?: { subject: string; message: string } | null;
@@ -190,7 +191,7 @@ export default function Contact({
               </div>
               <div>
                 <h4 className="font-serif text-sm text-brand-dark font-semibold">
-                  Durbar Marg Atelier
+                  chhetrapati
                 </h4>
                 <p className="font-sans text-stone-500 text-xs leading-relaxed">
                   Kathmandu, Nepal
@@ -198,7 +199,7 @@ export default function Contact({
               </div>
             </div>
 
-            <div className="flex items-start space-x-4">
+            {/* <div className="flex items-start space-x-4">
               <div
                 className="flex-shrink-0 w-10 h-10 rounded-xl bg-brand-dark/5 flex items-center justify-center text-brand-dark"
                 id="icon-phone"
@@ -207,14 +208,14 @@ export default function Contact({
               </div>
               <div>
                 <h4 className="font-serif text-sm text-brand-dark font-semibold">
-                  Virtual Care Desk
+                  Care Desk
                 </h4>
                 <p className="font-sans text-stone-500 text-xs leading-relaxed">
                   Mon - Sat, 09:00 - 18:00 NPT <br />
                   +977 9709157340
                 </p>
               </div>
-            </div>
+            </div> */}
 
             <div className="flex items-start space-x-4">
               <div
@@ -247,13 +248,13 @@ export default function Contact({
                 href="https://www.instagram.com/the_skin_professionals/"
                 className="hover:text-brand-gold cursor-pointer"
               >
-                Instagram
+                <Instagram className="w-6 h-6 inline-block mr-1" />
               </a>
               <a
                 href="https://www.facebook.com/profile.php?id=61563659194605"
                 className="hover:text-brand-gold cursor-pointer"
               >
-                Facebook
+                <Facebook className="w-6 h-6 inline-block mr-1" />
               </a>
             </div>
           </div>
