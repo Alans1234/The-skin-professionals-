@@ -219,34 +219,34 @@ export default function Home({
       >
         <div className="lg:col-span-5" id="intro-text">
           <span className="font-sans text-xs tracking-[0.3em] text-brand-dark uppercase bg-brand-pink text-brand-pink-dark border border-brand-pink px-3 py-1 rounded inline-block mb-4 font-bold">
-            THE BEST SKINCARE BRAND IN NEPAL
+            PREMIUM SKINCARE
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-brand-dark tracking-tight leading-snug mb-6">
-            Clinical Dermatology & Analysis in Kathmandu
+            The best products for your skin.
           </h2>
           <p className="font-sans text-stone-600 text-sm leading-relaxed mb-6 font-light">
-            Founded by veteran clinical formulators,{" "}
-            <span className="text-brand-dark font-semibold">
-              The Skin Professionals Nepal
-            </span>{" "}
-            is widely recognized as the best skincare brand in Nepal and premier
-            skin clinic. We offer the ultimate biological balance between
-            dermatologist-quality skin products, advanced skin diagnostics, and
-            gentle dermal self-care.
+            We formulate every product with clinical precision — using
+            evidence‑based ingredients at therapeutic concentrations. No
+            unnecessary fillers, no harsh fragrances. Just clean, effective
+            skincare that works.
+          </p>
+          <p className="font-sans text-stone-600 text-sm leading-relaxed mb-6 font-light">
+            Our range is dermatologist‑tested, non‑comedogenic, and suitable for
+            all skin types — from oily and acne‑prone to dry and sensitive. Each
+            formula is designed to repair, protect, and restore your natural
+            barrier.
           </p>
           <p className="font-sans text-stone-600 text-sm leading-relaxed mb-8 font-light">
-            We formulate premium dermo-physiological skincare solutions tailored
-            specifically for local climates and South Asian skin conditions.
-            Every batch is clinically verified to heal acne, protect against UV
-            rays with advanced sunscreen gel, and rebuild your biological
-            moisture barrier.
+            Whether you need deep hydration, brightening, or sun protection, we
+            have a solution made for you. Trusted by families, athletes, and
+            skin experts across Nepal.
           </p>
           <button
-            onClick={() => onNavigate("contact")}
+            onClick={() => onNavigate("products")}
             id="intro-read-story"
             className="inline-flex items-center space-x-2 text-xs tracking-widest uppercase text-brand-dark hover:text-brand-pink-dark transition-all font-bold border-b border-brand-dark pb-1"
           >
-            <span>Consult Our Specialists</span>
+            <span>Explore Our Range</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>
@@ -259,7 +259,7 @@ export default function Home({
           <div className="col-span-7 rounded-2xl overflow-hidden shadow-xl hover:scale-[1.01] transition-transform duration-500 h-[450px]">
             <img
               src={Eszt1}
-              alt="Luxury cosmetic botanical lipids showcase"
+              alt="Premium skincare products from The Skin Professionals Nepal"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
@@ -268,7 +268,7 @@ export default function Home({
             <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-[1.01] transition-all duration-500 h-[210px]">
               <img
                 src={Sunco}
-                alt="High-tech premium dermal barrier treatment"
+                alt="High-quality dermatological skincare"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -279,11 +279,11 @@ export default function Home({
                 100%
               </span>
               <span className="font-sans text-xs uppercase tracking-widest text-brand-dark block font-bold mb-1">
-                Gentle Active Formula
+                Clean & Safe
               </span>
               <p className="font-sans text-[11px] text-brand-dark/70 leading-normal">
-                Absorbs immediately with zero heavy feel. Completely free from
-                synthetic fillers, sulfates, or paraben cultures.
+                No parabens, no sulfates, no artificial dyes. Every batch is
+                clinically tested for purity and efficacy.
               </p>
             </div>
           </div>
