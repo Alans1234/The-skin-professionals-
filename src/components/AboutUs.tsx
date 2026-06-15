@@ -16,18 +16,15 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
   return (
     <div id="about-us-view" className="bg-[#fafaf9] text-[#1c1c1a]">
       {/* Elevated Editorial Header */}
-      <section
-        className="relative py-28 bg-brand-dark overflow-hidden"
-        id="about-header"
-      >
+      <section className="relative py-28  overflow-hidden" id="about-header">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/Eszt1.jpg"
+            src="/images/contact.png"
             alt="Advanced clean cosmetic laboratory settings with soft ambient lighting"
-            className="w-full h-full object-cover opacity-35 filter scale-102"
+            className="w-full h-full object-cover  filter scale-102"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/75 to-brand-dark/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/10 via-brand-dark/75 to-brand-dark/40"></div>
 
           <div className="absolute top-10 left-10 w-[350px] h-[350px] bg-brand-gold/5 rounded-full blur-[110px] mix-blend-screen pointer-events-none"></div>
           <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-brand-pink/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
@@ -70,13 +67,13 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
           </h2>
           <div className="w-12 h-[2px] bg-[#c5a880] mb-8"></div>
           <p className="font-sans text-stone-600 text-sm leading-relaxed mb-6 font-light">
-            In 2021, The Skin Professionals collection was born from a simple
+            In 2023, The Skin Professionals collection was born from a simple
             realization: the modern skincare industry was selling illusions.
             Brands either peddled aggressive, clinical chemicals that
             compromised the skin's healthy microflora, or marketed romanticized,
             weak botanical extracts that failed to yield actual results.
           </p>
-          <blockquote className="border-l-2 border-[#c5a880] pl-6 py-2 my-8">
+          {/* <blockquote className="border-l-2 border-[#c5a880] pl-6 py-2 my-8">
             <span className="font-serif text-lg italic text-brand-dark block">
               "Our mission is to create a state of perfect skin balance, where
               active ingredients support your skin instead of causing redness."
@@ -84,7 +81,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
             <span className="font-sans text-[10px] uppercase tracking-wider text-stone-500 block mt-2">
               — Dr. Sujata Koirala, Lead Dermatologist
             </span>
-          </blockquote>
+          </blockquote> */}
         </div>
 
         <div
