@@ -522,7 +522,9 @@ export default function App() {
                 <h4 className="font-serif text-sm text-brand-gold mb-4 uppercase tracking-widest font-normal">
                   Executive Office
                 </h4>
-                <p className="leading-relaxed mb-2">Kathmandu, Nepal</p>
+                <p className="leading-relaxed mb-2">
+                  chhetrapati, Kathmandu, Nepal
+                </p>
                 <p className="leading-relaxed mb-4 italic text-brand-pink">
                   Inquiries: skinprofessionals.2023@gmail.com
                 </p>
