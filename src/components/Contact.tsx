@@ -134,10 +134,10 @@ export default function Contact({
           <img
             src="/images/contact.png"
             alt="Scientific skincare formulations contact header pattern"
-            className="w-full h-full object-cover opacity-35 filter scale-102"
+            className="w-full h-full object-cover  filter scale-102"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 "></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/10 via-brand-dark/75 to-brand-dark/40"></div>
 
           <div className="absolute top-10 left-1/4 w-[400px] h-[400px] bg-brand-gold/5 rounded-full blur-[110px] mix-blend-screen pointer-events-none"></div>
           <div className="absolute bottom-10 right-1/4 w-[400px] h-[400px] bg-brand-pink/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
