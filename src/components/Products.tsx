@@ -68,12 +68,12 @@ export default function Products({ products, onNavigate }: ProductsProps) {
         {/* Cinematic rich background blur & Unsplash premium skincare texture */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/M6MC2.jpg"
+            src="/images/contact.png"
             alt="Physiological formulations backdrop"
-            className="w-full h-full object-cover opacity-35 filter scale-102"
+            className="w-full h-full object-cover  filter scale-102"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/55 to-brand-dark/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/10 via-brand-dark/55 to-brand-dark/30"></div>
 
           <div className="absolute top-0 left-1/4 w-[450px] h-[450px] bg-brand-gold/5 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
           <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-brand-pink/10 rounded-full blur-[100px] mix-blend-screen pointer-events-none"></div>
