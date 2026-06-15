@@ -11,7 +11,7 @@ import {
 const RenewImg = "/images/renew.jpg";
 const GoodMoistureImg = "/images/GoodMoisture.jpg";
 
-const MoistcomImg = "/images/112A4432.jpg";
+const MoistcomImg = "/images/112A4432.jpeg";
 const SuncoImg = "/images/Sunco.jpg";
 const FluideImg = "/images/fluide.jpg";
 
