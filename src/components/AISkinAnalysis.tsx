@@ -10,6 +10,7 @@ import {
   Smile,
   HelpCircle,
   FileText,
+  X,
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { SkinQuestion, Product } from "../types";
@@ -48,6 +49,8 @@ export default function AISkinAnalysis({
     routines: string[];
     recomProducts: Product[];
   } | null>(null);
+
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const handleOptionSelect = (qId: string, optVal: string) => {
     setUserAnswers((prev) => ({
@@ -103,27 +106,128 @@ export default function AISkinAnalysis({
     if (concern === "congestion")
       concernName = "Clearing Blackheads, Clogged Pores & Acne Breakouts";
 
-    // Tailor custom skincare product matches
+    // Tailor custom skincare product matches (suitability-based)
+    // This prevents the UI from recommending products that are not suitable for the selected skin type.
+    const normalizeSuitability = (s: string): string => s.trim().toLowerCase();
+
+    const skinSuitabilityLabel =
+      skinType === "dry"
+        ? "dry"
+        : skinType === "oily"
+          ? "oily"
+          : skinType === "combination"
+            ? "combination"
+            : "normal";
+
+    // Prioritize category order so routine text indices remain stable:
+    // Serum -> Moisturizer -> Sunscreen (then any remaining suitable products)
+    const categoryPriority: Record<string, number> = {
+      Serum: 1,
+      Moisturizer: 2,
+      Sunscreen: 3,
+      Cleanser: 4,
+      Treatment: 5,
+      Mask: 6,
+    };
+
+    const isSuitableForSkin = (p: Product) => {
+      const suits = p.suitability?.map(normalizeSuitability) ?? [];
+      // Your dataset uses values like: "Dry", "Normal", "Oily", "Combination", and sometimes "All skin types".
+      return (
+        suits.includes(skinSuitabilityLabel) ||
+        suits.includes("all") ||
+        suits.includes("all skin types".toLowerCase())
+      );
+    };
+
+    const isSuitableForConcern = (p: Product) => {
+      // Concerns are not mapped explicitly in the product dataset, but we can bias:
+      // - redness -> moisturizers/sensitive-friendly (fit via Dry + All skin types)
+      // - congestion -> oily/normal/sensitive-friendly via Oily/Combination matches.
+      if (concern === "redness") {
+        const suits = p.suitability?.map(normalizeSuitability) ?? [];
+        return (
+          suits.includes("dry") ||
+          suits.includes("sensitive") ||
+          suits.includes("all skin types".toLowerCase()) ||
+          suits.includes("all")
+        );
+      }
+      if (concern === "congestion") {
+        const suits = p.suitability?.map(normalizeSuitability) ?? [];
+        return (
+          suits.includes("oily") ||
+          suits.includes("combination") ||
+          suits.includes("normal") ||
+          suits.includes("all skin types".toLowerCase()) ||
+          suits.includes("all")
+        );
+      }
+      // aging/dullness: allow broad suitable-by-skin selection
+      return true;
+    };
+
+    // Build candidate list using suitability.
+    let candidates = products.filter(
+      (p) => isSuitableForSkin(p) && isSuitableForConcern(p),
+    );
+
+    // Output matches used by routine + recommended shelf
     let matches: Product[] = [];
-    if (skinType === "dry" || concern === "redness") {
-      // Find cleanser, serum and moisturizer
-      matches = products.filter(
-        (p) => p.id === "prod-4" || p.id === "prod-1" || p.id === "prod-2",
-      );
-    } else if (skinType === "oily" || concern === "congestion") {
-      matches = products.filter(
-        (p) => p.id === "prod-4" || p.id === "prod-3" || p.id === "prod-5",
-      );
-    } else {
-      matches = products.slice(0, 3);
+
+    // If we cannot get enough products, show broader matches.
+    // Product feedback rule:
+    // - Prefer selected skin type matches.
+    // - If we still cannot get 3, include products suitable for ALL skin types.
+    if (candidates.length < 3) {
+      candidates = products.filter((p) => isSuitableForSkin(p));
     }
 
+    if (candidates.length < 3) {
+      candidates = products.filter((p) => {
+        const suits = p.suitability?.map(normalizeSuitability) ?? [];
+        return (
+          suits.includes("all") ||
+          suits.includes("all skin types".toLowerCase())
+        );
+      });
+    }
+
+    // Ensure we always include the best dry pick when skinType is dry.
+    // (GOOD MOISTURISER = prod-5; dataset suitability includes Dry.)
+    if (skinType === "dry" && !candidates.some((p) => p.id === "prod-5")) {
+      const goodMoist = products.find((p) => p.id === "prod-5");
+      if (goodMoist) candidates = [goodMoist, ...candidates];
+    }
+
+    matches = candidates
+      .slice()
+      .sort((a, b) => {
+        const pa = categoryPriority[a.category] ?? 999;
+        const pb = categoryPriority[b.category] ?? 999;
+        // Stable-ish secondary sort: higher rating first
+        if (pa !== pb) return pa - pb;
+        return (b.rating ?? 0) - (a.rating ?? 0);
+      })
+      .slice(0, 3);
+
     const routinesList = [
-      "AM Step 1: Cleanse with a mild pH-balanced skin cleanser",
-      `AM Step 2: Massage 4 drops of ${matches[0]?.name || "RENEW NIACINAMIDE SERUM"} onto damp skin`,
-      `AM Step 3: Seal hydration with ${matches[1]?.name || "THE GOOD MOISTURISER"}`,
-      "PM Step 1: Double cellular cleanse to wash off pollutants & sebum",
-      `PM Step 2: Repair skin overnight using ${matches[2]?.name || "MOISTCOM LITE Skin lightning Moisturiser"}`,
+      "AM Step 1: Cleanse with a gentle pH-balanced cleanser suitable for your skin type",
+      `AM Step 2: Apply 4-5 drops of ${
+        matches[0]?.name || "RENEW NIACINAMIDE SERUM"
+      } to clean skin`,
+      `AM Step 3: Moisturize with ${
+        matches[1]?.name || "THE GOOD MOISTURISER"
+      } according to your skin type`,
+      "AM Step 4: Finish with a broad-spectrum sunscreen (SPF 30+) suitable for your skin type",
+
+      "PM Step 1: Cleanse thoroughly to remove sunscreen, dirt, and excess oil",
+      `PM Step 2: Apply ${
+        matches[0]?.name || "RENEW NIACINAMIDE SERUM"
+      } to support overnight skin repair`,
+      `PM Step 3: Lock in hydration with ${
+        matches[2]?.name || "MOISTCOM LITE Skin Lightening Moisturiser"
+      } according to your skin type`,
     ];
 
     setTimeout(() => {
@@ -211,7 +315,7 @@ export default function AISkinAnalysis({
 
       {/* Main Interactive Interactive container */}
       <section
-        className="py-20 max-w-4xl mx-auto px-4"
+        className="py-20 max-w-7xl mx-auto px-4"
         id="analysis-interaction-space"
       >
         <AnimatePresence mode="wait">
@@ -573,37 +677,62 @@ export default function AISkinAnalysis({
                     perfectly:
                   </p>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
                     {reportData.recomProducts.map((p) => (
                       <div
                         key={p.id}
-                        className="bg-[#fafaf9] rounded-xl border border-stone-200/50 p-4 flex flex-col justify-between hover:border-[#c5a880]/30 transition-all"
+                        id={`ai-featured-card-${p.id}`}
+                        className="group flex flex-col bg-brand-dark-accent/60 border border-white/10 rounded-2xl overflow-hidden hover:border-brand-gold/40 transition-all duration-500 shadow-xl cursor-pointer"
+                        role="button"
+                        tabIndex={0}
+                        aria-label={`Open details for ${p.name}`}
+                        onClick={() => setSelectedProduct(p)}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            setSelectedProduct(p);
+                          }
+                        }}
                       >
-                        <div>
-                          <div className="h-32 rounded-lg overflow-hidden mb-3 bg-stone-100">
-                            <img
-                              src={p.image}
-                              alt={p.name}
-                              className="w-full h-full object-cover"
-                              referrerPolicy="no-referrer"
-                              onError={(e) => {
-                                (e.target as HTMLImageElement).src =
-                                  "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=400";
-                              }}
-                            />
+                        {/* Image */}
+                        <div className="h-80 overflow-hidden relative">
+                          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark to-transparent opacity-60 z-10"></div>
+                          <img
+                            src={p.image}
+                            alt={p.name}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            referrerPolicy="no-referrer"
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).src =
+                                "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=600";
+                            }}
+                          />
+                          <div className="absolute top-4 right-4 bg-brand-dark border border-brand-gold/30 rounded-full px-3 py-1 text-[10px] tracking-widest uppercase text-brand-gold z-20">
+                            {p.category}
                           </div>
-                          <h5 className="font-serif text-xs px-1 text-brand-dark font-bold leading-tight">
-                            {p.name}
-                          </h5>
-                          {/* <span className="font-mono text-[9px] px-1 text-stone-400 uppercase block mt-1">
-                            {p.category} • {p.price}
-                          </span> */}
                         </div>
 
-                        <div className="border-t border-stone-100/50 pt-2 mt-3 flex items-center justify-between text-[10px]">
-                          <span className="font-mono text-brand-dark font-bold">
-                            Clinical grade
-                          </span>
+                        {/* Info */}
+                        <div className="p-6 bg-brand-dark flex-grow flex flex-col justify-between">
+                          <div>
+                            <h5 className="font-serif text-xl text-white mb-1 group-hover:text-brand-gold transition-colors">
+                              {p.name}
+                            </h5>
+                            <p className="font-sans text-xs text-brand-pink tracking-wider mb-3 italic">
+                              {p.tagline}
+                            </p>
+                            <p className="font-sans text-xs text-brand-chalk/70 leading-relaxed line-clamp-3 mb-6">
+                              {p.description}
+                            </p>
+                          </div>
+
+                          <div>
+                            <div className="flex items-center justify-end border-t border-white/15 pt-4">
+                              <span className="inline-flex items-center space-x-1.5 text-[10px] tracking-widest uppercase text-brand-chalk group-hover:text-brand-pink-dark transition-colors">
+                                <span>View Details</span>
+                              </span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     ))}
@@ -623,6 +752,134 @@ export default function AISkinAnalysis({
                 </button>
               </div>
             </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Product details modal for recommended products */}
+        <AnimatePresence>
+          {selectedProduct && (
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto"
+              id="product-detail-modal"
+            >
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setSelectedProduct(null)}
+                className="fixed inset-0 bg-[#052e2b]/80 backdrop-blur-sm"
+                id="modal-backdrop"
+              ></motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                className="relative bg-[#fafaf9] max-w-7xl w-full max-h-[92vh] rounded-2xl overflow-hidden shadow-2xl z-10 grid grid-cols-1 md:grid-cols-12"
+                id="modal-card"
+              >
+                <button
+                  onClick={() => setSelectedProduct(null)}
+                  className="absolute top-4 right-4 z-30 p-2 rounded-full bg-white/80 backdrop-blur-sm text-stone-600 hover:text-stone-900 border border-stone-200"
+                  id="close-modal-trigger"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+
+                <div className="md:col-span-5 h-[260px] sm:h-[320px] md:h-full bg-stone-100 relative">
+                  <img
+                    src={selectedProduct.image}
+                    alt={selectedProduct.name}
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src =
+                        "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=600";
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#052e2b]/80 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
+                    <span className="font-sans text-[10px] tracking-widest uppercase text-[#2dd4bf]/90 block mb-1">
+                      {selectedProduct.category}
+                    </span>
+                    <h4 className="font-serif text-xl text-white font-light">
+                      {selectedProduct.name}
+                    </h4>
+                  </div>
+                </div>
+
+                <div
+                  className="md:col-span-7 p-5 sm:p-10 max-h-[60vh] md:max-h-[85vh] overflow-y-auto"
+                  id="modal-detail-panel"
+                >
+                  <span className="font-sans text-[10px] tracking-[0.3em] text-[#c5a880] uppercase block mb-1 font-semibold">
+                    Product Description
+                  </span>
+                  <h2 className="font-serif text-2xl text-brand-dark mb-1 leading-snug">
+                    {selectedProduct.name}
+                  </h2>
+                  <p className="font-sans text-xs text-[#c5a880] tracking-wider mb-4 italic font-medium">
+                    {selectedProduct.tagline}
+                  </p>
+
+                  <div className="border-t border-stone-200/50 pt-4 mb-6">
+                    <h4 className="font-serif text-sm text-brand-dark uppercase tracking-wider mb-2">
+                      Physiological Profile
+                    </h4>
+                    <p className="font-sans text-stone-600 text-xs leading-relaxed">
+                      {selectedProduct.description}
+                    </p>
+                  </div>
+
+                  <div className="mb-6">
+                    <h4 className="font-serif text-sm text-brand-dark uppercase tracking-wider mb-3">
+                      Scientific Micro-Formulations
+                    </h4>
+                    <div
+                      className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+                      id="ingredients-formulations-details"
+                    >
+                      {selectedProduct.ingredients.map((ing, idx) => (
+                        <div
+                          key={idx}
+                          className="bg-[#051118]/5 p-3 rounded-xl border border-stone-205 shadow-xs flex flex-col justify-between"
+                        >
+                          <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
+                            <span className="font-serif text-xs text-brand-dark font-semibold">
+                              {ing.name}
+                            </span>
+                            <span className="font-mono text-[9px] text-brand-chalk uppercase tracking-widest bg-brand-dark px-1.5 py-0.5 rounded-sm">
+                              {ing.percentage || "Active"}
+                            </span>
+                          </div>
+                          <span className="font-sans text-[10px] text-stone-500 leading-normal mt-1">
+                            {ing.purpose}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mb-6 bg-brand-dark/5 p-4 rounded-xl border border-brand-dark/10">
+                    <h4 className="font-serif text-xs text-brand-dark uppercase tracking-wider mb-1.5 font-semibold">
+                      Directions of Rite
+                    </h4>
+                    <p className="font-sans text-stone-600 text-xs leading-relaxed italic">
+                      {selectedProduct.usage}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center justify-end border-t border-stone-200/50 pt-5">
+                    <button
+                      onClick={() => setSelectedProduct(null)}
+                      className="w-full sm:w-auto px-4 py-3 bg-brand-dark hover:bg-[#c5a880] text-brand-gold hover:text-brand-dark rounded transition-all duration-300 cursor-pointer text-xs tracking-widest uppercase font-semibold"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           )}
         </AnimatePresence>
       </section>
