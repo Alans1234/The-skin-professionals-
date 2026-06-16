@@ -59,9 +59,9 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
         id="brand-story-chronicle"
       >
         <div className="lg:col-span-5" id="chronicle-intro">
-          <span className="font-sans text-xs tracking-[0.3em] text-brand-dark uppercase block mb-3 font-bold">
+          {/* <span className="font-sans text-xs tracking-[0.3em] text-brand-dark uppercase block mb-3 font-bold">
             The Botanical Epiphany
-          </span>
+          </span> */}
           <h2 className="font-serif text-3xl sm:text-4xl text-brand-dark tracking-tight leading-snug mb-6">
             Rethinking skincare with pure clinic-grade honesty.
           </h2>
@@ -89,17 +89,19 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
           id="chronicle-detail flex flex-col gap-8"
         >
           <p className="font-sans text-stone-600 leading-relaxed mb-6 font-light">
-            Working in our clinical laboratory, our formulators succeeded in
-            combining pure peptides with wild mountain plant extracts. By
-            surrounding active skin nutrients with gentle botanical
-            moisturizers, we unlocked a new standard: formulas that feed the
-            skin deeply with absolutely zero redness or irritation.
+            At The Skin Professionals, product quality begins with trusted
+            manufacturing. Our formulations are developed and produced in
+            internationally recognized facilities that follow strict quality
+            control standards, ensuring consistency, safety, and effectiveness
+            in every batch.
           </p>
+
           <p className="font-sans text-stone-600 leading-relaxed mb-12 font-light">
-            Today, The Skin Professionals stand as Nepal's premium provider of
-            honest, clinic-grade skincare. We design our formulas with complete
-            honesty and prioritize the long-term health of your skin over
-            temporary cosmetic trends.
+            We proudly partner with WHO-GMP certified manufacturers, combining
+            advanced skincare science with rigorous production practices. Every
+            product undergoes comprehensive testing to meet the highest
+            standards of purity, stability, and skin compatibility before
+            reaching our customers.
           </p>
 
           <div
@@ -112,11 +114,12 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               </div>
               <div>
                 <h4 className="font-serif text-sm text-brand-dark font-semibold mb-1">
-                  Physician Standard
+                  WHO-GMP Certified Manufacturing
                 </h4>
                 <p className="font-sans text-stone-500 text-xs leading-relaxed">
-                  Every product is balanced precisely to match the physiological
-                  surface pH of healthy skin cell matrices (pH 5.5).
+                  Our products are manufactured in WHO-GMP certified facilities,
+                  ensuring internationally recognized standards for quality,
+                  safety, and consistency.
                 </p>
               </div>
             </div>
@@ -127,11 +130,12 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               </div>
               <div>
                 <h4 className="font-serif text-sm text-brand-dark font-semibold mb-1">
-                  Bio-Active Yields
+                  Premium Quality Ingredients
                 </h4>
                 <p className="font-sans text-stone-500 text-xs leading-relaxed">
-                  We use therapeutic concentrations of active ingredients,
-                  avoiding simple "marketing dust" to satisfy formulas.
+                  We carefully source high-quality active ingredients and
+                  botanicals, selecting only those that meet our strict
+                  standards for purity and performance.
                 </p>
               </div>
             </div>
@@ -238,7 +242,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
                     an integrated pathway for elite skincare professionals.
                   </p>
                 </div>
-                  <div className="mt-4 pt-4 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                <div className="mt-4 pt-4 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                   <span className="font-sans text-[10px] text-stone-400 font-medium">
                     Corporate HQ
                   </span>
