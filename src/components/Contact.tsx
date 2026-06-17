@@ -155,7 +155,7 @@ export default function Contact({
             </span>
           </h1>
           <p className="font-sans text-xs sm:text-sm text-stone-300 max-w-xl mx-auto tracking-widest uppercase mb-2">
-            REACH THE SKIN PROFESSIONALS LABS AND CLINICAL PARTNERS
+            REACH THE SKIN PROFESSIONALS
           </p>
           <div className="w-16 h-[1px] bg-gradient-to-r from-brand-gold via-brand-pink-dark to-transparent mx-auto mt-6"></div>
         </div>

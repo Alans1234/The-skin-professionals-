@@ -31,9 +31,8 @@ export default function Products({ products, onNavigate }: ProductsProps) {
     "Cleanser",
     "Serum",
     "Moisturizer",
-    "Treatment",
-    "Mask",
     "Sunscreen",
+    "Mask",
   ];
   const suitabilities = ["All", "Dry", "Oily", "Sensitive", "Combination"];
 
@@ -99,12 +98,18 @@ export default function Products({ products, onNavigate }: ProductsProps) {
 
       {/* 2. Controls and Search Grid */}
       <section
-        className="py-6 sm:py-8 bg-brand-chalk/95 border-b border-stone-200/50 sticky top-[60px] z-40 backdrop-blur-md shadow-sm"
+        className="bg-brand-chalk/95 border-b border-stone-200/50 sticky top-[60px] z-40 backdrop-blur-md shadow-sm"
         id="filter-controls-sticky"
       >
-        <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-4 lg:gap-6 justify-between items-stretch lg:items-center">
+        <div
+          className="mx-auto px-4 py-3 flex flex-col lg:flex-row gap-3 lg:gap-6 justify-between items-stretch lg:items-center h-auto"
+          id="filter-controls-inner"
+        >
           {/* Search Input bar */}
-          <div className="w-full lg:w-96 relative" id="search-input-container">
+          <div
+            className="w-full lg:w-[22rem] relative"
+            id="search-input-container"
+          >
             <Search className="w-4 h-4 text-stone-400 absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
@@ -126,7 +131,7 @@ export default function Products({ products, onNavigate }: ProductsProps) {
 
           {/* Category Filters */}
           <div
-            className="w-full lg:w-auto overflow-x-auto flex gap-2 no-scrollbar py-2"
+            className="w-full lg:w-auto overflow-x-auto flex gap-2 no-scrollbar"
             id="categories-scroll"
           >
             {categories.map((cat) => (
@@ -146,30 +151,29 @@ export default function Products({ products, onNavigate }: ProductsProps) {
           </div>
 
           {/* Skin Type Filters */}
-          <div
-            className="w-full lg:w-auto flex flex-col sm:flex-row sm:items-center gap-2"
-            id="suitabilities-selector"
-          >
-            <span className="font-sans text-[10px] uppercase tracking-widest text-brand-dark font-semibold flex items-center mr-1">
-              <SlidersHorizontal className="w-3.5 h-3.5 mr-1.5 shrink-0" /> Filter by
-              Face:
-            </span>
-            <div className="flex gap-1 overflow-x-auto no-scrollbar max-w-full pb-1">
+          <div className="w-full lg:w-auto" id="suitabilities-selector">
+            <label
+              htmlFor="face-filter-select"
+              className="block font-sans text-[10px] uppercase tracking-widest text-brand-dark font-semibold mb-1"
+            >
+              <span className="inline-flex items-center">
+                <SlidersHorizontal className="w-3.5 h-3.5 mr-1.5 shrink-0" />
+                Filter by Face:
+              </span>
+            </label>
+
+            <select
+              id="face-filter-select"
+              value={selectedSuitability}
+              onChange={(e) => setSelectedSuitability(e.target.value)}
+              className="w-full lg:w-[14rem] bg-brand-chalk border border-stone-200 text-stone-700 rounded-xl text-xs tracking-wider px-3 py-3 focus:outline-none focus:border-brand-dark focus:ring-1 focus:ring-brand-dark/20 transition-all font-sans"
+            >
               {suitabilities.map((type) => (
-                <button
-                  key={type}
-                  onClick={() => setSelectedSuitability(type)}
-                  id={`type-filter-${type}`}
-                  className={`px-3 py-1.5 rounded-md text-[10px] tracking-wider uppercase transition-all duration-300 font-sans ${
-                    selectedSuitability === type
-                      ? "bg-brand-gold text-brand-dark font-bold"
-                      : "bg-brand-chalk text-stone-500 border border-stone-200/50 hover:bg-brand-dark/5"
-                  }`}
-                >
+                <option key={type} value={type}>
                   {type}
-                </button>
+                </option>
               ))}
-            </div>
+            </select>
           </div>
         </div>
       </section>
@@ -185,22 +189,26 @@ export default function Products({ products, onNavigate }: ProductsProps) {
             id="search-not-found"
           >
             <ShieldAlert className="w-12 h-12 text-[#c5a880] mx-auto mb-4" />
+
             <h3 className="font-serif text-2xl text-brand-dark mb-2 font-medium">
-              No Prescriptions Found
+              Products Coming Soon
             </h3>
+
             <p className="font-sans text-stone-500 text-xs max-w-md mx-auto mb-6">
-              We couldn't match any of our luxury formulations with your search
-              filters. Try adjusting your category or skin suitability.
+              We are carefully preparing our premium skincare collection. Stay
+              tuned for expertly formulated products crafted to elevate your
+              skincare journey.
             </p>
+
             <button
               onClick={() => {
                 setSearchQuery("");
                 setSelectedCategory("All");
                 setSelectedSuitability("All");
               }}
-              className="px-6 py-2.5 bg-brand-dark text-brand-gold text-xs tracking-widest uppercase rounded rounded-lg shadow-sm hover:opacity-90"
+              className="px-6 py-2.5 bg-brand-dark text-brand-gold text-xs tracking-widest uppercase rounded-lg shadow-sm hover:opacity-90"
             >
-              Reset Filters
+              View All Products
             </button>
           </div>
         ) : (
@@ -382,7 +390,7 @@ export default function Products({ products, onNavigate }: ProductsProps) {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#052e2b]/80 via-transparent to-transparent"></div>
                 <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
                   <span className="font-sans text-[10px] tracking-widest uppercase text-[#2dd4bf]/90 block mb-1">
-                    {selectedProduct.category} Vault ID: {selectedProduct.id}
+                    {selectedProduct.category}
                   </span>
                   <h4 className="font-serif text-xl text-white font-light">
                     {selectedProduct.name}
@@ -470,7 +478,29 @@ export default function Products({ products, onNavigate }: ProductsProps) {
                 </div>
 
                 {/* Navigation / CAs */}
-                <div className="flex items-center justify-end border-t border-stone-200/50 pt-5">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3 border-t border-stone-200/50 pt-5">
+                  <div className="text-left sm:flex-1">
+                    <div className="text-[10px] uppercase tracking-[0.3em] text-[#c5a880] font-semibold font-sans mb-1">
+                      Recommended for you
+                    </div>
+                    <div className="font-sans text-xs text-stone-500 mt-1 leading-relaxed line-clamp-2">
+                      {selectedProduct.tagline}
+                    </div>
+
+                    <div
+                      className="flex flex-wrap gap-1.5 mt-3"
+                      id="recommendation-suitabilities"
+                    >
+                      {selectedProduct.suitability.map((suit) => (
+                        <span
+                          key={suit}
+                          className="bg-[#fafaf9] text-stone-500 border border-stone-200/50 px-2.5 py-1 rounded text-[9px] tracking-widest uppercase font-mono"
+                        >
+                          {suit} skin
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                   {/* <div>
                     <span className="font-sans text-[10px] text-stone-400 block uppercase tracking-widest mb-0.5">
                       Value
