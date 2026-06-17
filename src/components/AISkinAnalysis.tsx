@@ -46,7 +46,9 @@ export default function AISkinAnalysis({
     concernKey: string;
     concernName: string;
     description: string;
-    routines: string[];
+    morningRoutine: string[];
+    eveningRoutine: string[];
+    nightRoutine: string[];
     recomProducts: Product[];
   } | null>(null);
 
@@ -211,23 +213,41 @@ export default function AISkinAnalysis({
       })
       .slice(0, 3);
 
-    const routinesList = [
-      "AM Step 1: Cleanse with a gentle pH-balanced cleanser suitable for your skin type",
-      `AM Step 2: Apply 4-5 drops of ${
-        matches[0]?.name || "RENEW NIACINAMIDE SERUM"
-      } to clean skin`,
-      `AM Step 3: Moisturize with ${
-        matches[1]?.name || "THE GOOD MOISTURISER"
+    const morningRoutine = [
+      "Cleanse with a gentle pH-balanced cleanser suitable for your skin type",
+      `Apply 4-5 drops of ${matches[0]?.name || "RENEW NIACINAMIDE SERUM"} to clean skin`,
+      `Moisturize with ${
+        // Prefer “good moisturizer” (prod-5) for dry skins; otherwise use the 2nd match.
+        (skinType === "dry"
+          ? products.find((p) => p.id === "prod-5")?.name || matches[1]?.name
+          : matches[1]?.name) || "THE GOOD MOISTURISER"
       } according to your skin type`,
-      "AM Step 4: Finish with a broad-spectrum sunscreen (SPF 30+) suitable for your skin type",
+      `Finish with a sunscreen of (spf 50+) ${
+        products.find((p) => p.id === "prod-2")?.name || "Fluide + Sunco 50"
+      }  as per your skin type`,
+    ];
 
-      "PM Step 1: Cleanse thoroughly to remove sunscreen, dirt, and excess oil",
-      `PM Step 2: Apply ${
-        matches[0]?.name || "RENEW NIACINAMIDE SERUM"
-      } to support overnight skin repair`,
-      `PM Step 3: Lock in hydration with ${
-        matches[2]?.name || "MOISTCOM LITE Skin Lightening Moisturiser"
-      } according to your skin type`,
+    const eveningRoutine = [
+      "Cleanse thoroughly to remove sunscreen, dirt, and excess oil",
+      `Apply ${matches[0]?.name || "RENEW NIACINAMIDE SERUM"} to support skin renewal`,
+      `Lock in hydration with ${
+        products.find((p) => p.id === "prod-2")?.name || "Fluide + Sunco 50"
+      } (use as per your skin type)`,
+    ];
+
+    const nightRoutine = [
+      "Cleanse again to remove evening buildup and impurities (if needed)",
+      `Apply ${matches[0]?.name || "RENEW NIACINAMIDE SERUM"} for overnight repair`,
+      `Moisturize your skin with a suitable product for your skin type: ${
+        skinType === "dry"
+          ? products.find((p) => p.id === "prod-5")?.name ||
+            "THE GOOD MOISTURISER"
+          : concern === "dullness" || concern === "congestion"
+            ? products.find((p) => p.id === "prod-6")?.name ||
+              "MoistCom Lite Moisturizer"
+            : products.find((p) => p.id === "prod-6")?.name ||
+              "MOISTCOM LITE Skin Lightening Moisturiser"
+      }`,
     ];
 
     setTimeout(() => {
@@ -237,7 +257,9 @@ export default function AISkinAnalysis({
         concernKey: concern,
         concernName,
         description,
-        routines: routinesList,
+        morningRoutine,
+        eveningRoutine,
+        nightRoutine,
         recomProducts: matches,
       });
 
@@ -646,20 +668,68 @@ export default function AISkinAnalysis({
                   <h4 className="font-serif text-lg text-brand-dark mb-4 uppercase tracking-widest font-bold">
                     Your Personalized Daily Routine Guide
                   </h4>
-                  <div className="space-y-3">
-                    {reportData.routines.map((rt, idx) => (
-                      <div
-                        key={idx}
-                        className="flex items-start gap-3 bg-[#fafaf9] border border-stone-250/20 p-3 rounded-xl text-xs text-stone-600"
-                      >
-                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-dark/10 text-brand-dark flex items-center justify-center font-serif text-[10px] font-bold mt-0.5">
-                          {idx + 1}
-                        </span>
-                        <p className="font-sans leading-relaxed flex-grow">
-                          {rt}
-                        </p>
+                  <div className="space-y-6">
+                    <div>
+                      <h5 className="font-serif text-xs text-stone-400 uppercase tracking-widest font-bold mb-3">
+                        Morning Routine
+                      </h5>
+                      <div className="space-y-3">
+                        {reportData.morningRoutine.map((rt, idx) => (
+                          <div
+                            key={idx}
+                            className="flex items-start gap-3 bg-[#fafaf9] border border-stone-250/20 p-3 rounded-xl text-xs text-stone-600"
+                          >
+                            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-dark/10 text-brand-dark flex items-center justify-center font-serif text-[10px] font-bold mt-0.5">
+                              {idx + 1}
+                            </span>
+                            <p className="font-sans leading-relaxed flex-grow">
+                              {rt}
+                            </p>
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                    </div>
+
+                    <div>
+                      <h5 className="font-serif text-xs text-stone-400 uppercase tracking-widest font-bold mb-3">
+                        Evening Routine
+                      </h5>
+                      <div className="space-y-3">
+                        {reportData.eveningRoutine.map((rt, idx) => (
+                          <div
+                            key={idx}
+                            className="flex items-start gap-3 bg-[#fafaf9] border border-stone-250/20 p-3 rounded-xl text-xs text-stone-600"
+                          >
+                            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-dark/10 text-brand-dark flex items-center justify-center font-serif text-[10px] font-bold mt-0.5">
+                              {idx + 1}
+                            </span>
+                            <p className="font-sans leading-relaxed flex-grow">
+                              {rt}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <h5 className="font-serif text-xs text-stone-400 uppercase tracking-widest font-bold mb-3">
+                        Night Routine
+                      </h5>
+                      <div className="space-y-3">
+                        {reportData.nightRoutine.map((rt, idx) => (
+                          <div
+                            key={idx}
+                            className="flex items-start gap-3 bg-[#fafaf9] border border-stone-250/20 p-3 rounded-xl text-xs text-stone-600"
+                          >
+                            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-dark/10 text-brand-dark flex items-center justify-center font-serif text-[10px] font-bold mt-0.5">
+                              {idx + 1}
+                            </span>
+                            <p className="font-sans leading-relaxed flex-grow">
+                              {rt}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
 
